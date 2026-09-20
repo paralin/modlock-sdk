@@ -1,0 +1,8 @@
+Using breakpad crash handler
+Setting breakpad minidump AppID = 1422450
+Forcing breakpad minidump interfaces to load
+Looking up breakpad interfaces from steamclient
+Calling BreakpadMiniDumpSystemInit
+Fontconfig warning: "C:\Users\cjs\modlock-sdk-work\cs2\game\core\panorama\fonts\conf.d/41-repl-os-win.conf", line 148: Having multiple values in <test> isn't supported and may not work as expected
+Fontconfig warning: "C:\Users\cjs\modlock-sdk-work\cs2\game\core\panorama\fonts\conf.d/41-repl-os-win.conf", line 160: Having multiple values in <test> isn't supported and may not work as expected
+CSteam3Client::Shutdown

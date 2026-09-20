@@ -1,2 +1,4 @@
 # Receipts hash the downloader's text byte-for-byte, including line-end spaces.
 manifests/manifest_*.txt whitespace=-blank-at-eol
+# Preserve captured Windows diagnostics and receipts without rewriting their bytes.
+manifests/runtime/** whitespace=-blank-at-eol,-blank-at-eof

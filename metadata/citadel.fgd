@@ -1,0 +1,1215 @@
+// Generated from compiled Valve map entities; review inferred types.
+// Unobserved classes, inputs, defaults, choices and model events remain unknown.
+@include "base.fgd"
+@include "lights.fgd"
+@include "lights2.fgd"
+@include "markup_volumes.fgd"
+@include "postprocessing.fgd"
+@include "ai_defaultnpc.fgd"
+
+@PointClass = citadel_base_prop_midboss_indicator : "Observed map entity"
+[
+]
+
+@PointClass = citadel_base_prop_stairs : "Observed map entity"
+[
+    animateonserver(boolean) : "Observed field"
+    breakablecontentstype(string) : "Observed field"
+    burstscale(float) : "Observed field"
+    clientsideentity(string) : "Observed field"
+    createnavobstacle(boolean) : "Observed field"
+    disablelowviolence(string) : "Observed field"
+    disablereceiveshadows(boolean) : "Observed field"
+    disableshadows(string) : "Observed field"
+    explodedamage(float) : "Observed field"
+    exploderadius(float) : "Observed field"
+    fademaxdist(float) : "Observed field"
+    fademindist(float) : "Observed field"
+    forcenpcexclude(boolean) : "Observed field"
+    glowcolor(vector) : "Observed field"
+    glowrange(integer) : "Observed field"
+    glowrangemin(integer) : "Observed field"
+    glowstate(string) : "Observed field"
+    glowteam(string) : "Observed field"
+    idleanimationloopmode(string) : "Observed field"
+    lagcompensate(boolean) : "Observed field"
+    lightmapstatic(string) : "Observed field"
+    nointerpolate(boolean) : "Observed field"
+    object_culling(string) : "Observed field"
+    performancemode(string) : "Observed field"
+    pressuredelay(float) : "Observed field"
+    randomizecycle(boolean) : "Observed field"
+    renderamt(string) : "Observed field"
+    rendercolor(vector) : "Observed field"
+    renderfx(string) : "Observed field"
+    rendermode(string) : "Observed field"
+    rendertocubemaps(boolean) : "Observed field"
+    skin(string) : "Observed field"
+    solid(string) : "Observed field"
+    spawnflags(integer) : "Observed field"
+    stairs_location(string) : "Observed field"
+    startinganimationloopmode(string) : "Observed field"
+    use_animgraph(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass = citadel_breakable_prop : "Observed map entity"
+[
+    breakable_spawn_group(string) : "Observed field"
+    initial_spawn_time_override(float) : "Observed field"
+    respawn_time_override(float) : "Observed field"
+    subclass_name(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_capture_point : "Observed map entity"
+[
+    groupname(string) : "Observed field"
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    subclass_name(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    output OnBecomeCapturable(void) : "Observed output"
+    output OnFullyCaptured(void) : "Observed output"
+]
+
+@PointClass = citadel_final_objective_proxy : "Observed map entity"
+[
+    final_objective(string) : "Observed field"
+    sub_objective_1(string) : "Observed field"
+    sub_objective_2(string) : "Observed field"
+    sub_objective_3(string) : "Observed field"
+    sub_objective_4(string) : "Observed field"
+    sub_objective_lane_1(string) : "Observed field"
+    sub_objective_lane_2(string) : "Observed field"
+    sub_objective_lane_3(string) : "Observed field"
+    sub_objective_lane_4(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    output BecomeActive(void) : "Observed output"
+    output FinalExposed(void) : "Observed output"
+    output FinalShielded(void) : "Observed output"
+    output SubObjective1Destroyed(void) : "Observed output"
+    output SubObjective1Revitilized(void) : "Observed output"
+    output SubObjective2Destroyed(void) : "Observed output"
+    output SubObjective2Revitilized(void) : "Observed output"
+]
+
+@PointClass = citadel_herotest_orbspawner : "Observed map entity"
+[
+]
+
+@PointClass base(Targetname) = citadel_hideout_button : "Observed map entity"
+[
+    animateonserver(boolean) : "Observed field"
+    breakablecontentstype(string) : "Observed field"
+    burstscale(float) : "Observed field"
+    clientsideentity(string) : "Observed field"
+    createnavobstacle(boolean) : "Observed field"
+    disablelowviolence(string) : "Observed field"
+    disablereceiveshadows(boolean) : "Observed field"
+    disableshadows(string) : "Observed field"
+    explodedamage(float) : "Observed field"
+    exploderadius(float) : "Observed field"
+    fademaxdist(float) : "Observed field"
+    fademindist(float) : "Observed field"
+    forcenpcexclude(boolean) : "Observed field"
+    glowcolor(vector) : "Observed field"
+    glowrange(integer) : "Observed field"
+    glowrangemin(integer) : "Observed field"
+    glowstate(string) : "Observed field"
+    glowteam(string) : "Observed field"
+    hideout_action(string) : "Observed field"
+    idleanim(string) : "Observed field"
+    idleanimationloopmode(string) : "Observed field"
+    interact_distance(float) : "Observed field"
+    interact_loc_string(string) : "Observed field"
+    interact_style(string) : "Observed field"
+    lagcompensate(boolean) : "Observed field"
+    lightmapstatic(string) : "Observed field"
+    model(string) : "Observed field"
+    nointerpolate(boolean) : "Observed field"
+    object_culling(string) : "Observed field"
+    performancemode(string) : "Observed field"
+    pressuredelay(float) : "Observed field"
+    randomizecycle(boolean) : "Observed field"
+    renderamt(string) : "Observed field"
+    rendercolor(vector) : "Observed field"
+    renderfx(string) : "Observed field"
+    rendermode(string) : "Observed field"
+    rendertocubemaps(boolean) : "Observed field"
+    skin(string) : "Observed field"
+    solid(string) : "Observed field"
+    spawnflags(integer) : "Observed field"
+    startinganim(string) : "Observed field"
+    startinganimationloopmode(string) : "Observed field"
+    use_animgraph(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    world_panel(string) : "Observed field"
+    world_panel_opacity_curve(string) : "Observed field"
+    world_panel_opacity_end(string) : "Observed field"
+    world_panel_opacity_end_distance(string) : "Observed field"
+    world_panel_opacity_start(string) : "Observed field"
+    world_panel_opacity_start_distance(string) : "Observed field"
+]
+
+@PointClass = citadel_hideout_clock : "Observed map entity"
+[
+]
+
+@PointClass = citadel_hideout_shootable_target_spawner : "Observed map entity"
+[
+]
+
+@PointClass = citadel_item_pickup_rejuv_herotest_infospawn : "Observed map entity"
+[
+]
+
+@PointClass base(Targetname) = citadel_item_powerup_spawner : "Observed map entity"
+[
+    subclass_name(string) : "Observed field"
+]
+
+@PointClass = citadel_local_player_ranked_badge_prop : "Observed map entity"
+[
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass = citadel_minimap_boundary : "Observed map entity"
+[
+]
+
+@PointClass = citadel_new_years_fireworks : "Observed map entity"
+[
+    fireworkintervalmax(float) : "Observed field"
+    fireworkintervalmin(float) : "Observed field"
+    fireworkparticle1(string) : "Observed field"
+    fireworkparticle2(string) : "Observed field"
+    fireworkparticle3(string) : "Observed field"
+    fireworkparticle4(string) : "Observed field"
+    fireworkparticle5(string) : "Observed field"
+    fireworkparticle6(string) : "Observed field"
+    fireworkparticle7(string) : "Observed field"
+    fireworkparticle8(string) : "Observed field"
+    showdelayseconds(string) : "Observed field"
+    showdurationseconds(string) : "Observed field"
+    soundname(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_passthrough_fake_wall : "Observed map entity"
+[
+    allow_anyone(boolean) : "Observed field"
+    allow_tiny_characters(boolean) : "Observed field"
+    model(string) : "Observed field"
+    trigger_distance_meters(float) : "Observed field"
+    output OnClose(void) : "Observed output"
+    output OnOpen(void) : "Observed output"
+]
+
+@PointClass base(Targetname) = citadel_point_talker : "Observed map entity"
+[
+]
+
+@PointClass = citadel_pregame_hero_draft_button : "Observed map entity"
+[
+    animateonserver(boolean) : "Observed field"
+    breakablecontentstype(string) : "Observed field"
+    burstscale(float) : "Observed field"
+    clientsideentity(string) : "Observed field"
+    createnavobstacle(boolean) : "Observed field"
+    disablelowviolence(string) : "Observed field"
+    disablereceiveshadows(boolean) : "Observed field"
+    disableshadows(string) : "Observed field"
+    explodedamage(float) : "Observed field"
+    exploderadius(float) : "Observed field"
+    fademaxdist(float) : "Observed field"
+    fademindist(float) : "Observed field"
+    forcenpcexclude(boolean) : "Observed field"
+    glowcolor(vector) : "Observed field"
+    glowrange(integer) : "Observed field"
+    glowrangemin(integer) : "Observed field"
+    glowstate(string) : "Observed field"
+    glowteam(string) : "Observed field"
+    idleanim(string) : "Observed field"
+    idleanimationloopmode(string) : "Observed field"
+    lagcompensate(boolean) : "Observed field"
+    lightmapstatic(string) : "Observed field"
+    model(string) : "Observed field"
+    nointerpolate(boolean) : "Observed field"
+    object_culling(string) : "Observed field"
+    performancemode(string) : "Observed field"
+    pressuredelay(float) : "Observed field"
+    randomizecycle(boolean) : "Observed field"
+    renderamt(string) : "Observed field"
+    rendercolor(vector) : "Observed field"
+    renderfx(string) : "Observed field"
+    rendermode(string) : "Observed field"
+    rendertocubemaps(boolean) : "Observed field"
+    skin(string) : "Observed field"
+    solid(string) : "Observed field"
+    spawnflags(integer) : "Observed field"
+    startinganim(string) : "Observed field"
+    startinganimationloopmode(string) : "Observed field"
+    use_animgraph(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_prop_dynamic : "Observed map entity"
+[
+    animateonserver(boolean) : "Observed field"
+    animationloopmode(string) : "Observed field"
+    bakelighting(string) : "Observed field"
+    breakablecontentstype(string) : "Observed field"
+    burstscale(float) : "Observed field"
+    clientsideentity(string) : "Observed field"
+    createnavobstacle(boolean) : "Observed field"
+    defaultanim(string) : "Observed field"
+    defaultskin(string) : "Observed field"
+    disablelowviolence(string) : "Observed field"
+    disablereceiveshadows(boolean) : "Observed field"
+    disableshadows(string) : "Observed field"
+    disablex360(string) : "Observed field"
+    enemyskin(string) : "Observed field"
+    explodedamage(float) : "Observed field"
+    exploderadius(float) : "Observed field"
+    fademaxdist(float) : "Observed field"
+    fademindist(float) : "Observed field"
+    forcenpcexclude(boolean) : "Observed field"
+    friendlyskin(string) : "Observed field"
+    glowcolor(vector) : "Observed field"
+    glowrange(string) : "Observed field"
+    glowrangemin(integer) : "Observed field"
+    glowstate(string) : "Observed field"
+    glowteam(string) : "Observed field"
+    idleanim(string) : "Observed field"
+    idleanimationloopmode(string) : "Observed field"
+    isworld(boolean) : "Observed field"
+    lagcompensate(boolean) : "Observed field"
+    lightmapstatic(string) : "Observed field"
+    maxanimtime(string) : "Observed field"
+    maxcpulevel(string) : "Observed field"
+    maxgpulevel(string) : "Observed field"
+    minanimtime(string) : "Observed field"
+    mincpulevel(string) : "Observed field"
+    mingpulevel(string) : "Observed field"
+    model(string) : "Observed field"
+    nointerpolate(boolean) : "Observed field"
+    object_culling(string) : "Observed field"
+    performancemode(string) : "Observed field"
+    pressuredelay(float) : "Observed field"
+    randomanimation(string) : "Observed field"
+    randomizecycle(boolean) : "Observed field"
+    renderamt(string) : "Observed field"
+    rendercolor(vector) : "Observed field"
+    renderfx(string) : "Observed field"
+    rendermode(string) : "Observed field"
+    rendertocubemaps(boolean) : "Observed field"
+    scriptedmovement(string) : "Observed field"
+    skin(string) : "Observed field"
+    solid(string) : "Observed field"
+    spawnflags(integer) : "Observed field"
+    startinganim(string) : "Observed field"
+    startinganimationloopmode(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    updatechildren(string) : "Observed field"
+    use_animgraph(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_shop_prop_dynamic : "Observed map entity"
+[
+    animateonserver(boolean) : "Observed field"
+    bakelightdoublesided(string) : "Observed field"
+    baketoworld(string) : "Observed field"
+    breakablecontentstype(string) : "Observed field"
+    burstscale(float) : "Observed field"
+    clientsideentity(string) : "Observed field"
+    createnavobstacle(boolean) : "Observed field"
+    disableinlowquality(string) : "Observed field"
+    disablelowviolence(string) : "Observed field"
+    disablemerging(string) : "Observed field"
+    disablereceiveshadows(boolean) : "Observed field"
+    disableshadows(string) : "Observed field"
+    explodedamage(float) : "Observed field"
+    exploderadius(float) : "Observed field"
+    fademaxdist(float) : "Observed field"
+    fademindist(float) : "Observed field"
+    forcenpcexclude(boolean) : "Observed field"
+    glowcolor(vector) : "Observed field"
+    glowrange(integer) : "Observed field"
+    glowrangemin(integer) : "Observed field"
+    glowstate(string) : "Observed field"
+    glowteam(string) : "Observed field"
+    idleanimationloopmode(string) : "Observed field"
+    lagcompensate(boolean) : "Observed field"
+    lightmapstatic(string) : "Observed field"
+    model(string) : "Observed field"
+    nointerpolate(boolean) : "Observed field"
+    object_culling(string) : "Observed field"
+    performancemode(string) : "Observed field"
+    pressuredelay(float) : "Observed field"
+    randomizecycle(boolean) : "Observed field"
+    renderamt(string) : "Observed field"
+    rendercolor(vector) : "Observed field"
+    renderfx(string) : "Observed field"
+    rendermode(string) : "Observed field"
+    rendertocubemaps(boolean) : "Observed field"
+    renderwithdynamic(string) : "Observed field"
+    skin(string) : "Observed field"
+    solid(string) : "Observed field"
+    spawnflags(integer) : "Observed field"
+    startinganim(string) : "Observed field"
+    startinganimationloopmode(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    use_animgraph(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    visoccluder(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_snd_base_music_obb : "Observed map entity"
+[
+    box_maxs(vector) : "Observed field"
+    box_mins(vector) : "Observed field"
+    max_distance(string) : "Observed field"
+    operator_name(string) : "Observed field"
+    operator_variable_name(string) : "Observed field"
+    stack_name(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_snd_obb : "Observed map entity"
+[
+    box_maxs(vector) : "Observed field"
+    box_mins(vector) : "Observed field"
+    clientcullradius(float) : "Observed field"
+    clientsideentity(string) : "Observed field"
+    entityindexselection(string) : "Observed field"
+    saveandrestore(boolean) : "Observed field"
+    soundname(string) : "Observed field"
+    startonspawn(boolean) : "Observed field"
+    stoponnew(boolean) : "Observed field"
+    tolocalplayer(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_snd_stack_field_obb : "Observed map entity"
+[
+    box_maxs(vector) : "Observed field"
+    box_mins(vector) : "Observed field"
+    max_distance(string) : "Observed field"
+    music_state(string) : "Observed field"
+    operator_name(string) : "Observed field"
+    operator_variable_name(string) : "Observed field"
+    stack_name(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_team_reveal_hero_card : "Observed map entity"
+[
+    animateonserver(boolean) : "Observed field"
+    breakablecontentstype(string) : "Observed field"
+    burstscale(float) : "Observed field"
+    clientsideentity(string) : "Observed field"
+    createnavobstacle(boolean) : "Observed field"
+    disablelowviolence(string) : "Observed field"
+    disablereceiveshadows(boolean) : "Observed field"
+    disableshadows(string) : "Observed field"
+    explodedamage(float) : "Observed field"
+    exploderadius(float) : "Observed field"
+    fademaxdist(float) : "Observed field"
+    fademindist(float) : "Observed field"
+    forcenpcexclude(boolean) : "Observed field"
+    glowcolor(vector) : "Observed field"
+    glowrange(integer) : "Observed field"
+    glowrangemin(integer) : "Observed field"
+    glowstate(string) : "Observed field"
+    glowteam(string) : "Observed field"
+    hero_id(string) : "Observed field"
+    idleanimationloopmode(string) : "Observed field"
+    lagcompensate(boolean) : "Observed field"
+    lightmapstatic(string) : "Observed field"
+    model(string) : "Observed field"
+    nointerpolate(boolean) : "Observed field"
+    object_culling(string) : "Observed field"
+    performancemode(string) : "Observed field"
+    pressuredelay(float) : "Observed field"
+    randomizecycle(boolean) : "Observed field"
+    renderamt(string) : "Observed field"
+    rendercolor(vector) : "Observed field"
+    renderfx(string) : "Observed field"
+    rendermode(string) : "Observed field"
+    rendertocubemaps(boolean) : "Observed field"
+    skin(string) : "Observed field"
+    solid(string) : "Observed field"
+    spawnflags(integer) : "Observed field"
+    startinganimationloopmode(string) : "Observed field"
+    use_animgraph(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = citadel_trigger_climb_rope : "Observed map entity"
+[
+    aligncameraonautodismount(boolean) : "Observed field"
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = citadel_trigger_hideout : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = citadel_trigger_hideout_teleport : "Observed map entity"
+[
+    landmark(string) : "Observed field"
+    locstring(string) : "Observed field"
+    map(string) : "Observed field"
+    model(string) : "Observed field"
+    prop(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_trigger_hotel_exit : "Observed map entity"
+[
+    is_success(boolean) : "Observed field"
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = citadel_trigger_idol_return : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_trigger_interior : "Observed map entity"
+[
+    interior_type(string) : "Observed field"
+    model(string) : "Observed field"
+    rendercolor(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = citadel_trigger_no_portals : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = citadel_trigger_push : "Observed map entity"
+[
+    model(string) : "Observed field"
+    pushdir(vector) : "Observed field"
+    spawnflags(string) : "Observed field"
+    speed(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = citadel_trigger_shop_tunnel : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = citadel_trigger_speed_boost : "Observed map entity"
+[
+    model(string) : "Observed field"
+    movespeed_override(float) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = citadel_trigger_suspend_modifier : "Observed map entity"
+[
+    model(string) : "Observed field"
+    modifier_name(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_trigger_teleport : "Observed map entity"
+[
+    delay(float) : "Observed field"
+    exitpoint(string) : "Observed field"
+    model(string) : "Observed field"
+    prop(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    output OnTeleport(void) : "Observed output"
+]
+
+@SolidClass = citadel_tunnel_trigger : "Observed map entity"
+[
+    kill_when_not_tiny(boolean) : "Observed field"
+    model(string) : "Observed field"
+    movespeed_override(float) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_volume_omni : "Observed map entity"
+[
+    _template_lump_ent_index(string) : "Observed field"
+    animated(string) : "Observed field"
+    animationduration(string) : "Observed field"
+    endlightbrightness(string) : "Observed field"
+    endlightradius(string) : "Observed field"
+    endmediabrightness(string) : "Observed field"
+    endmediadensity(string) : "Observed field"
+    lightbrightness(string) : "Observed field"
+    lightcolor(string) : "Observed field"
+    lightrange(string) : "Observed field"
+    looping(string) : "Observed field"
+    mediabrightness(string) : "Observed field"
+    mediacolor(string) : "Observed field"
+    mediadensity(string) : "Observed field"
+    mediaelevationmax(string) : "Observed field"
+    mediaelevationmin(string) : "Observed field"
+    mediainnerradiusscale(string) : "Observed field"
+    mediamiddleradiusscale(string) : "Observed field"
+    mediaouterradiusscale(string) : "Observed field"
+    startlightbrightness(string) : "Observed field"
+    startlightradius(string) : "Observed field"
+    startmediabrightness(string) : "Observed field"
+    startmediadensity(string) : "Observed field"
+    uselocaloffset(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_zap_trigger : "Observed map entity"
+[
+    model(string) : "Observed field"
+    percentmaxhealthdamage(float) : "Observed field"
+    shootafterenteringtime(float) : "Observed field"
+    shootfromentity(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    timebetweenshots(float) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_zipline_path : "Observed map entity"
+[
+    color_tint(vector) : "Observed field"
+    effect_name(string) : "Observed field"
+    lane_number(string) : "Observed field"
+    max_simulation_time(float) : "Observed field"
+    particle_spacing(float) : "Observed field"
+    pathnodepinsenabled(string) : "Observed field"
+    pathnoderadiusscales(string) : "Observed field"
+    pathnodes(string) : "Observed field"
+    radius(float) : "Observed field"
+    slack(float) : "Observed field"
+    start_active(boolean) : "Observed field"
+    static_collision(boolean) : "Observed field"
+    use_baselane_color(boolean) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_zipline_path_node : "Observed map entity"
+[
+    always_usable(string) : "Observed field"
+    capturable(boolean) : "Observed field"
+    color(string) : "Observed field"
+    corner_node(boolean) : "Observed field"
+    disable_ability_zip_targeting(string) : "Observed field"
+    disable_zipping_to(boolean) : "Observed field"
+    enabled(string) : "Observed field"
+    extra_latch_distance(string) : "Observed field"
+    guard_boss_name(string) : "Observed field"
+    in_tangent_local(string) : "Observed field"
+    is_base_backlane(string) : "Observed field"
+    one_way(string) : "Observed field"
+    out_tangent_local(string) : "Observed field"
+    path_index(string) : "Observed field"
+    path_uniqueid(string) : "Observed field"
+    secondary_guard_boss_name(string) : "Observed field"
+    speed_multiplier(string) : "Observed field"
+    speed_multiplier_from_base_bonus(float) : "Observed field"
+    speed_multiplier_to_base_bonus(float) : "Observed field"
+    taper(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    tertiary_guard_boss_name(string) : "Observed field"
+    use_for_minimap_drawing(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = destroyable_building : "Observed map entity"
+[
+    backdoorprotectiontrigger(string) : "Observed field"
+    building_health(string) : "Observed field"
+    disableshadows(string) : "Observed field"
+    final(boolean) : "Observed field"
+    lanenum(string) : "Observed field"
+    model(string) : "Observed field"
+    skin(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    trooperapproach(string) : "Observed field"
+    output OnAttackSubsided(void) : "Observed output"
+    output OnDestroyed(void) : "Observed output"
+    output OnUnderAttack(void) : "Observed output"
+]
+
+@PointClass = env_cubemap_fog : "Observed map entity"
+[
+    cubemapfogenddistance(float) : "Observed field"
+    cubemapfogfalloffexponent(float) : "Observed field"
+    cubemapfogheightexponent(float) : "Observed field"
+    cubemapfogheightstart(float) : "Observed field"
+    cubemapfogheightwidth(float) : "Observed field"
+    cubemapfoglodbiase(float) : "Observed field"
+    cubemapfogskyentity(string) : "Observed field"
+    cubemapfogskymaterial(string) : "Observed field"
+    cubemapfogsource(string) : "Observed field"
+    cubemapfogstartdistance(float) : "Observed field"
+    cubemapfogtexture(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+]
+
+@PointClass = env_gradient_fog : "Observed map entity"
+[
+    fadetime(float) : "Observed field"
+    fogcolor(vector) : "Observed field"
+    fogend(float) : "Observed field"
+    fogendheight(float) : "Observed field"
+    fogfalloffexponent(float) : "Observed field"
+    fogmaxopacity(float) : "Observed field"
+    fogstart(float) : "Observed field"
+    fogstartheight(float) : "Observed field"
+    fogstrength(float) : "Observed field"
+    fogverticalexponent(float) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+]
+
+@PointClass base(Targetname) = filter_activator_team : "Observed map entity"
+[
+    clientsideentity(string) : "Observed field"
+    filterteam(string) : "Observed field"
+    negated(string) : "Observed field"
+]
+
+@SolidClass = func_citadel_ladder : "Observed map entity"
+[
+    model(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = func_conditional_collidable : "Observed map entity"
+[
+    interactas(string) : "Observed field"
+    interactwith(string) : "Observed field"
+    model(string) : "Observed field"
+]
+
+@SolidClass = func_regenerate : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass base(Targetname) = hero_testing_controller : "Observed map entity"
+[
+]
+
+@PointClass = info_ability_test_bot : "Observed map entity"
+[
+]
+
+@PointClass = info_assigned_lane_particle : "Observed map entity"
+[
+    lanenum(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+]
+
+@PointClass = info_citadel_familiar_helper : "Observed map entity"
+[
+]
+
+@PointClass = info_citadel_hideout_interest_point : "Observed map entity"
+[
+]
+
+@PointClass base(Targetname) = info_citadel_matchmaking_status : "Observed map entity"
+[
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass = info_cover_point : "Observed map entity"
+[
+    allowoffnav(boolean) : "Observed field"
+    autoadjustdirection(string) : "Observed field"
+    groupid(string) : "Observed field"
+    visionradius(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = info_hero_testing_point : "Observed map entity"
+[
+    heroid(string) : "Observed field"
+    movetarget(string) : "Observed field"
+    pointtype(string) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@PointClass = info_koth_spawn_location : "Observed map entity"
+[
+]
+
+@PointClass = info_mini_map_marker : "Observed map entity"
+[
+    markertype(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+]
+
+@PointClass = info_neutral_trooper_camp : "Observed map entity"
+[
+    campname(string) : "Observed field"
+    eneutraltroopertype(string) : "Observed field"
+    initialspawndelayinseconds(string) : "Observed field"
+    spawnintervalinseconds(string) : "Observed field"
+    subclass_name(string) : "Observed field"
+]
+
+@PointClass = info_neutral_trooper_spawn : "Observed map entity"
+[
+    campname(string) : "Observed field"
+    covergroupid(string) : "Observed field"
+    eneutraltroopertype(string) : "Observed field"
+    grenadier(string) : "Observed field"
+    hatecrateattacker(string) : "Observed field"
+    model(string) : "Observed field"
+    modelscale(string) : "Observed field"
+    super(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = info_offscreen_panorama_texture : "Observed map entity"
+[
+    enable_mip_gen(boolean) : "Observed field"
+    panel_type(string) : "Observed field"
+    render_attr_name(string) : "Observed field"
+    resolution_x(string) : "Observed field"
+    resolution_y(string) : "Observed field"
+    targets(string) : "Observed field"
+]
+
+@PointClass = info_super_trooper_spawn : "Observed map entity"
+[
+    bossname(string) : "Observed field"
+    covergroupid(string) : "Observed field"
+    lanenum(string) : "Observed field"
+    reinforcementsonly(boolean) : "Observed field"
+    secondaryboss(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    troopertestspawner(boolean) : "Observed field"
+    output OnTrooperKilled(void) : "Observed output"
+]
+
+@PointClass base(Targetname) = info_team_spawn : "Observed map entity"
+[
+    grouptag(string) : "Observed field"
+    initialspawn(boolean) : "Observed field"
+    lanenum(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+]
+
+@PointClass = info_teleport_location : "Observed map entity"
+[
+    lanenum(string) : "Observed field"
+    objective(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+]
+
+@PointClass = info_trooper_spawn : "Observed map entity"
+[
+    disableziplining(boolean) : "Observed field"
+    lanenum(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    trooperlevel(string) : "Observed field"
+]
+
+@PointClass = item_crate_spawn : "Observed map entity"
+[
+    early_spawn(boolean) : "Observed field"
+    loot_type(string) : "Observed field"
+    objective_position(string) : "Observed field"
+]
+
+@PointClass = lane_marker_path : "Observed map entity"
+[
+    lanenum(string) : "Observed field"
+    laneslot(string) : "Observed field"
+    pathnodepinsenabled(string) : "Observed field"
+    pathnoderadiusscales(string) : "Observed field"
+    pathnodes(string) : "Observed field"
+]
+
+@PointClass = light_omni : "Observed map entity"
+[
+    attenuation1(float) : "Observed field"
+    attenuation2(float) : "Observed field"
+    bouncescale(float) : "Observed field"
+    brightness(float) : "Observed field"
+    brightness_legacy(string) : "Observed field"
+    brightness_lumens(string) : "Observed field"
+    castshadows(string) : "Observed field"
+    clientsideentity(string) : "Observed field"
+    color(vector) : "Observed field"
+    directlight(string) : "Observed field"
+    enabled(boolean) : "Observed field"
+    fademaxdist(float) : "Observed field"
+    fademindist(float) : "Observed field"
+    indirectlight(string) : "Observed field"
+    innerconeangle(string) : "Observed field"
+    lightsourceradius(float) : "Observed field"
+    nearclipplane(float) : "Observed field"
+    outerconeangle(string) : "Observed field"
+    precomputedboundsmaxs(string) : "Observed field"
+    precomputedboundsmins(string) : "Observed field"
+    precomputedfieldsvalid(string) : "Observed field"
+    precomputedmaxrange(string) : "Observed field"
+    precomputedminrange(string) : "Observed field"
+    precomputedobbangles(string) : "Observed field"
+    precomputedobbextent(string) : "Observed field"
+    precomputedobborigin(string) : "Observed field"
+    priority(integer) : "Observed field"
+    range(float) : "Observed field"
+    renderdiffuse(boolean) : "Observed field"
+    renderspecular(string) : "Observed field"
+    rendertocubemaps(boolean) : "Observed field"
+    rendertransmissive(string) : "Observed field"
+    shadowfademaxdist(string) : "Observed field"
+    shadowpriority(string) : "Observed field"
+    style(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass = light_spot : "Observed map entity"
+[
+    attenuation1(float) : "Observed field"
+    attenuation2(float) : "Observed field"
+    bouncescale(float) : "Observed field"
+    brightness(float) : "Observed field"
+    brightness_legacy(string) : "Observed field"
+    brightness_lumens(string) : "Observed field"
+    capsule_length(string) : "Observed field"
+    castshadows(string) : "Observed field"
+    clientsideentity(string) : "Observed field"
+    color(vector) : "Observed field"
+    directlight(string) : "Observed field"
+    enabled(boolean) : "Observed field"
+    fademaxdist(string) : "Observed field"
+    fademindist(string) : "Observed field"
+    falloff(float) : "Observed field"
+    indirectlight(string) : "Observed field"
+    innerconeangle(float) : "Observed field"
+    lightsourceradius(float) : "Observed field"
+    nearclipplane(string) : "Observed field"
+    outerconeangle(float) : "Observed field"
+    precomputedboundsmaxs(string) : "Observed field"
+    precomputedboundsmins(string) : "Observed field"
+    precomputedfieldsvalid(string) : "Observed field"
+    precomputedmaxrange(string) : "Observed field"
+    precomputedminrange(string) : "Observed field"
+    precomputedobbangles(string) : "Observed field"
+    precomputedobbextent(string) : "Observed field"
+    precomputedobborigin(string) : "Observed field"
+    priority(string) : "Observed field"
+    range(float) : "Observed field"
+    renderdiffuse(string) : "Observed field"
+    renderspecular(string) : "Observed field"
+    rendertocubemaps(boolean) : "Observed field"
+    rendertransmissive(string) : "Observed field"
+    shadowfademaxdist(float) : "Observed field"
+    shadowfademindist(float) : "Observed field"
+    shadowpriority(string) : "Observed field"
+    shadowtextureheight(integer) : "Observed field"
+    shadowtexturewidth(integer) : "Observed field"
+    style(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass = logic_auto_citadel : "Observed map entity"
+[
+    output OnGameInProgress(void) : "Observed output"
+]
+
+@PointClass base(Targetname) = npc_barrack_boss : "Observed map entity"
+[
+    backdoorprotectiontrigger(string) : "Observed field"
+    bossname(string) : "Observed field"
+    covergroupid(integer) : "Observed field"
+    lanenum(string) : "Observed field"
+    laneside(string) : "Observed field"
+    subclass_name(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    output OnKilled(void) : "Observed output"
+]
+
+@PointClass = npc_base_defense_sentry : "Observed map entity"
+[
+    ability_weapon(string) : "Observed field"
+    attack_cone(float) : "Observed field"
+    health(float) : "Observed field"
+    renderamt(string) : "Observed field"
+    rendercolor(vector) : "Observed field"
+    sentry_level(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    unit_status_offset(vector) : "Observed field"
+]
+
+@PointClass base(Targetname) = npc_boss_tier2 : "Observed map entity"
+[
+    bossname(string) : "Observed field"
+    covergroupid(string) : "Observed field"
+    lanenum(string) : "Observed field"
+    subclass_name(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+]
+
+@PointClass = npc_boss_tier3 : "Observed map entity"
+[
+    backdoorprotectiontrigger(string) : "Observed field"
+    bossname(string) : "Observed field"
+    covergroupid(string) : "Observed field"
+    dying_cover_id(string) : "Observed field"
+    lanenum(string) : "Observed field"
+    subclass_name(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    vulnerable_cover_id(string) : "Observed field"
+    output OnBossKilled(void) : "Observed output"
+    output OnBossPhase1End(void) : "Observed output"
+]
+
+@PointClass = npc_neutral_sinners_sacrifice_hideout : "Observed map entity"
+[
+    teamnumber(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = point_prefab : "Observed map entity"
+[
+    prefab_associated_relay(string) : "Observed field"
+    prefab_load_dynamic(boolean) : "Observed field"
+    prefab_relays(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = point_pulse : "Observed map entity"
+[
+    _entname_fixup_prefix(string) : "Observed field"
+    _procedural_connection_world_target(string) : "Observed field"
+    graph_def(string) : "Observed field"
+    graph_keys(string) : "Observed field"
+    prefab_relay_interface(boolean) : "Observed field"
+]
+
+@PointClass = portrait_world_unit : "Observed map entity"
+[
+    graph_base_state(string) : "Observed field"
+    heroid(string) : "Observed field"
+    model(string) : "Observed field"
+    rendercolor(vector) : "Observed field"
+]
+
+@SolidClass base(Targetname) = trigger_catapult : "Observed map entity"
+[
+    launch_speed(float) : "Observed field"
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    target(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    output OnStartTouch(void) : "Observed output"
+]
+
+@SolidClass base(Targetname) = trigger_hurt_citadel : "Observed map entity"
+[
+    damage(string) : "Observed field"
+    damagecap(string) : "Observed field"
+    damagemodel(string) : "Observed field"
+    damagetype(string) : "Observed field"
+    filtername(string) : "Observed field"
+    forgivedelay(float) : "Observed field"
+    model(string) : "Observed field"
+    nodmgforce(boolean) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    thinkalways(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass base(Targetname) = trigger_item_shop : "Observed map entity"
+[
+    audiooffset(string) : "Observed field"
+    model(string) : "Observed field"
+    soundname(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    output OnEndTouch(void) : "Observed output"
+    output OnStartTouch(void) : "Observed output"
+]
+
+@SolidClass base(Targetname) = trigger_item_shop_safe_zone : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    output OnContested(void) : "Observed output"
+    output OnNotContested(void) : "Observed output"
+]
+
+@SolidClass = trigger_midboss_shield : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = trigger_neutral_shield : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = trigger_ping_location : "Observed map entity"
+[
+    model(string) : "Observed field"
+    ping_location(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass base(Targetname) = trigger_team_base : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass = trigger_tier3phase2_shield : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@SolidClass base(Targetname) = trigger_trooper_detector : "Observed map entity"
+[
+    model(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+]
+
+@PointClass base(Targetname) = trooper_approach_horizon : "Observed map entity"
+[
+    lanenum(string) : "Observed field"
+    laneslot(string) : "Observed field"
+    pathnoderadiusscales(string) : "Observed field"
+    pathnodes(string) : "Observed field"
+]
+
+@PointClass = worldspawn : "Observed map entity"
+[
+    allowheightfog(string) : "Observed field"
+    backgroundmap(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
+    gametitle(string) : "Observed field"
+    heightfogadjustment(string) : "Observed field"
+    heightfogdrawscale1(string) : "Observed field"
+    heightfogdrawscale2(string) : "Observed field"
+    heightfogmasktexture(string) : "Observed field"
+    heightfogscale(string) : "Observed field"
+    heightfogscale1(string) : "Observed field"
+    heightfogscale2(string) : "Observed field"
+    heightfogscrolldir1(string) : "Observed field"
+    heightfogscrolldir2(string) : "Observed field"
+    heightfogtexture(string) : "Observed field"
+    heightfogworldscale(string) : "Observed field"
+    mapusagetype(string) : "Observed field"
+    max_lightmap_resolution(string) : "Observed field"
+    maxpropscreenwidth(float) : "Observed field"
+    minpropscreenwidth(float) : "Observed field"
+    newunit(string) : "Observed field"
+    prefab_has_runtime_entity_by_default(string) : "Observed field"
+    pvstype(string) : "Observed field"
+    skyname(string) : "Observed field"
+    startcolor(vector) : "Observed field"
+    startdark(boolean) : "Observed field"
+    steamaudio_customdata_bake_dimensions(boolean) : "Observed field"
+    steamaudio_customdata_bake_materials(boolean) : "Observed field"
+    steamaudio_customdata_bake_occlusion(boolean) : "Observed field"
+    steamaudio_customdata_filter_navmesh(boolean) : "Observed field"
+    steamaudio_customdata_filter_volumes(boolean) : "Observed field"
+    steamaudio_customdata_generation_type(string) : "Observed field"
+    steamaudio_customdata_grid_spacing(float) : "Observed field"
+    steamaudio_customdata_height_above_floor(float) : "Observed field"
+    steamaudio_customdata_occlusion_pathing(boolean) : "Observed field"
+    steamaudio_customdata_occlusion_reflection(boolean) : "Observed field"
+    steamaudio_customdata_occlusion_reflection_bounces(string) : "Observed field"
+    steamaudio_customdata_occlusion_reflection_rays(string) : "Observed field"
+    steamaudio_customdata_rebake_option(string) : "Observed field"
+    steamaudio_pathing_filter_navmesh(boolean) : "Observed field"
+    steamaudio_pathing_filter_volumes(boolean) : "Observed field"
+    steamaudio_pathing_generation_type(string) : "Observed field"
+    steamaudio_pathing_grid_spacing(float) : "Observed field"
+    steamaudio_pathing_grid_type(string) : "Observed field"
+    steamaudio_pathing_height_above_floor(float) : "Observed field"
+    steamaudio_pathing_rebake_option(string) : "Observed field"
+    steamaudio_pathing_visibility_pathrange(float) : "Observed field"
+    steamaudio_pathing_visibility_radius(float) : "Observed field"
+    steamaudio_pathing_visibility_samples(integer) : "Observed field"
+    steamaudio_pathing_visibility_threshold(float) : "Observed field"
+    steamaudio_reverb_ambisonic_order(integer) : "Observed field"
+    steamaudio_reverb_bounces(string) : "Observed field"
+    steamaudio_reverb_clustering_cubemap_resolution(string) : "Observed field"
+    steamaudio_reverb_clustering_depth_threshold(float) : "Observed field"
+    steamaudio_reverb_clustering_enable(boolean) : "Observed field"
+    steamaudio_reverb_compression_enable(boolean) : "Observed field"
+    steamaudio_reverb_filter_navmesh(boolean) : "Observed field"
+    steamaudio_reverb_filter_volumes(boolean) : "Observed field"
+    steamaudio_reverb_generation_type(string) : "Observed field"
+    steamaudio_reverb_grid_spacing(float) : "Observed field"
+    steamaudio_reverb_grid_type(string) : "Observed field"
+    steamaudio_reverb_height_above_floor(float) : "Observed field"
+    steamaudio_reverb_ir_duration(float) : "Observed field"
+    steamaudio_reverb_rays(string) : "Observed field"
+    steamaudio_reverb_rebake_option(string) : "Observed field"
+    vrchaperone(string) : "Observed field"
+    vrmovement(string) : "Observed field"
+    worldname(string) : "Observed field"
+]

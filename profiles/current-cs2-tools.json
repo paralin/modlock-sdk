@@ -20,7 +20,7 @@
       "app": "730",
       "depot": "2347779",
       "manifest": "2145418671218218617",
-      "include": ["game/bin/", "game/core/", "game/csgo/", "content/core/"]
+      "include": ["game/bin/", "game/core/", "game/csgo/", "game/csgo_core/", "content/core/"]
     }
   ]
 }

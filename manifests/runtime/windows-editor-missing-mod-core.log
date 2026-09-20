@@ -1,0 +1,76 @@
+ï»¿09/20 10:31:17 [RenderSystem] Determined driver version for graphics adapter 0 [output 0] '': 32.0.21045.5002
+09/20 10:31:17 [RenderSystem] Creating device for graphics adapter 0 'AMD Radeon RX 6700 XT' [vendorid 0x1002]: 32.0.21045.5002
+09/20 10:31:17 [RenderSystem] Failed to save video settings config to 'cfg\video_tools.txt'
+09/20 10:31:18 [RenderSystem] Successfully created dx11 swap chain [    Discard |    NoTear]
+09/20 10:31:18 [Filesystem] ---------------
+09/20 10:31:18 [Filesystem] Path ID:             File Path:
+09/20 10:31:18 [Filesystem] ADDONS               "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel_addons\" 
+09/20 10:31:18 [Filesystem] CONTENT              "C:\Users\cjs\modlock-sdk-work\cs2\content\citadel\" 
+09/20 10:31:18 [Filesystem] CONTENT              "C:\Users\cjs\modlock-sdk-work\cs2\content\core\" 
+09/20 10:31:18 [Filesystem] CONTENT              "C:\Users\cjs\modlock-sdk-work\cs2\content\citadel_assets\" 
+09/20 10:31:18 [Filesystem] CONTENTADDONS        "C:\Users\cjs\modlock-sdk-work\cs2\content\citadel_addons\" 
+09/20 10:31:18 [Filesystem] CONTENTROOT          "C:\Users\cjs\modlock-sdk-work\cs2\content\" 
+09/20 10:31:18 [Filesystem] DEFAULT_WRITE_PATH   "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel\" 
+09/20 10:31:18 [Filesystem] EXECUTABLE_PATH      "C:\Users\cjs\modlock-sdk-work\cs2\game\bin\win64\" 
+09/20 10:31:18 [Filesystem] EXECUTABLE_PATH      "C:\Users\cjs\modlock-sdk-work\cs2\game\bin\" 
+09/20 10:31:18 [Filesystem] GAME                 "C:\Users\cjs\modlock-sdk-work\cs2\game\core\pak01.vpk" (vpk) C:\Users\cjs\modlock-sdk-work\cs2\game\core\pak01.vpk
+09/20 10:31:18 [Filesystem] GAME                 "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel_assets\pak01.vpk" (vpk) C:\Users\cjs\modlock-sdk-work\cs2\game\citadel_assets\pak01.vpk
+09/20 10:31:18 [Filesystem] GAME                 "C:\Users\cjs\modlock-sdk-work\cs2\game\core\shaders_pc.vpk" (vpk) C:\Users\cjs\modlock-sdk-work\cs2\game\core\shaders_pc.vpk
+09/20 10:31:18 [Filesystem] GAME                 "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel\" 
+09/20 10:31:18 [Filesystem] GAME                 "C:\Users\cjs\modlock-sdk-work\cs2\game\core\" 
+09/20 10:31:18 [Filesystem] GAME                 "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel_assets\" 
+09/20 10:31:18 [Filesystem] GAMEBIN              "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel\bin\win64\" 
+09/20 10:31:18 [Filesystem] GAMEBIN              "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel\bin\" 
+09/20 10:31:18 [Filesystem] GAMEBIN              "C:\Users\cjs\modlock-sdk-work\cs2\game\core\bin\win64\" 
+09/20 10:31:18 [Filesystem] GAMEBIN              "C:\Users\cjs\modlock-sdk-work\cs2\game\core\bin\" 
+09/20 10:31:18 [Filesystem] GAMEBIN              "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel_assets\bin\win64\" 
+09/20 10:31:18 [Filesystem] GAMEBIN              "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel_assets\bin\" 
+09/20 10:31:18 [Filesystem] GAMEROOT             "C:\Users\cjs\modlock-sdk-work\cs2\game\" 
+09/20 10:31:18 [Filesystem] MOD                  "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel\" 
+09/20 10:31:18 [Filesystem] OFFICIAL_ADDONS      "C:\Users\cjs\modlock-sdk-work\cs2\game\citadel_community_addons\" 
+09/20 10:31:18 [Filesystem] PLATFORM             "C:\Users\cjs\modlock-sdk-work\cs2\game\core\pak01.vpk" (vpk) C:\Users\cjs\modlock-sdk-work\cs2\game\core\pak01.vpk
+09/20 10:31:18 [Filesystem] PLATFORM             "C:\Users\cjs\modlock-sdk-work\cs2\game\core\" 
+09/20 10:31:18 [Filesystem] SHADER_SOURCE        "C:\Users\cjs\modlock-sdk-work\cs2\src\shaders\citadel\" 
+09/20 10:31:18 [Filesystem] SHADER_SOURCE        "C:\Users\cjs\modlock-sdk-work\cs2\src\shaders\core\" 
+09/20 10:31:18 [Filesystem] SHADER_SOURCE        "C:\Users\cjs\modlock-sdk-work\cs2\src\shaders\citadel_assets\" 
+09/20 10:31:18 [Filesystem] SHADER_SOURCE        "C:\Users\cjs\modlock-sdk-work\cs2\src\shaders\citadel_community_addons\" 
+09/20 10:31:18 [Filesystem] SHADER_SOURCE_MOD    "C:\Users\cjs\modlock-sdk-work\cs2\src\shaders\citadel\" 
+09/20 10:31:18 [Filesystem] SHADER_SOURCE_ROOT   "C:\Users\cjs\modlock-sdk-work\cs2\src\shaders\" 
+09/20 10:31:18 [CommandLine] command line arguments:
+09/20 10:31:18 [CommandLine] -tools -insecure -novid -console -condebug -playtest +quit
+09/20 10:31:18 [Networking] CNetworkSystem::Init() failed - no SteamNetworking()
+09/20 10:31:18 [Networking] No steam client; SDR features will be unavailable
+09/20 10:31:18 [SteamNetSockets] Initialized low level socket/threading support.
+09/20 10:31:18 [Networking] Got ISteamNetworkingSockets user interfaces from standalone lib
+09/20 10:31:18 [Networking] Allowing IP connections without auth
+09/20 10:31:18 [Networking] Network System Initialized
+09/20 10:31:18 [AssetSystem] AssetSystem: Mod 'core' set to read-only
+09/20 10:31:18 [HelpSystem] Failed to find mod help file 'resource/toolhelp_models_gamedata_fgd_english.txt' (citadel) - new help will be written to 'C:\Users\cjs\modlock-sdk-work\cs2\game\citadel\resource\toolhelp_models_gamedata_fgd_english.txt'
+09/20 10:31:18 [HelpSystem] Failed to find mod help file 'resource/toolhelp_models_base_fgd_english.txt' (core) - new help will be written to 'C:\Users\cjs\modlock-sdk-work\cs2\game\core\resource\toolhelp_models_base_fgd_english.txt'
+09/20 10:31:18 [HelpSystem] Failed to find mod help file 'resource/toolhelp_models_base_breakables_fgd_english.txt' (core) - new help will be written to 'C:\Users\cjs\modlock-sdk-work\cs2\game\core\resource\toolhelp_models_base_breakables_fgd_english.txt'
+09/20 10:31:18 [HelpSystem] Failed to find mod help file 'resource/toolhelp_modeldoc_editor_english.txt' (citadel) - new help will be written to 'C:\Users\cjs\modlock-sdk-work\cs2\game\citadel\resource\toolhelp_modeldoc_editor_english.txt'
+09/20 10:31:19 [SteamNetSockets] SteamNetworkingSockets lock held for 33.1ms.  (Performance warning.)  ServiceThread
+This is usually a symptom of a general performance problem such as thread starvation.
+09/20 10:31:19 [ToolFramework2] Registering system tool for extension:           '.xml':                           Microsoft Edge (exe 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe' args '--single-argument {FilePath}')
+09/20 10:31:19 [ToolFramework2] Registering system tool for extension:            '.js':    Microsoft ® Windows Based Script Host (exe 'C:\Windows\System32\WScript.exe' args '"{FilePath}" %*')
+09/20 10:31:19 [ToolFramework2] Registering system tool for extension:           '.tif':                     Windows Photo Viewer (exe 'C:\Windows\System32\rundll32.exe' args '"C:\Program Files\Windows Photo Viewer\PhotoViewer.dll", ImageView_Fullscreen {FilePath}')
+09/20 10:31:19 [AssetSystem] AssetSystem loaded persistent info from 1 layers / 1598 assets in 0.01s
+09/20 10:31:19 [AssetSystem] Scanning for Asset Files (1/6): 'Game (citadel)' = C:\Users\cjs\modlock-sdk-work\cs2\game\citadel\, previously scanned 0 directories and 0 files
+09/20 10:31:19 [AssetSystem] Scanning for Asset Files (2/6): 'Game (core)' = C:\Users\cjs\modlock-sdk-work\cs2\game\core\, previously scanned 0 directories and 5 files
+09/20 10:31:19 [AssetSystem] Scanning for Asset Files (3/6): 'Game (citadel_assets)' = C:\Users\cjs\modlock-sdk-work\cs2\game\citadel_assets\, previously scanned 0 directories and 5 files
+09/20 10:31:19 [AssetSystem] Scanning for Asset Files (4/6): 'Content (citadel)' = C:\Users\cjs\modlock-sdk-work\cs2\content\citadel\, previously scanned 8 directories and 466 files
+09/20 10:31:19 [AssetSystem] Scanning for Asset Files (5/6): 'Content (core)' = C:\Users\cjs\modlock-sdk-work\cs2\content\core\, previously scanned 8 directories and 466 files
+09/20 10:31:19 [AssetSystem] Scanning for Asset Files (6/6): 'Content (citadel_assets)' = C:\Users\cjs\modlock-sdk-work\cs2\content\citadel_assets\, previously scanned 8 directories and 466 files
+09/20 10:31:19 [AssetSystem] AssetSystem files scanned in 0.07 seconds.
+09/20 10:31:19 [AssetSystem] AssetSystem pruned 0 stale assets
+09/20 10:31:19 [AssetSystem] Asset System - Updating dependency information...
+09/20 10:31:19 [AssetSystem] AssetSystem dependency data propagated in 0.29s (refreshed 185 of 1783)
+09/20 10:31:19 [AssetSystem] AssetSystem dependency graph created in 0.29 seconds.
+09/20 10:31:19 [AssetSystem] AssetSystem saved persistent info for 1 layers / 185 assets in 0.004 sec
+09/20 10:31:19 [AssetSystem] AssetSystem initialized in 0.39 seconds. [0.01 load, 0.07 scan, 0.29 dependencies, 0.00 save]
+09/20 10:31:19 [HelpSystem] Failed to find help file 'resource/toolhelp_fgd_from_asset_english.txt' - new help will be written to 'C:\Users\cjs\modlock-sdk-work\cs2\game\citadel\resource\toolhelp_fgd_from_asset_english.txt'
+09/20 10:31:19 [SplitScreen] Clamping split screen users to 1 due to -tools mode.
+09/20 10:31:20 [SoundSystem] Sound Initialization: Finish, Device Sampling Rate: 44100
+09/20 10:31:20 WARNING: Local content might be corrupt or missing files. Not reporting to Steam due to disabled reporting. Reason: [unknown].
+09/20 10:31:20 FATAL ERROR: Unable to read default keybinding configuration (user_keys_default)!
+09/20 10:31:20 ResetBreakpadAppId: Universe is 0 (k_EUniverseInvalid)

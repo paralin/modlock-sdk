@@ -1,0 +1,50 @@
+{
+  "status": "passed: repeated panorama compilation",
+  "runtime": "Windows",
+  "compiler_sha256": "baeea07befadcad5ab32b2f2fc3f48c1ea422076386b51a4ff42c10f84635e91",
+  "compiler_dll_sha256": "f084328cb14b44ce26484d1b38c0be8cf8402350f8e8837465293216bb36703a",
+  "gameinfo_sha256": "1a7792b218ac4702d4cab71636174250837312538cd7ecc81afc183951c50b30",
+  "mod": "citadel",
+  "addon": "modlock_final_panorama",
+  "kind": "panorama",
+  "sources": {
+    "layout/probe.xml": {
+      "bytes": 136,
+      "sha256": "94a90431b7b9c043d8453cc5dd6e5f42e47ac09dd680d9eb80b22549ffac5bab"
+    },
+    "scripts/probe.js": {
+      "bytes": 57,
+      "sha256": "f75d9d412821b82247e56b3166bc13d5fc4008f44b39cc290f0cceebfbad7e28"
+    }
+  },
+  "runs": [
+    {
+      "exit_code": 0,
+      "log": "windows-citadel-final-panorama.run1.log",
+      "artifacts": {
+        "layout/probe.vxml_c": {
+          "bytes": 1348,
+          "sha256": "88d4a8e14398e01cebaf510b8e822843b1ddd94ac3447bb75f0aed3a0f56a867"
+        },
+        "scripts/probe.vjs_c": {
+          "bytes": 905,
+          "sha256": "5a112b759a1a3c7bac5951a288a7104c3d770f15509aa89036c4bf27b5127365"
+        }
+      }
+    },
+    {
+      "exit_code": 0,
+      "log": "windows-citadel-final-panorama.run2.log",
+      "artifacts": {
+        "layout/probe.vxml_c": {
+          "bytes": 1348,
+          "sha256": "88d4a8e14398e01cebaf510b8e822843b1ddd94ac3447bb75f0aed3a0f56a867"
+        },
+        "scripts/probe.vjs_c": {
+          "bytes": 905,
+          "sha256": "5a112b759a1a3c7bac5951a288a7104c3d770f15509aa89036c4bf27b5127365"
+        }
+      }
+    }
+  ]
+}

@@ -38,12 +38,13 @@
           "game/bin/",
           "game/core/",
           "game/csgo/",
+          "game/csgo_core/",
           "content/core/"
         ]
       }
     ]
   },
-  "profile_sha256": "39d19f8dc89ae6bf722f0a41187e62ce268ad93200a80e4e149b3198def0886d",
+  "profile_sha256": "f16644ee9d837d8de9b574bb6db6eb80680cfe3dc9c2f6d9155d09e92054fb99",
   "sources": {
     "depot-2347770-2053759441494650084": {
       "app": "730",
@@ -86,8 +87,8 @@
       "depot": "2347779",
       "manifest": "2145418671218218617",
       "manifest_text_sha256": "39e9ea9fcff4bddc230d6e815371fc1b806517d93315eea9b28d7434f8107fe3",
-      "files": 313,
-      "bytes": 450809119
+      "files": 315,
+      "bytes": 450818563
     }
   ],
   "files": []

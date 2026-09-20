@@ -1,0 +1,1409 @@
+[
+  {
+    "Map": "1v1_test.vpk",
+    "MapSha256": "c256f330a31c18a5aa3e5e0e24a22cca8c6989f4cb1ced2928907610df9af420",
+    "Member": "maps/1v1_test/entities/default_ents.vents_c",
+    "Sha256": "00e555558657ba41a3538f0cf0c9f477b22ade8f2847a1443946f04e5f71761c",
+    "Entities": 196
+  },
+  {
+    "Map": "dl_hideout.vpk",
+    "MapSha256": "39ce0723129340d4a018c2fd2780441935d5515877fadffc33b5803c84fd90d0",
+    "Member": "maps/dl_hideout/entities/default_ents.vents_c",
+    "Sha256": "b891167728a90a82d87f890fef1ae7690867be4aee0a3b133da33acee6db9ed4",
+    "Entities": 445
+  },
+  {
+    "Map": "dl_midtown.vpk",
+    "MapSha256": "faf73184b902d52d719207179051a170a0014e0213ab807fb262e596c1e01217",
+    "Member": "maps/dl_midtown/entities/default_ents.vents_c",
+    "Sha256": "fe4e6aed0edd52b155b4bb7fa56e5605472f4e96b0f4685976d37764097e15ed",
+    "Entities": 5405
+  },
+  {
+    "Map": "dl_streets.vpk",
+    "MapSha256": "b11b9e6429b1a73be2bcc201fc0e8b64dc4caf3c8ad0ad31614edc28aad0a07c",
+    "Member": "maps/dl_streets/entities/14781_125_20#entitylumpname.vents_c",
+    "Sha256": "c1b52cc43a167af067a75c21015c857d7bfd88c6fee5e006c868deb9d8894408",
+    "Entities": 1
+  },
+  {
+    "Map": "dl_streets.vpk",
+    "MapSha256": "b11b9e6429b1a73be2bcc201fc0e8b64dc4caf3c8ad0ad31614edc28aad0a07c",
+    "Member": "maps/dl_streets/entities/14781_125_56#entitylumpname.vents_c",
+    "Sha256": "0478d25e73279d846b91fda2638eda6a1c031cece13873a4eb0d0eba4d8bd365",
+    "Entities": 1
+  },
+  {
+    "Map": "dl_streets.vpk",
+    "MapSha256": "b11b9e6429b1a73be2bcc201fc0e8b64dc4caf3c8ad0ad31614edc28aad0a07c",
+    "Member": "maps/dl_streets/entities/14781_125_58#entitylumpname.vents_c",
+    "Sha256": "b62936abfe048fddaabdb960cd54f2548dfae7b0f038547b2343c26bd04b5ad5",
+    "Entities": 1
+  },
+  {
+    "Map": "dl_streets.vpk",
+    "MapSha256": "b11b9e6429b1a73be2bcc201fc0e8b64dc4caf3c8ad0ad31614edc28aad0a07c",
+    "Member": "maps/dl_streets/entities/14781_125_7#entitylumpname.vents_c",
+    "Sha256": "75980492442cae9271e363b9b18366ef995af15d977742afaa530812b03641c5",
+    "Entities": 1
+  },
+  {
+    "Map": "dl_streets.vpk",
+    "MapSha256": "b11b9e6429b1a73be2bcc201fc0e8b64dc4caf3c8ad0ad31614edc28aad0a07c",
+    "Member": "maps/dl_streets/entities/331195_20#entitylumpname.vents_c",
+    "Sha256": "07551e29a572e0fdbd6f89a03be2773a53375bf693f5b3bd15047a87d89d609c",
+    "Entities": 1
+  },
+  {
+    "Map": "dl_streets.vpk",
+    "MapSha256": "b11b9e6429b1a73be2bcc201fc0e8b64dc4caf3c8ad0ad31614edc28aad0a07c",
+    "Member": "maps/dl_streets/entities/331195_56#entitylumpname.vents_c",
+    "Sha256": "2d259ea1f13179835bf60cfeb1979781776ca981298d8b90b294e160ebf50d85",
+    "Entities": 1
+  },
+  {
+    "Map": "dl_streets.vpk",
+    "MapSha256": "b11b9e6429b1a73be2bcc201fc0e8b64dc4caf3c8ad0ad31614edc28aad0a07c",
+    "Member": "maps/dl_streets/entities/331195_58#entitylumpname.vents_c",
+    "Sha256": "4387c05e66775d7fbc4f6ffd4073db7d8cdce90d30953d1f03d256307ec83384",
+    "Entities": 1
+  },
+  {
+    "Map": "dl_streets.vpk",
+    "MapSha256": "b11b9e6429b1a73be2bcc201fc0e8b64dc4caf3c8ad0ad31614edc28aad0a07c",
+    "Member": "maps/dl_streets/entities/331195_7#entitylumpname.vents_c",
+    "Sha256": "39e02937b8c79b7ffee062027740d4ea2416282ffc80f62bf21bc2048a1895a0",
+    "Entities": 1
+  },
+  {
+    "Map": "dl_streets.vpk",
+    "MapSha256": "b11b9e6429b1a73be2bcc201fc0e8b64dc4caf3c8ad0ad31614edc28aad0a07c",
+    "Member": "maps/dl_streets/entities/default_ents.vents_c",
+    "Sha256": "b750ceec89d864f3b728afc5139b5a3b66ce8e3b519a9660c08ef10607ad096e",
+    "Entities": 4130
+  },
+  {
+    "Map": "hero_testing.vpk",
+    "MapSha256": "1f404dd6d116d25c20668e7b7e70e15524401aadc2c731c5e12d69bd6b7f86c9",
+    "Member": "maps/hero_testing/entities/default_ents.vents_c",
+    "Sha256": "d8322c35c0f63938f498e90d010ac3aba764a0debfe28205003810382880e8d5",
+    "Entities": 183
+  },
+  {
+    "Map": "new_player_basics.vpk",
+    "MapSha256": "ec3cb1e9b30f850be713364334ae918777f43a578547b9c628cefe5b5d1043cc",
+    "Member": "maps/new_player_basics/entities/default_ents.vents_c",
+    "Sha256": "ab15def8167f87dab97195ec64f61bec67ded3616186a29eaf7bef1ba9b47d30",
+    "Entities": 338
+  },
+  {
+    "Map": "citadel_ui_particle_scene_panel_empty.vpk",
+    "MapSha256": "228b8caf88609cb52e69d29e32727fdc2871b0e08d90b408fc85a08a4290fced",
+    "Member": "maps/scenes/citadel_ui_particle_scene_panel_empty/entities/default_ents.vents_c",
+    "Sha256": "d05594c42bf7e93e9a7ff54e3521565adf7fd9682552ed59c5a538767f86c51d",
+    "Entities": 4
+  },
+  {
+    "Map": "match_intro_hero_reveal.vpk",
+    "MapSha256": "fd36c50353dbd971fa44792936b27c7879b658e547edf518a4663636629462ff",
+    "Member": "maps/scenes/match_intro_hero_reveal/entities/default_ents.vents_c",
+    "Sha256": "c8ddc20136905388ca019e9de0ec938ac2d5e6324d8768356f6b1677a6e08611",
+    "Entities": 12
+  },
+  {
+    "Map": "match_intro_team_reveal.vpk",
+    "MapSha256": "b75794699e48fba7856967783800b614fad3fb1fd854a7eba32cc1d7d80f158b",
+    "Member": "maps/scenes/match_intro_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "7f1a405231aec0a853c5ffca3b3e78dc87d379a15b1b0b0f21dab60818debff5",
+    "Entities": 16
+  },
+  {
+    "Map": "minimap_effects.vpk",
+    "MapSha256": "f7cf1afd59355a2c77e17f6e00c9f54538b9f7a7a4f8f2b49b4536b6688522a0",
+    "Member": "maps/scenes/minimap_effects/entities/default_ents.vents_c",
+    "Sha256": "8b97a9b59634ee79239e6f035a135917ed9946c151dd200b9fe7ffc5e123a4e4",
+    "Entities": 2
+  },
+  {
+    "Map": "start.vpk",
+    "MapSha256": "961ab93b21f50a1fcdeb97719a24164e3fba4e7a4d1137efe9453eea1c221248",
+    "Member": "maps/start/entities/default_ents.vents_c",
+    "Sha256": "f866e382b2c696b91afd296b5faec781eb02d7cb4e5cb920682de029bea2ff0f",
+    "Entities": 1
+  },
+  {
+    "Map": "street_test.vpk",
+    "MapSha256": "d9bc5d539f2feb06870f75aa062801b2a3808e9b8e73185165e4d4eb74e1f60b",
+    "Member": "maps/street_test/entities/14781_125_20#entitylumpname.vents_c",
+    "Sha256": "00eedbfcc1f6a820bbf5cb90b44e637615236bc0fa32ab8b06d630fde6e6ac6a",
+    "Entities": 1
+  },
+  {
+    "Map": "street_test.vpk",
+    "MapSha256": "d9bc5d539f2feb06870f75aa062801b2a3808e9b8e73185165e4d4eb74e1f60b",
+    "Member": "maps/street_test/entities/14781_125_56#entitylumpname.vents_c",
+    "Sha256": "a5d44b17411aa5bee2f017904d0e60633754c164fefb18cf876686313ba81ebe",
+    "Entities": 1
+  },
+  {
+    "Map": "street_test.vpk",
+    "MapSha256": "d9bc5d539f2feb06870f75aa062801b2a3808e9b8e73185165e4d4eb74e1f60b",
+    "Member": "maps/street_test/entities/14781_125_58#entitylumpname.vents_c",
+    "Sha256": "823f44eaadd8a50e613f83a6cf07483fc90eae3b730067d9bcdf91e1fa828bbd",
+    "Entities": 1
+  },
+  {
+    "Map": "street_test.vpk",
+    "MapSha256": "d9bc5d539f2feb06870f75aa062801b2a3808e9b8e73185165e4d4eb74e1f60b",
+    "Member": "maps/street_test/entities/14781_125_7#entitylumpname.vents_c",
+    "Sha256": "7b42248748b64f2f08fa62a972c31dd74dc7de43d33e26bd5bb21fbd7495ea29",
+    "Entities": 1
+  },
+  {
+    "Map": "street_test.vpk",
+    "MapSha256": "d9bc5d539f2feb06870f75aa062801b2a3808e9b8e73185165e4d4eb74e1f60b",
+    "Member": "maps/street_test/entities/331195_20#entitylumpname.vents_c",
+    "Sha256": "3ccecde37fdf6a5dbe8daada8e37f683ff560eabbee58b2aac0979d17d965b62",
+    "Entities": 1
+  },
+  {
+    "Map": "street_test.vpk",
+    "MapSha256": "d9bc5d539f2feb06870f75aa062801b2a3808e9b8e73185165e4d4eb74e1f60b",
+    "Member": "maps/street_test/entities/331195_56#entitylumpname.vents_c",
+    "Sha256": "f4e7b5fabe1d1cd150dc925e0caac5eddf9ca5bc6314d766fee202ea8969b5fe",
+    "Entities": 1
+  },
+  {
+    "Map": "street_test.vpk",
+    "MapSha256": "d9bc5d539f2feb06870f75aa062801b2a3808e9b8e73185165e4d4eb74e1f60b",
+    "Member": "maps/street_test/entities/331195_58#entitylumpname.vents_c",
+    "Sha256": "90a5be3724bde63f7f6c92c02567da336306c990180ff239f4c75efecac49092",
+    "Entities": 1
+  },
+  {
+    "Map": "street_test.vpk",
+    "MapSha256": "d9bc5d539f2feb06870f75aa062801b2a3808e9b8e73185165e4d4eb74e1f60b",
+    "Member": "maps/street_test/entities/331195_7#entitylumpname.vents_c",
+    "Sha256": "879013b71e2d7f32fa68161a81f4cdfd293f82d55f6e27b181a322400b595100",
+    "Entities": 1
+  },
+  {
+    "Map": "street_test.vpk",
+    "MapSha256": "d9bc5d539f2feb06870f75aa062801b2a3808e9b8e73185165e4d4eb74e1f60b",
+    "Member": "maps/street_test/entities/default_ents.vents_c",
+    "Sha256": "2b1621e464f80ea049979d54de556a021004c51ba2e5a6cd42b912d553c86381",
+    "Entities": 3594
+  },
+  {
+    "Map": "hero_container.vpk",
+    "MapSha256": "1baba62bc84b7e00f69d7ba70b3c66b49d356c2ae8e16e968c014efedafe2740",
+    "Member": "maps/ui/hero_container/entities/default_ents.vents_c",
+    "Sha256": "b82a0dd9af51674bdba686a1f46470338e1e2d66c718fbca5ea5bb029500e539",
+    "Entities": 11
+  },
+  {
+    "Map": "abrams_postgame_portrait.vpk",
+    "MapSha256": "5d33d9d52b7b3eae99df87cdd5b050479bb34b2b19231b04923fece8d8409aa0",
+    "Member": "maps/ui/hero_postgame_portrait/abrams_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "eb703b5d67c70c01e4fc1805b22d0266efe7a92a67b2e409250fdd6cd6844b6d",
+    "Entities": 9
+  },
+  {
+    "Map": "apollo_postgame_portrait.vpk",
+    "MapSha256": "2e7d45da92986245f300b15f95cd300fe01b477f3daecfff5d9897f9aeb6426e",
+    "Member": "maps/ui/hero_postgame_portrait/apollo_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "a174d13648bae84ca5757dfd15c357fc08f86da72da35f7f9e348315e0032453",
+    "Entities": 10
+  },
+  {
+    "Map": "astro_postgame_portrait.vpk",
+    "MapSha256": "fad3e1494147a7e4641e62fcaf819935c68ddafba6953d8b55222a3da07cfe91",
+    "Member": "maps/ui/hero_postgame_portrait/astro_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "cfefae0afe00067340e5107a606ce333aa2eb80cf00b0e609141f88218642ad3",
+    "Entities": 8
+  },
+  {
+    "Map": "bebop_postgame_portrait.vpk",
+    "MapSha256": "b5a657e4cfaf322662c51b847db624b97fed7a08fe2feaf7d6c6b43d713d1f67",
+    "Member": "maps/ui/hero_postgame_portrait/bebop_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "0ccf768e3008b75732a692093c00a29a551433787f5ae845105e8ab2023c0a5e",
+    "Entities": 9
+  },
+  {
+    "Map": "bookworm_postgame_portrait.vpk",
+    "MapSha256": "7a2f91e6e0088eb531ff69684f81b11224811d618fcf45038349227d5067341c",
+    "Member": "maps/ui/hero_postgame_portrait/bookworm_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "a489f348f7146ff7d0ce55658d4b7495121c90dfbbdcec2e261e984f069dc5d8",
+    "Entities": 8
+  },
+  {
+    "Map": "chrono_postgame_portrait.vpk",
+    "MapSha256": "00ed9e2a546aac097006697e0e98efc7a9533d742b0cbfee03f286c074f9c0ac",
+    "Member": "maps/ui/hero_postgame_portrait/chrono_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "c4be9e36d4d46111903239a69d2692e878fa1f4926be2d7ae3b978e83728e238",
+    "Entities": 9
+  },
+  {
+    "Map": "default_postgame_portrait.vpk",
+    "MapSha256": "3ecffaaa6bb2fef6ab5ecc608c83f1d593dde6562f53d255080f7feb56beeaeb",
+    "Member": "maps/ui/hero_postgame_portrait/default_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "f515527282338417325708669bebdb3c1504f8e55a8b717639567d5ee6a8b478",
+    "Entities": 9
+  },
+  {
+    "Map": "digger_postgame_portrait.vpk",
+    "MapSha256": "33b31a1e89dc3fa90799fe2bf90969c69d8cb867cc875fe53d1b8457dba186d2",
+    "Member": "maps/ui/hero_postgame_portrait/digger_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "d70160b0f9cebb6fb0e98b5f4f9bd4802a3e343bdc7e59fa666cbb1f1ff3bfd8",
+    "Entities": 9
+  },
+  {
+    "Map": "doorman_postgame_portrait.vpk",
+    "MapSha256": "a919cf689a09471907417a816b6a5229a4c17886a985739addd1fc5940961852",
+    "Member": "maps/ui/hero_postgame_portrait/doorman_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "4add99bba30a238a858cb6836ac3530d46e144ef13c0cb8f85843c756d5d9069",
+    "Entities": 9
+  },
+  {
+    "Map": "drifter_postgame_portrait.vpk",
+    "MapSha256": "8f36d9d30140c676aa883ac82653260eaab0889d8b1d6c347e2db0f1ca1d8953",
+    "Member": "maps/ui/hero_postgame_portrait/drifter_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "7c5ab9607580d0bfc5189a6e7aeabc4b47d9dcef46cfdf4bc15a2f4f27260761",
+    "Entities": 9
+  },
+  {
+    "Map": "engineer_postgame_portrait.vpk",
+    "MapSha256": "8e1286e55f7508f256a9817528e24ee5925f12e617b93704c48c30fe75faa4b4",
+    "Member": "maps/ui/hero_postgame_portrait/engineer_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "a668797e6bb59de8a203e6f09ceba3de07b30bb224c5418ef3beac929eba092a",
+    "Entities": 8
+  },
+  {
+    "Map": "familiar_postgame_portrait.vpk",
+    "MapSha256": "c959b2b7be4e2bd79399215ae9718c815709b7ecbe56ec77819f87015add7c7f",
+    "Member": "maps/ui/hero_postgame_portrait/familiar_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "bc7e8d42335bc8e7145f815b72d0d9328a5b758a2652ddf9d998a59dcee1c4ed",
+    "Entities": 11
+  },
+  {
+    "Map": "frank_postgame_portrait.vpk",
+    "MapSha256": "603da595d9ccf723fba608a8a3cf808809884b7e45b684875a0c1c4f8ebf935f",
+    "Member": "maps/ui/hero_postgame_portrait/frank_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "0a4cbb677b3d2c4ba6b418cdffc7a6c5300de2ea748ce374aa8027c33160eb47",
+    "Entities": 9
+  },
+  {
+    "Map": "ghost_postgame_portrait.vpk",
+    "MapSha256": "a607517ee57797665065bb94640a9a4904605904fd7ca9c40b116d72d2d717aa",
+    "Member": "maps/ui/hero_postgame_portrait/ghost_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "bd73c8950f662b549e51c42b395af8a0337aba498428fbd12cfbd1d39edd37b1",
+    "Entities": 8
+  },
+  {
+    "Map": "gigawatt_postgame_portrait.vpk",
+    "MapSha256": "552a21817f24f111f0326100b128dd17e457e5050899bc2429f05709e619b008",
+    "Member": "maps/ui/hero_postgame_portrait/gigawatt_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "586b7436240aa481f3837a65139902f7891054764028de32ee662911f228bd8e",
+    "Entities": 8
+  },
+  {
+    "Map": "gray_talon_postgame_portrait.vpk",
+    "MapSha256": "bfa2ae6a25e6773c3a31c8b6cf81367b07b54c4520ee660104ccaf4f4764438d",
+    "Member": "maps/ui/hero_postgame_portrait/gray_talon_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "8e6d2b8148062a60cdc91e59072b86e80c276e9ed048fbc1fb1598229e2c087f",
+    "Entities": 8
+  },
+  {
+    "Map": "haze_postgame_portrait.vpk",
+    "MapSha256": "9e8a4a2406b39f4aa7e609305fdd59ba5d967c1d37dedad1889d2f4f76e4f7f7",
+    "Member": "maps/ui/hero_postgame_portrait/haze_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "3ce45e24ea9e05a7aae451346022034fbb41d75e9f34586600204f4e15bbee40",
+    "Entities": 8
+  },
+  {
+    "Map": "hornet_postgame_portrait.vpk",
+    "MapSha256": "667a64b987ecab0a150aca8b8848fc524e3fa524d98d174eb56bd41125cbf18e",
+    "Member": "maps/ui/hero_postgame_portrait/hornet_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "284006d7731ece9d20f14634df9eecc017caa25880af5f8a5254c10abac733fe",
+    "Entities": 9
+  },
+  {
+    "Map": "inferno_postgame_portrait.vpk",
+    "MapSha256": "7d3cfd83ec1a9c768b9fb5cd7f3ed20ebed4198189bfb7c1d40ae79a5464831e",
+    "Member": "maps/ui/hero_postgame_portrait/inferno_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "36ddad90e29658026695174afc69ea16e90ebfb03f9a7da6f4622ee041e904e3",
+    "Entities": 9
+  },
+  {
+    "Map": "kelvin_postgame_portrait.vpk",
+    "MapSha256": "b10327790509c4564ba9fed0c38040cc29f3193a4b47d5911e25861fcefdc3f7",
+    "Member": "maps/ui/hero_postgame_portrait/kelvin_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "68562aec2b1c5b252d120f818cc84f698a31daac55008d731004c93fbd4546a3",
+    "Entities": 9
+  },
+  {
+    "Map": "lash_postgame_portrait.vpk",
+    "MapSha256": "fea2c434765706120a548e7bb291e5862dd49e51690a8cd820cce93bfd050468",
+    "Member": "maps/ui/hero_postgame_portrait/lash_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "efbfef7e3552587a2be3ef4287e96bdf98a1f36dab290e348541ecd39fd08573",
+    "Entities": 8
+  },
+  {
+    "Map": "mirage_postgame_portrait.vpk",
+    "MapSha256": "eec7926bda51d401e51ce559ef5cb9871285fcf3d8b5122fe0d33c8aac092c93",
+    "Member": "maps/ui/hero_postgame_portrait/mirage_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "776d07e1bb482bccdcbfba2feace50c5e8007498beeea64723b110a027dae51f",
+    "Entities": 7
+  },
+  {
+    "Map": "nano_postgame_portrait.vpk",
+    "MapSha256": "f62afc9236a5b7698f7e38a146212d466e5cec20ef235bd4e0fe641acfc28950",
+    "Member": "maps/ui/hero_postgame_portrait/nano_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "0c80863a6288c708177a2b9a234e1824cb7bb06c8f4bf330432b69f480c539f5",
+    "Entities": 9
+  },
+  {
+    "Map": "necro_postgame_portrait.vpk",
+    "MapSha256": "23a2c50f61abb3ea596be9c22abe630df793c0d53be354c74da0e0d6143fd1b9",
+    "Member": "maps/ui/hero_postgame_portrait/necro_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "37f6ee780d11a2f40ff20877f27698c631f8e9ee98fb0171696429d06f276d7c",
+    "Entities": 7
+  },
+  {
+    "Map": "pocket_postgame_portrait.vpk",
+    "MapSha256": "2f0745413d2efde88e39bfbf0cea15d4e9e5e3d787c7d4d6914a97e99e704808",
+    "Member": "maps/ui/hero_postgame_portrait/pocket_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "ebc83ef462533856dfba54a5163139e67dd9e9f43db8e1eb4ead0a0d3ae21d2d",
+    "Entities": 7
+  },
+  {
+    "Map": "priest_postgame_portrait.vpk",
+    "MapSha256": "350289abf161d29c01edc5bd0742f9e60706dccf12ca2c136c6bf8e5cfc238c4",
+    "Member": "maps/ui/hero_postgame_portrait/priest_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "8f52213bafea0f418648e42310c3c8500ad9baa13b054e4a06f49759e61ea9ac",
+    "Entities": 9
+  },
+  {
+    "Map": "prof_dynamo_postgame_portrait.vpk",
+    "MapSha256": "c87e1070ab7a497749436002a3e842e5776668e4271ff934a5bf18762165b0d2",
+    "Member": "maps/ui/hero_postgame_portrait/prof_dynamo_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "726f42932bf621a5e2205af8f14181466c0d5e3a0f6ad42f8d5a78e42b619198",
+    "Entities": 9
+  },
+  {
+    "Map": "punkgoat_postgame_portrait.vpk",
+    "MapSha256": "37497629f6dbcfb62d941e475d79e7ed2ca29e46c88c5d6d55a16aae35d95720",
+    "Member": "maps/ui/hero_postgame_portrait/punkgoat_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "7231036ffc86e25cd667b6da75922563fc9ab6ac3874c96be8e0ee4f3af06391",
+    "Entities": 9
+  },
+  {
+    "Map": "shiv_postgame_portrait.vpk",
+    "MapSha256": "b4d9ddca44b6b9a1184c0e4e08a9549b4227939c7e5a49617cb78e223c5d9aa9",
+    "Member": "maps/ui/hero_postgame_portrait/shiv_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "4a76e4b47f1bdde69422806fc407f9edab3e0d20f779fcb00276a5725597c6d5",
+    "Entities": 8
+  },
+  {
+    "Map": "sinclair_postgame_portrait.vpk",
+    "MapSha256": "214591f6bf29b75cc49b7dc0911e20162f8615b21349583ccfb0f7d8087eac19",
+    "Member": "maps/ui/hero_postgame_portrait/sinclair_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "f8115ca2f152aacf045f3bdb128f7ae80804af3e0ae3c833138fd8b1ee2ee8a9",
+    "Entities": 6
+  },
+  {
+    "Map": "tengu_postgame_portrait.vpk",
+    "MapSha256": "9583996cac15b2af0f4e5d479c38984694bc7c4ff038b253913f6e118bc13f57",
+    "Member": "maps/ui/hero_postgame_portrait/tengu_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "e7104e4ee72ece492d4ec2c18c88895c3ad0824947cdaa817efa56da48dcf709",
+    "Entities": 10
+  },
+  {
+    "Map": "thumper_postgame_portrait.vpk",
+    "MapSha256": "7be658873ec278d55d99065eff770e4a233b8b6e1df34a9c4cb21a2c0d41060b",
+    "Member": "maps/ui/hero_postgame_portrait/thumper_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "28030eb2b77b11a86886513d0f241f76449c2f4cd9e26f7bc4d4a523c1fbd7c8",
+    "Entities": 9
+  },
+  {
+    "Map": "unicorn_postgame_portrait.vpk",
+    "MapSha256": "682cbb7045a36e840a342a98b9db4191e972ea0bca3956df153b26ad7a476d51",
+    "Member": "maps/ui/hero_postgame_portrait/unicorn_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "e7ed2eff11b83579b1e183bb163c84f0f7b4bd61c0a00fbd66095f2377cf1adf",
+    "Entities": 9
+  },
+  {
+    "Map": "vampirebat_postgame_portrait.vpk",
+    "MapSha256": "6e0ecc3a99748323066d01cf9c56221db44b23355ee1a9c86cb4b48158053e5a",
+    "Member": "maps/ui/hero_postgame_portrait/vampirebat_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "8d68c260b7cb3576fa15cff7038994035ae4392af43fedca5e6e7affe08db380",
+    "Entities": 8
+  },
+  {
+    "Map": "viper_postgame_portrait.vpk",
+    "MapSha256": "36610ba3aea1f586bf82f573cca54642d4cf515d206754ea9f8d056aa1fd4072",
+    "Member": "maps/ui/hero_postgame_portrait/viper_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "7cd2e084597b9f8522c2706e41bd9a8d2c31dc0b289d3111a280f530b085230e",
+    "Entities": 9
+  },
+  {
+    "Map": "viscous_postgame_portrait.vpk",
+    "MapSha256": "c4d24ab671ed9363e35707fe38f5abdd10231aaecb46a467a1040eedf6a156a0",
+    "Member": "maps/ui/hero_postgame_portrait/viscous_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "7bdaef6167ac6cb2a8f2245c564f5687cc9455d3109f268dc77d1bbaac31d642",
+    "Entities": 7
+  },
+  {
+    "Map": "warden_postgame_portrait.vpk",
+    "MapSha256": "c22c4eb15c4d60f08e3fced19c9eff273665d3ad291cff79782b62e73de203a6",
+    "Member": "maps/ui/hero_postgame_portrait/warden_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "a9cc00ac2444c0b64d293e96f7051af85318e4b8bed00c366ed5bfc62cc55c2e",
+    "Entities": 7
+  },
+  {
+    "Map": "werewolf_postgame_portrait.vpk",
+    "MapSha256": "e9b17107a94b6af6ebc61ee17f15f46ef106796022ac45d1413540c8726d985a",
+    "Member": "maps/ui/hero_postgame_portrait/werewolf_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "348ec32ff42c7b8403ab5e83ea374d0402fb9046c6e27d268563e62ef1b51e98",
+    "Entities": 10
+  },
+  {
+    "Map": "wraith_postgame_portrait.vpk",
+    "MapSha256": "e4da68db7f61107ebc409dd1301f0432994ee0aee064debca86cf8303e42ed8a",
+    "Member": "maps/ui/hero_postgame_portrait/wraith_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "00776adb5a58a5cd546b858a11264ae3f0317cd98b619ace9aac259ccc2b028a",
+    "Entities": 8
+  },
+  {
+    "Map": "wrecker_postgame_portrait.vpk",
+    "MapSha256": "429ff45ef8616da88d1614efa7502da48d900ddb887bc2ee3569cdb01aac1232",
+    "Member": "maps/ui/hero_postgame_portrait/wrecker_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "af1d3793eccdef8d577187a1e68998530180fa9c43e8e38ff5fbd2772d26bb28",
+    "Entities": 9
+  },
+  {
+    "Map": "yakuza_postgame_portrait.vpk",
+    "MapSha256": "f8b5fa0c919c1ce429884d198a06b866342e59e45a5e1048f9195c84896a8489",
+    "Member": "maps/ui/hero_postgame_portrait/yakuza_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "03493aa50b136708222b0ed4e1aa4469a3cfe7800dec7fd2a82ee90d55cc3ca7",
+    "Entities": 9
+  },
+  {
+    "Map": "yamato_postgame_portrait.vpk",
+    "MapSha256": "9bb06824a2e9b8634266e51f3f5ce9a0e1debc652b4a7c33a99eb568c7500982",
+    "Member": "maps/ui/hero_postgame_portrait/yamato_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "322a4db67102c8b17c919aca30e0d5a51c9eef039c28c39ecd64a313b70fd560",
+    "Entities": 7
+  },
+  {
+    "Map": "abrams.vpk",
+    "MapSha256": "1caaf03d04a591aad4b51e85780ce574eac70d5bcbeabba2e05e744c1324cdd9",
+    "Member": "maps/ui/hero_prefabs/abrams/entities/default_ents.vents_c",
+    "Sha256": "53a012b6df18d720070b716211810b3287f5405088a1fa2dfdf13096f3d01ac7",
+    "Entities": 14
+  },
+  {
+    "Map": "apollo.vpk",
+    "MapSha256": "e87a8916f680e9a20d9c55b5ff6a3a37a67d52d7784ffe5a683090db205c4aae",
+    "Member": "maps/ui/hero_prefabs/apollo/entities/default_ents.vents_c",
+    "Sha256": "2a881534fbc070b1fe5a3776f0d97a0528995d5aa21bafeadb32f8f36db604c2",
+    "Entities": 14
+  },
+  {
+    "Map": "archer.vpk",
+    "MapSha256": "1053458aec2c7312549e06b5f0f7d48464c9c6a22d83a8187da36609a5d2ac00",
+    "Member": "maps/ui/hero_prefabs/archer/entities/default_ents.vents_c",
+    "Sha256": "14915c63738c722e814f4075ef869aaa1a11ddca6fd88cbb82c9d53a006ed7a2",
+    "Entities": 16
+  },
+  {
+    "Map": "astro.vpk",
+    "MapSha256": "46253faff990a3d12b78eb560784ffb35f78997baa80816cec122ea28a6b3bef",
+    "Member": "maps/ui/hero_prefabs/astro/entities/default_ents.vents_c",
+    "Sha256": "070fbe82bdb1c0004bf0c2bcb7685d770c0a60224e8dacf291d1e75fdd5cf6a6",
+    "Entities": 12
+  },
+  {
+    "Map": "bebop.vpk",
+    "MapSha256": "1562bd416bc890a05649872bbc09e5c91b49b2d95ce18cb6c94bf650c7905353",
+    "Member": "maps/ui/hero_prefabs/bebop/entities/default_ents.vents_c",
+    "Sha256": "9a5292e5bf67918f88be5c2abc91a62436aea1f6850f37ac71b5a1191d015a41",
+    "Entities": 10
+  },
+  {
+    "Map": "boho.vpk",
+    "MapSha256": "c531d0a7050ac7acfd03d64c363bd8f22d7b6f21af43828e90e0dc25504cdab2",
+    "Member": "maps/ui/hero_prefabs/boho/entities/default_ents.vents_c",
+    "Sha256": "d22cc10bcdfc022bf849a62aa0d6519eef1de85e56a8e03808329563cb05e6ed",
+    "Entities": 11
+  },
+  {
+    "Map": "bookworm.vpk",
+    "MapSha256": "e02166293247f4b6efb6b8aceedded41d3efc1e0519a14cded96772a87b6b46d",
+    "Member": "maps/ui/hero_prefabs/bookworm/entities/default_ents.vents_c",
+    "Sha256": "92f6e6160df52bda9f4f71f8612138aa5708178bf3388198b705b8bb7dfe977d",
+    "Entities": 12
+  },
+  {
+    "Map": "chrono.vpk",
+    "MapSha256": "9d309cdea12b1dd3fd0b1e2679c55adf9fdad74a11d67af05a8ea3d3367e4e87",
+    "Member": "maps/ui/hero_prefabs/chrono/entities/default_ents.vents_c",
+    "Sha256": "3e393f606a1767bacb3b7f8b4d58a453b6ae6e8167e5041243a97a7418a312be",
+    "Entities": 13
+  },
+  {
+    "Map": "common.vpk",
+    "MapSha256": "02a99c0b61e80f6bcdfc2e0fc16872dfcee28207d4d8f67b831723aeb83c0c94",
+    "Member": "maps/ui/hero_prefabs/common/entities/default_ents.vents_c",
+    "Sha256": "a851301cabbb7566c67f5a7a8b8266fa3bbf02d42dbc8200c258ac67252bb4a0",
+    "Entities": 2
+  },
+  {
+    "Map": "default.vpk",
+    "MapSha256": "71cb33cf7a4eaa72497f62b9b46d0c4ee8ffab5ccc46952559e63eb66cd0bd81",
+    "Member": "maps/ui/hero_prefabs/default/entities/default_ents.vents_c",
+    "Sha256": "6ca2e841ebfea4826f3fc891fc241db2f6749bae4d5f5410ea2b6fa65e174743",
+    "Entities": 10
+  },
+  {
+    "Map": "digger.vpk",
+    "MapSha256": "5be016171deb5113afb74eee42120c48031022ba32ccbb7cfc03e4b20c55e99e",
+    "Member": "maps/ui/hero_prefabs/digger/entities/default_ents.vents_c",
+    "Sha256": "4c125542d5f9fbccdf2c74487a66ffe58f0ceb17ce978f3bf0077dc55513259c",
+    "Entities": 15
+  },
+  {
+    "Map": "doorman.vpk",
+    "MapSha256": "5b39926b8d8dc0714cfb33fb289dd89f2566e0fbf56485ea81027b116c9b4608",
+    "Member": "maps/ui/hero_prefabs/doorman/entities/default_ents.vents_c",
+    "Sha256": "11cde7256ec862f4ced9ed8974f679e7399b88d0151d82440df17b1999be920a",
+    "Entities": 12
+  },
+  {
+    "Map": "drifter.vpk",
+    "MapSha256": "6f4dcc71566a5a08fdc12d6abc0096f248e097d6281fc02c4ee48b96747a0421",
+    "Member": "maps/ui/hero_prefabs/drifter/entities/default_ents.vents_c",
+    "Sha256": "59f8c74d6d131ff5d27d00333feb594edbccadcea99823a5608637dcf9227870",
+    "Entities": 13
+  },
+  {
+    "Map": "familiar.vpk",
+    "MapSha256": "1e5e9ac50f884238a325ef37c1e1452e59ba209670e8504681ec8fc45617c2a2",
+    "Member": "maps/ui/hero_prefabs/familiar/entities/default_ents.vents_c",
+    "Sha256": "990133d693e61db63a3ff20df9b2d7cbeaf21b2c87d85a00a64e78ea1854c10c",
+    "Entities": 17
+  },
+  {
+    "Map": "forge.vpk",
+    "MapSha256": "ffda823e1c99d8019c9509192d349e8302ca51795c05d8092ceb058356ca9ef7",
+    "Member": "maps/ui/hero_prefabs/forge/entities/default_ents.vents_c",
+    "Sha256": "61f589b4feabeb47c705a346e739d7ed00fa13e37854619f7def81f86ce6f610",
+    "Entities": 13
+  },
+  {
+    "Map": "frank.vpk",
+    "MapSha256": "cb08bc5fc5902e21b0007e3f4977a6cd0b4faae90d178d6e369a95e9f7fe2deb",
+    "Member": "maps/ui/hero_prefabs/frank/entities/default_ents.vents_c",
+    "Sha256": "c5c471e8457e2ed25b12b2228935ffedd3784da6f40ce4773900c77a1f54a7bb",
+    "Entities": 12
+  },
+  {
+    "Map": "geist.vpk",
+    "MapSha256": "0f508e5782b6037d796b339b244117755c21c6f89ad632fc684a0e7044d04c2d",
+    "Member": "maps/ui/hero_prefabs/geist/entities/default_ents.vents_c",
+    "Sha256": "98130e7dd0e2b101d228fbd0b34d7752e1d3767371a124d1294f8b0affa727d0",
+    "Entities": 13
+  },
+  {
+    "Map": "gigawatt.vpk",
+    "MapSha256": "7b4d8c57a267909690e5131e05535571bac9bf8285fb18ff26ed67b6483d2a9c",
+    "Member": "maps/ui/hero_prefabs/gigawatt/entities/default_ents.vents_c",
+    "Sha256": "98f7883a90483fc700971ab775608b7a1956786f599d5c33c9554d518e941073",
+    "Entities": 11
+  },
+  {
+    "Map": "haze.vpk",
+    "MapSha256": "6e485a62cb74d7f0d72c5e6ac0a8a5f724811eb5e556e498160895a7939cb6b4",
+    "Member": "maps/ui/hero_prefabs/haze/entities/default_ents.vents_c",
+    "Sha256": "d3dc62ee16b7510237c2fba0eb17c2403228e4d8de8dac31f81f30051f01c3f6",
+    "Entities": 13
+  },
+  {
+    "Map": "hornet.vpk",
+    "MapSha256": "aa027cdc067e6e87769b40e73494d3a4f87a4df08a2f3cbf48a54b4b5d908b6b",
+    "Member": "maps/ui/hero_prefabs/hornet/entities/default_ents.vents_c",
+    "Sha256": "031ec97e1607307fac3f0599727648516b68e6c75442bcdfacbce646aa72f9c9",
+    "Entities": 11
+  },
+  {
+    "Map": "inferno.vpk",
+    "MapSha256": "6b1a7c02bb21d2b82b7d91d76203ae7a4c5a229df2c4fbd35e6cec166f735a94",
+    "Member": "maps/ui/hero_prefabs/inferno/entities/default_ents.vents_c",
+    "Sha256": "f0509f399f94427690cdbb48f006530ac30954fd52c18b57c5e3df8b4d5f57da",
+    "Entities": 12
+  },
+  {
+    "Map": "kelvin.vpk",
+    "MapSha256": "55df6751c736e117f7ddb285b58a9aec65b049bf639bece55743db5f53141a64",
+    "Member": "maps/ui/hero_prefabs/kelvin/entities/default_ents.vents_c",
+    "Sha256": "b0112126aea47a890b9fdadc6fb8561a64b8b308b3a41354d7ff4caa10717a91",
+    "Entities": 11
+  },
+  {
+    "Map": "lash.vpk",
+    "MapSha256": "14ffea348fa4933588985409b69acd12dd4e540a9ca96e4961bfbfc7ae89d8a4",
+    "Member": "maps/ui/hero_prefabs/lash/entities/default_ents.vents_c",
+    "Sha256": "9d44f1e310dabeb7b94d295bb46e6a73b7367ce4450e4c399a7c0471ca996a10",
+    "Entities": 13
+  },
+  {
+    "Map": "magician.vpk",
+    "MapSha256": "7b40f6b3f3cac1cece6d316d36ccb5c1041d3f1faa973830a0a6b147b347e760",
+    "Member": "maps/ui/hero_prefabs/magician/entities/default_ents.vents_c",
+    "Sha256": "ea6423964cd571f50ea7ecb9df92293bae474c7c8e529dd44e11082c2ac8d0d5",
+    "Entities": 10
+  },
+  {
+    "Map": "mirage.vpk",
+    "MapSha256": "341a7c32b1ea94fa7869b70b9f91037ef7550f4f8ae378bd0138c4589b9a15ce",
+    "Member": "maps/ui/hero_prefabs/mirage/entities/default_ents.vents_c",
+    "Sha256": "e552038ce150438c614f11f0e12b79db405f6d35da378ae531492895d934a6a8",
+    "Entities": 11
+  },
+  {
+    "Map": "nano.vpk",
+    "MapSha256": "abfb863501b86c1fe0c24e48830045fea274481196cfda923dff275bbbc02c77",
+    "Member": "maps/ui/hero_prefabs/nano/entities/default_ents.vents_c",
+    "Sha256": "a9acac51f3bae149bcd970cf9cb0acbe5b04b38f8adc7dac5d4f82542b8a4491",
+    "Entities": 11
+  },
+  {
+    "Map": "necro.vpk",
+    "MapSha256": "e5b358a4136e468f4c266bf205d4fc6e4be4fdd61ce6af11948e1e85bc912cd6",
+    "Member": "maps/ui/hero_prefabs/necro/entities/default_ents.vents_c",
+    "Sha256": "76a19deaa338c6f5b130f873aa11ad8f94693103eae2163d54b997f3dd8faff1",
+    "Entities": 20
+  },
+  {
+    "Map": "pocket.vpk",
+    "MapSha256": "62e29addd22d315de2ad2263312e659b7538dd2f38b31b77386b6712338b180f",
+    "Member": "maps/ui/hero_prefabs/pocket/entities/default_ents.vents_c",
+    "Sha256": "07e8212b39ef881ab5399f8092f181a69e594de0429b64d529224fafe5069a25",
+    "Entities": 13
+  },
+  {
+    "Map": "priest.vpk",
+    "MapSha256": "acac3c6cd05a30a42e499e0b7139c8e0c539b5f80f7055b8faad47be07612afe",
+    "Member": "maps/ui/hero_prefabs/priest/entities/default_ents.vents_c",
+    "Sha256": "03ea008609f9aa6110fd5767f404dd2fb283d8e2aafb069e32e98ae77baa05dc",
+    "Entities": 16
+  },
+  {
+    "Map": "prof_dynamo.vpk",
+    "MapSha256": "0c3111e50957a74dc27c5006db79b1fc5e7763b48c0ec7338ea75e0f4177693f",
+    "Member": "maps/ui/hero_prefabs/prof_dynamo/entities/default_ents.vents_c",
+    "Sha256": "153e4a5b32554b35a9eba14c71ccb3f06e257efe11504c79eed3d05f9c0e85e9",
+    "Entities": 16
+  },
+  {
+    "Map": "punkgoat.vpk",
+    "MapSha256": "dd5d8d3440b294f499f52d9b73275e37df7f33b215871bc9ece40cb6837b9bc3",
+    "Member": "maps/ui/hero_prefabs/punkgoat/entities/default_ents.vents_c",
+    "Sha256": "883974d3b00a6c3f2ba6506dc76d7522ea703aaa87179a9e9dc3b4f424aba563",
+    "Entities": 15
+  },
+  {
+    "Map": "shiv.vpk",
+    "MapSha256": "191f4edb00d2a81e2b18098685f50a9a83e051c314465a4b0f08500e1e3dbe5e",
+    "Member": "maps/ui/hero_prefabs/shiv/entities/default_ents.vents_c",
+    "Sha256": "7ff532756c248ecce6697ceb447d433d17978ab2c9b21db965451e954787d609",
+    "Entities": 12
+  },
+  {
+    "Map": "tengu.vpk",
+    "MapSha256": "0c84febe247f4de4882e4dbfed8dba2b2923704f37217f73ee227c749fc0dddf",
+    "Member": "maps/ui/hero_prefabs/tengu/entities/default_ents.vents_c",
+    "Sha256": "fcd57c6fcf202831a2b2be6fa5430398c8f9be42a31d1f6e42bf3e4ac0229ffd",
+    "Entities": 23
+  },
+  {
+    "Map": "unicorn.vpk",
+    "MapSha256": "5200849c75a52cf21745b401f8deca85e21931ae11ce245dd5f4d5de8ffe07d5",
+    "Member": "maps/ui/hero_prefabs/unicorn/entities/default_ents.vents_c",
+    "Sha256": "9f3c14e8db651df3cad97b206566d1a0ac5cb2fd5afabf3f43b419e4bfdec97d",
+    "Entities": 17
+  },
+  {
+    "Map": "vampirebat.vpk",
+    "MapSha256": "f2b3c1dc381138c0608b6168a05ed6e50dbafda5a28f20dfb37b298cb76dca57",
+    "Member": "maps/ui/hero_prefabs/vampirebat/entities/default_ents.vents_c",
+    "Sha256": "9b75708fde605ada94638d34cac55927b78b3a89269a77ac49fa484fd0ad7e67",
+    "Entities": 16
+  },
+  {
+    "Map": "viper.vpk",
+    "MapSha256": "6727581687dfa0d791effe43e3e2c7a7aa7debd9f4287aa6b7f7a713a97bdc40",
+    "Member": "maps/ui/hero_prefabs/viper/entities/default_ents.vents_c",
+    "Sha256": "3d32cb7810e7638282bf603deda38d475b9a77409147c14e07603847bf76432c",
+    "Entities": 11
+  },
+  {
+    "Map": "viscous.vpk",
+    "MapSha256": "fc34a487e1f9eb60a0d25c99f706b59cf876134ba8dd1615ef0a356ca36c5a10",
+    "Member": "maps/ui/hero_prefabs/viscous/entities/default_ents.vents_c",
+    "Sha256": "654d250133a35063d21f6f12559776b71c450ee3a68e6d1ac161d12a16c4f7fa",
+    "Entities": 14
+  },
+  {
+    "Map": "warden.vpk",
+    "MapSha256": "1a028b824534dc816bc4a24697a1a6cbe40eaa60d08da5271b4dd0522f846be5",
+    "Member": "maps/ui/hero_prefabs/warden/entities/default_ents.vents_c",
+    "Sha256": "9239c95961fbbe0e1c4a51a3c954c044c8dbcb469159791dcaa5c7e76519f97c",
+    "Entities": 11
+  },
+  {
+    "Map": "werewolf.vpk",
+    "MapSha256": "31b4329445d0a30802bd3da6ff67f82ed16ce37bf876c0a5e7183516f959d9c8",
+    "Member": "maps/ui/hero_prefabs/werewolf/entities/default_ents.vents_c",
+    "Sha256": "1f6a50f54a4b7cbc2cfd184eb6a96a80d750ffdc89915fcc3b8caffc0fe972f2",
+    "Entities": 16
+  },
+  {
+    "Map": "wraith.vpk",
+    "MapSha256": "130656de971e2b7c20e3ca36dca74e3fdd2f9ca2d376850bf5504084991ede28",
+    "Member": "maps/ui/hero_prefabs/wraith/entities/default_ents.vents_c",
+    "Sha256": "da89bbc01d9f3403b9734c9ea43b8c82575b25f8c36748a76d1d1e64b7fe3f52",
+    "Entities": 14
+  },
+  {
+    "Map": "wrecker.vpk",
+    "MapSha256": "61608c6d20e2fa7ac1ea04ffaa5eaa15671f2e4f6fe22449e5adb68a379414ba",
+    "Member": "maps/ui/hero_prefabs/wrecker/entities/default_ents.vents_c",
+    "Sha256": "cc1b420f56dd91dc60c43b15f4a6cb8c773e6755cac87427f93f845a135a0e00",
+    "Entities": 11
+  },
+  {
+    "Map": "yamato.vpk",
+    "MapSha256": "28dc8b5f668dd3eff0b75ccbc4f81c60617a1d1db664faaa2e4908d2445dd421",
+    "Member": "maps/ui/hero_prefabs/yamato/entities/default_ents.vents_c",
+    "Sha256": "3b61339eebc371ad0caeee8610b849d0ee59e3219f695290bde055dae0e040b3",
+    "Entities": 11
+  },
+  {
+    "Map": "hero_roster.vpk",
+    "MapSha256": "2aa160708e6c75ecc77612821777befb2a6f47587257f3c356be25bcf9d21b08",
+    "Member": "maps/ui/hero_roster/entities/default_ents.vents_c",
+    "Sha256": "2280a60695493130debf54406478aa3a2ab3a3ae2deeea938a5b8c47e9dc3306",
+    "Entities": 11
+  },
+  {
+    "Map": "hero_select.vpk",
+    "MapSha256": "8982511d36e427622985ff27332e45f07fbf47050c31f3ad812f3a5990bd98df",
+    "Member": "maps/ui/hero_select/entities/default_ents.vents_c",
+    "Sha256": "c7830009edbaf23ef5fc35e125969a92ee32cf9314470c254586718f7afbe024",
+    "Entities": 13
+  },
+  {
+    "Map": "hero_select_backer.vpk",
+    "MapSha256": "db5d67beb9837efc223d1813d363cfd609400c9587fc897cf3c1921fe9a3b743",
+    "Member": "maps/ui/hero_select_backer/hero_select_backer/entities/default_ents.vents_c",
+    "Sha256": "2df38919853ef2db3b8c3bd61e66507cd6e67cab9e8e76410e28f5a71891cc26",
+    "Entities": 5
+  },
+  {
+    "Map": "post_game_backer.vpk",
+    "MapSha256": "f7bb91dd34d3350af8f2ab81c6d829fe102e26253f64ffa834f51a5e289c399f",
+    "Member": "maps/ui/hero_select_backer/post_game_backer/entities/default_ents.vents_c",
+    "Sha256": "3ef6fe2f68b413e7dca4799e66a998a58cb4969a46113fb8fe1dc3ed8761d24e",
+    "Entities": 5
+  },
+  {
+    "Map": "abrams_shop.vpk",
+    "MapSha256": "db0fa4aaeae6fef9c4542444f3a09b59c4a15fbe6ea9d12b1e678087996dc669",
+    "Member": "maps/ui/hero_shop/abrams_shop/entities/default_ents.vents_c",
+    "Sha256": "ccedae2222f263be7ce33f463cfea27922d10c36183c10dd12de1bf1420da212",
+    "Entities": 8
+  },
+  {
+    "Map": "apollo_shop.vpk",
+    "MapSha256": "ba213098e1232ec4d489f64fad7172b30a463a61afeb8f27539f80bb43c099be",
+    "Member": "maps/ui/hero_shop/apollo_shop/entities/default_ents.vents_c",
+    "Sha256": "069b505671f6f884dfb3765a6708b7fed4ae721c347dfa44121b8f8d0801ff0c",
+    "Entities": 8
+  },
+  {
+    "Map": "astro_shop.vpk",
+    "MapSha256": "0a575f669b92d3ed7053d31889abfcd214a706cda1e210150f26f825741f80de",
+    "Member": "maps/ui/hero_shop/astro_shop/entities/default_ents.vents_c",
+    "Sha256": "b944878e0b77753f1ea56936a9f51fb1c1c735851e5b01f7279e0502850e0ac1",
+    "Entities": 7
+  },
+  {
+    "Map": "bebop_shop.vpk",
+    "MapSha256": "7e1c48663940e66728c8c506a7b081dc817bbfe856fe666804272f23aa94c879",
+    "Member": "maps/ui/hero_shop/bebop_shop/entities/default_ents.vents_c",
+    "Sha256": "560e1c25699b41c5d4ca72408de4175090138751e8ca99cb0915ea59ff23326c",
+    "Entities": 7
+  },
+  {
+    "Map": "bookworm_shop.vpk",
+    "MapSha256": "0eb6bbc80641e59ef9c987860c6f644338eb70dfb07fdb50d370363388e47488",
+    "Member": "maps/ui/hero_shop/bookworm_shop/entities/default_ents.vents_c",
+    "Sha256": "f8489704644d12a6994259d53b1c437751b4a8ebcf69382d9a78e62fa5af9d0d",
+    "Entities": 6
+  },
+  {
+    "Map": "chrono_shop.vpk",
+    "MapSha256": "a29193f7182706704430116d37aa3789a6a5b1e0669e8440059108f394c2b539",
+    "Member": "maps/ui/hero_shop/chrono_shop/entities/default_ents.vents_c",
+    "Sha256": "e9d769bc7461880398801a0b4f558e524d071a8321e08c8c286a4642010e8bd9",
+    "Entities": 7
+  },
+  {
+    "Map": "default_shop.vpk",
+    "MapSha256": "7abd8119bec16715e17ababfc168ea74763661b945a18e6d0113d68ffe6d33f2",
+    "Member": "maps/ui/hero_shop/default_shop/entities/default_ents.vents_c",
+    "Sha256": "a40406ac1633bf7cb95190bb6832a8e6149b6465111ff109815e7813ed7d6fb4",
+    "Entities": 9
+  },
+  {
+    "Map": "digger_shop.vpk",
+    "MapSha256": "aca2a82424fe5ee90ef136f69f5406a393104fedb73891ef33ca58ee9b9f9728",
+    "Member": "maps/ui/hero_shop/digger_shop/entities/default_ents.vents_c",
+    "Sha256": "d603edcb1e00a25238db68a856fce6abae332f88829eff51ca165300f564e59c",
+    "Entities": 7
+  },
+  {
+    "Map": "doorman_shop.vpk",
+    "MapSha256": "81308eb15790203d3945533890d0fd7f678007e5155e6ae3b8b2507df11ab9ee",
+    "Member": "maps/ui/hero_shop/doorman_shop/entities/default_ents.vents_c",
+    "Sha256": "31c8b7e9a225102832b7a5f2014b31dd5e76ec6653fd5368ec9fb0d3faa0d8b4",
+    "Entities": 9
+  },
+  {
+    "Map": "drifter_shop.vpk",
+    "MapSha256": "3723416b00535ce55c529c660afd6b19b02d5efd52f2b9f8462ab1e4d863b982",
+    "Member": "maps/ui/hero_shop/drifter_shop/entities/default_ents.vents_c",
+    "Sha256": "8dcc57ecce53c350a6b2f5ea3209541da4239ff62d5eccad101d6f0c4a25d573",
+    "Entities": 7
+  },
+  {
+    "Map": "engineer_shop.vpk",
+    "MapSha256": "066543a9a54a331e2589060f2836668a994468754de75fabe92ceb8bce4b6ad0",
+    "Member": "maps/ui/hero_shop/engineer_shop/entities/default_ents.vents_c",
+    "Sha256": "1a0a03196dcaa30cdbeef74f1dffe747659b085e09f5dd536e23d61fb5e12120",
+    "Entities": 7
+  },
+  {
+    "Map": "familiar_shop.vpk",
+    "MapSha256": "59ecd911fbf3e2df6998eec4d4b37b934c0693c03b31cb0f7e7b1c9ec603fa07",
+    "Member": "maps/ui/hero_shop/familiar_shop/entities/default_ents.vents_c",
+    "Sha256": "86c90ae10136a050f024a9c5f6d74b8d4dca0dc512eab0e9555710ad38bf6728",
+    "Entities": 8
+  },
+  {
+    "Map": "frank_shop.vpk",
+    "MapSha256": "0368380fa1dbfdbccaf86b9d06637953a67ed40e98692bf86a5053e5743e48ac",
+    "Member": "maps/ui/hero_shop/frank_shop/entities/default_ents.vents_c",
+    "Sha256": "44f3a101c8f7b51902a22731a52b71fc5e418e2618f0126d19be9b6aba615d23",
+    "Entities": 9
+  },
+  {
+    "Map": "ghost_shop.vpk",
+    "MapSha256": "394586c76227288aa7f63f2f7c4d5b3cbef8cc569b5efa3d4a9a2308c9bb1783",
+    "Member": "maps/ui/hero_shop/ghost_shop/entities/default_ents.vents_c",
+    "Sha256": "3549dcd0ea88a74065d81933c80806fa59fbd294034d5f8b0dfaabe513ad7c04",
+    "Entities": 7
+  },
+  {
+    "Map": "gigawatt_shop.vpk",
+    "MapSha256": "6bd399f8281d3af3ba275e56ad53e810b72d17d37cd3827a265574ba83e52b4b",
+    "Member": "maps/ui/hero_shop/gigawatt_shop/entities/default_ents.vents_c",
+    "Sha256": "c50bb6c69d3a7a3022256033cfc11d7848eb1264a01fcdea0af0d5414293d7e6",
+    "Entities": 7
+  },
+  {
+    "Map": "gray_talon_shop.vpk",
+    "MapSha256": "fc047a75271258b46195634df62e4f13b4b49779772ed9bcbd03e8b3b3ecabd4",
+    "Member": "maps/ui/hero_shop/gray_talon_shop/entities/default_ents.vents_c",
+    "Sha256": "e26b09e5e536210a2a6ade3f15ae97d0c7c9ab87c6b42fb7842fa9248cd6aeec",
+    "Entities": 8
+  },
+  {
+    "Map": "haze_shop.vpk",
+    "MapSha256": "d2f173338522f7ecc37a181f22a52cdc01e1b362f9e903c630b3b0a1f969598d",
+    "Member": "maps/ui/hero_shop/haze_shop/entities/default_ents.vents_c",
+    "Sha256": "5fbb8f45d242c0d75cc8ffb48c18a2b6bed7373c047b06de86f5037e8b8e799e",
+    "Entities": 6
+  },
+  {
+    "Map": "hornet_shop.vpk",
+    "MapSha256": "32999a00a34610fd78364faec22b7f6bca9ae76fe31e0ae560a5f9e1a8001c45",
+    "Member": "maps/ui/hero_shop/hornet_shop/entities/default_ents.vents_c",
+    "Sha256": "34510d1e62231bb7baed362df781549de855f3d33720cc5e564136858a58ae80",
+    "Entities": 7
+  },
+  {
+    "Map": "inferno_shop.vpk",
+    "MapSha256": "f9f85fd7c48b77ac56b9f4bb76e0e1e9e42f03ac59d9019baa4c80be7e257e54",
+    "Member": "maps/ui/hero_shop/inferno_shop/entities/default_ents.vents_c",
+    "Sha256": "f19bbf3b3f53fa518661e1e6b6e1665a5d2b16b08a0320659db40d97c16340aa",
+    "Entities": 7
+  },
+  {
+    "Map": "kelvin_shop.vpk",
+    "MapSha256": "0280b007f72c38545dd627978db433f52db065eb3907b07429a587f30106aec5",
+    "Member": "maps/ui/hero_shop/kelvin_shop/entities/default_ents.vents_c",
+    "Sha256": "445551636e88f1c1491dc6cef01cb0e140e4738b311bd73cdb0df0e1b8191173",
+    "Entities": 7
+  },
+  {
+    "Map": "lash_shop.vpk",
+    "MapSha256": "dea8f7c96b77f50c501e32092491e9d5ee55f6a5b176fded1f914a17d571f39d",
+    "Member": "maps/ui/hero_shop/lash_shop/entities/default_ents.vents_c",
+    "Sha256": "69c718a0ad52d142bc3c71278bca80f8f8434ede5369229b34fa30fad91a2298",
+    "Entities": 7
+  },
+  {
+    "Map": "mirage_shop.vpk",
+    "MapSha256": "f161fa3b9dc1dbd3d9cdd4e3ad9c5f4284dc36c9dbd67cff13ecf42ac4053a5b",
+    "Member": "maps/ui/hero_shop/mirage_shop/entities/default_ents.vents_c",
+    "Sha256": "086380d05a7db1f00eeff4cae056a29e593ef52ab2617df0d467138e7f0b43dd",
+    "Entities": 7
+  },
+  {
+    "Map": "nano_shop.vpk",
+    "MapSha256": "0e1bb43d13faeb6164585a0bf55ea170adac50a7029543d5d4b4e324eb606eab",
+    "Member": "maps/ui/hero_shop/nano_shop/entities/default_ents.vents_c",
+    "Sha256": "81f37f3d7b92a3e30bd6cdc3819aed595bb714941102915bafeb7cfc15eb354b",
+    "Entities": 7
+  },
+  {
+    "Map": "necro_shop.vpk",
+    "MapSha256": "8aa150a6b4c437d46e3a556fb478da62d1a982c3b2014a86c2116e48833c05e7",
+    "Member": "maps/ui/hero_shop/necro_shop/entities/default_ents.vents_c",
+    "Sha256": "34868012f67785112a0ff4bfff72ad2700123237af64a122f6beaaa66df9eb3b",
+    "Entities": 8
+  },
+  {
+    "Map": "pocket_shop.vpk",
+    "MapSha256": "70a96e9dec6ac83ce3d98f7f84b0ca6b3dcce6bbe0b96c43b078a19e717bd2f4",
+    "Member": "maps/ui/hero_shop/pocket_shop/entities/default_ents.vents_c",
+    "Sha256": "d6133e93e91284fb12cb983874626a38f9b2fefd8982369cd106e667a88b34b0",
+    "Entities": 7
+  },
+  {
+    "Map": "priest_shop.vpk",
+    "MapSha256": "8423dbc5a001e2fac34a66f8f46bd5902e191767d17289793f496db1583b5ce6",
+    "Member": "maps/ui/hero_shop/priest_shop/entities/default_ents.vents_c",
+    "Sha256": "6c687c18b7457df2ee9561f51ea50b96408b0bb982b9b1e96a6ded971ae3ed6b",
+    "Entities": 8
+  },
+  {
+    "Map": "prof_dynamo.vpk",
+    "MapSha256": "5d415c7f55118ed3149fcda064bb1f4e58061a4c13b0dcf5cf9761afdc6901d0",
+    "Member": "maps/ui/hero_shop/prof_dynamo/entities/default_ents.vents_c",
+    "Sha256": "d7c529c34606ca51eddfcce3f7425d2989dcd174837579d17cb43c4fef3c3893",
+    "Entities": 9
+  },
+  {
+    "Map": "prof_dynamo_shop.vpk",
+    "MapSha256": "84648d1c2ffe5e0aaea723cc79d6765af8ee615d2b6483086a431f37eb280c58",
+    "Member": "maps/ui/hero_shop/prof_dynamo_shop/entities/default_ents.vents_c",
+    "Sha256": "a3fbc0eda0e5e2ae8530e438b7c8177e3f786141ebd373c84a40bf3a23214bb8",
+    "Entities": 9
+  },
+  {
+    "Map": "punkgoat_shop.vpk",
+    "MapSha256": "e954f68599d0b9f432ffee5213f3cdce540361e232c2f15e20f1095196bc9d31",
+    "Member": "maps/ui/hero_shop/punkgoat_shop/entities/default_ents.vents_c",
+    "Sha256": "4e66385dfc7478c78d6f0a9c21f5f8aa0b5665ccf9a608fb77535ee358d81ee8",
+    "Entities": 8
+  },
+  {
+    "Map": "shiv_shop.vpk",
+    "MapSha256": "2b37b369268679673735627a873cad4935e7b726a57c80a00bf93174d534041d",
+    "Member": "maps/ui/hero_shop/shiv_shop/entities/default_ents.vents_c",
+    "Sha256": "65075d1637a382ea51bb7f8ac5c838de93c4574fbf48dccb74aabd1a39507c9a",
+    "Entities": 7
+  },
+  {
+    "Map": "tengu_shop.vpk",
+    "MapSha256": "59fd4052ecdcfb1403085c0c18f3aa675d699baec47539b29011baa49a1803a2",
+    "Member": "maps/ui/hero_shop/tengu_shop/entities/default_ents.vents_c",
+    "Sha256": "66e66a31b931449d9b738195ce7a7f0f7b8da11a2c950f7026421a66d2e11a4b",
+    "Entities": 8
+  },
+  {
+    "Map": "thumper_shop.vpk",
+    "MapSha256": "d8243a912e02cd3f9d0675a984b961afe37700e6cdfa5e342cbe86ddee76fa9f",
+    "Member": "maps/ui/hero_shop/thumper_shop/entities/default_ents.vents_c",
+    "Sha256": "d2308f9e87a934a53a9ead336a282487e4b507d57640a831d82b7b76fa182fc8",
+    "Entities": 9
+  },
+  {
+    "Map": "unicorn_shop.vpk",
+    "MapSha256": "42d6f40b62cb0823bc69049d83738d6256c2c78a1682c4c1956ab6a587218e4b",
+    "Member": "maps/ui/hero_shop/unicorn_shop/entities/default_ents.vents_c",
+    "Sha256": "77b97a12bfca49d0a548d8748cd94a0d22001470dd39e952666c9e3694a16ddf",
+    "Entities": 8
+  },
+  {
+    "Map": "vampirebat_shop.vpk",
+    "MapSha256": "f77de99d479bb231d61d3dfd244d70cd638a0980a121a5c727aa92ef28ad00c1",
+    "Member": "maps/ui/hero_shop/vampirebat_shop/entities/default_ents.vents_c",
+    "Sha256": "60a6968de743d33b937319b1cfd2b0a365b047b25fe1494a1873774aafad2c48",
+    "Entities": 7
+  },
+  {
+    "Map": "viper_shop.vpk",
+    "MapSha256": "1a1d5c08b5f66740ddcbe20082a2b307424fd4bc7ffa656e6ca2653b775dfc64",
+    "Member": "maps/ui/hero_shop/viper_shop/entities/default_ents.vents_c",
+    "Sha256": "aa29b73fc5aa3f89edefafd1db46157188aa073bcc9fb391fff2857038324b0b",
+    "Entities": 8
+  },
+  {
+    "Map": "viscous_shop.vpk",
+    "MapSha256": "df76dd7b13a830f287451894204766688b312c741b096d0f67ca8d249c82fdf5",
+    "Member": "maps/ui/hero_shop/viscous_shop/entities/default_ents.vents_c",
+    "Sha256": "028b3c24c15d8cbda3aa0bcadb3a0a90fb970f51a6269b48b129e77873b53b39",
+    "Entities": 8
+  },
+  {
+    "Map": "warden_shop.vpk",
+    "MapSha256": "fabd6f0ab95fe49e0557e0a29467aec2f78704f26e80f72aa8dba80931a8f5c8",
+    "Member": "maps/ui/hero_shop/warden_shop/entities/default_ents.vents_c",
+    "Sha256": "b3e6e80c24ffbf64820b9e43e892278b5206064dc3afa6a03e93dfead54346f4",
+    "Entities": 7
+  },
+  {
+    "Map": "werewolf_shop.vpk",
+    "MapSha256": "9a57cf4b463aed56152cae65f624c4051275a170bf63f334872d4d0569f0632f",
+    "Member": "maps/ui/hero_shop/werewolf_shop/entities/default_ents.vents_c",
+    "Sha256": "f30f91b9e7faab6104cd838821f4ff10e58272c40a7e5b8ad2ea3efb6d6615c8",
+    "Entities": 6
+  },
+  {
+    "Map": "wraith_shop.vpk",
+    "MapSha256": "2a8c5b3e5050ac37411dc3f7bac4e4aace0a28098fb6d1e8a7bfa24fbbca5de5",
+    "Member": "maps/ui/hero_shop/wraith_shop/entities/default_ents.vents_c",
+    "Sha256": "21b75876f3dac12abd964fe17869ee12e6e2d4ff41729aa3cb1d548b7019551d",
+    "Entities": 7
+  },
+  {
+    "Map": "wrecker_shop.vpk",
+    "MapSha256": "5960e679f2674c30119ce570dd29f3d4fa09a52cbc080db97368ab8102addfaa",
+    "Member": "maps/ui/hero_shop/wrecker_shop/entities/default_ents.vents_c",
+    "Sha256": "cb0dac233eb4d35acf71bd7e14892e6879f359447c3aa8ae51c416a0d685f158",
+    "Entities": 9
+  },
+  {
+    "Map": "yakuza_shop.vpk",
+    "MapSha256": "16499d65e62722e2766d931b2d5bd24821aff9bf971e7ff28556d5b82ced61b3",
+    "Member": "maps/ui/hero_shop/yakuza_shop/entities/default_ents.vents_c",
+    "Sha256": "c85b5e1a45eb8b1e0d52065c715d1d0b3de2597773df1eb425f73aa0c6441f5e",
+    "Entities": 9
+  },
+  {
+    "Map": "yamato_shop.vpk",
+    "MapSha256": "3d34cc61c69749b1edf98d69fa1f20811e651938a95ad65b713638b81bf1b599",
+    "Member": "maps/ui/hero_shop/yamato_shop/entities/default_ents.vents_c",
+    "Sha256": "c40705bd896e5d6ad267b9987c224f846a6d8df63f372e716b934c58fbce1d6b",
+    "Entities": 7
+  },
+  {
+    "Map": "abrams_team_reveal.vpk",
+    "MapSha256": "34ae43621b8d9c58b175be6387bb3babae4c28b31084153dfbe75d303e166351",
+    "Member": "maps/ui/team_reveal_hero/abrams_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "61a1589eaf6c5a7ceba93e13ab0d4ab09503659cf00576f367a6a915f8dcdb1f",
+    "Entities": 13
+  },
+  {
+    "Map": "apollo_team_reveal.vpk",
+    "MapSha256": "28d064abf651a31f7804470aab90841c521cb06291841f833f08ca92d15e8f60",
+    "Member": "maps/ui/team_reveal_hero/apollo_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "3c93798802bc3e49e7b7386d7ef941e79b4901fb00f30343e1f660498525132e",
+    "Entities": 7
+  },
+  {
+    "Map": "astro_team_reveal.vpk",
+    "MapSha256": "07f8c5c3244cc85e9a8b824efc4da3705baca61769e4396788fe63648bb1296f",
+    "Member": "maps/ui/team_reveal_hero/astro_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "5acd6fec71464f071a42c58ee17f69b0d75fae920a93556d8083b8e1620af87b",
+    "Entities": 7
+  },
+  {
+    "Map": "bebop_team_reveal.vpk",
+    "MapSha256": "ad6c4081bc94f00908e03b513d7cc27abe0134be74d2f41c4ee9a0122a4c0a44",
+    "Member": "maps/ui/team_reveal_hero/bebop_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "e65dd5aa97f3348810becb514b54278d613ba47d5a64c32c862d6b9ccdffe004",
+    "Entities": 9
+  },
+  {
+    "Map": "bookworm_team_reveal.vpk",
+    "MapSha256": "eb3b3ed8e26ef39a44b03cdd38e7e96f479ed94ca8ee6e673ba214fe8cd04de9",
+    "Member": "maps/ui/team_reveal_hero/bookworm_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "c77549546a1a016caf37f7a8985f3c3db6cea63ce2bd47c9f868bd21d4ae2c57",
+    "Entities": 6
+  },
+  {
+    "Map": "chrono_team_reveal.vpk",
+    "MapSha256": "8bfd7d8f97192afa9d6791d31fb6e8e37bdd9955ccecd13cc42849fb20067390",
+    "Member": "maps/ui/team_reveal_hero/chrono_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "b49bf0e90754c890c5b20e0193ac1762839af51ff8e7cc55b757a01f27c1ab18",
+    "Entities": 7
+  },
+  {
+    "Map": "default_team_reveal.vpk",
+    "MapSha256": "40b1efd488f493ccdc38ed5e1263276c7054b71da820298e6e1fac89e00416c2",
+    "Member": "maps/ui/team_reveal_hero/default_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "34e0a5305d38707e5947a070bbe645fab5fc95d13ae56dca89be1ac632f9a600",
+    "Entities": 9
+  },
+  {
+    "Map": "digger_team_reveal.vpk",
+    "MapSha256": "1f5a3234965fe88bb560c36d6efc45fcd32cd9c06bd61de1bab5ac9575ed62c1",
+    "Member": "maps/ui/team_reveal_hero/digger_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "89b9fa15e59a88b970da125a6f471db7b7be9320938b6952302ee103af85cc0d",
+    "Entities": 7
+  },
+  {
+    "Map": "doorman_team_reveal.vpk",
+    "MapSha256": "bff95b5d66b95a9931a5234e34cafa20c4480bb7576b28ae018a01f5fc11ecfa",
+    "Member": "maps/ui/team_reveal_hero/doorman_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "0ad535b16103f58174b7ec0c692422046e634c4b9a469c00f5ce000ab3dc57bd",
+    "Entities": 8
+  },
+  {
+    "Map": "drifter_team_reveal.vpk",
+    "MapSha256": "2831a904a8185b272d30f258bcb082c0e84c9b245a8d398b6df6514ad66ab4c9",
+    "Member": "maps/ui/team_reveal_hero/drifter_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "8679caa650cd2d4743017c9d25ed0a21b329744484f6ca8c5606c41550665ee2",
+    "Entities": 13
+  },
+  {
+    "Map": "engineer_team_reveal.vpk",
+    "MapSha256": "54306e14a058f1a93b00b2633ca07ff2006baa40f3edd9fe9506685c956171f4",
+    "Member": "maps/ui/team_reveal_hero/engineer_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "5138ad85b1ccce0cbd3488b5c9acc9aabcb5a27a8e73ad79f41d3bede765cc03",
+    "Entities": 7
+  },
+  {
+    "Map": "familiar_team_reveal.vpk",
+    "MapSha256": "de8551e85fa2b2e439cbb94b755c1b36664a0103903161165a3c7d42077784d9",
+    "Member": "maps/ui/team_reveal_hero/familiar_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "c5dffd224e166c547e8938d1667237cfbfc70dabc33c6066cb06304fdc3c049d",
+    "Entities": 7
+  },
+  {
+    "Map": "frank_team_reveal.vpk",
+    "MapSha256": "fe61fe4d860c8bf817e433904a9d9326a0acddee1f2325c28c228bbbc43d7e06",
+    "Member": "maps/ui/team_reveal_hero/frank_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "44703baba46bc8d3c18f7a9236c9c36a030c76e842b690bef454c14f65306498",
+    "Entities": 9
+  },
+  {
+    "Map": "ghost_team_reveal.vpk",
+    "MapSha256": "13e047394682df6675f27ce2c12ae5386f0bf3e798bd89347354f031e7766f1d",
+    "Member": "maps/ui/team_reveal_hero/ghost_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "9f108ec16f3074df54c3394d33446d4a5ebc94bb3c9b227e2cb869214d04f448",
+    "Entities": 7
+  },
+  {
+    "Map": "gigawatt_team_reveal.vpk",
+    "MapSha256": "e34508fb723e4aac5017c4736cf8b93710e2d0d4d5565bde7670fb573e151b04",
+    "Member": "maps/ui/team_reveal_hero/gigawatt_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "ba58a94174646a4d29db4dabda41459287523d2f7c84f56599fdd625da2933f2",
+    "Entities": 7
+  },
+  {
+    "Map": "gray_talon_team_reveal.vpk",
+    "MapSha256": "3c11c56aba2e485c077f59545e77e58a4126281cc6a9cc0a11e2880c2fafdeb0",
+    "Member": "maps/ui/team_reveal_hero/gray_talon_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "836d804c498d1725f0f36b8803afa782b85b9bf482c35df1b44f36cd92f17a84",
+    "Entities": 9
+  },
+  {
+    "Map": "haze_team_reveal.vpk",
+    "MapSha256": "165b8d1ef9ff6f48eba216158ad5b329436b0b3da055daf4d6cc9d458094c0bd",
+    "Member": "maps/ui/team_reveal_hero/haze_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "3262d65e0e70f0355b76b1d1c4051104a73a30ff9ce44491d45b2e8e0689a84a",
+    "Entities": 7
+  },
+  {
+    "Map": "hornet_team_reveal.vpk",
+    "MapSha256": "310e6e701f61a2218cc5bc00e83ce24639e36540839eff75a5d611264e3b488f",
+    "Member": "maps/ui/team_reveal_hero/hornet_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "34d497188e619b4ae325cd34de78faf70fd8eec18c42539b70ad1d0edfda1083",
+    "Entities": 7
+  },
+  {
+    "Map": "inferno_team_reveal.vpk",
+    "MapSha256": "a885d1bdc3690b69a15708964ec6ab5aa0576d0734a15324afd6b11b1279088d",
+    "Member": "maps/ui/team_reveal_hero/inferno_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "05e00e47b4438a1aa010ba42140796f58a1a06ad133e1e5728290b334b8e96be",
+    "Entities": 7
+  },
+  {
+    "Map": "kelvin_team_reveal.vpk",
+    "MapSha256": "e07031daa8e926afcb79ecfd6a78bfe56cba6f5c9f0f15418887f890ee1adbd5",
+    "Member": "maps/ui/team_reveal_hero/kelvin_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "30752954ecff3c48e612c7f58887e2fe8cadce31910c48c65fab2c9aab791b77",
+    "Entities": 7
+  },
+  {
+    "Map": "lash_team_reveal.vpk",
+    "MapSha256": "583852f92f1b39eb71d5ddcfeb5864a023b6f8bd18dffa2180070174e73433ce",
+    "Member": "maps/ui/team_reveal_hero/lash_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "7d5717f165fe4e3ec5014fcc10b63df6eb1e804ae764bdefe7d2e9bbc947c780",
+    "Entities": 7
+  },
+  {
+    "Map": "mirage_team_reveal.vpk",
+    "MapSha256": "d6bbc8bb0ed0ac5b52e303ae00f4bcf94a5d140d9589424c81f481ee3516ff6f",
+    "Member": "maps/ui/team_reveal_hero/mirage_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "41be449351a05eb9fb51c14d1b5d2188b8bbb36ee57caa6ef543a3d553816a39",
+    "Entities": 7
+  },
+  {
+    "Map": "nano_team_reveal.vpk",
+    "MapSha256": "1bdfded834e47f14b10347bf36fe3dc80804a15366bbf7c81cd4a5802c046b07",
+    "Member": "maps/ui/team_reveal_hero/nano_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "07fb5e0912a2cda6fc98e8475226e12b438ddeabfd4122187df467fc92b42a58",
+    "Entities": 7
+  },
+  {
+    "Map": "necro_team_reveal.vpk",
+    "MapSha256": "e9584ebb6a7e457e3274b4c866b6c5574d51526167447f46448423339b98ce20",
+    "Member": "maps/ui/team_reveal_hero/necro_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "ad3f1a806ec765e659fb9ca3f310c92bd526fee884af12529ab59df121cfd47c",
+    "Entities": 8
+  },
+  {
+    "Map": "pocket_team_reveal.vpk",
+    "MapSha256": "222be8f27c981ce31e097dd16a90cfb89c7ed071b865f16d341af1f7ac692874",
+    "Member": "maps/ui/team_reveal_hero/pocket_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "e20bfe60d12b40ed027add5edf61a36f5611b58aeb8a88de1a9950917e762d7f",
+    "Entities": 7
+  },
+  {
+    "Map": "priest_team_reveal.vpk",
+    "MapSha256": "e0aff6b7901153d8cbe149acec2ada09316af8436621ea26e9a26c8277b40943",
+    "Member": "maps/ui/team_reveal_hero/priest_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "2efea2a481fde3157cdf0fedf1ac2f19be42cdbf166094d0e19d7c918e511605",
+    "Entities": 13
+  },
+  {
+    "Map": "prof_dynamo_team_reveal.vpk",
+    "MapSha256": "5198cc8304075c4f62707c67a3b6fd8ebbfba380193c8378480469a4ae8a2791",
+    "Member": "maps/ui/team_reveal_hero/prof_dynamo_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "d8ecba05ad8c81face330fec9d04b566791f7a36108c0809f48d488bde70354d",
+    "Entities": 9
+  },
+  {
+    "Map": "punkgoat_team_reveal.vpk",
+    "MapSha256": "e591eaaf760e2ec7f2eab1749f7615cb3d17877249a50f152d1da2deb0767f12",
+    "Member": "maps/ui/team_reveal_hero/punkgoat_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "41cabfe69c19b00590182bdfdccecef541bcb52aa38b9ab74dd15b1a2fe12529",
+    "Entities": 8
+  },
+  {
+    "Map": "shiv_team_reveal.vpk",
+    "MapSha256": "17a48819ff282b65ae03d63afd7ea972b2087e0cf5771ed7068ea45316da7c23",
+    "Member": "maps/ui/team_reveal_hero/shiv_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "5807c6999279b095d5d9bace18a34847adc301294c217d765aa7d95dd55a3c22",
+    "Entities": 7
+  },
+  {
+    "Map": "sinclair_team_reveal.vpk",
+    "MapSha256": "ea66ed79d561273f6a304c663851bdda54ab72163e85ba8040ba530ddd324dce",
+    "Member": "maps/ui/team_reveal_hero/sinclair_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "34101a2858b23f6bc6b9697f08af416ef4a0c33c5c46ca58f9822557be9fea02",
+    "Entities": 7
+  },
+  {
+    "Map": "tengu_team_reveal.vpk",
+    "MapSha256": "fd23d460b09d39a2e69b3619b195c3e42b29b738768689e98577abfaf8862f8d",
+    "Member": "maps/ui/team_reveal_hero/tengu_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "bea5b60f77cc0105cde24038099c5646f0ca882734fb0d4323e8704d59c0e543",
+    "Entities": 8
+  },
+  {
+    "Map": "thumper_team_reveal.vpk",
+    "MapSha256": "74b633d87c038d24502d3568cf31028935f6a1048e315f44d42a003bad6cdfb1",
+    "Member": "maps/ui/team_reveal_hero/thumper_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "c52a4147b2ea0b53df582df848eb36843f3a6c9706f521b81d71b05ae26dabef",
+    "Entities": 9
+  },
+  {
+    "Map": "unicorn_team_reveal.vpk",
+    "MapSha256": "c9efec4f898aa594577e0e6f1e4e4202a2fea1dee214edb523580c21c0ac3224",
+    "Member": "maps/ui/team_reveal_hero/unicorn_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "e59f371f58a1dd51fa44569ce10ea48416e4260562f6130ec61980dfcc5c68d0",
+    "Entities": 8
+  },
+  {
+    "Map": "vampirebat_team_reveal.vpk",
+    "MapSha256": "7e1dd7c09908497c9aa0ed7f69b233366065c64bf99ab7ba502d730992c36fdf",
+    "Member": "maps/ui/team_reveal_hero/vampirebat_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "81c5a1e146763a8468c05c73bfec827c2b2c6be52d3d551bd0b8db89520663de",
+    "Entities": 8
+  },
+  {
+    "Map": "viper_team_reveal.vpk",
+    "MapSha256": "ade9ccedb5c607ab488d15545390e6f8f3628da702e49e1edfbde22016c5ffd6",
+    "Member": "maps/ui/team_reveal_hero/viper_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "758529d6d541d80f0955b6fa440441e4c7f8dec5f2d0f6e2c6ef93bf998507aa",
+    "Entities": 8
+  },
+  {
+    "Map": "viscous_team_reveal.vpk",
+    "MapSha256": "e2aacbc9a68e3275a867ed475d1effcda59e2e207e42956a1a8d2b6d6d4a6238",
+    "Member": "maps/ui/team_reveal_hero/viscous_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "b8410126c00a0271d590c0eca82bce2b1032a20fedef130583d4ddae24987348",
+    "Entities": 9
+  },
+  {
+    "Map": "warden_team_reveal.vpk",
+    "MapSha256": "fdbdce662bfd42c9972fc2e9465a8381813e8bb6b63d9c2a31ce77f419d08314",
+    "Member": "maps/ui/team_reveal_hero/warden_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "f990ffefdfed2d408fb6382680485b568e92e0c37307a62f92d72263fdd3d795",
+    "Entities": 7
+  },
+  {
+    "Map": "werewolf_team_reveal.vpk",
+    "MapSha256": "02b6066269e6be861c32424a6c9ca2e50b807f00f0cd0e45d41594b62b87b7f8",
+    "Member": "maps/ui/team_reveal_hero/werewolf_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "e0dcd1f006aaaa78db829b1d60268f45eaf65383545b7d49bb1964735d5a185b",
+    "Entities": 7
+  },
+  {
+    "Map": "wraith_team_reveal.vpk",
+    "MapSha256": "f20819e02a3b4c717daa5ed74f82bfb9c7b89986fc1c672498c06b068ff94a26",
+    "Member": "maps/ui/team_reveal_hero/wraith_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "3966d491ca54dbb01671477d128a165b1843556b28d8261542187c3aded94d83",
+    "Entities": 7
+  },
+  {
+    "Map": "wrecker_team_reveal.vpk",
+    "MapSha256": "3967309673b841e78aa2eedaeee294fdb07ef04a6b69e780fa59812b3e6e46b0",
+    "Member": "maps/ui/team_reveal_hero/wrecker_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "977f724e7c693103bbadb74bd6ecd7bbf84ad3ab4095bc8234ccd71a6fed76cb",
+    "Entities": 9
+  },
+  {
+    "Map": "yakuza_team_reveal.vpk",
+    "MapSha256": "0f0f719ef3d2c8f3e61e0f5350aed6350e236608cf3852d64d2162a60fa6bd4c",
+    "Member": "maps/ui/team_reveal_hero/yakuza_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "06d6d03d1f21ff00ffdc13332a2c7de0f74ef35cf3a8e7e3c29fdbf425d0d5ff",
+    "Entities": 9
+  },
+  {
+    "Map": "yamato_team_reveal.vpk",
+    "MapSha256": "000beb402795b8e72cfbceb43fb0f85d9593e56d77d200bec4625c5e65403461",
+    "Member": "maps/ui/team_reveal_hero/yamato_team_reveal/entities/default_ents.vents_c",
+    "Sha256": "10a54c43f7f2159d3ae5503cf15e157146a9faf0e77ba262328e1798068011bb",
+    "Entities": 7
+  }
+]

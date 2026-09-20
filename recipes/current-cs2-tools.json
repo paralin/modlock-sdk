@@ -38,12 +38,13 @@
           "game/bin/",
           "game/core/",
           "game/csgo/",
+          "game/csgo_core/",
           "content/core/"
         ]
       }
     ]
   },
-  "profile_sha256": "39d19f8dc89ae6bf722f0a41187e62ce268ad93200a80e4e149b3198def0886d",
+  "profile_sha256": "f16644ee9d837d8de9b574bb6db6eb80680cfe3dc9c2f6d9155d09e92054fb99",
   "sources": {
     "depot-2347770-2053759441494650084": {
       "app": "730",
@@ -92,8 +93,8 @@
       "manifest": "2145418671218218617",
       "manifest_text_sha256": "39e9ea9fcff4bddc230d6e815371fc1b806517d93315eea9b28d7434f8107fe3",
       "root": "../inputs/current-cs2-tools/2347779",
-      "files": 313,
-      "bytes": 450809119
+      "files": 315,
+      "bytes": 450818563
     }
   ],
   "files": [
@@ -16058,6 +16059,12 @@
       "sha256": "bc472060080baa0423605da7b05ac6ea7c1bf2f1115bbfa63e98499664d9aa30"
     },
     {
+      "source": "depot-2347779-2145418671218218617",
+      "from": "game/csgo_core/models_gamedata.fgd",
+      "to": "game/csgo_core/models_gamedata.fgd",
+      "sha256": "c0a792221f4fbfd9fe3f027033f242d1d630c6c430f49a50a720fe8e8a1bee12"
+    },
+    {
       "source": "depot-2347770-2053759441494650084",
       "from": "game/csgo_core/pak01_000.vpk",
       "to": "game/csgo_core/pak01_000.vpk",
@@ -16068,6 +16075,12 @@
       "from": "game/csgo_core/pak01_dir.vpk",
       "to": "game/csgo_core/pak01_dir.vpk",
       "sha256": "3e25833085fae8b518a709c458e5e3198c076524ad24fddd8771971bea511422"
+    },
+    {
+      "source": "depot-2347779-2145418671218218617",
+      "from": "game/csgo_core/readonly_tools_asset_info.bin",
+      "to": "game/csgo_core/readonly_tools_asset_info.bin",
+      "sha256": "b99434f4ce47441ad2e865ddf1f46a8c918d508a7b37632fd02bc442b8ae93a0"
     },
     {
       "source": "depot-2347771-5806169188224907599",

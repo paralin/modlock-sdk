@@ -43,32 +43,36 @@ the current member payload has been downloaded. The last group may include
 renamed files, other Valve sources, obsolete files, and community additions;
 it is not a finding that all 874 files are custom or unnecessary.
 
-## Integration work that remains necessary
+## Current reconstruction and remaining acceptance
 
-1. **Deadlock runtime and content.** Current `deadlock.exe`, Citadel
-   `client.dll`/`server.dll`, game configuration, and shaders are listed in
-   Valve's manifests. Obtain or mount the appropriate current game files for
-   Deadlock previews and playtests. The assembled CS2 baseline alone does not
-   supply a working Deadlock runtime.
-2. **Hammer entity definitions.** The archive's `game/citadel/citadel.fgd`
-   includes Valve base/light definitions and adds Citadel-specific entities.
-   No file at that path appears in the checked current manifests or indexes.
-   Its README credits community authors using CS2 definitions and extracted
-   game entities. Rebuild and validate this definition layer for Deadlock map
-   authoring; the exact historical file is not the requirement.
-3. **ModelDoc metadata.** `game/citadel/models_gamedata.fgd` defines Citadel
-   animation events and model metadata, including tagged sounds and camera
-   settings. No corresponding path was found in the checked current sources.
-   Reconstruct the definitions needed by the model-authoring workflow.
-4. **Game mounts and tool configuration.** Author the addon search paths,
-   tool/game selection, and launch commands against the selected builds. The
-   archive's `gameinfo.gi` mounts its Lua-unlocker addon and enables custom
-   tool settings; copying that configuration is not a verified integration.
-5. **Runtime acceptance.** Run the current compiler on Windows, load its
-   outputs in Deadlock, and exercise Hammer/ModelDoc/S2FM separately. The
-   archive README claims different binary profiles trade off Animgraph1
-   compilation, projected-particle previews, server previews, and standalone
-   map compilation. Those claims have not been validated in the new toolchain.
+1. **Deadlock runtime and content: assembled and verified.** The pinned
+   profile now supplies 3,862 files, including current game DLLs, shaders and
+   VPKs. Keep its engine separate from the tools engine.
+2. **Hammer definitions: inferred from current maps.** The source-built
+   exporter reads 185 Valve map VPKs and 201 entity lumps. The merger adds 89
+   observed classes beyond Valve's core FGDs. Defaults, choices, unobserved
+   classes and input signatures remain unknown; map editing and compilation
+   must establish usefulness for the intended workflow.
+3. **ModelDoc metadata: generic baseline only.** Valve's model and breakable
+   definitions are included. Citadel animation events and game-specific model
+   properties still need a source-backed schema and a real authoring check.
+4. **Game mounts and tool configuration: authored and compiler-tested.**
+   `tool_project.py` copies 461 verified Citadel VPKs into a separate content
+   mount while retaining coherent CS2 core and binaries. A source-built
+   launcher selects the Citadel content project through `Source2Main`.
+5. **Runtime acceptance: partly established.** The CS2 and Dota baseline
+   compilers, plus the Citadel content project, compile Panorama twice through
+   Proton. See [runtime findings](runtime/README.md) for native Windows results.
+   Native Windows compiles the model fixture twice and opens it in ModelDoc.
+   Loading assets in Deadlock, editing/compiling a Hammer map, authoring an
+   animated model, and rendering an S2FM scene remain separate checks.
+
+The historical archive's four binary profiles have not been reproduced as
+interchangeable current configurations. Mixing current CS2 compiler resources
+with the untouched Deadlock game context fails localization validation; adding
+missing CS2 tool DLLs beside Deadlock's own compiler crashed under Proton.
+Neither failure justifies replacing or patching Valve DLLs until the supported
+content-authoring path has been tested.
 
 ## Optional or feature-specific additions
 

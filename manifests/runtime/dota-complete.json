@@ -1,0 +1,40 @@
+{
+  "status": "passed: repeated Panorama compilation",
+  "runtime": "Valve Proton Wine with WineD3D",
+  "compiler_sha256": "d5e3f874f209af6e8f038aab5da07480fb8fdcff9cb65416dd3782a7c7edbf93",
+  "compiler_dll_sha256": "eb1689525c46f15b0ee4ef70893a4f3501fbd2eec5ef3fe419ae8e8d91dfc135",
+  "gameinfo_sha256": "1fa387b7d02e56bb83f8daab572dae2d5511b173f99f1360ee3068fa789efb25",
+  "mod": "dota",
+  "addon": "modlock_acceptance",
+  "runs": [
+    {
+      "exit_code": 0,
+      "log": "dota-complete.run1.log",
+      "artifacts": {
+        "layout/probe.vxml_c": {
+          "bytes": 1348,
+          "sha256": "74805449477b20424f7b448e30bef759f6ccbd895a36b3cfa4a5281150e012e1"
+        },
+        "scripts/probe.vjs_c": {
+          "bytes": 905,
+          "sha256": "eb2560365722a4661d60c7cdcc17103e3a89cc6372319b303855b257d712f080"
+        }
+      }
+    },
+    {
+      "exit_code": 0,
+      "log": "dota-complete.run2.log",
+      "artifacts": {
+        "layout/probe.vxml_c": {
+          "bytes": 1348,
+          "sha256": "74805449477b20424f7b448e30bef759f6ccbd895a36b3cfa4a5281150e012e1"
+        },
+        "scripts/probe.vjs_c": {
+          "bytes": 905,
+          "sha256": "eb2560365722a4661d60c7cdcc17103e3a89cc6372319b303855b257d712f080"
+        }
+      }
+    }
+  ],
+  "proton_version": "1788504981 proton-11.0-2c-x86_64"
+}

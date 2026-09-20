@@ -1,0 +1,40 @@
+{
+  "status": "passed: repeated Panorama compilation",
+  "runtime": "Valve Proton Wine with WineD3D",
+  "compiler_sha256": "baeea07befadcad5ab32b2f2fc3f48c1ea422076386b51a4ff42c10f84635e91",
+  "compiler_dll_sha256": "f084328cb14b44ce26484d1b38c0be8cf8402350f8e8837465293216bb36703a",
+  "gameinfo_sha256": "b1391e73dbec2e078bdbaf7279c2b955084cf2b38a47e3d8181662e7948679b8",
+  "mod": "csgo",
+  "addon": "modlock_acceptance",
+  "runs": [
+    {
+      "exit_code": 0,
+      "log": "cs2-complete.run1.log",
+      "artifacts": {
+        "layout/probe.vxml_c": {
+          "bytes": 1348,
+          "sha256": "132651f576763dbea4f079b350be49a23e17ececa71fe91b18c0bd40f145776d"
+        },
+        "scripts/probe.vjs_c": {
+          "bytes": 905,
+          "sha256": "8e93d62b1c7fed22f4f5ef0ffbc8d1a598641854b626a9ea27ac9b80441592fc"
+        }
+      }
+    },
+    {
+      "exit_code": 0,
+      "log": "cs2-complete.run2.log",
+      "artifacts": {
+        "layout/probe.vxml_c": {
+          "bytes": 1348,
+          "sha256": "132651f576763dbea4f079b350be49a23e17ececa71fe91b18c0bd40f145776d"
+        },
+        "scripts/probe.vjs_c": {
+          "bytes": 905,
+          "sha256": "8e93d62b1c7fed22f4f5ef0ffbc8d1a598641854b626a9ea27ac9b80441592fc"
+        }
+      }
+    }
+  ],
+  "proton_version": "1788504981 proton-11.0-2c-x86_64"
+}

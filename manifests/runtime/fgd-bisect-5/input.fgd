@@ -1,0 +1,22 @@
+@include "base.fgd"
+@include "lights.fgd"
+@include "lights2.fgd"
+@include "markup_volumes.fgd"
+@include "postprocessing.fgd"
+@include "ai_defaultnpc.fgd"
+
+@PointClass base(Targetname) = destroyable_building : "Observed map entity"
+[
+    backdoorprotectiontrigger(string) : "Observed field"
+    building_health(string) : "Observed field"
+    disableshadows(string) : "Observed field"
+    final(boolean) : "Observed field"
+    lanenum(string) : "Observed field"
+    model(string) : "Observed field"
+    skin(string) : "Observed field"
+    teamnumber(string) : "Observed field"
+    trooperapproach(string) : "Observed field"
+    output OnAttackSubsided(void) : "Observed output"
+    output OnDestroyed(void) : "Observed output"
+    output OnUnderAttack(void) : "Observed output"
+]

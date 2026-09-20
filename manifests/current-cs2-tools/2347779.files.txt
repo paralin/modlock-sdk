@@ -311,3 +311,5 @@ game/csgo/tools/met/met_tooltips.kv3
 game/csgo/tools/modeldoc_editor_presets.txt
 game/csgo/tools/model_archetypes.txt
 game/csgo/tools/workshop_addoninfo.fgd
+game/csgo_core/models_gamedata.fgd
+game/csgo_core/readonly_tools_asset_info.bin

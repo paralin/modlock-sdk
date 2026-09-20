@@ -1,0 +1,42 @@
+{
+  "status": "passed: repeated model compilation",
+  "runtime": "Windows",
+  "compiler_sha256": "baeea07befadcad5ab32b2f2fc3f48c1ea422076386b51a4ff42c10f84635e91",
+  "compiler_dll_sha256": "f084328cb14b44ce26484d1b38c0be8cf8402350f8e8837465293216bb36703a",
+  "gameinfo_sha256": "aa7a8c361b84b147c9732c089ace01371434600aad7b434c251fa852ab201429",
+  "mod": "citadel",
+  "addon": "modlock_accepted_model",
+  "kind": "model",
+  "sources": {
+    "probe.vmdl": {
+      "bytes": 386,
+      "sha256": "3d13de7b463fac2f8cdfd7d86dea589ae3b6366792f227f85c02bb710a81047e"
+    },
+    "probe.obj": {
+      "bytes": 210,
+      "sha256": "0f4a9f3f20fdc5bfc32f516f50fe560266c478c20cfe91ff7a491ff3b1f815aa"
+    }
+  },
+  "runs": [
+    {
+      "exit_code": 0,
+      "log": "windows-accepted-model.run1.log",
+      "artifacts": {
+        "probe.vmdl_c": {
+          "bytes": 4605,
+          "sha256": "b54cf911f36717e6b914c5f29fbd438f4ff9bc043875538c9c0ac5625e003f52"
+        }
+      }
+    },
+    {
+      "exit_code": 0,
+      "log": "windows-accepted-model.run2.log",
+      "artifacts": {
+        "probe.vmdl_c": {
+          "bytes": 4605,
+          "sha256": "b54cf911f36717e6b914c5f29fbd438f4ff9bc043875538c9c0ac5625e003f52"
+        }
+      }
+    }
+  ]
+}

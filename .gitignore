@@ -5,3 +5,5 @@ extracted/
 account.config
 account.config.*
 __pycache__/
+**/bin/
+**/obj/
