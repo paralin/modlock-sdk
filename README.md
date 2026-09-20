@@ -52,6 +52,10 @@ directory and extension. `reference/csdk12.json`
 contains hashes and paths, not the community binaries. The original archive's
 SHA-256 is `b5e2bfa958fcceb7bc2e6f0e9723edc914dcb9dcbfdd9717bca42dde482e93af`.
 
+See [the remaining-file assessment](manifests/unmatched-summary.md) for the
+complete unmatched-path list, current-source candidates, and which capabilities
+still need integration or replacement.
+
 ## Build the downloader
 
 Build the existing DepotDownloader checkout, or obtain its source from
