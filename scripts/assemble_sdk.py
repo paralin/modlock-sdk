@@ -40,7 +40,7 @@ def assemble(recipe_path: Path, destination: Path) -> None:
 
     # Build in a sibling directory so failed copies never publish a partial SDK.
     with tempfile.TemporaryDirectory(prefix=".sdk-assembly-", dir=destination.parent) as temporary:
-        stage = Path(temporary) / "sdk"
+        stage = Path(temporary).resolve() / "sdk"
         stage.mkdir()
         selected = set()
         for entry in recipe["files"]:

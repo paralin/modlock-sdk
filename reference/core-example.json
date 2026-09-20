@@ -1,0 +1,14 @@
+[
+  {
+    "path": "game/core/materials/dev/atrous_filter.vmat_c",
+    "bytes": 1359,
+    "sha1": "aabc56176c2acf45a6d41637a5a84673a4abe8d5",
+    "sha256": "0d389407095e99ed298fe99460438302a910460fc59458ecf53bcb70f1125f92"
+  },
+  {
+    "path": "game/core/materials/dev/atrous_pack_depthnormal.vmat_c",
+    "bytes": 1375,
+    "sha1": "8f6ae70492a80994b2dd8c1187a5a300c4749cc8",
+    "sha256": "6f8bc044bf8c947d4fe9965f2da829549fe0cd1cd96a2d583b1793ddbf4327fa"
+  }
+]

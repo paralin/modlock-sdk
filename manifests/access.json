@@ -1,0 +1,19 @@
+{
+  "anonymous_requests": [
+    {
+      "app": "1422450",
+      "result": "app unavailable to anonymous session"
+    },
+    {
+      "app": "730",
+      "depot": "2347779",
+      "result": "depot unavailable to anonymous session"
+    },
+    {
+      "app": "570",
+      "depot": "381450",
+      "result": "depot unavailable to anonymous session"
+    }
+  ],
+  "required_next_input": "Manifests from an entitled account; authenticate interactively in Terminal."
+}

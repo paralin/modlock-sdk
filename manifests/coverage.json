@@ -1,0 +1,43 @@
+{
+  "reference_files": 10864,
+  "verified_paths": 2548,
+  "remaining_paths": 8316,
+  "reference_bytes": 5929663288,
+  "verified_output_bytes": 702976063,
+  "remaining_by_directory": {
+    "game/citadel/materials": 2635,
+    "game/citadel/models": 1202,
+    "game/core/materials": 923,
+    "game/citadel/panorama": 813,
+    "game/core/tools": 431,
+    "game/citadel/resource": 246,
+    "game/citadel/particles": 177,
+    "game/citadel/scripts": 174,
+    "game/citadel/soundevents": 148,
+    "game/bin/win64": 114,
+    "game/bin_tools/win64": 114,
+    "game/bin_cs2/win64": 110,
+    "game/bin_server/win64": 110,
+    "content/citadel/materials": 104,
+    "game/citadel/smart_props": 101
+  },
+  "remaining_by_extension": {
+    ".vtex_c": 2489,
+    ".vmat_c": 1280,
+    ".vxml_c": 805,
+    ".vcss_c": 744,
+    ".png": 464,
+    ".txt": 454,
+    ".dll": 366,
+    ".vnmclip_c": 247,
+    ".vpcf_c": 233,
+    ".vsndevts_c": 153,
+    ".vmdl_c": 107,
+    ".tga": 106,
+    ".vsmart_c": 103,
+    ".vrr_c": 96,
+    ".vdata_c": 73
+  },
+  "compiler_verified": false,
+  "runtime_acceptance": "not run; Windows x64 required"
+}

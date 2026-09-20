@@ -1,0 +1,2 @@
+# Receipts hash the downloader's text byte-for-byte, including line-end spaces.
+manifests/manifest_*.txt whitespace=-blank-at-eol
