@@ -13,11 +13,13 @@ the checked-in, reproducible entity supplement described below.
 Build the launcher from `tools/sdk_launcher.c` using Zig 0.16.0:
 
 ```sh
-mkdir -p output/authored
-zig cc -target x86_64-windows-gnu -O2 -Wall -Wextra -Werror \
-  -Wl,--subsystem,windows tools/sdk_launcher.c \
-  -o output/authored/sdk-launcher.exe
+python3 scripts/build_launcher.py --zig /path/to/zig
 ```
+
+The build strips debug records: otherwise the PDB identifier embeds differences
+between build hosts in the executable. Zig 0.16.0 builds on macOS and Linux
+produce the same stripped launcher SHA-256:
+`04b79688dc315ac893134434ee7ce6d7b8c04613df657b07aec3928c3829e92c`.
 
 Use Python 3.14.0 for the release packager. From a clean checkout at the release
 tag, run the following, substituting your assembled input locations:
@@ -61,6 +63,53 @@ and `panorama` with distinct fresh addon/report names. Preserve the resulting
 hashes and logs. This tests the distributed files, not just the source assembly.
 Tag the accepted source revision `0.0.1`; retain its archive checksums alongside
 the release. The binaries themselves do not belong in Git.
+
+### Reuse a local Steam installation
+
+The packager accepts ordinary Steam game directories as inputs and verifies
+every selected file against the pinned recipe. It never changes those inputs.
+If CS2 Workshop Tools is absent, download depot `2347779`, manifest
+`2145418671218218617`, from app `730` with an entitled account:
+
+```sh
+python3 scripts/current_toolchain.py select profiles/current-cs2-tools.json \
+  --manifests manifests --output output/cs2-selection
+dotnet /path/to/DepotDownloader.dll -qr -remember-password \
+  -app 730 -depot 2347779 -manifest 2145418671218218617 -os windows -osarch 64 \
+  -filelist output/cs2-selection/2347779.files.txt -validate \
+  -dir inputs/current-cs2-tools/2347779
+```
+
+Scan the QR code with Steam Mobile. Keep credentials out of scripts. Resolve
+the tools recipe against both the installed game and the downloaded depot,
+then assemble an independent tools directory. For example, from WSL:
+
+```sh
+python3 scripts/installed_toolchain.py recipes/current-cs2-tools.json \
+  --source '/mnt/c/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive' \
+  --source inputs/current-cs2-tools/2347779 \
+  --output output/installed-cs2-recipe.json
+python3 scripts/assemble_sdk.py output/installed-cs2-recipe.json output/current-cs2-tools
+python3 scripts/build_launcher.py --zig /path/to/zig
+python3 scripts/release_bundle.py --tools output/current-cs2-tools \
+  --runtime '/mnt/c/Program Files (x86)/Steam/steamapps/common/Deadlock' \
+  --launcher output/authored/sdk-launcher.exe --revision "$(git rev-parse HEAD)" \
+  --output output/release/0.0.1
+```
+
+`installed_toolchain.py` tries each supplied root and accepts only the expected
+SHA-256. A same-named file from another depot version cannot silently replace
+the required file. If it lists missing or changed files, obtain their pinned
+depots using the profile, then add those download roots with `--source`.
+The installed Deadlock VPKs must also match the pinned recipe; changed game
+configuration files do not affect the asset-only package selection.
+
+Run `Install.ps1` from Windows PowerShell with the release folder reachable on
+disk or through WSL's `\\wsl.localhost\<distribution>\` share. Choose a fresh
+destination such as `C:\Users\<user>\modlock-sdk`. This reconstructs and installs
+the toolkit on the recipient's machine without transferring another person's
+SDK binaries. Compare the resulting archive and member hashes with the release
+manifest; Python/zlib versions are recorded for diagnosing compression changes.
 
 Reconstruct a toolkit using Valve downloads and explicit, hash-checked file
 recipes. Requires Python 3.11+, .NET, and a source build of DepotDownloader.
@@ -423,9 +472,8 @@ Deadlock gameplay preview.
 Build the Citadel project launcher from source using Zig 0.16.0:
 
 ```sh
-zig cc -target x86_64-windows-gnu -O2 -Wall -Wextra -Werror \
-  -Wl,--subsystem,windows tools/sdk_launcher.c \
-  -o output/current-cs2-tools/game/bin/win64/sdk-launcher.exe
+python3 scripts/build_launcher.py --zig /path/to/zig \
+  --output output/current-cs2-tools/game/bin/win64/sdk-launcher.exe
 ```
 
 The launcher selects `citadel` through the adjacent engine's exported

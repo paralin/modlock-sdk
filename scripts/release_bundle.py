@@ -152,9 +152,9 @@ def build(root: Path, tools: Path, runtime: Path, launcher: Path,
         for name, source in (("README.md", root / "README.md"),
                              ("Install.ps1", root / "bundle/Install.ps1")):
             shutil.copyfile(source, stage / name)
-        (stage / "release.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+        (stage / "release.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
         sums = [f"{digest(path)}  {path.name}" for path in sorted(stage.iterdir())]
-        (stage / "SHA256SUMS").write_text("\n".join(sums) + "\n", encoding="utf-8")
+        (stage / "SHA256SUMS").write_text("\n".join(sums) + "\n", encoding="utf-8", newline="\n")
         if output.exists():
             raise ValueError(f"Release destination appeared during build: {output}")
         stage.rename(output)
