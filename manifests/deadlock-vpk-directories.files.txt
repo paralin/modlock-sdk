@@ -1,0 +1,2 @@
+game/citadel/pak01_dir.vpk
+game/core/pak01_dir.vpk

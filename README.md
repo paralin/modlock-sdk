@@ -6,27 +6,48 @@ The Python scripts use only the standard library.
 
 ## Current result
 
-The combined verified subset reproduces **2,548 of 10,864 reference paths**,
-occupying 702,976,063 bytes, from Valve downloads. All sources use CS2 app `730`.
+The primary target is a **current, pinned Valve toolchain**. The assembled
+baseline at `output/current-cs2-tools/` contains **2,671 verified files**,
+occupying 2,512,735,413 bytes, including Resource Compiler, Resource Info, and
+Hammer. `profiles/current-cs2-tools.json` selects CS2's Windows runtime, tools,
+core content, and shaders from the public build's three pinned depots. It
+preserves Valve's directory layout and requires no community archive.
 
-| Input | Depot | Manifest | Matching output paths |
-| --- | --- | --- | ---: |
-| Windows libraries: 43 files | 2347771 | 5806169188224907599 | 166 |
-| Loose content: 2,120 files | 2347770 | 2053759441494650084 | 2,150 |
-| Core VPK: 7 package files, 1,549 members | 2347770 | 2053759441494650084 | 232 |
+The files have passed download and assembly verification. Windows compiler,
+editor, and Deadlock compatibility checks are still pending. This baseline
+does not establish that CS2-compiled assets load in Deadlock or that its editor
+DLLs can run inside the Deadlock engine. Keep the two engine builds separate
+until those checks establish the required integration.
+
+Historical byte matching remains useful provenance research. The combined
+verified subset reproduces **8,064 of 10,864 reference paths** (74.2%),
+occupying 3,200,566,549 bytes, from Valve downloads.
+
+| Input | App | Depot | Manifest | Matching output paths |
+| --- | --- | --- | --- | ---: |
+| Windows libraries: 43 files | 730 | 2347771 | 5806169188224907599 | 166 |
+| Loose content: 2,120 files | 730 | 2347770 | 2053759441494650084 | 2,150 |
+| Core VPK: 7 package files, 1,549 members | 730 | 2347770 | 2053759441494650084 | 232 |
+| Workshop Tools: 125 files | 730 | 2347779 | 2145418671218218617 | 239 |
+| Common files: 26 files | 1422450 | 1422451 | 886051970741897775 | 26 |
+| Windows libraries: 42 files | 1422450 | 1422452 | 1334199870863440742 | 167 |
+| Loose content: 2,717 files | 1422450 | 1422456 | 9192361732058507254 | 2,722 |
+| Citadel VPK: 172 packages, 3,123 candidate members | 1422450 | 1422456 | 9192361732058507254 | 3,573 |
+| Core VPK: 7 packages, 1,324 candidate members | 1422450 | 1422456 | 9192361732058507254 | 1,323 |
 
 These are byte-identical available sources, not proof of which depot the
 community assembler originally used. Empty files and common libraries can
 have many indistinguishable sources. Alternate matches remain in the plans.
 
-This is a dependency subset, **not a runnable SDK**. It contains shared runtime
-libraries, Qt plugins, and signatures. Resource Compiler, Hammer, the Citadel
-runtime, authored configuration, and community additions remain unresolved.
+The counts overlap. This historical subset is **not a runnable SDK**. Exact
+historical compiler/editor/runtime binaries, modified configuration, and
+community additions remain unresolved. The current toolchain above provides
+an independent path forward without locating every historical manifest.
 No community executable has been run or used as an assembly input.
 
 The combined recipe is `recipes/valve-verified-subset.json` and the local
-assembly is `output/valve-verified-subset/`. Individual plans and recipes retain
-each source. `manifests/coverage.json` counts the remaining 8,316 paths by
+assembly is `output/valve-verified-subset-expanded/`. Individual plans and
+recipes retain each source. `manifests/coverage.json` counts the remaining 2,800 paths by
 directory and extension. `reference/csdk12.json`
 contains hashes and paths, not the community binaries. The original archive's
 SHA-256 is `b5e2bfa958fcceb7bc2e6f0e9723edc914dcb9dcbfdd9717bca42dde482e93af`.
@@ -47,6 +68,50 @@ runtime roll-forward; .NET SDK 10.0.401 and runtime 10.0.12 built and ran it her
 Building from inside its checkout instead selects its `global.json`, which
 requires an installed .NET 9 SDK. The DLL and all adjacent build outputs form
 the runnable tool; do not copy only the DLL.
+
+## Reproduce the current toolchain
+
+Acquire the three manifests named in `profiles/current-cs2-tools.json` with
+DepotDownloader. Use an entitled account for Workshop Tools. Add
+`-remember-password` during interactive login to opt into a persistent session;
+later requests using the same downloader build path can reuse it. No password
+belongs in a command line. A successful `-manifest-only` request normally
+reports zero payload bytes downloaded.
+
+```sh
+python3 scripts/current_toolchain.py select profiles/current-cs2-tools.json \
+  --manifests manifests --output manifests/current-cs2-tools
+```
+
+For each profile depot, run the following shape with its pinned IDs:
+
+```sh
+dotnet /path/to/DepotDownloader.dll -username <account-name> -remember-password \
+  -app 730 -depot <depot> -manifest <manifest> -os windows -osarch 64 \
+  -filelist manifests/current-cs2-tools/<depot>.files.txt -validate \
+  -dir inputs/current-cs2-tools/<depot>
+```
+
+Then verify the downloads and assemble into a new directory:
+
+```sh
+python3 scripts/current_toolchain.py recipe profiles/current-cs2-tools.json \
+  --manifests manifests --inputs inputs/current-cs2-tools \
+  --output recipes/current-cs2-tools.json
+python3 scripts/assemble_sdk.py recipes/current-cs2-tools.json output/current-cs2-tools
+```
+
+The profile has literal inclusion prefixes, preserves native paths, and rejects
+different bytes at an overlapping output path. Verification checks every
+manifest size and SHA-1, then records SHA-256 for assembly. Valve sometimes uses
+an all-zero hash for an empty, chunkless file; the parser normalizes only that
+case to the known empty-file SHA-1. Downloads still must have zero bytes.
+
+To update, resolve all selected depots from the current public build, revise
+the pinned profile, and repeat verification in new input/output directories.
+On Windows, first run the Panorama probe with `game/csgo` and
+`content/csgo_addons/probe`, then test the compiled outputs against Deadlock.
+Do not treat old and current DLLs as interchangeable.
 
 ## Reproduce the library subset without the archive
 
@@ -139,8 +204,9 @@ assets; decompilation would produce different bytes.
 
 ## Continue provenance discovery
 
-Current CS2 Workshop Tools (`730` / `2347779`) and Deadlock (`1422450`)
-denied anonymous access. Use an entitled account interactively in Terminal:
+CS2 Workshop Tools (`730` / `2347779`) and Deadlock (`1422450`)
+denied anonymous access and succeeded through an entitled account. For a fresh
+interactive session in Terminal:
 
 ```sh
 dotnet /path/to/DepotDownloader.dll -username <account-name> \
@@ -168,9 +234,38 @@ binary. Files extracted from VPKs need the package hash and member path recorded
 separately. Community launchers and the Lua-unlocker DLL require buildable
 source or an authored replacement; they are not Valve payloads by assumption.
 
-After resolving the compiler and its dependency set, run the Panorama compile
-probe on Windows x64. Require `.vxml_c` and `.vjs_c` outputs, then test Hammer,
-ModelDoc, and S2FM separately. These runtime checks have not run on this Mac.
+Historical manifest discovery is optional provenance work. It no longer blocks
+building the current pinned toolchain.
+
+## Select large VPK downloads
+
+Download the pinned manifest and its `_dir.vpk` first. The selector verifies
+the directory against Valve's manifest before reading member metadata:
+
+```sh
+python3 scripts/vpk_match.py reference/csdk12.json \
+  manifests/manifest_1422456_9192361732058507254.txt --app 1422450 \
+  --depot-root inputs/deadlock-vpk --archive game/citadel/pak01_dir.vpk \
+  --extractor ../ValveResourceFormat/CLI/bin/Release/Source2Viewer-CLI.dll \
+  --select-packages manifests/deadlock-citadel-vpk.files.txt
+```
+
+Acquire that file list using the pinned authenticated downloader command, then
+replace `--select-packages` with `--matching-paths`, `--extracted` naming a new
+directory, and `--output` naming the recipe. Repeat for `game/core/pak01_dir.vpk`.
+Selection matches mounted paths and sizes; extraction verifies package hashes,
+then member SHA-256. It can miss renamed members. Full extraction without
+`--matching-paths` remains available for exhaustive content matching.
+
+The Citadel package staging occupied 18,417,573,193 bytes. Its numbered packages
+were removed after verified extraction to recover disk space; the extracted
+members, directory, pinned download list, and per-package hashes remain. Re-run
+the same download before repeating extraction. Assembling its recipe needs
+only the retained member tree.
+
+Run the current compiler's Panorama probe on Windows x64. Require `.vxml_c`
+and `.vjs_c` outputs, then test Hammer, ModelDoc, and S2FM separately. These
+runtime checks have not run on this Mac.
 
 ## Inventory the reference
 
@@ -204,7 +299,9 @@ It does not resolve a compiler's dependency set or prove that the result runs.
 
 `tests/test_depot_match.py` exercises renamed outputs through the real assembler,
 truncated manifests, traversal, changed downloads, and SHA-1 matches whose
-SHA-256 differs. Run with a test deadline:
+SHA-256 differs. The current-toolchain tests cover archive-independent assembly,
+empty files, and conflicting depot versions. VPK tests cover preloaded bytes
+and truncated directory output. Run with a test deadline:
 
 ```sh
 uv run python -c 'import subprocess,sys; subprocess.run([sys.executable,"-m","unittest","discover","-s","tests","-v"],check=True,timeout=60)'

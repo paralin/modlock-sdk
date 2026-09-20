@@ -48,7 +48,7 @@ class DownloadPlan(TypedDict):
 
 @dataclass(frozen=True)
 class ManifestFile:
-    """One regular depot file with its Steam content hash."""
+    """One regular depot file with its content hash, normalizing empty-file hashes."""
 
     path: str
     size: int
@@ -96,7 +96,12 @@ def read_manifest(path: Path) -> Manifest:
             continue
         if not row[3]:
             raise ValueError(f"Missing regular-file SHA-1: {name}")
-        files.append(ManifestFile(name, int(row[1]), row[3]))
+        # Valve can encode an empty, chunkless file with an all-zero hash.
+        size = int(row[1])
+        digest = row[3]
+        if size == 0 and int(row[2]) == 0 and digest == "0" * 40:
+            digest = hashlib.sha1(b"").hexdigest()
+        files.append(ManifestFile(name, size, digest))
     if rows != int(count[1]):
         raise ValueError(f"Manifest declares {count[1]} rows but contains {rows}")
     return Manifest(depot[1], manifest[1], tuple(files))

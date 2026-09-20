@@ -15,5 +15,21 @@
       "result": "depot unavailable to anonymous session"
     }
   ],
-  "required_next_input": "Manifests from an entitled account; authenticate interactively in Terminal."
+  "authenticated_requests": [
+    {
+      "app": "730",
+      "depot": "2347779",
+      "result": "manifest and selected payloads verified"
+    },
+    {
+      "app": "1422450",
+      "depots": [
+        "1422451",
+        "1422452",
+        "1422456"
+      ],
+      "result": "manifests, selected loose payloads, and selected VPK payloads verified"
+    }
+  ],
+  "remaining_acceptance": "Current compiler/editor and Deadlock compatibility checks require Windows x64."
 }
