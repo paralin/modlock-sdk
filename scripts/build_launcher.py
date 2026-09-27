@@ -7,23 +7,33 @@ from pathlib import Path
 
 from compiler_probe import digest
 
+ROOT = Path(__file__).resolve().parents[1]
+ZIG_VERSION = "0.16.0"
+
+
+def build(zig: str, output: Path) -> str:
+    """Compile without host-dependent PDB identifiers and return the output SHA-256."""
+    version = subprocess.check_output([zig, "version"], text=True, timeout=10).strip()
+    if version != ZIG_VERSION:
+        raise ValueError(f"Reproducible launcher builds require Zig {ZIG_VERSION}; found {version}")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run([zig, "cc", "-target", "x86_64-windows-gnu", "-O2", "-s",
+                    "-Wall", "-Wextra", "-Werror", "-Wl,--subsystem,windows",
+                    str(ROOT / "tools/sdk_launcher.c"), "-o", str(output)],
+                   check=True, timeout=120)
+    return digest(output)
+
 
 def main() -> int:
-    """Compile without host-dependent PDB identifiers and print the output hash."""
-    root = Path(__file__).resolve().parents[1]
+    """Build the launcher and print its hash."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--zig", default="zig", help="Zig compiler executable")
-    parser.add_argument("--output", type=Path, default=root / "output/authored/sdk-launcher.exe")
+    parser.add_argument("--output", type=Path, default=ROOT / "output/authored/sdk-launcher.exe")
     args = parser.parse_args()
-    version = subprocess.check_output([args.zig, "version"], text=True, timeout=10).strip()
-    if version != "0.16.0":
-        parser.error(f"Reproducible release builds require Zig 0.16.0; found {version}")
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run([args.zig, "cc", "-target", "x86_64-windows-gnu", "-O2", "-s",
-                    "-Wall", "-Wextra", "-Werror", "-Wl,--subsystem,windows",
-                    str(root / "tools/sdk_launcher.c"), "-o", str(args.output)],
-                   check=True, timeout=120)
-    print(f"{digest(args.output)}  {args.output}")
+    try:
+        print(f"{build(args.zig, args.output)}  {args.output}")
+    except ValueError as error:
+        parser.error(str(error))
     return 0
 
 

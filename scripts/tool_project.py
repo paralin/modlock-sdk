@@ -49,6 +49,13 @@ GAMEINFO = '''"GameInfo"
 MODELS = '@include "models_base.fgd"\n@include "models_base_breakables.fgd"\n'
 
 
+def asset_path(path: str) -> str | None:
+    """Map a Deadlock asset package to its tools-tree path; other files map to None."""
+    if path.startswith(("game/citadel/pak01_", "game/citadel/maps/")) and path.endswith(".vpk"):
+        return "game/citadel_assets/" + path.removeprefix("game/citadel/")
+    return None
+
+
 def create(tools: Path, runtime: Path, recipe: Path, fgd: Path) -> dict:
     """Add fresh project directories; preserve tool binaries and existing projects.
 
@@ -69,9 +76,7 @@ def create(tools: Path, runtime: Path, recipe: Path, fgd: Path) -> dict:
         raise ValueError("Tools assembly is missing Valve's core ModelDoc definitions")
     fgd_bytes = fgd.read_bytes()
     original = json.loads(recipe.read_text(encoding="utf-8"))
-    selected = [entry for entry in original["files"]
-                if entry["to"].startswith(("game/citadel/pak01_", "game/citadel/maps/"))
-                and entry["to"].endswith(".vpk")]
+    selected = [entry for entry in original["files"] if asset_path(entry["to"])]
     if not any(entry["to"] == "game/citadel/pak01_dir.vpk" for entry in selected):
         raise ValueError("Runtime recipe has no Citadel VPK directory")
     created = []
@@ -81,8 +86,7 @@ def create(tools: Path, runtime: Path, recipe: Path, fgd: Path) -> dict:
             target.mkdir(parents=True)
             created.append(target)
         for entry in selected:
-            relative = entry["to"].removeprefix("game/citadel/")
-            target = contained_path(assets, relative)
+            target = contained_path(tools, asset_path(entry["to"]))
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(contained_path(runtime, entry["to"]), target)
             with target.open("rb") as stream:

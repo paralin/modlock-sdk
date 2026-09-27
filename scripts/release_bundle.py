@@ -17,10 +17,12 @@ from pathlib import Path
 
 from assemble_sdk import contained_path
 from compiler_probe import JS, MESH, MODEL, XML, digest
-from tool_project import GAMEINFO, MODELS
+from tool_project import GAMEINFO, MODELS, asset_path
 
 ROOT = Path(__file__).resolve().parents[1]
 PART_BYTES = 2 * 1024**3
+PROJECT_DIRS = ("content/citadel/", "content/citadel_assets/", "game/citadel/cfg/",
+                "game/citadel_addons/modlock_sample/", "game/citadel_community_addons/")
 
 
 def authored(root: Path, launcher: Path) -> dict[str, bytes | Path]:
@@ -105,10 +107,9 @@ def build(root: Path, tools: Path, runtime: Path, launcher: Path,
         for row in rows:
             name = row["to"]
             if profile == "current-deadlock":
-                if not (name.startswith(("game/citadel/pak01_", "game/citadel/maps/"))
-                        and name.endswith(".vpk")):
+                name = asset_path(name)
+                if name is None:
                     continue
-                name = name.replace("game/citadel/", "game/citadel_assets/", 1)
             contained_path(output, name)
             if name.casefold() in seen:
                 raise ValueError(f"Duplicate Windows destination: {name}")
@@ -125,8 +126,7 @@ def build(root: Path, tools: Path, runtime: Path, launcher: Path,
             raise ValueError(f"Authored file would replace a Valve file: {name}")
         seen.add(name.casefold())
         groups[0].append({"path": name, "input": source, "source": "authored"})
-    for name in ("content/citadel/", "content/citadel_assets/", "game/citadel/cfg/",
-                 "game/citadel_addons/modlock_sample/", "game/citadel_community_addons/"):
+    for name in PROJECT_DIRS:
         groups[0].append({"path": name, "input": b"", "source": "authored"})
 
     # Bound each asset archive by uncompressed bytes; never split a VPK member.

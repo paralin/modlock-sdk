@@ -17,6 +17,35 @@ lists every file in a release with its hash.
 > compilation pass on native Windows. Map playtests, Citadel-specific ModelDoc
 > events, and SFM renders are not yet validated.
 
+## Install
+
+On Windows, run this in PowerShell:
+
+```powershell
+irm https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.ps1 | iex
+```
+
+On Linux or macOS:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.sh | bash
+```
+
+The installer puts the toolkit in `C:\modlock-tools` on Windows and
+`~/modlock-tools` elsewhere; set `MODLOCK_TOOLS_DIR` to choose another
+directory. It installs [uv] if needed, uses the Counter-Strike 2 and Deadlock
+files already in your Steam libraries, and downloads the rest from Steam with
+[DepotDownloader]. Downloads need a Steam login: scan the QR code it prints with
+the Steam mobile app. Deadlock's asset packages are linked from your Deadlock
+installation when the system allows it, and copied otherwise (about 35 GB).
+
+Run the same command again to update after a game update. Your addons and edits
+to the sample addon are kept. Then open `Hammer.cmd`, `ModelDoc.cmd`, or
+`SFM.cmd` in the toolkit directory. [bundle/README.md](bundle/README.md)
+describes the editors and the sample addon.
+
+[uv]: https://docs.astral.sh/uv/
+
 ## Features
 
 - **Pinned toolchains.** Profiles in [`profiles/`](profiles) pin Valve app,
@@ -38,6 +67,7 @@ lists every file in a release with its hash.
 
 | Path | Contents |
 | --- | --- |
+| `install.sh`, `install.ps1` | One-line installers that run `scripts/install.py` |
 | `profiles/` | Pinned Valve app, depot, and manifest selections |
 | `recipes/` | Hash-checked file recipes for each assembled tree |
 | `manifests/` | Depot file lists, coverage, release manifests, and runtime probe results |
@@ -48,16 +78,13 @@ lists every file in a release with its hash.
 | `reference/` | Path and hash inventories used as matching references |
 | `tests/` | Unit tests for matching, assembly, and packaging |
 
-## Requirements
+## Building a release
 
-- Python 3.11 or newer; releases use Python 3.14.0.
-- .NET SDK and a source build of [DepotDownloader] to fetch Valve depots.
-- Zig 0.16.0 to build the launcher.
-- A Steam account entitled to the downloaded apps.
+A release needs Python 3.11 or newer (releases use 3.14.0), the .NET SDK with a
+source build of [DepotDownloader], Zig 0.16.0, and a Steam account entitled to
+the downloaded apps.
 
 [DepotDownloader]: https://github.com/SteamRE/DepotDownloader
-
-## Building a release
 
 Acquire and assemble the pinned toolchain and Deadlock runtime as described in
 [REPRODUCING.md](REPRODUCING.md), then build the launcher and package:
