@@ -1,8 +1,0 @@
-No display adapters found. Falling back to software rasterizer. (nAdapterCount=0, nAdapter=0)
-- citadel_addons\modlock_release_panorama\panorama\layout\probe.xml
-- citadel_addons\modlock_release_panorama\panorama\scripts\probe.js
-
------------------------------------------------------------------
- OK: 1 compiled, 0 failed, 0 skipped, 0m:00s
------------------------------------------------------------------
-Leaked KeyValues blocks: 59

@@ -1,9 +1,0 @@
-﻿09/20 10:28:15 [RenderSystem] EnumOutputs failed for adapter 0, output 0 (hr = 0x00000000), not adding adapter.
-09/20 10:28:15 [RenderSystem] EnumOutputs failed for adapter 1, output 0 (hr = 0x00000000), not adding adapter.
-09/20 10:28:15 [RenderSystem] No usable DX11 adapters found out of 2 available, this system may not support DX11.
-09/20 10:28:15 No display adapters found. Falling back to software rasterizer. (nAdapterCount=0, nAdapter=0)
-09/20 10:28:15 Failed to initialize video!
-09/20 10:28:15 Reset video config to desktop mode 1024x768!
-09/20 10:28:15 [RenderSystem] Failed to create DirectX 11 render device!
-Please check that your GPU supports at least DirectX 11 and Shader Model 5
-09/20 10:28:15 ResetBreakpadAppId: Universe is 0 (k_EUniverseInvalid)

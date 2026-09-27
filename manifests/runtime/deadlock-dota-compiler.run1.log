@@ -1,1 +1,0 @@
-FATAL ERROR: valve_english.txt: :p loc tokens are no longer supported, use a MessageFormat string instead (token 'Valve_TestPlurals:p')

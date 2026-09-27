@@ -1,8 +1,0 @@
-{
-    "runtime_recipe_sha256":  "562d86b0c936fa4ab393123c6ee771bc109dddcc27c8df30eb392a9e510320ff",
-    "entity_fgd_sha256":  "1faaae7460b983594b1ec06fcaff1adb2bee0001036d4f2eb42459332f2fbca3",
-    "asset_packages":  461,
-    "status":  "content project; editor and game acceptance pending",
-    "gameinfo_sha256":  "4e0e07c703ccbd972e5829bcd4131a9d52935128e12ea4cb192a43795a90c825",
-    "models_gamedata_sha256":  "7099a064ddfaefe5612375f4d9c0c9e1188d9983c4871be4ea6b412496916709"
-}

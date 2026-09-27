@@ -1,78 +1,70 @@
-# Modlock Tools 0.0.1
+# Modlock Tools
 
-A Windows authoring toolkit for exploring Deadlock assets with Hammer, ModelDoc,
-and Source Filmmaker. It combines a pinned Valve CS2 toolchain with verified
-Deadlock asset packages and a small source-built launcher. It does not contain
-the community SDK's executables or modify your Steam installation.
+A Windows toolkit for making Deadlock maps, models, and UI with Hammer,
+ModelDoc, and Source Filmmaker. It runs Valve's Counter-Strike 2 tools with
+Deadlock's asset packages mounted. It edits and compiles assets; it does not
+run Deadlock itself.
 
-**This is an early developer test release.** Native Windows editor startup,
-model compilation, and Panorama compilation pass. Complete map playtests,
-Citadel-specific ModelDoc events, and SFM renders still need validation.
-The tools use the CS2 engine to author assets; this bundle is not a Deadlock
-game client or server.
+**Early developer release.** Editor startup, model compilation, and Panorama
+compilation work on Windows. Map playtests, Deadlock-specific ModelDoc events,
+and SFM renders are not yet tested.
 
-## What to download
+## Requirements
 
-Keep these files together in one download folder:
+- Windows 10 or 11, x64, with a DirectX 11 GPU and current drivers.
+- A short ASCII path such as `C:\modlock-tools`, without `%`, `!`, or quotes.
+  Spaces work.
+- About 40 GB free if Deadlock's packages are copied. When the toolkit is on
+  the same drive as Deadlock, the installer links them instead and the toolkit
+  needs about 3 GB.
 
-| File | Purpose |
-| --- | --- |
-| `modlock-tools-0.0.1-windows-x64.zip` | Editors, compiler, launcher, project configuration, sample addon |
-| **Every** `modlock-assets-0.0.1-NNN.zip` | Numbered Deadlock asset parts; all parts listed in `release.json` are required |
-| `Install.ps1` and `release.json` | Installer and exact archive/file checksums |
-| `README.md` and `SHA256SUMS` | These instructions and download checksums |
+## Install and update
 
-The ZIPs are ordinary independent archives, not split-ZIP volumes. Do not
-concatenate them. The installer merges their contents into one SDK directory.
-Use the complete set from the same release.
-
-## Requirements and installation
-
-- Windows 10 or 11, x64, with a DirectX 11 capable GPU and current drivers.
-- A short local path such as `C:\modlock-tools\0.0.1`. Use ASCII characters;
-  avoid `%`, `!`, and quotes. Spaces work.
-- Allow **80 GB free** when keeping both downloads and the installed SDK.
-  The installed files occupy about 37 GB before your own content and caches.
-- PowerShell 5.1, included with Windows. Python, .NET SDK, and a compiler are
-  needed only to reproduce the bundle from source, not to install or use it.
-
-Open PowerShell in the download folder and run:
+Run this in PowerShell:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\Install.ps1 -Destination C:\modlock-tools\0.0.1
+irm https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.ps1 | iex
 ```
 
-The installer verifies every ZIP, extracts into a temporary directory, verifies
-every installed file, and publishes the completed directory. It refuses an
-existing destination so it cannot overwrite your projects. Installation and
-verification may take several minutes. Keep the console open until it reports
-success. You can remove the downloaded ZIPs afterward if you retain another copy.
+To update after a game update, run `Update.cmd` in the toolkit. Your addons and
+edits to the sample addon are kept.
 
-If a download is missing or damaged, replace the named archive and rerun. After
-an interrupted installation, remove only the abandoned `.modlock-install-*`
-directory created beside your chosen destination before retrying.
+### From a release download
+
+A release has one `modlock-tools-<version>-windows-x64.zip`, several numbered
+`modlock-assets-<version>-NNN.zip` parts, `Install.ps1`, `release.json`, this
+README, and `SHA256SUMS`. Download all of them into one folder. Each ZIP is a
+separate archive; the installer extracts them all into one directory. Then run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Install.ps1 -Destination C:\modlock-tools
+```
+
+The installer checks every ZIP and every extracted file against `release.json`
+before it moves the finished directory into place. It stops if the destination
+exists, so it never overwrites your work. If a ZIP is missing or damaged,
+download that one again and rerun. After an interrupted install, delete the
+`.modlock-install-*` folder next to the destination before retrying.
 
 ## Open the tools
 
-From the installed directory, double-click:
+Double-click one of these in the toolkit directory:
 
-- **`Hammer.cmd`** to open the map editor with the `modlock_sample` addon.
-- **`ModelDoc.cmd`** to open the editable sample cube, `models/probe.vmdl`.
-- **`SFM.cmd`** to open Source Filmmaker and create a session.
+- `Hammer.cmd` opens the map editor with the `modlock_sample` addon.
+- `ModelDoc.cmd` opens the sample cube, `models/probe.vmdl`.
+- `SFM.cmd` opens Source Filmmaker.
 
-Run them on an interactive Windows desktop. An SSH-only session cannot reliably
-create the DirectX device. Initial asset discovery can take time. A running
-Steam client is not required for the local editor checks; online gameplay
-requires the separately installed game and an entitled Steam account.
+Run them from a normal Windows desktop session; a remote SSH session cannot
+create the DirectX device. The first start takes a while as the tools index the
+assets. Steam does not need to be running.
 
-Edit source files under `content/citadel_addons/modlock_sample/`. Compiled
-resources belong under the matching `game/citadel_addons/modlock_sample/`.
-Keep both paths paired when creating another addon, then change `-addon` in a
-copy of a launcher. Mounted Valve packages live in `game/citadel_assets/`;
-keep your changes in your addon.
+Put addon sources under `content/citadel_addons/<addon>/`. Compiled files go
+under the matching `game/citadel_addons/<addon>/`. To work on another addon,
+copy a `.cmd` file and change its `-addon` option. Deadlock's packages are in
+`game/citadel_assets/`; leave them unchanged and keep your work in your addon.
 
-To force compilation of the included cube, open PowerShell in the installed
-directory and run:
+To compile the sample cube by hand, run this in PowerShell in the toolkit
+directory:
 
 ```powershell
 $sdk = (Get-Location).Path
@@ -81,38 +73,30 @@ Push-Location "$sdk\game\bin\win64"
 Pop-Location
 ```
 
-The expected output is
-`game/citadel_addons/modlock_sample/models/probe.vmdl_c`. The sample also
-includes `panorama/layout/probe.xml` and its JavaScript dependency; compile the
-XML with the same command by changing the input path.
+It writes `game/citadel_addons/modlock_sample/models/probe.vmdl_c`. The same
+command compiles the sample Panorama layout, `panorama/layout/probe.xml`.
 
-## Limits and useful test feedback
+## Known limits
 
-The entity definition file supplements Valve's base definitions with 89 classes
-observed in shipped maps. It is incomplete: observed properties do not establish
-all valid authoring options. Generic models compile; Deadlock-specific animation
-events still need schema work. Some assets and preview scenes may have missing
-materials or unsupported features under the tools engine. Compiled maps and
-assets must be tested separately in Deadlock; successful compilation does not
-prove game compatibility.
+Hammer's entity list adds 89 classes seen in Deadlock's shipped maps to
+Valve's base set. It includes only the properties those maps use. ModelDoc has
+generic model settings and lacks Deadlock's animation events. Some assets may
+show missing materials under the CS2 engine. A file that compiles here may
+still fail in Deadlock, so test it in the game.
 
-When reporting a problem, include the tool, action, asset path, visible error,
-and `game/citadel/console.log` from that run. Include the bundle version and
-`release.json`. For a compiler failure, save its console output too. For the
-first test, try opening each editor, compiling the cube, creating and saving a
-small map, and saving/reopening an SFM session.
-
-If Windows reports a missing Microsoft runtime DLL, install Microsoft's
+If Windows reports a missing Microsoft runtime DLL, install the
 [Visual C++ x64 Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist).
-Keep this SDK separate from an existing game installation. To uninstall, first
-save your addon sources and sessions elsewhere, then remove the SDK directory.
 
-## Reproduce from source
+## Reporting a problem
 
-The source repository's `0.0.1` tag includes pinned depot profiles, per-file
-SHA-256 recipes, metadata, launcher source, and packaging/verification scripts.
-See [REPRODUCING.md](REPRODUCING.md) in the source checkout for authenticated
-Valve acquisition, assembly, native acceptance checks, and release commands.
-Archive ordering, timestamps, permissions, compression, and member hashes are
-recorded or fixed. `release.json` identifies the source revision, Python/zlib
-versions, recipes, and every delivered file.
+Include the tool, what you did, the asset path, the error you saw, and
+`game/citadel/console.log` from that run. For a compiler error, include its
+console output.
+
+To uninstall, move your addon sources and SFM sessions elsewhere, then delete
+the toolkit directory.
+
+## Source
+
+The source is at <https://github.com/paralin/modlock-sdk>. Its
+`REPRODUCING.md` explains how the toolkit is built.

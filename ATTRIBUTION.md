@@ -8,9 +8,9 @@ under which terms.
 
 Hammer, ModelDoc, Source Filmmaker, the resource compiler, and every Deadlock
 and Counter-Strike 2 asset belong to Valve. This repository contains none of
-their binaries or assets. It holds file lists, hashes, and recipes that select
-files from Valve's own Steam depots or an existing installation on the user's
-machine. `metadata/citadel.fgd` and `metadata/entity-sources.json` record entity
+their binaries or assets. It lists the Valve depots and paths the toolkit uses;
+the installer takes those files from the user's own Steam games or downloads
+them from Steam. `metadata/citadel.fgd` and `metadata/entity-sources.json` record entity
 classes and properties observed in maps shipped with Deadlock.
 
 ## Community SDK 12
@@ -22,18 +22,18 @@ Deadlock modding community members assembled by merging the Counter-Strike 2
 Workshop Tools with their own fixes, and it defined the layout and workflow
 this repository reproduces. Thank you to everyone who built and maintains it.
 
-`reference/csdk12.json` is a path and hash inventory of the community
-`Reduced_CSDK_12` archive distributed through that guide. It served as the
-reference layout when matching files to Valve depots. The repository contains
+A path and hash inventory of the community `Reduced_CSDK_12` archive
+distributed through that guide served as the reference layout when matching
+files to Valve depots. It is kept in the `0.0.1` tag. The repository contains
 no files or executables from that archive.
 
 ## Tools used at build time
 
 | Project | Use | License |
 | --- | --- | --- |
-| [DepotDownloader](https://github.com/SteamRE/DepotDownloader) | Downloads pinned Valve depot manifests and files (`scripts/depot_download.py`) | GPL-2.0 |
+| [DepotDownloader](https://github.com/SteamRE/DepotDownloader) | Downloads the Valve depots that are not installed (`scripts/steam.py`) | GPL-2.0 |
 | [ValveResourceFormat](https://github.com/ValveResourceFormat/ValveResourceFormat) | Reads VPKs and entity lumps in `tools/EntityMetadata`; Source2Viewer checks compiled output | MIT |
-| [Zig](https://ziglang.org) | Cross-compiles `tools/sdk_launcher.c` reproducibly | MIT |
+| [Zig](https://ziglang.org) | Cross-compiles `tools/sdk_launcher.c` | MIT |
 
 These projects are invoked or referenced as separate builds; none of their
 source is copied into this repository.

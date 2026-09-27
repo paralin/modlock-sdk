@@ -1,0 +1,61 @@
+{
+  "depots": [
+    {
+      "app": "730",
+      "depot": "2347770",
+      "include": [
+        "game/core/",
+        "game/csgo_core/",
+        "game/csgo/gameinfo",
+        "game/csgo_imported/gameinfo",
+        "game/csgo/panorama/fonts/"
+      ]
+    },
+    {
+      "app": "730",
+      "depot": "2347771",
+      "include": [
+        "game/bin/",
+        "game/core/",
+        "game/csgo_core/",
+        "game/csgo/bin/",
+        "game/csgo/shaders_"
+      ]
+    },
+    {
+      "app": "730",
+      "depot": "2347779",
+      "include": [
+        "game/bin/",
+        "game/core/",
+        "game/csgo/",
+        "game/csgo_core/",
+        "content/core/"
+      ]
+    },
+    {
+      "app": "1422450",
+      "depot": "1422451",
+      "include": [
+        "game/citadel/pak01_",
+        "game/citadel/maps/"
+      ]
+    },
+    {
+      "app": "1422450",
+      "depot": "1422452",
+      "include": [
+        "game/citadel/pak01_",
+        "game/citadel/maps/"
+      ]
+    },
+    {
+      "app": "1422450",
+      "depot": "1422456",
+      "include": [
+        "game/citadel/pak01_",
+        "game/citadel/maps/"
+      ]
+    }
+  ]
+}

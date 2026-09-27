@@ -1,7 +1,0 @@
-game/core/pak01_000.vpk
-game/core/pak01_001.vpk
-game/core/pak01_002.vpk
-game/core/pak01_003.vpk
-game/core/pak01_004.vpk
-game/core/pak01_005.vpk
-game/core/pak01_dir.vpk

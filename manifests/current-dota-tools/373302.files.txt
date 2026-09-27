@@ -1,5 +1,0 @@
-game/core/shaders_pc_000.vpk
-game/core/shaders_pc_dir.vpk
-game/dota/shaders_pc_000.vpk
-game/dota/shaders_pc_001.vpk
-game/dota/shaders_pc_dir.vpk
