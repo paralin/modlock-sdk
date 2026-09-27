@@ -84,10 +84,11 @@ with Zig 0.16.0. The build strips debug records, which would otherwise embed
 details of the build machine, so every host produces the same file. Its
 SHA-256 is `04b79688dc315ac893134434ee7ce6d7b8c04613df657b07aec3928c3829e92c`.
 
-## Releases
+## Offline bundles
 
-A release is a set of ZIPs for people who cannot run the installer. To make
-one, install the toolkit, then pack it:
+An offline bundle is a set of ZIPs for a machine that cannot reach Steam. It
+contains Valve's files, so it is for your own machines and is not published.
+To make one, install the toolkit, then pack it:
 
 ```sh
 python3 scripts/release_bundle.py --toolkit ~/modlock-tools \

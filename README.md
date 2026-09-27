@@ -73,20 +73,25 @@ describes the editors and the sample addon.
 | `scripts/` | Install, package, and probe scripts (standard library Python) |
 | `metadata/` | Entity definitions and the tools `gameinfo.gi` |
 | `tools/` | The Windows launcher and the entity metadata exporter |
-| `bundle/` | The installer and the README shipped in each release |
+| `bundle/` | The offline bundle installer and the toolkit README |
 | `tests/` | Unit tests for installing and packaging |
 
 ## Releases
 
-A release packs an installed toolkit into ZIPs with a checksum list, for
-machines that cannot run the installer:
+A release is a tagged source revision; Valve's files are never published. To
+install a specific release, set `MODLOCK_TOOLS_REF` to its tag before running
+the installer, for example `$env:MODLOCK_TOOLS_REF = '0.0.2'` in PowerShell.
+
+For a machine that cannot reach Steam, pack an installed toolkit into an
+offline bundle of ZIPs with a checksum list, and copy it there yourself:
 
 ```sh
 python3 scripts/release_bundle.py --toolkit ~/modlock-tools \
   --revision "$(git rev-parse HEAD)" --output output/release/$(cat VERSION)
 ```
 
-[bundle/README.md](bundle/README.md) is the guide shipped with each release.
+[bundle/README.md](bundle/README.md) is the guide copied into each toolkit and
+bundle.
 
 ## Testing
 

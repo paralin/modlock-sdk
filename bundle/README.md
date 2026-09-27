@@ -30,11 +30,14 @@ irm https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.ps1 | i
 To update after a game update, run `Update.cmd` in the toolkit. Your addons and
 edits to the sample addon are kept.
 
-### From a release download
+### From an offline bundle
 
-A release has one `modlock-tools-<version>-windows-x64.zip`, several numbered
+For a machine that cannot reach Steam, pack an installed toolkit into an
+offline bundle on another machine; the source's `REPRODUCING.md` explains how.
+Bundles contain Valve's files, so they are not published. A bundle has one
+`modlock-tools-<version>-windows-x64.zip`, several numbered
 `modlock-assets-<version>-NNN.zip` parts, `Install.ps1`, `release.json`, this
-README, and `SHA256SUMS`. Download all of them into one folder. Each ZIP is a
+README, and `SHA256SUMS`. Copy all of them into one folder. Each ZIP is a
 separate archive; the installer extracts them all into one directory. Then run:
 
 ```powershell
@@ -44,7 +47,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\Install.ps1 -Destination C
 The installer checks every ZIP and every extracted file against `release.json`
 before it moves the finished directory into place. It stops if the destination
 exists, so it never overwrites your work. If a ZIP is missing or damaged,
-download that one again and rerun. After an interrupted install, delete the
+copy that one again and rerun. After an interrupted install, delete the
 `.modlock-install-*` folder next to the destination before retrying.
 
 ## Open the tools
