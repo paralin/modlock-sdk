@@ -89,9 +89,13 @@ python3 -m unittest discover -s tests
 
 ## Acknowledgments
 
-Thank you to the Deadlock and Source 2 modding communities, whose shared tools
-and research made this possible. See [ATTRIBUTION.md](ATTRIBUTION.md) for the
-projects this toolkit uses.
+Modlock Tools reconstructs the community
+[CSDK 12](https://deadlockmodding.pages.dev/modding-tools/csdk-12) toolkit,
+which Deadlock modding community members built from the Counter-Strike 2
+Workshop Tools and their own fixes. Thank you to them and to the Deadlock and
+Source 2 modding communities, whose shared tools and research made this
+possible. See [ATTRIBUTION.md](ATTRIBUTION.md) for the projects this toolkit
+uses.
 
 ## License
 
