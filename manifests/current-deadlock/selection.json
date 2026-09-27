@@ -1,0 +1,83 @@
+{
+  "status": "download selection",
+  "profile": {
+    "name": "Current Deadlock runtime and content",
+    "branch": "public",
+    "platform": "windows-x64",
+    "purpose": "Keep the runtime and content together for independent addon acceptance.",
+    "depots": [
+      {
+        "app": "1422450",
+        "depot": "1422451",
+        "manifest": "886051970741897775",
+        "include": [
+          "game/"
+        ]
+      },
+      {
+        "app": "1422450",
+        "depot": "1422452",
+        "manifest": "1334199870863440742",
+        "include": [
+          "game/"
+        ]
+      },
+      {
+        "app": "1422450",
+        "depot": "1422456",
+        "manifest": "9192361732058507254",
+        "include": [
+          "game/"
+        ]
+      }
+    ]
+  },
+  "profile_sha256": "81bd4141efe342d24d46ed3a495f99d919f5939a487aec2b4d02ab70dc4d00bc",
+  "sources": {
+    "depot-1422451-886051970741897775": {
+      "app": "1422450",
+      "depot": "1422451",
+      "manifest": "886051970741897775",
+      "manifest_text_sha256": "3bb06fcd4f4c7d0fc9255dd16e090fb8603668fcc1e5d75b63b782295fb2422b"
+    },
+    "depot-1422452-1334199870863440742": {
+      "app": "1422450",
+      "depot": "1422452",
+      "manifest": "1334199870863440742",
+      "manifest_text_sha256": "8a019bff4eb0852b2948ad01e684d5ad0bc276b976ab66a88c4af4984f5e59a2"
+    },
+    "depot-1422456-9192361732058507254": {
+      "app": "1422450",
+      "depot": "1422456",
+      "manifest": "9192361732058507254",
+      "manifest_text_sha256": "1ec26ad1fb84cf98a6f85ae2387e12f75101f5f0d095a483c2f05b0d615c2743"
+    }
+  },
+  "selections": [
+    {
+      "app": "1422450",
+      "depot": "1422451",
+      "manifest": "886051970741897775",
+      "manifest_text_sha256": "3bb06fcd4f4c7d0fc9255dd16e090fb8603668fcc1e5d75b63b782295fb2422b",
+      "files": 202,
+      "bytes": 977372005
+    },
+    {
+      "app": "1422450",
+      "depot": "1422452",
+      "manifest": "1334199870863440742",
+      "manifest_text_sha256": "8a019bff4eb0852b2948ad01e684d5ad0bc276b976ab66a88c4af4984f5e59a2",
+      "files": 108,
+      "bytes": 660087426
+    },
+    {
+      "app": "1422450",
+      "depot": "1422456",
+      "manifest": "9192361732058507254",
+      "manifest_text_sha256": "1ec26ad1fb84cf98a6f85ae2387e12f75101f5f0d095a483c2f05b0d615c2743",
+      "files": 3552,
+      "bytes": 34877055548
+    }
+  ],
+  "files": []
+}

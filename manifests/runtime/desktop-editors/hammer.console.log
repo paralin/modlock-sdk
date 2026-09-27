@@ -1,0 +1,10 @@
+r::QueueNewRequest( Quitting, 3 )
+09/20 10:39:40 [HostStateManager] HostStateRequest::Start(HSR_QUIT)
+09/20 10:39:40 [HostStateManager] Host activate: Quitting
+09/20 10:39:40 Dispatching EventAppShutdown_t {
+09/20 10:39:40 } Dispatched EventAppShutdown_t
+09/20 10:39:40 MainLoop returning
+09/20 10:39:40 [ToolFramework2] Shutting down Qt windows...
+09/20 10:39:40 [ToolFramework2] ..........
+09/20 10:39:40 Source2Shutdown
+09/20 10:39:40 ShutdownSource2Logging

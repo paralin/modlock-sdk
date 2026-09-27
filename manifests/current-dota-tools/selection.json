@@ -1,0 +1,133 @@
+{
+  "status": "download selection",
+  "profile": {
+    "name": "Current Dota 2 compiler and tools baseline",
+    "branch": "public",
+    "platform": "windows-x64",
+    "purpose": "Test a coherent Dota toolchain and compare Deadlock content compatibility.",
+    "depots": [
+      {
+        "app": "570",
+        "depot": "373301",
+        "manifest": "693476521428628584",
+        "include": [
+          "game/bin/",
+          "game/core/",
+          "game/dota/gameinfo",
+          "game/dota/bin/",
+          "game/dota/shaders_",
+          "content/core/",
+          "game/dota/tools/",
+          "game/dota/models_gamedata.fgd",
+          "game/dota/dota.fgd"
+        ]
+      },
+      {
+        "app": "570",
+        "depot": "373303",
+        "manifest": "9112253242025854370",
+        "include": [
+          "game/bin/",
+          "game/core/",
+          "game/dota/gameinfo",
+          "game/dota/bin/",
+          "game/dota/shaders_",
+          "content/core/",
+          "game/dota/tools/",
+          "game/dota/models_gamedata.fgd",
+          "game/dota/dota.fgd"
+        ]
+      },
+      {
+        "app": "570",
+        "depot": "381450",
+        "manifest": "3664814097704453884",
+        "include": [
+          "game/bin/",
+          "game/core/",
+          "game/dota/gameinfo",
+          "game/dota/bin/",
+          "game/dota/shaders_",
+          "content/core/",
+          "game/dota/tools/",
+          "game/dota/models_gamedata.fgd",
+          "game/dota/dota.fgd"
+        ],
+        "exclude": [
+          "game/bin/win64/dota.signatures"
+        ]
+      },
+      {
+        "app": "570",
+        "depot": "373302",
+        "manifest": "6949368311956215785",
+        "include": [
+          "game/core/shaders_pc",
+          "game/dota/shaders_pc"
+        ]
+      }
+    ]
+  },
+  "profile_sha256": "3aa18999bec1f22dbfb6cbb47f7c95e4360846f063b23b1183660d91ddc6d71f",
+  "sources": {
+    "depot-373301-693476521428628584": {
+      "app": "570",
+      "depot": "373301",
+      "manifest": "693476521428628584",
+      "manifest_text_sha256": "bf7cb9f7ce6d30fefb0a32615b55dfe864dc97d68cb5ef3e22798de22ae722b0"
+    },
+    "depot-373303-9112253242025854370": {
+      "app": "570",
+      "depot": "373303",
+      "manifest": "9112253242025854370",
+      "manifest_text_sha256": "d78251c43d1976a779d06d6e9828eb1365ba9b7b5f70428725aaf56daf13c42b"
+    },
+    "depot-381450-3664814097704453884": {
+      "app": "570",
+      "depot": "381450",
+      "manifest": "3664814097704453884",
+      "manifest_text_sha256": "2e6d99e17af8fa070835dae140f2a5b542af9351f65f6d3d8b1344cf7e93131a"
+    },
+    "depot-373302-6949368311956215785": {
+      "app": "570",
+      "depot": "373302",
+      "manifest": "6949368311956215785",
+      "manifest_text_sha256": "ad475f20dd89bf7190c8b455d9cfaa2c2d8565313c2f4d2a6355141c6cabcde3"
+    }
+  },
+  "selections": [
+    {
+      "app": "570",
+      "depot": "373301",
+      "manifest": "693476521428628584",
+      "manifest_text_sha256": "bf7cb9f7ce6d30fefb0a32615b55dfe864dc97d68cb5ef3e22798de22ae722b0",
+      "files": 2577,
+      "bytes": 691858343
+    },
+    {
+      "app": "570",
+      "depot": "373303",
+      "manifest": "9112253242025854370",
+      "manifest_text_sha256": "d78251c43d1976a779d06d6e9828eb1365ba9b7b5f70428725aaf56daf13c42b",
+      "files": 96,
+      "bytes": 650452120
+    },
+    {
+      "app": "570",
+      "depot": "381450",
+      "manifest": "3664814097704453884",
+      "manifest_text_sha256": "2e6d99e17af8fa070835dae140f2a5b542af9351f65f6d3d8b1344cf7e93131a",
+      "files": 118,
+      "bytes": 337266847
+    },
+    {
+      "app": "570",
+      "depot": "373302",
+      "manifest": "6949368311956215785",
+      "manifest_text_sha256": "ad475f20dd89bf7190c8b455d9cfaa2c2d8565313c2f4d2a6355141c6cabcde3",
+      "files": 5,
+      "bytes": 135860023
+    }
+  ],
+  "files": []
+}

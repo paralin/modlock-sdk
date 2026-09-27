@@ -1,0 +1,95 @@
+{
+  "status": "download selection",
+  "profile": {
+    "name": "Current CS2 compiler and tools baseline",
+    "branch": "public",
+    "platform": "windows-x64",
+    "purpose": "Compile and test assets with a coherent Valve toolchain before testing Deadlock compatibility.",
+    "depots": [
+      {
+        "app": "730",
+        "depot": "2347770",
+        "manifest": "2053759441494650084",
+        "include": [
+          "game/core/",
+          "game/csgo_core/",
+          "game/csgo/gameinfo",
+          "game/csgo_imported/gameinfo",
+          "game/csgo/panorama/fonts/"
+        ]
+      },
+      {
+        "app": "730",
+        "depot": "2347771",
+        "manifest": "5806169188224907599",
+        "include": [
+          "game/bin/",
+          "game/core/",
+          "game/csgo_core/",
+          "game/csgo/bin/",
+          "game/csgo/shaders_"
+        ]
+      },
+      {
+        "app": "730",
+        "depot": "2347779",
+        "manifest": "2145418671218218617",
+        "include": [
+          "game/bin/",
+          "game/core/",
+          "game/csgo/",
+          "game/csgo_core/",
+          "content/core/"
+        ]
+      }
+    ]
+  },
+  "profile_sha256": "f16644ee9d837d8de9b574bb6db6eb80680cfe3dc9c2f6d9155d09e92054fb99",
+  "sources": {
+    "depot-2347770-2053759441494650084": {
+      "app": "730",
+      "depot": "2347770",
+      "manifest": "2053759441494650084",
+      "manifest_text_sha256": "03910251a34216bfe12cef29dbcf9a9848c008d056c22486d0c07206866bc461"
+    },
+    "depot-2347771-5806169188224907599": {
+      "app": "730",
+      "depot": "2347771",
+      "manifest": "5806169188224907599",
+      "manifest_text_sha256": "e7f320822f07c177af4c1f78994a505dc49a6f90aa27e91920d43c464ff8e0ba"
+    },
+    "depot-2347779-2145418671218218617": {
+      "app": "730",
+      "depot": "2347779",
+      "manifest": "2145418671218218617",
+      "manifest_text_sha256": "39e9ea9fcff4bddc230d6e815371fc1b806517d93315eea9b28d7434f8107fe3"
+    }
+  },
+  "selections": [
+    {
+      "app": "730",
+      "depot": "2347770",
+      "manifest": "2053759441494650084",
+      "manifest_text_sha256": "03910251a34216bfe12cef29dbcf9a9848c008d056c22486d0c07206866bc461",
+      "files": 2247,
+      "bytes": 1211788636
+    },
+    {
+      "app": "730",
+      "depot": "2347771",
+      "manifest": "5806169188224907599",
+      "manifest_text_sha256": "e7f320822f07c177af4c1f78994a505dc49a6f90aa27e91920d43c464ff8e0ba",
+      "files": 111,
+      "bytes": 850137658
+    },
+    {
+      "app": "730",
+      "depot": "2347779",
+      "manifest": "2145418671218218617",
+      "manifest_text_sha256": "39e9ea9fcff4bddc230d6e815371fc1b806517d93315eea9b28d7434f8107fe3",
+      "files": 315,
+      "bytes": 450818563
+    }
+  ],
+  "files": []
+}

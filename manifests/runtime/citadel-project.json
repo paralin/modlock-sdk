@@ -1,0 +1,40 @@
+{
+  "status": "passed: repeated Panorama compilation",
+  "runtime": "Valve Proton Wine with WineD3D",
+  "compiler_sha256": "baeea07befadcad5ab32b2f2fc3f48c1ea422076386b51a4ff42c10f84635e91",
+  "compiler_dll_sha256": "f084328cb14b44ce26484d1b38c0be8cf8402350f8e8837465293216bb36703a",
+  "gameinfo_sha256": "c2201022ae53f0c78c5f008eb3ac49d5331cd1856673a4b8851a47ee704733c4",
+  "mod": "citadel",
+  "addon": "modlock_acceptance",
+  "runs": [
+    {
+      "exit_code": 0,
+      "log": "citadel-project.run1.log",
+      "artifacts": {
+        "layout/probe.vxml_c": {
+          "bytes": 1364,
+          "sha256": "12378691598c172e1d4620aae1fc05b44ab8fcf22a9afbf2024364088f687fa3"
+        },
+        "scripts/probe.vjs_c": {
+          "bytes": 905,
+          "sha256": "bdaab59943b74200f369b586ece9010e7b7af2392703cf29f59941e3d2135c5a"
+        }
+      }
+    },
+    {
+      "exit_code": 0,
+      "log": "citadel-project.run2.log",
+      "artifacts": {
+        "layout/probe.vxml_c": {
+          "bytes": 1364,
+          "sha256": "12378691598c172e1d4620aae1fc05b44ab8fcf22a9afbf2024364088f687fa3"
+        },
+        "scripts/probe.vjs_c": {
+          "bytes": 905,
+          "sha256": "bdaab59943b74200f369b586ece9010e7b7af2392703cf29f59941e3d2135c5a"
+        }
+      }
+    }
+  ],
+  "proton_version": "1788504981 proton-11.0-2c-x86_64"
+}

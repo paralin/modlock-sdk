@@ -1,0 +1,350 @@
+{
+  "command": [
+    "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\sdk-launcher.exe",
+    "-tools",
+    "-insecure",
+    "-novid",
+    "-console",
+    "-condebug",
+    "-playtest",
+    "-addon",
+    "modlock_accepted_model",
+    "-asset",
+    "models/probe.vmdl",
+    "+show_tool",
+    "modeldoc_editor"
+  ],
+  "tool": "modeldoc_editor",
+  "observation": "Startup only; inspect windows, modules and console errors",
+  "sdk-launcher.exe_sha256": "d0de6d9cf46a96801b4104454470f5eead1c4e9a502786e246a14d4d85dad0f7",
+  "engine2.dll_sha256": "7a72cbb4b9239309627dd52f029d72a7a5b09bfb36a3f0b9af4411eb5f337e80",
+  "gameinfo_sha256": "de909a653a3cbd3f1c9ec956c696f3dff24ae229bbbadfece45a633a2932d733",
+  "pid": 4516,
+  "alive_after_seconds": 8,
+  "windows": [
+    "Failed To Load Entity FGD",
+    "Citadel asset tools"
+  ],
+  "dialogs": {
+    "Failed To Load Entity FGD": "Failed to load FGD file 'citadel.fgd'.\n\nOK"
+  },
+  "modules": [
+    {
+      "ModuleName": "sdk-launcher.exe",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\sdk-launcher.exe"
+    },
+    {
+      "ModuleName": "engine2.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\engine2.dll"
+    },
+    {
+      "ModuleName": "steam_api64.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\steam_api64.dll"
+    },
+    {
+      "ModuleName": "steamnetworkingsockets.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\steamnetworkingsockets.dll"
+    },
+    {
+      "ModuleName": "tier0.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\tier0.dll"
+    },
+    {
+      "ModuleName": "dbghelp.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\dbghelp.dll"
+    },
+    {
+      "ModuleName": "vconcomm.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\vconcomm.dll"
+    },
+    {
+      "ModuleName": "SDL3.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\SDL3.dll"
+    },
+    {
+      "ModuleName": "filesystem_stdio.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\filesystem_stdio.dll"
+    },
+    {
+      "ModuleName": "inputsystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\inputsystem.dll"
+    },
+    {
+      "ModuleName": "imemanager.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\imemanager.dll"
+    },
+    {
+      "ModuleName": "localize.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\localize.dll"
+    },
+    {
+      "ModuleName": "rendersystemdx11.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\rendersystemdx11.dll"
+    },
+    {
+      "ModuleName": "amd_ags_x64.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\amd_ags_x64.dll"
+    },
+    {
+      "ModuleName": "D3DCOMPILER_47.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\D3DCOMPILER_47.dll"
+    },
+    {
+      "ModuleName": "resourcesystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\resourcesystem.dll"
+    },
+    {
+      "ModuleName": "schemasystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\schemasystem.dll"
+    },
+    {
+      "ModuleName": "materialsystem2.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\materialsystem2.dll"
+    },
+    {
+      "ModuleName": "meshsystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\meshsystem.dll"
+    },
+    {
+      "ModuleName": "worldrenderer.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\worldrenderer.dll"
+    },
+    {
+      "ModuleName": "pulse_system.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\pulse_system.dll"
+    },
+    {
+      "ModuleName": "vscript.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\vscript.dll"
+    },
+    {
+      "ModuleName": "networksystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\networksystem.dll"
+    },
+    {
+      "ModuleName": "animationsystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\animationsystem.dll"
+    },
+    {
+      "ModuleName": "vphysics2.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\vphysics2.dll"
+    },
+    {
+      "ModuleName": "soundsystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\soundsystem.dll"
+    },
+    {
+      "ModuleName": "scenesystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\scenesystem.dll"
+    },
+    {
+      "ModuleName": "particles.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\particles.dll"
+    },
+    {
+      "ModuleName": "panoramauiclient.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\panoramauiclient.dll"
+    },
+    {
+      "ModuleName": "video64.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\video64.dll"
+    },
+    {
+      "ModuleName": "libavformat-58.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libavformat-58.dll"
+    },
+    {
+      "ModuleName": "libavcodec-58.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libavcodec-58.dll"
+    },
+    {
+      "ModuleName": "libavresample-4.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libavresample-4.dll"
+    },
+    {
+      "ModuleName": "libavutil-56.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libavutil-56.dll"
+    },
+    {
+      "ModuleName": "libswscale-5.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libswscale-5.dll"
+    },
+    {
+      "ModuleName": "v8.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\v8.dll"
+    },
+    {
+      "ModuleName": "v8_libbase.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\v8_libbase.dll"
+    },
+    {
+      "ModuleName": "v8_zlib.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\v8_zlib.dll"
+    },
+    {
+      "ModuleName": "v8_icuuc.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\v8_icuuc.dll"
+    },
+    {
+      "ModuleName": "v8_icui18n.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\v8_icui18n.dll"
+    },
+    {
+      "ModuleName": "panorama.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\panorama.dll"
+    },
+    {
+      "ModuleName": "panorama_text_pango.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\panorama_text_pango.dll"
+    },
+    {
+      "ModuleName": "libfontconfig-1.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libfontconfig-1.dll"
+    },
+    {
+      "ModuleName": "libfreetype-6.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libfreetype-6.dll"
+    },
+    {
+      "ModuleName": "libpango-1.0-0.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libpango-1.0-0.dll"
+    },
+    {
+      "ModuleName": "libpangoft2-1.0-0.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libpangoft2-1.0-0.dll"
+    },
+    {
+      "ModuleName": "libglib-2.0-0.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libglib-2.0-0.dll"
+    },
+    {
+      "ModuleName": "libgobject-2.0-0.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libgobject-2.0-0.dll"
+    },
+    {
+      "ModuleName": "libgmodule-2.0-0.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libgmodule-2.0-0.dll"
+    },
+    {
+      "ModuleName": "v8system.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\v8system.dll"
+    },
+    {
+      "ModuleName": "v8_libplatform.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\v8_libplatform.dll"
+    },
+    {
+      "ModuleName": "toolframework2.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\toolframework2.dll"
+    },
+    {
+      "ModuleName": "Qt5Gui.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\Qt5Gui.dll"
+    },
+    {
+      "ModuleName": "Qt5Widgets.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\Qt5Widgets.dll"
+    },
+    {
+      "ModuleName": "Qt5Core.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\Qt5Core.dll"
+    },
+    {
+      "ModuleName": "libfbxsdk_2020_3_1.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libfbxsdk_2020_3_1.dll"
+    },
+    {
+      "ModuleName": "assetsystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\assetsystem.dll"
+    },
+    {
+      "ModuleName": "assetbrowser.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\assetbrowser.dll"
+    },
+    {
+      "ModuleName": "assetpreview.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\assetpreview.dll"
+    },
+    {
+      "ModuleName": "assetrename.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\assetrename.dll"
+    },
+    {
+      "ModuleName": "resourcecompiler.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\resourcecompiler.dll"
+    },
+    {
+      "ModuleName": "embree3.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\embree3.dll"
+    },
+    {
+      "ModuleName": "p4lib.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\p4lib.dll"
+    },
+    {
+      "ModuleName": "propertyeditor.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\propertyeditor.dll"
+    },
+    {
+      "ModuleName": "modeldoc_utils.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\modeldoc_utils.dll"
+    },
+    {
+      "ModuleName": "toolscenenodes.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\toolscenenodes.dll"
+    },
+    {
+      "ModuleName": "navsystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\navsystem.dll"
+    },
+    {
+      "ModuleName": "exportsystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\exportsystem.dll"
+    },
+    {
+      "ModuleName": "helpsystem.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\helpsystem.dll"
+    },
+    {
+      "ModuleName": "qwindows.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\qt5_plugins\\platforms\\qwindows.dll"
+    },
+    {
+      "ModuleName": "qwindowsvistastyle.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\qt5_plugins\\styles\\qwindowsvistastyle.dll"
+    },
+    {
+      "ModuleName": "qgif.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\qt5_plugins\\imageformats\\qgif.dll"
+    },
+    {
+      "ModuleName": "qico.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\qt5_plugins\\imageformats\\qico.dll"
+    },
+    {
+      "ModuleName": "qjpeg.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\qt5_plugins\\imageformats\\qjpeg.dll"
+    },
+    {
+      "ModuleName": "qtga.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\qt5_plugins\\imageformats\\qtga.dll"
+    },
+    {
+      "ModuleName": "qtiff.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\qt5_plugins\\imageformats\\qtiff.dll"
+    },
+    {
+      "ModuleName": "libmpg123-0.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\libmpg123-0.dll"
+    },
+    {
+      "ModuleName": "cairo.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\cairo.dll"
+    },
+    {
+      "ModuleName": "modeldoc_editor.dll",
+      "FileName": "C:\\modlock-sdk-work\\cs2\\game\\bin\\win64\\tools\\modeldoc_editor.dll"
+    }
+  ],
+  "close_exit_code": 0
+}

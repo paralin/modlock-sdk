@@ -1,0 +1,14 @@
+Using breakpad crash handler
+Setting breakpad minidump AppID = 1422450
+Forcing breakpad minidump interfaces to load
+Looking up breakpad interfaces from steamclient
+Calling BreakpadMiniDumpSystemInit
+Looking up breakpad interfaces from steamclient
+Calling BreakpadMiniDumpSystemInit
+
+
+---------------------------------------------------------
+Encountered error.
+Wrote minidump to .\sdk-launcher_2026_0920_102815_0_error.mdmp
+---------------------------------------------------------
+

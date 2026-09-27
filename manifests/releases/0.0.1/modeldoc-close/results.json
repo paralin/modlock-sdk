@@ -1,0 +1,18 @@
+[
+  {
+    "launcher": "ModelDoc.cmd",
+    "status": "passed: ModelDoc startup; close required bounded test cleanup",
+    "pid": 2020,
+    "windows": [
+      "Asset Browser",
+      "ModelDoc :: probe",
+      "Citadel asset tools"
+    ],
+    "windows_after_close": [
+      "Compile?",
+      "ModelDoc :: probe",
+      "Citadel asset tools"
+    ],
+    "cleanup": "taskkill of owned batch process tree after close deadline"
+  }
+]

@@ -1,0 +1,4 @@
+Creating device for graphics adapter 0 'NVIDIA GeForce GTX 470' [vendorid 0x10DE]: 31.0.13.9135
+PIX/NSIGHT WAS detected.
+Disable asynchronous shader creation because of an old driver that might crash.
+FATAL ERROR: CAppSystemDict:Unable to load module modeldoc_utils (Dependency of ResourceCompilerSystem001), error 126

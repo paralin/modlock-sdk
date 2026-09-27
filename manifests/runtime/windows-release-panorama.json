@@ -1,0 +1,50 @@
+{
+  "status": "passed: repeated panorama compilation",
+  "runtime": "Windows",
+  "compiler_sha256": "baeea07befadcad5ab32b2f2fc3f48c1ea422076386b51a4ff42c10f84635e91",
+  "compiler_dll_sha256": "f084328cb14b44ce26484d1b38c0be8cf8402350f8e8837465293216bb36703a",
+  "gameinfo_sha256": "4e0e07c703ccbd972e5829bcd4131a9d52935128e12ea4cb192a43795a90c825",
+  "mod": "citadel",
+  "addon": "modlock_release_panorama",
+  "kind": "panorama",
+  "sources": {
+    "layout/probe.xml": {
+      "bytes": 136,
+      "sha256": "94a90431b7b9c043d8453cc5dd6e5f42e47ac09dd680d9eb80b22549ffac5bab"
+    },
+    "scripts/probe.js": {
+      "bytes": 57,
+      "sha256": "f75d9d412821b82247e56b3166bc13d5fc4008f44b39cc290f0cceebfbad7e28"
+    }
+  },
+  "runs": [
+    {
+      "exit_code": 0,
+      "log": "windows-release-panorama.run1.log",
+      "artifacts": {
+        "layout/probe.vxml_c": {
+          "bytes": 1364,
+          "sha256": "fe7ad8cc864c203af87e2861b1098802a2cae62f08e43fe47d18472248ae3ca7"
+        },
+        "scripts/probe.vjs_c": {
+          "bytes": 905,
+          "sha256": "a25115352042c97abb1dfdae63793851627cc4b790cef8435ee38d3813df65f7"
+        }
+      }
+    },
+    {
+      "exit_code": 0,
+      "log": "windows-release-panorama.run2.log",
+      "artifacts": {
+        "layout/probe.vxml_c": {
+          "bytes": 1364,
+          "sha256": "fe7ad8cc864c203af87e2861b1098802a2cae62f08e43fe47d18472248ae3ca7"
+        },
+        "scripts/probe.vjs_c": {
+          "bytes": 905,
+          "sha256": "a25115352042c97abb1dfdae63793851627cc4b790cef8435ee38d3813df65f7"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "app": "730",
+  "depot": "2347770",
+  "manifest": "2053759441494650084",
+  "os": "windows",
+  "osarch": "64",
+  "login": "anonymous",
+  "acquired_at": "2026-09-20T05:31:30.143021+00:00",
+  "downloader_sha256": "fb80490033992af7e3a5a0ac05522f624f458f6b4697d59578b03ae209881958",
+  "selection_sha256": "b1a99b93930cfbba5f70ebc76ea8b10a00a01e103bd0f29bb9f6080da9c95ed3",
+  "status": "download returned; verify payloads before assembly"
+}

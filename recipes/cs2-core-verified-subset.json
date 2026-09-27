@@ -1,0 +1,2161 @@
+{
+  "status": "verified subset; not a runnable SDK",
+  "reference_files": 10864,
+  "reference_inventory_sha256": "b98e5f63606f64530839b675a9e7b17b3e8e9947163acd7764307c3ce1c7ec08",
+  "sources": {
+    "vpk-2347770-2053759441494650084-core": {
+      "root": "../extracted/cs2-core-current",
+      "kind": "vpk-members",
+      "app": "730",
+      "depot": "2347770",
+      "manifest": "2053759441494650084",
+      "vpk": "game/core/pak01_dir.vpk",
+      "manifest_text_sha256": "03910251a34216bfe12cef29dbcf9a9848c008d056c22486d0c07206866bc461",
+      "packages": [
+        {
+          "path": "game/core/pak01_000.vpk",
+          "bytes": 104645056,
+          "sha1": "c582879bf5423d8c216bc6e3799c6cf6fdf3108f",
+          "sha256": "d99b61da192148700de9c7cde06d78ae7aa4793bb50a7cec2b77501ee9527cac"
+        },
+        {
+          "path": "game/core/pak01_001.vpk",
+          "bytes": 100666552,
+          "sha1": "1cfacf6760b5f5941a6c21899dd55fd6a55935e4",
+          "sha256": "edc21870edac0e8579b4fa7a3a1b8a8f20f9f5251d0d22d1e7712b0fa6027d01"
+        },
+        {
+          "path": "game/core/pak01_002.vpk",
+          "bytes": 100666552,
+          "sha1": "e07b739ed98f8c7f5f1dc75abe19803be51e11b0",
+          "sha256": "ace345ba6e4c2ee9f78fc052f34dc15fc6f529ada2f069de23517c6e94f732f2"
+        },
+        {
+          "path": "game/core/pak01_003.vpk",
+          "bytes": 151001464,
+          "sha1": "7127b96673db85ccf60d244366a61ff70bcb62c8",
+          "sha256": "e9a5adc0029f4be239deca0fbb875132a0c620f4036d54b48576ea017113cb16"
+        },
+        {
+          "path": "game/core/pak01_004.vpk",
+          "bytes": 108635398,
+          "sha1": "16da3f1043c8e5176c724309bafcb5a0126a2511",
+          "sha256": "9fdee8acbd638368a84cc5f1b926bcc664f6b15982048a6dfd5a04998996d72e"
+        },
+        {
+          "path": "game/core/pak01_005.vpk",
+          "bytes": 90996356,
+          "sha1": "561e3b594502ac050ef1531b41925c3e1ced29e8",
+          "sha256": "7948a584f0e843ec9c56bc8cea907da111aecd810dbd32c6ac20e82b10e78acd"
+        },
+        {
+          "path": "game/core/pak01_dir.vpk",
+          "bytes": 82315,
+          "sha1": "f24343ad9f54baddc15ba91976474733e6f2868f",
+          "sha256": "3d19db908993b2b9449ae12a07b085694660e3b39a5c42f7903a13fecd63941f"
+        }
+      ],
+      "extractor_sha256": "56e0b3ea2e42303a7c2ce0babef7b1769fd47b473540a5357ecca07ef0f5074b"
+    }
+  },
+  "extracted_files": 1549,
+  "member_candidates": {
+    "game/bin/win64/legacy.txt": [
+      "panorama/window_keybinds.cfg",
+      "scripts/vscripts/game/gameinit.lua"
+    ],
+    "game/bin/win64/tools.txt": [
+      "panorama/window_keybinds.cfg",
+      "scripts/vscripts/game/gameinit.lua"
+    ],
+    "game/bin_tools/win64/tools.txt": [
+      "panorama/window_keybinds.cfg",
+      "scripts/vscripts/game/gameinit.lua"
+    ],
+    "game/core/dev/materialsystem2utils/pixel_borders.vtex_c": [
+      "dev/materialsystem2utils/pixel_borders.vtex_c"
+    ],
+    "game/core/dev/point_worldtext_default_background.vmat_c": [
+      "dev/point_worldtext_default_background.vmat_c"
+    ],
+    "game/core/materials/dev/atrous_filter.vmat_c": [
+      "materials/dev/atrous_filter.vmat_c"
+    ],
+    "game/core/materials/dev/atrous_pack_depthnormal.vmat_c": [
+      "materials/dev/atrous_pack_depthnormal.vmat_c"
+    ],
+    "game/core/materials/dev/black_color_tga_7c2e3498.vtex_c": [
+      "materials/dev/black_color_tga_7c2e3498.vtex_c"
+    ],
+    "game/core/materials/dev/compact_indirect_draws.vmat_c": [
+      "materials/dev/compact_indirect_draws.vmat_c"
+    ],
+    "game/core/materials/dev/compute_smooth_normals_cs.vmat_c": [
+      "materials/dev/compute_smooth_normals_cs.vmat_c"
+    ],
+    "game/core/materials/dev/cs_compress_bc7.vmat_c": [
+      "materials/dev/cs_compress_bc7.vmat_c"
+    ],
+    "game/core/materials/dev/cs_parallel_sort_onesweep.vmat_c": [
+      "materials/dev/cs_parallel_sort_onesweep.vmat_c"
+    ],
+    "game/core/materials/dev/cull_instanced_meshes.vmat_c": [
+      "materials/dev/cull_instanced_meshes.vmat_c"
+    ],
+    "game/core/materials/dev/hair_composite.vmat_c": [
+      "materials/dev/hair_composite.vmat_c"
+    ],
+    "game/core/materials/dev/hair_noise_lut.vtex_c": [
+      "materials/dev/hair_noise_lut.vtex_c"
+    ],
+    "game/core/materials/dev/hair_processing_cs.vmat_c": [
+      "materials/dev/hair_processing_cs.vmat_c"
+    ],
+    "game/core/materials/dev/hair_render_ao_volume.vmat_c": [
+      "materials/dev/hair_render_ao_volume.vmat_c"
+    ],
+    "game/core/materials/dev/hair_render_shadow_volume.vmat_c": [
+      "materials/dev/hair_render_shadow_volume.vmat_c"
+    ],
+    "game/core/materials/dev/hair_render_volume.vmat_c": [
+      "materials/dev/hair_render_volume.vmat_c"
+    ],
+    "game/core/materials/dev/hair_shading_cs.vmat_c": [
+      "materials/dev/hair_shading_cs.vmat_c"
+    ],
+    "game/core/materials/dev/hair_sim_cs.vmat_c": [
+      "materials/dev/hair_sim_cs.vmat_c"
+    ],
+    "game/core/materials/dev/imgui_srgb.vmat_c": [
+      "materials/dev/imgui_srgb.vmat_c"
+    ],
+    "game/core/materials/dev/implicit_surface.vmat_c": [
+      "materials/dev/implicit_surface.vmat_c"
+    ],
+    "game/core/materials/dev/spd_depth_pyramid.vmat_c": [
+      "materials/dev/spd_depth_pyramid.vmat_c"
+    ],
+    "game/core/materials/dev/sst_cs.vmat_c": [
+      "materials/dev/sst_cs.vmat_c"
+    ],
+    "game/core/materials/dev/sst_depth_copy.vmat_c": [
+      "materials/dev/sst_depth_copy.vmat_c"
+    ],
+    "game/core/materials/dev/update_visnode_visibility.vmat_c": [
+      "materials/dev/update_visnode_visibility.vmat_c"
+    ],
+    "game/core/materials/dev/visualize_depth_cull_holes.vmat_c": [
+      "materials/dev/visualize_depth_cull_holes.vmat_c"
+    ],
+    "game/core/materials/dev/vrad3/lightmap_vertexlight_reduce.vmat_c": [
+      "materials/dev/vrad3/lightmap_vertexlight_reduce.vmat_c"
+    ],
+    "game/core/materials/dev/vrad3/vertexlight_raytrace.vmat_c": [
+      "materials/dev/vrad3/vertexlight_raytrace.vmat_c"
+    ],
+    "game/core/materials/dev/vrad3/vertexlight_test_converged.vmat_c": [
+      "materials/dev/vrad3/vertexlight_test_converged.vmat_c"
+    ],
+    "game/core/materials/dev/wind_controller_visualize.vmat_c": [
+      "materials/dev/wind_controller_visualize.vmat_c"
+    ],
+    "game/core/materials/dev/wind_noise_cs.vmat_c": [
+      "materials/dev/wind_noise_cs.vmat_c"
+    ],
+    "game/core/materials/dev/wind_update_cs.vmat_c": [
+      "materials/dev/wind_update_cs.vmat_c"
+    ],
+    "game/core/materials/editor/deformer_icon.vmat_c": [
+      "materials/editor/deformer_icon.vmat_c"
+    ],
+    "game/core/materials/editor/deformer_icon_translucent.vmat_c": [
+      "materials/editor/deformer_icon_translucent.vmat_c"
+    ],
+    "game/core/materials/editor/error_indicator.vmat_c": [
+      "materials/editor/error_indicator.vmat_c"
+    ],
+    "game/core/materials/editor/error_indicator_psd_95f0e675.vtex_c": [
+      "materials/editor/error_indicator_psd_95f0e675.vtex_c"
+    ],
+    "game/core/materials/models/editor/player_start_tga_6597ddab.vtex_c": [
+      "materials/models/editor/player_start_tga_6597ddab.vtex_c"
+    ],
+    "game/core/materials/tools/modeldoc_texture_generator_preview.vmat_c": [
+      "materials/tools/modeldoc_texture_generator_preview.vmat_c"
+    ],
+    "game/core/materials/tools/tools_conveyor.vmat_c": [
+      "materials/tools/tools_conveyor.vmat_c"
+    ],
+    "game/core/materials/tools/tools_spawn_volume.vmat_c": [
+      "materials/tools/tools_spawn_volume.vmat_c"
+    ],
+    "game/core/materials/tools/tools_spawn_volume_color_psd_cf616ff3.vtex_c": [
+      "materials/tools/tools_spawn_volume_color_psd_cf616ff3.vtex_c"
+    ],
+    "game/core/panorama/browser/webkit.css": [
+      "panorama/browser/webkit.css"
+    ],
+    "game/core/panorama/default_keybinds.cfg": [
+      "panorama/default_keybinds.cfg"
+    ],
+    "game/core/panorama/layout/base_world_panel.vxml_c": [
+      "panorama/layout/base_world_panel.vxml_c"
+    ],
+    "game/core/panorama/layout/console.vxml_c": [
+      "panorama/layout/console.vxml_c"
+    ],
+    "game/core/panorama/layout/context_menus/context_menu_base.vxml_c": [
+      "panorama/layout/context_menus/context_menu_base.vxml_c"
+    ],
+    "game/core/panorama/layout/debugger.vxml_c": [
+      "panorama/layout/debugger.vxml_c"
+    ],
+    "game/core/panorama/layout/debugindividualstyle.vxml_c": [
+      "panorama/layout/debugindividualstyle.vxml_c"
+    ],
+    "game/core/panorama/layout/debuginheritedstylesheader.vxml_c": [
+      "panorama/layout/debuginheritedstylesheader.vxml_c"
+    ],
+    "game/core/panorama/layout/debuglayout.vxml_c": [
+      "panorama/layout/debuglayout.vxml_c"
+    ],
+    "game/core/panorama/layout/debugpanel.vxml_c": [
+      "panorama/layout/debugpanel.vxml_c"
+    ],
+    "game/core/panorama/layout/debugstyleanimation.vxml_c": [
+      "panorama/layout/debugstyleanimation.vxml_c"
+    ],
+    "game/core/panorama/layout/debugstyleblock.vxml_c": [
+      "panorama/layout/debugstyleblock.vxml_c"
+    ],
+    "game/core/panorama/layout/engineconsole.vxml_c": [
+      "panorama/layout/engineconsole.vxml_c"
+    ],
+    "game/core/panorama/layout/fileopendialog.vxml_c": [
+      "panorama/layout/fileopendialog.vxml_c"
+    ],
+    "game/core/panorama/layout/number_entry.vxml_c": [
+      "panorama/layout/number_entry.vxml_c"
+    ],
+    "game/core/panorama/layout/popups/popup_generic_dropdown.vxml_c": [
+      "panorama/layout/popups/popup_generic_dropdown.vxml_c"
+    ],
+    "game/core/panorama/layout/popups/popup_generic_no_dim.vxml_c": [
+      "panorama/layout/popups/popup_generic_no_dim.vxml_c"
+    ],
+    "game/core/panorama/layout/popups/popup_generic_text_entry.vxml_c": [
+      "panorama/layout/popups/popup_generic_text_entry.vxml_c"
+    ],
+    "game/core/panorama/layout/popups/popup_manager.vxml_c": [
+      "panorama/layout/popups/popup_manager.vxml_c"
+    ],
+    "game/core/panorama/layout/tooltip.vxml_c": [
+      "panorama/layout/tooltip.vxml_c"
+    ],
+    "game/core/panorama/layout/tooltips/tooltip_base.vxml_c": [
+      "panorama/layout/tooltips/tooltip_base.vxml_c"
+    ],
+    "game/core/panorama/layout/tooltips/tooltip_text.vxml_c": [
+      "panorama/layout/tooltips/tooltip_text.vxml_c"
+    ],
+    "game/core/panorama/layout/tooltips/tooltip_title_image_text.vxml_c": [
+      "panorama/layout/tooltips/tooltip_title_image_text.vxml_c"
+    ],
+    "game/core/panorama/layout/tooltips/tooltip_title_text.vxml_c": [
+      "panorama/layout/tooltips/tooltip_title_text.vxml_c"
+    ],
+    "game/core/panorama/localization/core_tools_brazilian.txt": [
+      "panorama/localization/core_tools_brazilian.txt"
+    ],
+    "game/core/panorama/localization/core_tools_bulgarian.txt": [
+      "panorama/localization/core_tools_bulgarian.txt"
+    ],
+    "game/core/panorama/localization/core_tools_czech.txt": [
+      "panorama/localization/core_tools_czech.txt"
+    ],
+    "game/core/panorama/localization/core_tools_danish.txt": [
+      "panorama/localization/core_tools_danish.txt"
+    ],
+    "game/core/panorama/localization/core_tools_dutch.txt": [
+      "panorama/localization/core_tools_dutch.txt"
+    ],
+    "game/core/panorama/localization/core_tools_english.txt": [
+      "panorama/localization/core_tools_english.txt"
+    ],
+    "game/core/panorama/localization/core_tools_finnish.txt": [
+      "panorama/localization/core_tools_finnish.txt"
+    ],
+    "game/core/panorama/localization/core_tools_french.txt": [
+      "panorama/localization/core_tools_french.txt"
+    ],
+    "game/core/panorama/localization/core_tools_greek.txt": [
+      "panorama/localization/core_tools_greek.txt"
+    ],
+    "game/core/panorama/localization/core_tools_hungarian.txt": [
+      "panorama/localization/core_tools_hungarian.txt"
+    ],
+    "game/core/panorama/localization/core_tools_indonesian.txt": [
+      "panorama/localization/core_tools_indonesian.txt"
+    ],
+    "game/core/panorama/localization/core_tools_italian.txt": [
+      "panorama/localization/core_tools_italian.txt"
+    ],
+    "game/core/panorama/localization/core_tools_japanese.txt": [
+      "panorama/localization/core_tools_japanese.txt"
+    ],
+    "game/core/panorama/localization/core_tools_latam.txt": [
+      "panorama/localization/core_tools_latam.txt"
+    ],
+    "game/core/panorama/localization/core_tools_norwegian.txt": [
+      "panorama/localization/core_tools_norwegian.txt"
+    ],
+    "game/core/panorama/localization/core_tools_polish.txt": [
+      "panorama/localization/core_tools_polish.txt"
+    ],
+    "game/core/panorama/localization/core_tools_portuguese.txt": [
+      "panorama/localization/core_tools_portuguese.txt"
+    ],
+    "game/core/panorama/localization/core_tools_romanian.txt": [
+      "panorama/localization/core_tools_romanian.txt"
+    ],
+    "game/core/panorama/localization/core_tools_russian.txt": [
+      "panorama/localization/core_tools_russian.txt"
+    ],
+    "game/core/panorama/localization/core_tools_schinese.txt": [
+      "panorama/localization/core_tools_schinese.txt"
+    ],
+    "game/core/panorama/localization/core_tools_spanish.txt": [
+      "panorama/localization/core_tools_spanish.txt"
+    ],
+    "game/core/panorama/localization/core_tools_swedish.txt": [
+      "panorama/localization/core_tools_swedish.txt"
+    ],
+    "game/core/panorama/localization/core_tools_tchinese.txt": [
+      "panorama/localization/core_tools_tchinese.txt"
+    ],
+    "game/core/panorama/localization/core_tools_thai.txt": [
+      "panorama/localization/core_tools_thai.txt"
+    ],
+    "game/core/panorama/localization/core_tools_turkish.txt": [
+      "panorama/localization/core_tools_turkish.txt"
+    ],
+    "game/core/panorama/localization/core_tools_ukrainian.txt": [
+      "panorama/localization/core_tools_ukrainian.txt"
+    ],
+    "game/core/panorama/localization/core_tools_vietnamese.txt": [
+      "panorama/localization/core_tools_vietnamese.txt"
+    ],
+    "game/core/panorama/localization/panorama_brazilian.txt": [
+      "panorama/localization/panorama_brazilian.txt"
+    ],
+    "game/core/panorama/localization/panorama_bulgarian.txt": [
+      "panorama/localization/panorama_bulgarian.txt"
+    ],
+    "game/core/panorama/localization/panorama_czech.txt": [
+      "panorama/localization/panorama_czech.txt"
+    ],
+    "game/core/panorama/localization/panorama_danish.txt": [
+      "panorama/localization/panorama_danish.txt"
+    ],
+    "game/core/panorama/localization/panorama_dutch.txt": [
+      "panorama/localization/panorama_dutch.txt"
+    ],
+    "game/core/panorama/localization/panorama_english.txt": [
+      "panorama/localization/panorama_english.txt"
+    ],
+    "game/core/panorama/localization/panorama_finnish.txt": [
+      "panorama/localization/panorama_finnish.txt"
+    ],
+    "game/core/panorama/localization/panorama_greek.txt": [
+      "panorama/localization/panorama_greek.txt"
+    ],
+    "game/core/panorama/localization/panorama_hungarian.txt": [
+      "panorama/localization/panorama_hungarian.txt"
+    ],
+    "game/core/panorama/localization/panorama_indonesian.txt": [
+      "panorama/localization/panorama_indonesian.txt"
+    ],
+    "game/core/panorama/localization/panorama_italian.txt": [
+      "panorama/localization/panorama_italian.txt"
+    ],
+    "game/core/panorama/localization/panorama_japanese.txt": [
+      "panorama/localization/panorama_japanese.txt"
+    ],
+    "game/core/panorama/localization/panorama_korean.txt": [
+      "panorama/localization/panorama_koreana.txt"
+    ],
+    "game/core/panorama/localization/panorama_koreana.txt": [
+      "panorama/localization/panorama_koreana.txt"
+    ],
+    "game/core/panorama/localization/panorama_latam.txt": [
+      "panorama/localization/panorama_latam.txt"
+    ],
+    "game/core/panorama/localization/panorama_norwegian.txt": [
+      "panorama/localization/panorama_norwegian.txt"
+    ],
+    "game/core/panorama/localization/panorama_polish.txt": [
+      "panorama/localization/panorama_polish.txt"
+    ],
+    "game/core/panorama/localization/panorama_portuguese.txt": [
+      "panorama/localization/panorama_portuguese.txt"
+    ],
+    "game/core/panorama/localization/panorama_romanian.txt": [
+      "panorama/localization/panorama_romanian.txt"
+    ],
+    "game/core/panorama/localization/panorama_schinese.txt": [
+      "panorama/localization/panorama_schinese.txt"
+    ],
+    "game/core/panorama/localization/panorama_spanish.txt": [
+      "panorama/localization/panorama_spanish.txt"
+    ],
+    "game/core/panorama/localization/panorama_swedish.txt": [
+      "panorama/localization/panorama_swedish.txt"
+    ],
+    "game/core/panorama/localization/panorama_tchinese.txt": [
+      "panorama/localization/panorama_tchinese.txt"
+    ],
+    "game/core/panorama/localization/panorama_thai.txt": [
+      "panorama/localization/panorama_thai.txt"
+    ],
+    "game/core/panorama/localization/panorama_turkish.txt": [
+      "panorama/localization/panorama_turkish.txt"
+    ],
+    "game/core/panorama/localization/panorama_ukrainian.txt": [
+      "panorama/localization/panorama_ukrainian.txt"
+    ],
+    "game/core/panorama/localization/panorama_vietnamese.txt": [
+      "panorama/localization/panorama_vietnamese.txt"
+    ],
+    "game/core/panorama/panorama_config.txt": [
+      "panorama/panorama_config.txt"
+    ],
+    "game/core/panorama/styles/base_world_panel.vcss_c": [
+      "panorama/styles/base_world_panel.vcss_c"
+    ],
+    "game/core/panorama/styles/console.vcss_c": [
+      "panorama/styles/console.vcss_c"
+    ],
+    "game/core/panorama/styles/gameconsole.vcss_c": [
+      "panorama/styles/gameconsole.vcss_c"
+    ],
+    "game/core/panorama/styles/gamestyles.vcss_c": [
+      "panorama/styles/gamestyles.vcss_c"
+    ],
+    "game/core/panorama/styles/panorama_base.vcss_c": [
+      "panorama/styles/panorama_base.vcss_c"
+    ],
+    "game/core/panorama/styles/popups/popups_shared.vcss_c": [
+      "panorama/styles/popups/popups_shared.vcss_c"
+    ],
+    "game/core/panorama/styles/popups/popup_generic.vcss_c": [
+      "panorama/styles/popups/popup_generic.vcss_c"
+    ],
+    "game/core/panorama/styles/popups/popup_generic_dropdown.vcss_c": [
+      "panorama/styles/popups/popup_generic_dropdown.vcss_c"
+    ],
+    "game/core/panorama/styles/popups/popup_generic_text_entry.vcss_c": [
+      "panorama/styles/popups/popup_generic_text_entry.vcss_c"
+    ],
+    "game/core/panorama/styles/tooltips/tooltip_title_image_text.vcss_c": [
+      "panorama/styles/tooltips/tooltip_title_image_text.vcss_c"
+    ],
+    "game/core/panorama/styles/tooltips/tooltip_title_text.vcss_c": [
+      "panorama/styles/tooltips/tooltip_title_text.vcss_c"
+    ],
+    "game/core/panorama/window_keybinds.cfg": [
+      "panorama/window_keybinds.cfg",
+      "scripts/vscripts/game/gameinit.lua"
+    ],
+    "game/core/particles/dev/dev_origin.vsnap_c": [
+      "particles/dev/dev_origin.vsnap_c"
+    ],
+    "game/core/particles/entity/ent_physics_gorilla_tentacle_placeholder.vsnap_c": [
+      "particles/entity/ent_physics_gorilla_tentacle_placeholder.vsnap_c"
+    ],
+    "game/core/resource/bugreporter.res": [
+      "resource/bugreporter.res"
+    ],
+    "game/core/resource/clientscheme.res": [
+      "resource/clientscheme.res"
+    ],
+    "game/core/resource/colorpicker.res": [
+      "resource/colorpicker.res"
+    ],
+    "game/core/resource/colorpickerframe.res": [
+      "resource/colorpickerframe.res"
+    ],
+    "game/core/resource/countries_english.txt": [
+      "resource/countries_english.txt"
+    ],
+    "game/core/resource/dmecontrols_english.txt": [
+      "resource/dmecontrols_english.txt"
+    ],
+    "game/core/resource/gamemenu.res": [
+      "resource/gamemenu.res"
+    ],
+    "game/core/resource/keybindings_english.txt": [
+      "resource/keybindings_english.txt"
+    ],
+    "game/core/resource/sourcescheme.res": [
+      "resource/sourcescheme.res"
+    ],
+    "game/core/resource/toolhelp_base_fgd_english.txt": [
+      "resource/toolhelp_base_fgd_english.txt"
+    ],
+    "game/core/resource/toolhelp_hammer_embedded_properties_english.txt": [
+      "resource/toolhelp_hammer_embedded_properties_english.txt"
+    ],
+    "game/core/resource/toolhelp_helpsystem_english.txt": [
+      "resource/toolhelp_helpsystem_english.txt"
+    ],
+    "game/core/resource/toolhelp_lights2_fgd_english.txt": [
+      "resource/toolhelp_lights2_fgd_english.txt"
+    ],
+    "game/core/resource/toolhelp_lights_fgd_english.txt": [
+      "resource/toolhelp_lights_fgd_english.txt"
+    ],
+    "game/core/resource/toolhelp_met_english.txt": [
+      "resource/toolhelp_met_english.txt"
+    ],
+    "game/core/resource/toolhelp_models_base_fgd_english.txt": [
+      "resource/toolhelp_models_base_fgd_english.txt"
+    ],
+    "game/core/resource/toolhelp_sndtool_english.txt": [
+      "resource/toolhelp_sndtool_english.txt"
+    ],
+    "game/core/resource/toolhelp_vdata_editor_english.txt": [
+      "resource/toolhelp_vdata_editor_english.txt"
+    ],
+    "game/core/resource/toolhelp_vmixtool_english.txt": [
+      "resource/toolhelp_vmixtool_english.txt"
+    ],
+    "game/core/scripts/collision_properties.txt": [
+      "scripts/collision_properties.txt"
+    ],
+    "game/core/scripts/dsp_presets.txt": [
+      "scripts/dsp_presets.txt"
+    ],
+    "game/core/scripts/hammer/sprinkle/grass_sprinkle.txt": [
+      "scripts/hammer/sprinkle/grass_sprinkle.txt"
+    ],
+    "game/core/scripts/hammer/sprinkle/stone_sprinkle.txt": [
+      "scripts/hammer/sprinkle/stone_sprinkle.txt"
+    ],
+    "game/core/scripts/hudanimations.txt": [
+      "scripts/hudanimations.txt"
+    ],
+    "game/core/scripts/screens/vrclosecaption.res": [
+      "scripts/screens/vrclosecaption.res"
+    ],
+    "game/core/scripts/soundmixers.txt": [
+      "scripts/soundmixers.txt"
+    ],
+    "game/core/scripts/soundscapes_manifest.txt": [
+      "scripts/soundscapes_manifest.txt"
+    ],
+    "game/core/scripts/sound_operator_stacks.txt": [
+      "scripts/sound_operator_stacks.txt"
+    ],
+    "game/core/scripts/surfaceproperties_explosion_debris_effects.txt": [
+      "scripts/surfaceproperties_explosion_debris_effects.txt"
+    ],
+    "game/core/scripts/surfaceproperties_footsteps.txt": [
+      "scripts/surfaceproperties_footsteps.txt"
+    ],
+    "game/core/scripts/surfaceproperties_game.txt": [
+      "scripts/surfaceproperties_game.txt"
+    ],
+    "game/core/scripts/surfaceproperties_impact_effects.txt": [
+      "scripts/surfaceproperties_impact_effects.txt"
+    ],
+    "game/core/scripts/tools/modeldoc_motion_analysis.vdata_c": [
+      "scripts/tools/modeldoc_motion_analysis.vdata_c"
+    ],
+    "game/core/scripts/vgui_screens.txt": [
+      "scripts/vgui_screens.txt"
+    ],
+    "game/core/scripts/vmidi/beeper.txt": [
+      "scripts/vmidi/beeper.txt"
+    ],
+    "game/core/scripts/vmidi/vmidi_manifest.txt": [
+      "scripts/vmidi/vmidi_manifest.txt"
+    ],
+    "game/core/scripts/vscripts/animationsystem/animationsysteminit.lua": [
+      "scripts/vscripts/animationsystem/animationsysteminit.lua"
+    ],
+    "game/core/scripts/vscripts/core/coreinit.lua": [
+      "scripts/vscripts/core/coreinit.lua",
+      "scripts/vscripts/framework/frameworkinit.lua"
+    ],
+    "game/core/scripts/vscripts/framework/entities/entitiesinit.lua": [
+      "scripts/vscripts/framework/entities/entitiesinit.lua"
+    ],
+    "game/core/scripts/vscripts/framework/frameworkinit.lua": [
+      "scripts/vscripts/core/coreinit.lua",
+      "scripts/vscripts/framework/frameworkinit.lua"
+    ],
+    "game/core/scripts/vscripts/game/entities/entclass_example.lua": [
+      "scripts/vscripts/game/entities/entclass_example.lua"
+    ],
+    "game/core/scripts/vscripts/game/entities/entmixin_enabledisable.lua": [
+      "scripts/vscripts/game/entities/entmixin_enabledisable.lua"
+    ],
+    "game/core/scripts/vscripts/game/gameinit.lua": [
+      "panorama/window_keybinds.cfg",
+      "scripts/vscripts/game/gameinit.lua"
+    ],
+    "game/core/scripts/vscripts/init.lua": [
+      "scripts/vscripts/init.lua"
+    ],
+    "game/core/scripts/vscripts/modelprocessing/modelprocessinginit.lua": [
+      "scripts/vscripts/modelprocessing/modelprocessinginit.lua"
+    ],
+    "game/core/scripts/vscripts/utils/class.lua": [
+      "scripts/vscripts/utils/class.lua"
+    ],
+    "game/core/scripts/vscripts/utils/deepprint.lua": [
+      "scripts/vscripts/utils/deepprint.lua"
+    ],
+    "game/core/scripts/vscripts/utils/library.lua": [
+      "scripts/vscripts/utils/library.lua"
+    ],
+    "game/core/scripts/vscripts/utils/utilsinit.lua": [
+      "scripts/vscripts/utils/utilsinit.lua"
+    ],
+    "game/core/scripts/vscripts/utils/vscriptinit.lua": [
+      "scripts/vscripts/utils/vscriptinit.lua"
+    ],
+    "game/core/smartprops/test/test_color_tint.vsmart_c": [
+      "smartprops/test/test_color_tint.vsmart_c"
+    ],
+    "game/core/smartprops/test/test_fill_box.vsmart_c": [
+      "smartprops/test/test_fill_box.vsmart_c"
+    ],
+    "game/core/smartprops/test/test_fit_on_line_scale.vsmart_c": [
+      "smartprops/test/test_fit_on_line_scale.vsmart_c"
+    ],
+    "game/core/smartprops/test/test_steps.vsmart_c": [
+      "smartprops/test/test_steps.vsmart_c"
+    ],
+    "game/core/soundevents/soundevents_manifest_core.vrman_c": [
+      "soundevents/soundevents_manifest_core.vrman_c"
+    ],
+    "game/core/soundevents/soundevents_manifest_core_tools.vrman_c": [
+      "soundevents/soundevents_manifest_core_tools.vrman_c"
+    ],
+    "game/core/soundevents/soundevents_manifest_tools.vrman_c": [
+      "soundevents/soundevents_manifest_tools.vrman_c"
+    ],
+    "game/core/sounds/common/noise.vsnd_c": [
+      "sounds/common/noise.vsnd_c"
+    ],
+    "game/core/sounds/common/null.vsnd_c": [
+      "sounds/common/null.vsnd_c"
+    ],
+    "game/core/sounds/containers/counting.vsnd_c": [
+      "sounds/containers/counting.vsnd_c"
+    ],
+    "game/core/sounds/ir/default.vsnd_c": [
+      "sounds/ir/default.vsnd_c"
+    ],
+    "game/core/sounds/ir/impulse_transient_filtered_pink_noise.vsnd_c": [
+      "sounds/ir/impulse_transient_filtered_pink_noise.vsnd_c"
+    ],
+    "game/core/sounds/ir/impulse_transient_filtered_pink_noise_3sec_loop.vsnd_c": [
+      "sounds/ir/impulse_transient_filtered_pink_noise_3sec_loop.vsnd_c"
+    ],
+    "game/core/sounds/ir/ir_click_3sec_lp.vsnd_c": [
+      "sounds/ir/ir_click_3sec_lp.vsnd_c"
+    ],
+    "game/core/sounds/ir/legacy_pickup_weapon_3sec_lp.vsnd_c": [
+      "sounds/ir/legacy_pickup_weapon_3sec_lp.vsnd_c"
+    ],
+    "game/core/sounds/tools/footstep_preview/step_01.vsnd_c": [
+      "sounds/tools/footstep_preview/step_01.vsnd_c"
+    ],
+    "game/core/sounds/tools/footstep_preview/step_02.vsnd_c": [
+      "sounds/tools/footstep_preview/step_02.vsnd_c"
+    ],
+    "game/core/sounds/tools/footstep_preview/step_03.vsnd_c": [
+      "sounds/tools/footstep_preview/step_03.vsnd_c"
+    ],
+    "game/core/sounds/tools/footstep_preview/step_04.vsnd_c": [
+      "sounds/tools/footstep_preview/step_04.vsnd_c"
+    ],
+    "game/core/sounds/tools/footstep_preview/step_05.vsnd_c": [
+      "sounds/tools/footstep_preview/step_05.vsnd_c"
+    ],
+    "game/core/sounds/tools/footstep_preview/step_06.vsnd_c": [
+      "sounds/tools/footstep_preview/step_06.vsnd_c"
+    ],
+    "game/core/sounds/tools/footstep_preview/step_07.vsnd_c": [
+      "sounds/tools/footstep_preview/step_07.vsnd_c"
+    ],
+    "game/core/sounds/tools/footstep_preview/step_08.vsnd_c": [
+      "sounds/tools/footstep_preview/step_08.vsnd_c"
+    ],
+    "game/core/sounds/tools/footstep_preview/step_09.vsnd_c": [
+      "sounds/tools/footstep_preview/step_09.vsnd_c"
+    ],
+    "game/core/soundstacks/sosstrings.txt": [
+      "soundstacks/sosstrings.txt"
+    ],
+    "game/core/soundstacks/soundstacks_core_setters.vsndstck_c": [
+      "soundstacks/soundstacks_core_setters.vsndstck_c"
+    ],
+    "game/core/soundstacks/soundstacks_core_test.vsndstck_c": [
+      "soundstacks/soundstacks_core_test.vsndstck_c"
+    ],
+    "game/core/soundstacks/soundstacks_examples.vsndstck_c": [
+      "soundstacks/soundstacks_examples.vsndstck_c"
+    ],
+    "game/core/soundstacks/soundstacks_manifest_core.vrman_c": [
+      "soundstacks/soundstacks_manifest_core.vrman_c"
+    ],
+    "game/core/soundstacks/soundstacks_manifest_core_devonly.vrman_c": [
+      "soundstacks/soundstacks_manifest_core_devonly.vrman_c"
+    ],
+    "game/core/soundstacks/soundstacks_manifest_core_tools.vrman_c": [
+      "soundstacks/soundstacks_manifest_core_tools.vrman_c"
+    ],
+    "game/core/soundstacks/soundstacks_manifest_devonly.vrman_c": [
+      "soundstacks/soundstacks_manifest_devonly.vrman_c"
+    ],
+    "game/core/soundstacks/soundstacks_manifest_tools.vrman_c": [
+      "soundstacks/soundstacks_manifest_tools.vrman_c"
+    ],
+    "game/core/soundstacks/soundstacks_src1.vsndstck_c": [
+      "soundstacks/soundstacks_src1.vsndstck_c"
+    ],
+    "game/core/vgui/fonts/arial.ttf": [
+      "vgui/fonts/arial.ttf"
+    ],
+    "game/core/vgui/fonts/arialbd.ttf": [
+      "vgui/fonts/arialbd.ttf"
+    ],
+    "game/core/vgui/fonts/arialn.ttf": [
+      "vgui/fonts/arialn.ttf"
+    ],
+    "game/core/vgui/fonts/arialuni.ttf": [
+      "vgui/fonts/arialuni.ttf"
+    ],
+    "game/core/vgui/fonts/cour.ttf": [
+      "vgui/fonts/cour.ttf"
+    ],
+    "game/core/vgui/fonts/lucon.ttf": [
+      "vgui/fonts/lucon.ttf"
+    ],
+    "game/core/vgui/fonts/marlett.ttf": [
+      "vgui/fonts/marlett.ttf"
+    ],
+    "game/core/vgui/fonts/tahoma.ttf": [
+      "vgui/fonts/tahoma.ttf"
+    ],
+    "game/core/vgui/fonts/times.ttf": [
+      "vgui/fonts/times.ttf"
+    ],
+    "game/core/vgui/fonts/trebuc.ttf": [
+      "vgui/fonts/trebuc.ttf"
+    ],
+    "game/core/vgui/fonts/verdana.ttf": [
+      "vgui/fonts/verdana.ttf"
+    ],
+    "game/core/vgui/fonts/xarialuni.ttf": [
+      "vgui/fonts/xarialuni.ttf"
+    ]
+  },
+  "files": [
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/window_keybinds.cfg",
+      "to": "game/bin/win64/legacy.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/window_keybinds.cfg",
+      "to": "game/bin/win64/tools.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/window_keybinds.cfg",
+      "to": "game/bin_tools/win64/tools.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "dev/materialsystem2utils/pixel_borders.vtex_c",
+      "to": "game/core/dev/materialsystem2utils/pixel_borders.vtex_c",
+      "sha256": "8460839d7ec2f1d6ebff888f0f6e935e3056fc4bb8a176485bb6620eb1be1d5d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "dev/point_worldtext_default_background.vmat_c",
+      "to": "game/core/dev/point_worldtext_default_background.vmat_c",
+      "sha256": "ec49ec1bada2f5fb6c1dab08a606c213efe67678abe406c58529730275fdabcc"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/atrous_filter.vmat_c",
+      "to": "game/core/materials/dev/atrous_filter.vmat_c",
+      "sha256": "0d389407095e99ed298fe99460438302a910460fc59458ecf53bcb70f1125f92"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/atrous_pack_depthnormal.vmat_c",
+      "to": "game/core/materials/dev/atrous_pack_depthnormal.vmat_c",
+      "sha256": "6f8bc044bf8c947d4fe9965f2da829549fe0cd1cd96a2d583b1793ddbf4327fa"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/black_color_tga_7c2e3498.vtex_c",
+      "to": "game/core/materials/dev/black_color_tga_7c2e3498.vtex_c",
+      "sha256": "4aaedcfc1b5e84d68021b28b7d4c5359178f2ffde2c2a9603c8e49da3d81596d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/compact_indirect_draws.vmat_c",
+      "to": "game/core/materials/dev/compact_indirect_draws.vmat_c",
+      "sha256": "39918108d3416a21d908a280f527a60b4a0d6baddce24c446eb50e5fbe245afb"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/compute_smooth_normals_cs.vmat_c",
+      "to": "game/core/materials/dev/compute_smooth_normals_cs.vmat_c",
+      "sha256": "c855f511034582c07d6834b1fc7726bb6f537bcea26e18ff83fb482e15b81adf"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/cs_compress_bc7.vmat_c",
+      "to": "game/core/materials/dev/cs_compress_bc7.vmat_c",
+      "sha256": "9153e4f86d688ecc64a4a368b2b0c744c569a24dd49e9731a104203a756e9486"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/cs_parallel_sort_onesweep.vmat_c",
+      "to": "game/core/materials/dev/cs_parallel_sort_onesweep.vmat_c",
+      "sha256": "5ed871fb3497ff4bf6083ea8f0723a21a7856cc04bbc243045409c7de62e1ba8"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/cull_instanced_meshes.vmat_c",
+      "to": "game/core/materials/dev/cull_instanced_meshes.vmat_c",
+      "sha256": "9b77c98a33e2d1e8b112846284963dbc97ca7bbdf2b55d90820239c2a6afb308"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/hair_composite.vmat_c",
+      "to": "game/core/materials/dev/hair_composite.vmat_c",
+      "sha256": "41dbb1c0d5109f331ba7732aa74a404575545a3574bd46bbb03c303bdf5cd8c4"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/hair_noise_lut.vtex_c",
+      "to": "game/core/materials/dev/hair_noise_lut.vtex_c",
+      "sha256": "53d0e5a002e8ca4a7975f278949b247e08eb48720e654691392ba7deac541c7d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/hair_processing_cs.vmat_c",
+      "to": "game/core/materials/dev/hair_processing_cs.vmat_c",
+      "sha256": "109a654c6d90a89fae1228a3fcbe1d74fdb85d1d1e3d56a1dddc23c782666475"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/hair_render_ao_volume.vmat_c",
+      "to": "game/core/materials/dev/hair_render_ao_volume.vmat_c",
+      "sha256": "4958fef0078c4a50c54f4ecb3d03e29ffa7b86ba54c40b080dce2fadfd72577b"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/hair_render_shadow_volume.vmat_c",
+      "to": "game/core/materials/dev/hair_render_shadow_volume.vmat_c",
+      "sha256": "8d8a5f4c83b78d7243a2b73f20af3d3d2f3cb7fa01d5c359f190200417f4fd1a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/hair_render_volume.vmat_c",
+      "to": "game/core/materials/dev/hair_render_volume.vmat_c",
+      "sha256": "dca71e43fc1b53ff171965e004d6a355a3177c1a11bc1910326748013c848334"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/hair_shading_cs.vmat_c",
+      "to": "game/core/materials/dev/hair_shading_cs.vmat_c",
+      "sha256": "df67f9131ea0864a8edac1e71349a597747807b2e3ddcd14d5f4cd88b385c3b0"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/hair_sim_cs.vmat_c",
+      "to": "game/core/materials/dev/hair_sim_cs.vmat_c",
+      "sha256": "f373cde189c497336a4412a96fe87648adc877c08dfdc162371312f34ae86f30"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/imgui_srgb.vmat_c",
+      "to": "game/core/materials/dev/imgui_srgb.vmat_c",
+      "sha256": "fa22da7ad0ea7ad6cccbe94636c0912a5c941d2167c567be51705244de0d49e0"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/implicit_surface.vmat_c",
+      "to": "game/core/materials/dev/implicit_surface.vmat_c",
+      "sha256": "ab34e2672eaa0c78b2fd5cc62976ba76b6c98c599e35e13c16e433fbcc630e6c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/spd_depth_pyramid.vmat_c",
+      "to": "game/core/materials/dev/spd_depth_pyramid.vmat_c",
+      "sha256": "8b641517ec37974a0ae749dd709180eabb7ccfef5b714ee3b7c99ad52f5dae98"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/sst_cs.vmat_c",
+      "to": "game/core/materials/dev/sst_cs.vmat_c",
+      "sha256": "d0699c48c6e397db0fa214ded365559442ece5538272fcb3801b457e7a9a837b"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/sst_depth_copy.vmat_c",
+      "to": "game/core/materials/dev/sst_depth_copy.vmat_c",
+      "sha256": "f2935d9a41ebaf2dfb54e46c65d787bde04c8476140557e508409cba89eda128"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/update_visnode_visibility.vmat_c",
+      "to": "game/core/materials/dev/update_visnode_visibility.vmat_c",
+      "sha256": "d8b88ca8c60fc176a2b574527eb23dab17e0a4ad610ece6e57588bcddad3bce5"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/visualize_depth_cull_holes.vmat_c",
+      "to": "game/core/materials/dev/visualize_depth_cull_holes.vmat_c",
+      "sha256": "ad13a1cb9340c44b671edc9e7e84c74ce4cfb24ca44ef226ae5c78ccba3d7ef2"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/vrad3/lightmap_vertexlight_reduce.vmat_c",
+      "to": "game/core/materials/dev/vrad3/lightmap_vertexlight_reduce.vmat_c",
+      "sha256": "5e6238d0fc6527447545d096fb104f59bacfd25445870e0e721ab1921c73a356"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/vrad3/vertexlight_raytrace.vmat_c",
+      "to": "game/core/materials/dev/vrad3/vertexlight_raytrace.vmat_c",
+      "sha256": "c49fd921f68d221bfc76b6f689074d725166d26a6506bfbe90dc91e15f531e2a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/vrad3/vertexlight_test_converged.vmat_c",
+      "to": "game/core/materials/dev/vrad3/vertexlight_test_converged.vmat_c",
+      "sha256": "28ce6403bb29647a2111dc01ee927c9fc359e5f0afa7f726c2a4f24c08b94e39"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/wind_controller_visualize.vmat_c",
+      "to": "game/core/materials/dev/wind_controller_visualize.vmat_c",
+      "sha256": "0b51284fa1a0304c4842a5c9d365c2b9556dd0915bdc897d55dc154f5171062a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/wind_noise_cs.vmat_c",
+      "to": "game/core/materials/dev/wind_noise_cs.vmat_c",
+      "sha256": "c8a09cce6286eb0f3fbe6a89a71cbe088d3b6eea00fb31deb3331a1d659d4a14"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/dev/wind_update_cs.vmat_c",
+      "to": "game/core/materials/dev/wind_update_cs.vmat_c",
+      "sha256": "322653672a554f9a3421805df12088f38e49744d6b5e880d66b8f2bb2e5476a1"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/editor/deformer_icon.vmat_c",
+      "to": "game/core/materials/editor/deformer_icon.vmat_c",
+      "sha256": "d289a951ca48d902970b5e7359351afbc7c53aabb5b9c44de1b8876004a1dc49"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/editor/deformer_icon_translucent.vmat_c",
+      "to": "game/core/materials/editor/deformer_icon_translucent.vmat_c",
+      "sha256": "cd272ec50292356a7d8b79af215ef1d275b87dbd4a385e9787aebbdae19ab0f4"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/editor/error_indicator.vmat_c",
+      "to": "game/core/materials/editor/error_indicator.vmat_c",
+      "sha256": "639d4fa6e3b6d3defbeb90c3f40ceab6574a40e5f376a939b60b7ff241a8070a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/editor/error_indicator_psd_95f0e675.vtex_c",
+      "to": "game/core/materials/editor/error_indicator_psd_95f0e675.vtex_c",
+      "sha256": "25a19aa55e916b6898972d8905e1e11b773efb6d431c862c1ebe27cc01b980bf"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/models/editor/player_start_tga_6597ddab.vtex_c",
+      "to": "game/core/materials/models/editor/player_start_tga_6597ddab.vtex_c",
+      "sha256": "34080aec2bcfad7a8e8d4ba5dc1ce013e35b3d067902b305976bc1112a46f8bf"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/tools/modeldoc_texture_generator_preview.vmat_c",
+      "to": "game/core/materials/tools/modeldoc_texture_generator_preview.vmat_c",
+      "sha256": "d2e6d5667168caac22705200927ef25e792128bfc48e216effe5108be057eb99"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/tools/tools_conveyor.vmat_c",
+      "to": "game/core/materials/tools/tools_conveyor.vmat_c",
+      "sha256": "807bcde8f0b5d59ba3d03de5f160d72c596f119cfb7200151a8ac36f433fe722"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/tools/tools_spawn_volume.vmat_c",
+      "to": "game/core/materials/tools/tools_spawn_volume.vmat_c",
+      "sha256": "c7452ae85e361bf0bce8c8a4d6cd9149a55f2574a245545a12b8cc81f9c309fd"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "materials/tools/tools_spawn_volume_color_psd_cf616ff3.vtex_c",
+      "to": "game/core/materials/tools/tools_spawn_volume_color_psd_cf616ff3.vtex_c",
+      "sha256": "0457486df64005d93a9f57672a4f9e24291042172099a68a21cdac31dff5656a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/browser/webkit.css",
+      "to": "game/core/panorama/browser/webkit.css",
+      "sha256": "84eae8df14d2d284abf2b8554a849f8f46cce350c2e4a59143282de6ec4c04ec"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/default_keybinds.cfg",
+      "to": "game/core/panorama/default_keybinds.cfg",
+      "sha256": "81e2863b4974b0546e701aa433a745b7b887cc9331729d157d9f92f3099aa6bf"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/base_world_panel.vxml_c",
+      "to": "game/core/panorama/layout/base_world_panel.vxml_c",
+      "sha256": "e6cafbfa53ec28032dd619d992ae0590878135a57717334f05f8a3f82507d82c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/console.vxml_c",
+      "to": "game/core/panorama/layout/console.vxml_c",
+      "sha256": "dcdf23fd1b609e2fd6b769d71d2ac8c7281e04c7b314bc6a41948616494784fe"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/context_menus/context_menu_base.vxml_c",
+      "to": "game/core/panorama/layout/context_menus/context_menu_base.vxml_c",
+      "sha256": "ee1c4ca6c50da370a1bbb77f60c03782a4c91983058055b7942df364accee727"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/debugger.vxml_c",
+      "to": "game/core/panorama/layout/debugger.vxml_c",
+      "sha256": "8e2a5a6cd34ac6b7674e3a3459bad446562dbca3df8e2eea63760d277b70dce0"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/debugindividualstyle.vxml_c",
+      "to": "game/core/panorama/layout/debugindividualstyle.vxml_c",
+      "sha256": "1168b2ae0d1532a229d15a7555aa3d613182b4e850f04ca91876fce17c762f96"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/debuginheritedstylesheader.vxml_c",
+      "to": "game/core/panorama/layout/debuginheritedstylesheader.vxml_c",
+      "sha256": "6020584f0cb378c58bff95618622b4560fc1adec98e35e0cb230dc393ae36676"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/debuglayout.vxml_c",
+      "to": "game/core/panorama/layout/debuglayout.vxml_c",
+      "sha256": "32426a40fe5bd7650ac2ed1ae037ce1cabd80e58ddc328e2377f049d3adcffb8"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/debugpanel.vxml_c",
+      "to": "game/core/panorama/layout/debugpanel.vxml_c",
+      "sha256": "2a6c4ddfcaf5126e87d281f65345aca29b4b4bc24623e054d0880118025c1e53"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/debugstyleanimation.vxml_c",
+      "to": "game/core/panorama/layout/debugstyleanimation.vxml_c",
+      "sha256": "83973e711d088836855968d3d516c3170c9baba783a3356a0d4759f2f50e9f2d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/debugstyleblock.vxml_c",
+      "to": "game/core/panorama/layout/debugstyleblock.vxml_c",
+      "sha256": "a5f6f50505c6fd5248ee2fa622a9e66991cb3732887fa8375c1aa17c1ccfd3ee"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/engineconsole.vxml_c",
+      "to": "game/core/panorama/layout/engineconsole.vxml_c",
+      "sha256": "371884ad8a1fb5aacf977d1129ad3b59c9d3b4276ea8bc2538a6f13355fd266e"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/fileopendialog.vxml_c",
+      "to": "game/core/panorama/layout/fileopendialog.vxml_c",
+      "sha256": "6c5e7e4cddb46a1f31498d4946c077c31d7b516500391e371a707d7f48e9968d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/number_entry.vxml_c",
+      "to": "game/core/panorama/layout/number_entry.vxml_c",
+      "sha256": "95b91457b709992a8cdb7c5c5070de27795a2bcb36b816283a363c0100e71d72"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/popups/popup_generic_dropdown.vxml_c",
+      "to": "game/core/panorama/layout/popups/popup_generic_dropdown.vxml_c",
+      "sha256": "8cf470ab4cc659809dca195f70b33e0b66b98e76dd63fc85772f665e4833ac69"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/popups/popup_generic_no_dim.vxml_c",
+      "to": "game/core/panorama/layout/popups/popup_generic_no_dim.vxml_c",
+      "sha256": "46fa4a507c8b60db5fb8ed837ea33899ca4d1257a02a9accb0d1e00a9a7041b6"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/popups/popup_generic_text_entry.vxml_c",
+      "to": "game/core/panorama/layout/popups/popup_generic_text_entry.vxml_c",
+      "sha256": "c42f7f0c27b3dfbe269d386d96f618954bf850a77590f3d345402ae15d7343a4"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/popups/popup_manager.vxml_c",
+      "to": "game/core/panorama/layout/popups/popup_manager.vxml_c",
+      "sha256": "89508d496f25e21b47cb80062772a28d5e50523785b90151b1fe20ac648452cb"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/tooltip.vxml_c",
+      "to": "game/core/panorama/layout/tooltip.vxml_c",
+      "sha256": "d9300f683003fc6469c607e44d91b96b40562e4a895beaedc05c2b7ffa0ce2b9"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/tooltips/tooltip_base.vxml_c",
+      "to": "game/core/panorama/layout/tooltips/tooltip_base.vxml_c",
+      "sha256": "324f35ba01a079736f3b6a50565f940c2bc2294ba18f434343ff43a1b92da3b4"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/tooltips/tooltip_text.vxml_c",
+      "to": "game/core/panorama/layout/tooltips/tooltip_text.vxml_c",
+      "sha256": "ca7f9d455bc61275ef98c2cdacb05c408a9ca5a333d1e06ecc8faeeb682ca6b2"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/tooltips/tooltip_title_image_text.vxml_c",
+      "to": "game/core/panorama/layout/tooltips/tooltip_title_image_text.vxml_c",
+      "sha256": "8732c0b195e3ff6599a8191a8c82763298b1c3ef666f0a2a4c7734810d5a676e"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/layout/tooltips/tooltip_title_text.vxml_c",
+      "to": "game/core/panorama/layout/tooltips/tooltip_title_text.vxml_c",
+      "sha256": "c59dd07ee0c414eac063e2a62282a0bb47cd2b7fda54f8c3953bd927e8b96211"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_brazilian.txt",
+      "to": "game/core/panorama/localization/core_tools_brazilian.txt",
+      "sha256": "edc2aa90ac2e6b4ae84efd97aad1672e8d6182576b12695d3c702994749ceffe"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_bulgarian.txt",
+      "to": "game/core/panorama/localization/core_tools_bulgarian.txt",
+      "sha256": "08f67436908a0f6cfa81818ee88d7caec80d6a3dee819ed10cbcc63d233d5bbc"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_czech.txt",
+      "to": "game/core/panorama/localization/core_tools_czech.txt",
+      "sha256": "5d180d511974fa116250654d27e4e6eab531cd983579192a40c07dfbf7b02a22"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_danish.txt",
+      "to": "game/core/panorama/localization/core_tools_danish.txt",
+      "sha256": "73119c86128de371bbc9898b73fa53333c2582ed80756817062a5f63a166b985"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_dutch.txt",
+      "to": "game/core/panorama/localization/core_tools_dutch.txt",
+      "sha256": "8cce860c21ee77268c8cdac5aea560e3eb489809d25f82e1b7caef571585d3b1"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_english.txt",
+      "to": "game/core/panorama/localization/core_tools_english.txt",
+      "sha256": "f0ea596c06d23448a63b21077ad2bd0a86b705b0ace2ff003fbc9e5640ff9265"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_finnish.txt",
+      "to": "game/core/panorama/localization/core_tools_finnish.txt",
+      "sha256": "2f5890d350e42432d7f618794a92f848657f7de0dc66a20e534491ef04149174"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_french.txt",
+      "to": "game/core/panorama/localization/core_tools_french.txt",
+      "sha256": "6f9cd9fb4175116e54059a450621396e8f706d3e47149dd98ef660296c59d0f0"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_greek.txt",
+      "to": "game/core/panorama/localization/core_tools_greek.txt",
+      "sha256": "d6786aeeb4ac28d64e3234d4b169d9a7f68fe647532de16847973adbe3fd6d4b"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_hungarian.txt",
+      "to": "game/core/panorama/localization/core_tools_hungarian.txt",
+      "sha256": "56df20c45db7c4968934b6482e72b90b182bb1d5fee512396cf2cfc3087430e8"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_indonesian.txt",
+      "to": "game/core/panorama/localization/core_tools_indonesian.txt",
+      "sha256": "6a0d2e3896277afba7db9e191d3a7ee724cd6eb1e5ffe602b6f889ff374151b8"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_italian.txt",
+      "to": "game/core/panorama/localization/core_tools_italian.txt",
+      "sha256": "421d447b8fc110cb41fd24e4f4f42de27bf0389d2018f2100acf47c345cd0612"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_japanese.txt",
+      "to": "game/core/panorama/localization/core_tools_japanese.txt",
+      "sha256": "f0b5243e215bd12d3a6f8e3b4becf11b244d41cf04c5c0e42d1501d4533175bd"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_latam.txt",
+      "to": "game/core/panorama/localization/core_tools_latam.txt",
+      "sha256": "cb518c8bc22deef855c3253c84ebf26392be398979e3bcc98af6bf2982fb5b62"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_norwegian.txt",
+      "to": "game/core/panorama/localization/core_tools_norwegian.txt",
+      "sha256": "48b2d57f8879a57cbd6fff571df55abe75fbb844791c0b11e62397bc405bb530"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_polish.txt",
+      "to": "game/core/panorama/localization/core_tools_polish.txt",
+      "sha256": "4fa806462df281852ec7d40b30d2297f1cf06e136a35bdf935662cb13b70f9ad"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_portuguese.txt",
+      "to": "game/core/panorama/localization/core_tools_portuguese.txt",
+      "sha256": "cf9f73dbe790370532c5b0776571580c44f8d830e3f61a810fe637e024330e5d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_romanian.txt",
+      "to": "game/core/panorama/localization/core_tools_romanian.txt",
+      "sha256": "593121bb4675fb250fe3c5712c3312e83a3b43e29a32e894d415b0172a176d9e"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_russian.txt",
+      "to": "game/core/panorama/localization/core_tools_russian.txt",
+      "sha256": "1f8a3beac697762496e0a3552041c4e09d0ee65e17f6f0171a76dc304be2de0d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_schinese.txt",
+      "to": "game/core/panorama/localization/core_tools_schinese.txt",
+      "sha256": "9b33b4d4203aece4a0d938dd32d6143ea9d927156d8aadebcf9f9ed8165579a0"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_spanish.txt",
+      "to": "game/core/panorama/localization/core_tools_spanish.txt",
+      "sha256": "392ace04e33e0791663bfc7a0eb536d79a13b00924783a743db9e7608744bdd8"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_swedish.txt",
+      "to": "game/core/panorama/localization/core_tools_swedish.txt",
+      "sha256": "4f1ccb15e6b26e6b0bcd131961d0a48a8a3a1d47c43c3a5f1ab31641cf6dae3a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_tchinese.txt",
+      "to": "game/core/panorama/localization/core_tools_tchinese.txt",
+      "sha256": "61ddea083b0801ff3ef588e0eceb1de9ea38484c1b412fc0251dc2580b5057a3"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_thai.txt",
+      "to": "game/core/panorama/localization/core_tools_thai.txt",
+      "sha256": "dfc136092eeab47d615860695915c55f3134211aaceb159b22386bd338bfd1c6"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_turkish.txt",
+      "to": "game/core/panorama/localization/core_tools_turkish.txt",
+      "sha256": "0b31378b88652518c91868e7a71932c4437e20eda6731f9952303d439d165da7"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_ukrainian.txt",
+      "to": "game/core/panorama/localization/core_tools_ukrainian.txt",
+      "sha256": "542d05270044901c0caa68a1e53cec6dd11ab9a8ddd59af0ceabea8575b12467"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/core_tools_vietnamese.txt",
+      "to": "game/core/panorama/localization/core_tools_vietnamese.txt",
+      "sha256": "119cc9c6b8d2c60844e6654ce59510756e8a78a08fc4057b60b004e69fd7ff9f"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_brazilian.txt",
+      "to": "game/core/panorama/localization/panorama_brazilian.txt",
+      "sha256": "b4f68703883aa170b4c3b6f56acce527d19fe0f125cb762997311a7f799d0a18"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_bulgarian.txt",
+      "to": "game/core/panorama/localization/panorama_bulgarian.txt",
+      "sha256": "4a59386a9fd573c2a968910d13c202cc856c2c40f9139a63652ffaae1725d545"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_czech.txt",
+      "to": "game/core/panorama/localization/panorama_czech.txt",
+      "sha256": "fb128b25302fc0de67af5684defcfebbbf9773d34c06b8e555ac94c22b8694ea"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_danish.txt",
+      "to": "game/core/panorama/localization/panorama_danish.txt",
+      "sha256": "731f077468b26c31a9dd2d6f52761bafb83a39e513a5f14b3a7ba09f0cc00606"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_dutch.txt",
+      "to": "game/core/panorama/localization/panorama_dutch.txt",
+      "sha256": "ba1a70de30efe4deca17ef38f4a8b09972c3478be7edc0df043449027ab337b2"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_english.txt",
+      "to": "game/core/panorama/localization/panorama_english.txt",
+      "sha256": "a194cb3f7b8c15246a68145dd4803751be9e8533a019659a299bd8767db9ff4a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_finnish.txt",
+      "to": "game/core/panorama/localization/panorama_finnish.txt",
+      "sha256": "9d79b6c03f797eb9418c079e81fa1b3fabc2f9d36fe155cdfe78d2d0f1145918"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_greek.txt",
+      "to": "game/core/panorama/localization/panorama_greek.txt",
+      "sha256": "218aedb4ba9f24a65892b040f5441474317daa788378eabe2086a2c1caa1f401"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_hungarian.txt",
+      "to": "game/core/panorama/localization/panorama_hungarian.txt",
+      "sha256": "458271a7eb76f4877faebb01961e1452a46f0f114f1f84deca9d24ea81f739d1"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_indonesian.txt",
+      "to": "game/core/panorama/localization/panorama_indonesian.txt",
+      "sha256": "8a19250587734bf6164fae71abf0018997f522c8397e75c79d2fe71517fd0157"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_italian.txt",
+      "to": "game/core/panorama/localization/panorama_italian.txt",
+      "sha256": "e529b7c77de216d43f09fbe1b8b2e88da7c121f45cef925d9fa1bd0ea3aaac9a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_japanese.txt",
+      "to": "game/core/panorama/localization/panorama_japanese.txt",
+      "sha256": "fc75e0c45c7cf713823c98021d77a05b6417ab251378cc805c9822cb6621fc8a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_koreana.txt",
+      "to": "game/core/panorama/localization/panorama_korean.txt",
+      "sha256": "f968a42b70ca5a7266cfd57d9796d1b0cf998c15796e3fbc7cc1eb4bdbd19fb0"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_koreana.txt",
+      "to": "game/core/panorama/localization/panorama_koreana.txt",
+      "sha256": "f968a42b70ca5a7266cfd57d9796d1b0cf998c15796e3fbc7cc1eb4bdbd19fb0"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_latam.txt",
+      "to": "game/core/panorama/localization/panorama_latam.txt",
+      "sha256": "da1ac9a03b42e4e820ca052c5a28a3fd2c9f621e742a5cbe64b089a124ed8019"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_norwegian.txt",
+      "to": "game/core/panorama/localization/panorama_norwegian.txt",
+      "sha256": "283444e16fe019d66bad8f200880b2abbc8fb6b4bff413036d3085258d6e9d38"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_polish.txt",
+      "to": "game/core/panorama/localization/panorama_polish.txt",
+      "sha256": "070f6678abb1daf7fe67af8907c087e0f9b60fa26feb4cd1561236544dc63ce3"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_portuguese.txt",
+      "to": "game/core/panorama/localization/panorama_portuguese.txt",
+      "sha256": "ddc077775b5a305bee7fa602edaa608ab4ad91fbbf50c5fbeb865056ced41128"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_romanian.txt",
+      "to": "game/core/panorama/localization/panorama_romanian.txt",
+      "sha256": "e768d1e7712b574f9d465de5df20fedc6cd9a1e7f5d06c15ac8d1c2d9cd38e36"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_schinese.txt",
+      "to": "game/core/panorama/localization/panorama_schinese.txt",
+      "sha256": "395d0e6bfd1362f4007d6a58f43b924c49899ec852bfa92eff53f90b1f8f45fb"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_spanish.txt",
+      "to": "game/core/panorama/localization/panorama_spanish.txt",
+      "sha256": "439630789e051cdb0582b4b5e0ac93ae02a73faa03cdec26ae499722479c43ff"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_swedish.txt",
+      "to": "game/core/panorama/localization/panorama_swedish.txt",
+      "sha256": "f39653341ce5b9d445b19fb37efe82e0bcbfdce51746c7e8113c990f2f1ac729"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_tchinese.txt",
+      "to": "game/core/panorama/localization/panorama_tchinese.txt",
+      "sha256": "fe2a1d5d5496e3a2fed719a3aac15155b119e9c4d1c63ec5db38f285838fb67a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_thai.txt",
+      "to": "game/core/panorama/localization/panorama_thai.txt",
+      "sha256": "ccfc341db443b5d9f054bdf7058e28af35232bf7486240136dee1f6b8d196ede"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_turkish.txt",
+      "to": "game/core/panorama/localization/panorama_turkish.txt",
+      "sha256": "724b2dccd0e61a683ccf069226b9766a68e6b8f245e76d33499b8ee6c28852f6"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_ukrainian.txt",
+      "to": "game/core/panorama/localization/panorama_ukrainian.txt",
+      "sha256": "476d401a2e3bf79daf483d45e84a812ad26e50137a7033b7ecd6790f1dd2ff38"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/localization/panorama_vietnamese.txt",
+      "to": "game/core/panorama/localization/panorama_vietnamese.txt",
+      "sha256": "ced3291cf2186d1f0dce18310136d7fbf3e590265e7fe8f3cb0a9674009bb7e5"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/panorama_config.txt",
+      "to": "game/core/panorama/panorama_config.txt",
+      "sha256": "fcc2893e9148e85791b0b1ad4bcafc674ab8768023e4bb1bddfc7d53bfeabb30"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/base_world_panel.vcss_c",
+      "to": "game/core/panorama/styles/base_world_panel.vcss_c",
+      "sha256": "17509f343809380f2d1b550ec19766dc2b98ef6b12010b24e3b84403a622071a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/console.vcss_c",
+      "to": "game/core/panorama/styles/console.vcss_c",
+      "sha256": "15f59039489e410480a4c5e50886a613ccf22f4362e9d1380b0bbe0e06b383eb"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/gameconsole.vcss_c",
+      "to": "game/core/panorama/styles/gameconsole.vcss_c",
+      "sha256": "dfb72701f55755f1e698933b335e52745ab94457a88e5221c7b8b41b3e8c06ad"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/gamestyles.vcss_c",
+      "to": "game/core/panorama/styles/gamestyles.vcss_c",
+      "sha256": "09bb0cdfa8c6300b902f87dcf5908f670f9f5c3066c90b330c3654fee11f7882"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/panorama_base.vcss_c",
+      "to": "game/core/panorama/styles/panorama_base.vcss_c",
+      "sha256": "edbacc7cb19edf12f35d931153b679c690670ebc7479942f3e9cf257a6a204ca"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/popups/popups_shared.vcss_c",
+      "to": "game/core/panorama/styles/popups/popups_shared.vcss_c",
+      "sha256": "20c243f099a10e4105950505440674619a400fed98261d337e3b95933b32eb96"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/popups/popup_generic.vcss_c",
+      "to": "game/core/panorama/styles/popups/popup_generic.vcss_c",
+      "sha256": "6c949fff357526c46552b544f9fa1d2a6a851b263f97ff52c602a7c1c56950e0"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/popups/popup_generic_dropdown.vcss_c",
+      "to": "game/core/panorama/styles/popups/popup_generic_dropdown.vcss_c",
+      "sha256": "22d3079b21be49c990751b5ff98c7d193e1ac679f27aab84051bf0363f6c7299"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/popups/popup_generic_text_entry.vcss_c",
+      "to": "game/core/panorama/styles/popups/popup_generic_text_entry.vcss_c",
+      "sha256": "64bafc45ac18613ce40bfe0075c98c3ff3a3817ed573fd5531bb4ffbf7687060"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/tooltips/tooltip_title_image_text.vcss_c",
+      "to": "game/core/panorama/styles/tooltips/tooltip_title_image_text.vcss_c",
+      "sha256": "5c981c69cbc536516f5a0f374973742bba83b1982db35f4473fc4b85940c7462"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/styles/tooltips/tooltip_title_text.vcss_c",
+      "to": "game/core/panorama/styles/tooltips/tooltip_title_text.vcss_c",
+      "sha256": "6de99afd7d85f073efe1c8b865fc10aa219ce7b523b05cc9e275039e7e30c262"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/window_keybinds.cfg",
+      "to": "game/core/panorama/window_keybinds.cfg",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "particles/dev/dev_origin.vsnap_c",
+      "to": "game/core/particles/dev/dev_origin.vsnap_c",
+      "sha256": "8763070a1eb25eb0b47684ff458a727bffa9b09beceb844d72492b65d2bcbabc"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "particles/entity/ent_physics_gorilla_tentacle_placeholder.vsnap_c",
+      "to": "game/core/particles/entity/ent_physics_gorilla_tentacle_placeholder.vsnap_c",
+      "sha256": "2fc69f2156d0dba731509e0bd052df1d10e435400b4d89207ca9b4297666df78"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/bugreporter.res",
+      "to": "game/core/resource/bugreporter.res",
+      "sha256": "b48b9667215eeb32dbfdbb0ead9389c998404689a161ff950c57e2d0721849f3"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/clientscheme.res",
+      "to": "game/core/resource/clientscheme.res",
+      "sha256": "72fa10170f79e8db9a12abf691f2cf92740830101875490ffbba2d6dfab40fc5"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/colorpicker.res",
+      "to": "game/core/resource/colorpicker.res",
+      "sha256": "beaa717e03ba981e3650b848c7727eac356d93b1c67f32997005c56edc5e6c72"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/colorpickerframe.res",
+      "to": "game/core/resource/colorpickerframe.res",
+      "sha256": "e025dffeb30bdcdc0270ef5d53aa9ba03c52cd41bbc073497537cb47027cd263"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/countries_english.txt",
+      "to": "game/core/resource/countries_english.txt",
+      "sha256": "668b3c8a9934e6f806ec034aa08fae9f4651982b3bd11fb1544a59563d0f2008"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/dmecontrols_english.txt",
+      "to": "game/core/resource/dmecontrols_english.txt",
+      "sha256": "405fb0c4115804f26f928f7f3fbecc441f76aa713d215f73d1e6742deac75834"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/gamemenu.res",
+      "to": "game/core/resource/gamemenu.res",
+      "sha256": "0b0422fd0b9511a02466ac3f577ae8f87eb493c351192989f0dcf21e9098d20c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/keybindings_english.txt",
+      "to": "game/core/resource/keybindings_english.txt",
+      "sha256": "5870f9a60a3711272308da00a952dfe1aca71655fa8caeea0fd617eab8092716"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/sourcescheme.res",
+      "to": "game/core/resource/sourcescheme.res",
+      "sha256": "ad8032c483ae12c0cc99bf84a85b149690a43cc6c1a4bdc376e539b627ab9a0f"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/toolhelp_base_fgd_english.txt",
+      "to": "game/core/resource/toolhelp_base_fgd_english.txt",
+      "sha256": "19ac1dfee723da243cc82b203e5e2a86c04df0ce554a239967dc226c30aea3cc"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/toolhelp_hammer_embedded_properties_english.txt",
+      "to": "game/core/resource/toolhelp_hammer_embedded_properties_english.txt",
+      "sha256": "6e742cc32d0afc16431cc422177ba5d77f36b138a895fad24b329eaef3d13403"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/toolhelp_helpsystem_english.txt",
+      "to": "game/core/resource/toolhelp_helpsystem_english.txt",
+      "sha256": "3f76e782cf98453172fc61f283dda69d9d170f9aa054018fb6863ac7b68d4879"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/toolhelp_lights2_fgd_english.txt",
+      "to": "game/core/resource/toolhelp_lights2_fgd_english.txt",
+      "sha256": "f0cfc943104bafe124f9c240d1060452bdae01918ede30f5fc9926a085c033a4"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/toolhelp_lights_fgd_english.txt",
+      "to": "game/core/resource/toolhelp_lights_fgd_english.txt",
+      "sha256": "7363d2d5a050a3073ff3291a3aa8122034336a4040a36de1bc1e7fbfc65a9899"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/toolhelp_met_english.txt",
+      "to": "game/core/resource/toolhelp_met_english.txt",
+      "sha256": "090f43a5d1817514da4ff9a4cafcbfd387c37127405f55eaeb86bf7b35fad78b"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/toolhelp_models_base_fgd_english.txt",
+      "to": "game/core/resource/toolhelp_models_base_fgd_english.txt",
+      "sha256": "66c28cd333ca276da9bf25a1fbaef83ee122ad3f973b2941d9f4cb3c39defb54"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/toolhelp_sndtool_english.txt",
+      "to": "game/core/resource/toolhelp_sndtool_english.txt",
+      "sha256": "bde3730a0e0d7ad0c2a3abf57d1489fb7acdf1ac0cc1628c54be6824999f5768"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/toolhelp_vdata_editor_english.txt",
+      "to": "game/core/resource/toolhelp_vdata_editor_english.txt",
+      "sha256": "24818bd2842fa7ccd7f86ca6d0e7862e8bcd738970420b1ca01828af71f0322f"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "resource/toolhelp_vmixtool_english.txt",
+      "to": "game/core/resource/toolhelp_vmixtool_english.txt",
+      "sha256": "1c7a096d622cdfe34fd111c5d9cde7cb0d32abab8be362b5fa4956cc2c78e60c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/collision_properties.txt",
+      "to": "game/core/scripts/collision_properties.txt",
+      "sha256": "d933fc535d9e5d854f5c837376b6a29540310f0fa6ce8217833ed4e4fb555ea4"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/dsp_presets.txt",
+      "to": "game/core/scripts/dsp_presets.txt",
+      "sha256": "57ab56520cc1885ed24e952e7186dbbf5f111e04c8d72a00f1a805daa398a631"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/hammer/sprinkle/grass_sprinkle.txt",
+      "to": "game/core/scripts/hammer/sprinkle/grass_sprinkle.txt",
+      "sha256": "9ce17bfe3d947de91c009213b5066f1502b95129d5a0adf9469e55440289ac00"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/hammer/sprinkle/stone_sprinkle.txt",
+      "to": "game/core/scripts/hammer/sprinkle/stone_sprinkle.txt",
+      "sha256": "5b9b48aeeb004b1fd525666b761bb06c7190a4b22736d39b8421de60e39fb133"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/hudanimations.txt",
+      "to": "game/core/scripts/hudanimations.txt",
+      "sha256": "2f089523d38aa58e759164451872939a04220ebe70d1c1f2d4978a3a7c69edbb"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/screens/vrclosecaption.res",
+      "to": "game/core/scripts/screens/vrclosecaption.res",
+      "sha256": "cd5af9759dbfebcc23529cd696d108998c0b7d483b9a511aeab3c76bee0b882d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/soundmixers.txt",
+      "to": "game/core/scripts/soundmixers.txt",
+      "sha256": "b965a07501998aa06008842189e3dad51679259d27ac7c2685699f37e6f0ca9d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/soundscapes_manifest.txt",
+      "to": "game/core/scripts/soundscapes_manifest.txt",
+      "sha256": "54d68432e9af9c2afad02fa24fe2e2019e9e7d7e1ad531f224e6af35af71d116"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/sound_operator_stacks.txt",
+      "to": "game/core/scripts/sound_operator_stacks.txt",
+      "sha256": "999da9928a5201b0d98c79ac7c1d2c4c1cc32dcb07c9ee9bbeef645b5537e86c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/surfaceproperties_explosion_debris_effects.txt",
+      "to": "game/core/scripts/surfaceproperties_explosion_debris_effects.txt",
+      "sha256": "b1e27d29eb8ba8a4bc6de8397cc5fd94856a2d86e91011ec2fb055cd082ef5bb"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/surfaceproperties_footsteps.txt",
+      "to": "game/core/scripts/surfaceproperties_footsteps.txt",
+      "sha256": "47f7195e75d3359156ce1ed5f00132f852264c547edd78df9215913fb0af76c9"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/surfaceproperties_game.txt",
+      "to": "game/core/scripts/surfaceproperties_game.txt",
+      "sha256": "6551ad4202b0078e4af535c2ca18193ea666ad48289eefd06c5f0dd25889deec"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/surfaceproperties_impact_effects.txt",
+      "to": "game/core/scripts/surfaceproperties_impact_effects.txt",
+      "sha256": "5a22ac48b04a135c4e50858a5fb5aa6c36b4f6c87d1cd9e9fd3492d23440110b"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/tools/modeldoc_motion_analysis.vdata_c",
+      "to": "game/core/scripts/tools/modeldoc_motion_analysis.vdata_c",
+      "sha256": "7402c4d78b1d6b18f475b1c184029e4f32edef885e32ba1b9f62dc544a6a97d4"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vgui_screens.txt",
+      "to": "game/core/scripts/vgui_screens.txt",
+      "sha256": "141de179529896f8ed89aea11d772737eca7541ec05b0262b12129bde66b5cb2"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vmidi/beeper.txt",
+      "to": "game/core/scripts/vmidi/beeper.txt",
+      "sha256": "ef28c17c621514a3e4c469891268c2eb930d59442c14bb1fcb27d73a4e70aa6a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vmidi/vmidi_manifest.txt",
+      "to": "game/core/scripts/vmidi/vmidi_manifest.txt",
+      "sha256": "14975d20c9e21be3119659b8c5a95365545def38daac4852040aeafcf14549d1"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/animationsystem/animationsysteminit.lua",
+      "to": "game/core/scripts/vscripts/animationsystem/animationsysteminit.lua",
+      "sha256": "649b2d8a84268c8548175f06942ce03a984ad1e1ea39b26299dafd41e34a9fec"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/core/coreinit.lua",
+      "to": "game/core/scripts/vscripts/core/coreinit.lua",
+      "sha256": "ee5f083bb304d3a26c7fe69bf45c368a9b933a59d0f7e1093f39c03f118a56ae"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/framework/entities/entitiesinit.lua",
+      "to": "game/core/scripts/vscripts/framework/entities/entitiesinit.lua",
+      "sha256": "de49c1e71d9f6f870bd17a12f8ab60df3a98da182bce52159e96767bf7da8a41"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/core/coreinit.lua",
+      "to": "game/core/scripts/vscripts/framework/frameworkinit.lua",
+      "sha256": "ee5f083bb304d3a26c7fe69bf45c368a9b933a59d0f7e1093f39c03f118a56ae"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/game/entities/entclass_example.lua",
+      "to": "game/core/scripts/vscripts/game/entities/entclass_example.lua",
+      "sha256": "060bf3730a0c628f0d6d178806d3f0c10b4b1722bd454507f8e5261a5176509c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/game/entities/entmixin_enabledisable.lua",
+      "to": "game/core/scripts/vscripts/game/entities/entmixin_enabledisable.lua",
+      "sha256": "e3c2c7226dc13580daeb11d924d1e5f5732842e5f5c0acba695e6ac77d3f473b"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "panorama/window_keybinds.cfg",
+      "to": "game/core/scripts/vscripts/game/gameinit.lua",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/init.lua",
+      "to": "game/core/scripts/vscripts/init.lua",
+      "sha256": "f90398dc103f38546285aa22ef08b675b92c894f4eecc929625a37803611edcf"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/modelprocessing/modelprocessinginit.lua",
+      "to": "game/core/scripts/vscripts/modelprocessing/modelprocessinginit.lua",
+      "sha256": "e996f50ee903277eb63e5d81c7975246f4e7ff3db3dfd2192fe2412ad4f17b2c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/utils/class.lua",
+      "to": "game/core/scripts/vscripts/utils/class.lua",
+      "sha256": "248a72824a17d917eb5bde0bfd7d40598433e7ce3ff0988c940823ce77890bbf"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/utils/deepprint.lua",
+      "to": "game/core/scripts/vscripts/utils/deepprint.lua",
+      "sha256": "6c64d4034571e0f933d3e0dd1a76117bd8d0a5f4270dc6a45eb97549fe81e075"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/utils/library.lua",
+      "to": "game/core/scripts/vscripts/utils/library.lua",
+      "sha256": "58e8ed12b4a7a4254b76ccd59308065dd07395b3c4196747359c0b957b9b0df4"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/utils/utilsinit.lua",
+      "to": "game/core/scripts/vscripts/utils/utilsinit.lua",
+      "sha256": "78cc14d1fa565385eb46a4168588105782dfed23c3a77d49d68c404e373404c6"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "scripts/vscripts/utils/vscriptinit.lua",
+      "to": "game/core/scripts/vscripts/utils/vscriptinit.lua",
+      "sha256": "0455230ff1f76b80d243585ce202ed49de00cb7eecdb9097c5ff4f4e1c43840e"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "smartprops/test/test_color_tint.vsmart_c",
+      "to": "game/core/smartprops/test/test_color_tint.vsmart_c",
+      "sha256": "0c8cf53f40ed18041fb35540857531ce786ebffdeb5ecda57afc968c38257f94"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "smartprops/test/test_fill_box.vsmart_c",
+      "to": "game/core/smartprops/test/test_fill_box.vsmart_c",
+      "sha256": "6e742795b3612df6cd089ad0be69f84207f5437737b9c4100032b43809f146dc"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "smartprops/test/test_fit_on_line_scale.vsmart_c",
+      "to": "game/core/smartprops/test/test_fit_on_line_scale.vsmart_c",
+      "sha256": "accb1f5d55abb777955bc001ef9b34ba0e695070562bd6b503958ecb45c5447a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "smartprops/test/test_steps.vsmart_c",
+      "to": "game/core/smartprops/test/test_steps.vsmart_c",
+      "sha256": "84b0c37b17f8ed6444b5cd30c909abc1787b353ea8011529444f0232955652c0"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundevents/soundevents_manifest_core.vrman_c",
+      "to": "game/core/soundevents/soundevents_manifest_core.vrman_c",
+      "sha256": "cb8779003211361891f49690b4cabfa69706aa5f3e7c361e94de5651718d2d8c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundevents/soundevents_manifest_core_tools.vrman_c",
+      "to": "game/core/soundevents/soundevents_manifest_core_tools.vrman_c",
+      "sha256": "88489435c4683ce0a659cf4cd69ab8cc8f2cf2ec48ed8a9462a93f4e0c1f97c5"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundevents/soundevents_manifest_tools.vrman_c",
+      "to": "game/core/soundevents/soundevents_manifest_tools.vrman_c",
+      "sha256": "d40ce9a685230007aa10157d4e597562fad3f778541d15f721e64f98f92bfd3f"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/common/noise.vsnd_c",
+      "to": "game/core/sounds/common/noise.vsnd_c",
+      "sha256": "1b0b60e2d898c384e7f4a2f286641cf512c9ecb1d677f237f17f08875b15b4fd"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/common/null.vsnd_c",
+      "to": "game/core/sounds/common/null.vsnd_c",
+      "sha256": "d1fe184d5f07fc3dc3386f995cd1c8ce1bc5108276bc5e38b120afc33b86a879"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/containers/counting.vsnd_c",
+      "to": "game/core/sounds/containers/counting.vsnd_c",
+      "sha256": "b394a65f950d9cb13acebee797a38b098aaa15dd96b773d729dda2614b44bb14"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/ir/default.vsnd_c",
+      "to": "game/core/sounds/ir/default.vsnd_c",
+      "sha256": "3d0d7755edce5e49de426c2960c88453e0e47dec38652834710a532cd4e789f9"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/ir/impulse_transient_filtered_pink_noise.vsnd_c",
+      "to": "game/core/sounds/ir/impulse_transient_filtered_pink_noise.vsnd_c",
+      "sha256": "6aa28576ee156fb62152144a2bd0fb4f90475bc0c5375eeaefa997f635f24f58"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/ir/impulse_transient_filtered_pink_noise_3sec_loop.vsnd_c",
+      "to": "game/core/sounds/ir/impulse_transient_filtered_pink_noise_3sec_loop.vsnd_c",
+      "sha256": "acda5b965e81e3590427af4a1fbd3449af9f42ca4a451b97e433126d252e033a"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/ir/ir_click_3sec_lp.vsnd_c",
+      "to": "game/core/sounds/ir/ir_click_3sec_lp.vsnd_c",
+      "sha256": "14df0242d658286e09f6ec4bffa638cdf485bfeada8720f4e7552acf8b3a6ad6"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/ir/legacy_pickup_weapon_3sec_lp.vsnd_c",
+      "to": "game/core/sounds/ir/legacy_pickup_weapon_3sec_lp.vsnd_c",
+      "sha256": "1987b9122eb836d62648d7c78ce39266be60fb6c5f1edb86cdf23c84ff73699c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/tools/footstep_preview/step_01.vsnd_c",
+      "to": "game/core/sounds/tools/footstep_preview/step_01.vsnd_c",
+      "sha256": "a2f356d30217524bf9c0f90c137e755771dae2a714cd0e0cebe06d0f6ca641e2"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/tools/footstep_preview/step_02.vsnd_c",
+      "to": "game/core/sounds/tools/footstep_preview/step_02.vsnd_c",
+      "sha256": "3268d49237451ff2464e18933c33c3ae0a45c4e2a9e77be74a74ddffa318f52f"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/tools/footstep_preview/step_03.vsnd_c",
+      "to": "game/core/sounds/tools/footstep_preview/step_03.vsnd_c",
+      "sha256": "738e0aae0511b3da82024acb95d8534ec0544ff886e2a3e4414e66c8bce87cd8"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/tools/footstep_preview/step_04.vsnd_c",
+      "to": "game/core/sounds/tools/footstep_preview/step_04.vsnd_c",
+      "sha256": "50651638a8af6d1f8f30972da4b32d78f15a0ed7e0eca412bbbcd7cc75d2817f"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/tools/footstep_preview/step_05.vsnd_c",
+      "to": "game/core/sounds/tools/footstep_preview/step_05.vsnd_c",
+      "sha256": "03813f7214c0525b097ee8b10ea027c35c8038cc4fa36865b5b7d1dfc71e01bd"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/tools/footstep_preview/step_06.vsnd_c",
+      "to": "game/core/sounds/tools/footstep_preview/step_06.vsnd_c",
+      "sha256": "b6bf79ab5bbad4f768c7664ccf0209b72e06128eea35ee0ec6aeb0c9b4c01ff3"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/tools/footstep_preview/step_07.vsnd_c",
+      "to": "game/core/sounds/tools/footstep_preview/step_07.vsnd_c",
+      "sha256": "7af947a3810feb4c14c4d5a55b08a4fb335a5fb018febc36163184c66e03bb3c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/tools/footstep_preview/step_08.vsnd_c",
+      "to": "game/core/sounds/tools/footstep_preview/step_08.vsnd_c",
+      "sha256": "93a70e884abc01e37e72f91c443cd4613cf28873ec5c7d0e4574819bcedd6824"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "sounds/tools/footstep_preview/step_09.vsnd_c",
+      "to": "game/core/sounds/tools/footstep_preview/step_09.vsnd_c",
+      "sha256": "a40d8707715351d86ac466773516a9b606b000f57453e0cf6e7c11bdcc5cc329"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundstacks/sosstrings.txt",
+      "to": "game/core/soundstacks/sosstrings.txt",
+      "sha256": "d2d3b9faa0fe3724bc79ffc3705a6fad2f7abecb4732b8233cfca5731f95c94c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundstacks/soundstacks_core_setters.vsndstck_c",
+      "to": "game/core/soundstacks/soundstacks_core_setters.vsndstck_c",
+      "sha256": "e3b3bacf7e0a8740394f7c2663ba1ba7e63b75b813fc2f19ff3ba5265a8e1a43"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundstacks/soundstacks_core_test.vsndstck_c",
+      "to": "game/core/soundstacks/soundstacks_core_test.vsndstck_c",
+      "sha256": "b289d3df42b4f10c708437be6cb59ba3ec7ae01016f60d0e70ec26871f3fb986"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundstacks/soundstacks_examples.vsndstck_c",
+      "to": "game/core/soundstacks/soundstacks_examples.vsndstck_c",
+      "sha256": "63816e015bb31bc2d3c0ea88440c8f360bbc8eb6fe4cbf91923b344fa68f7c68"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundstacks/soundstacks_manifest_core.vrman_c",
+      "to": "game/core/soundstacks/soundstacks_manifest_core.vrman_c",
+      "sha256": "1da512a85c6743e3333784b80ef0f675edb7de90566b06f2209b4377803d55cd"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundstacks/soundstacks_manifest_core_devonly.vrman_c",
+      "to": "game/core/soundstacks/soundstacks_manifest_core_devonly.vrman_c",
+      "sha256": "912c339bd4f49cb2815b0ed07e93e65ac9aa51f602c7d03342ea9819b50fa3de"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundstacks/soundstacks_manifest_core_tools.vrman_c",
+      "to": "game/core/soundstacks/soundstacks_manifest_core_tools.vrman_c",
+      "sha256": "8eee8b6a8882e54bb73b54c5edd015c4f3c4d3639d608fe3a8cab11d557d08b7"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundstacks/soundstacks_manifest_devonly.vrman_c",
+      "to": "game/core/soundstacks/soundstacks_manifest_devonly.vrman_c",
+      "sha256": "1c68ae9e88505f08702c1a8c208fa80ab499c268bce55734c4d4c8ef5e60b95d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundstacks/soundstacks_manifest_tools.vrman_c",
+      "to": "game/core/soundstacks/soundstacks_manifest_tools.vrman_c",
+      "sha256": "df036bda3174ab88385c47ec18470d5e27ef98d5ef5a9c96201fb8959c60056d"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "soundstacks/soundstacks_src1.vsndstck_c",
+      "to": "game/core/soundstacks/soundstacks_src1.vsndstck_c",
+      "sha256": "188ac4fa915db5bae0fc8856fc82b407100d664e77c6efafa57953df882465b0"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/arial.ttf",
+      "to": "game/core/vgui/fonts/arial.ttf",
+      "sha256": "413c78f91bd39e134f3c0bb204b1d5a90f29df9efddc8fd26950a178058d5d74"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/arialbd.ttf",
+      "to": "game/core/vgui/fonts/arialbd.ttf",
+      "sha256": "df70597f0bdf49da3af270138f8a34396e4f5618c671a1db3480e626f38aaece"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/arialn.ttf",
+      "to": "game/core/vgui/fonts/arialn.ttf",
+      "sha256": "bd31d0cf2e5a1a3a9074e98ebe4964c641121e9e660f31627614c4acb6c89c1c"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/arialuni.ttf",
+      "to": "game/core/vgui/fonts/arialuni.ttf",
+      "sha256": "fe50313c37c2eca0bbf8cc3565b5ef32314753889afbe44cb275d65c3b58f0df"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/cour.ttf",
+      "to": "game/core/vgui/fonts/cour.ttf",
+      "sha256": "97c6ad2e60d7e41f34d3aa9e41fcc569ce64002d980d54cabc02e368393c3733"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/lucon.ttf",
+      "to": "game/core/vgui/fonts/lucon.ttf",
+      "sha256": "6ddf64ee896d24cf9908f115ae220a7cfa18dc034bc4a68e4db68dcd57c71512"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/marlett.ttf",
+      "to": "game/core/vgui/fonts/marlett.ttf",
+      "sha256": "01cf990685f171da866d254861788c8f0b545f3a6a4f7e7b653015227310d7df"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/tahoma.ttf",
+      "to": "game/core/vgui/fonts/tahoma.ttf",
+      "sha256": "18e6f9f2cd7d7c4e21693b048db73bf8afef072f10da9f59f2a729d7fb82d3d5"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/times.ttf",
+      "to": "game/core/vgui/fonts/times.ttf",
+      "sha256": "fcb479a00bdf7c05a68b91ba89a8ea3dd2be027dcca112f1f26270c081dc3502"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/trebuc.ttf",
+      "to": "game/core/vgui/fonts/trebuc.ttf",
+      "sha256": "9cf5777ebf93e9193d25ec0697976bb2dcad1637b73e9e36cfbf18d26ef262a9"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/verdana.ttf",
+      "to": "game/core/vgui/fonts/verdana.ttf",
+      "sha256": "a40de55683d93e6765ae1b5280f0168437857393be4a58c93ce805afb9ea2cff"
+    },
+    {
+      "source": "vpk-2347770-2053759441494650084-core",
+      "from": "vgui/fonts/xarialuni.ttf",
+      "to": "game/core/vgui/fonts/xarialuni.ttf",
+      "sha256": "380f125e78756f118d60f8d76d93a7487884fbbfd7786aeaac585ac3fc7c5a28"
+    }
+  ]
+}

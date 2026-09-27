@@ -1,0 +1,11 @@
+{
+  "status": "passed: independent manifests and all 18 archive hashes match byte-for-byte",
+  "source_revision": "b580f29a23ce0636fa7de5ec0a81d6df653fcf4e",
+  "release_manifest_sha256": "d8643f4fc13dc873bfca02cb7e593b5d369fee74292f02b4a61681c8323199db",
+  "archive_count": 18,
+  "archive_bytes": 20055287987,
+  "valve_asset_files": 461,
+  "steam_tools_files": 2358,
+  "downloaded_tools_files": 315,
+  "source_built_launcher_sha256": "04b79688dc315ac893134434ee7ce6d7b8c04613df657b07aec3928c3829e92c"
+}

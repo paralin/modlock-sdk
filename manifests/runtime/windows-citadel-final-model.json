@@ -1,0 +1,42 @@
+{
+  "status": "passed: repeated model compilation",
+  "runtime": "Windows",
+  "compiler_sha256": "baeea07befadcad5ab32b2f2fc3f48c1ea422076386b51a4ff42c10f84635e91",
+  "compiler_dll_sha256": "f084328cb14b44ce26484d1b38c0be8cf8402350f8e8837465293216bb36703a",
+  "gameinfo_sha256": "1a7792b218ac4702d4cab71636174250837312538cd7ecc81afc183951c50b30",
+  "mod": "citadel",
+  "addon": "modlock_final_model",
+  "kind": "model",
+  "sources": {
+    "probe.vmdl": {
+      "bytes": 386,
+      "sha256": "3d13de7b463fac2f8cdfd7d86dea589ae3b6366792f227f85c02bb710a81047e"
+    },
+    "probe.obj": {
+      "bytes": 210,
+      "sha256": "0f4a9f3f20fdc5bfc32f516f50fe560266c478c20cfe91ff7a491ff3b1f815aa"
+    }
+  },
+  "runs": [
+    {
+      "exit_code": 0,
+      "log": "windows-citadel-final-model.run1.log",
+      "artifacts": {
+        "probe.vmdl_c": {
+          "bytes": 4605,
+          "sha256": "07207ca6da20a8f4e2923af0f0ff8b2a9d9628c5c385ee652845ea218b0cdfb7"
+        }
+      }
+    },
+    {
+      "exit_code": 0,
+      "log": "windows-citadel-final-model.run2.log",
+      "artifacts": {
+        "probe.vmdl_c": {
+          "bytes": 4605,
+          "sha256": "07207ca6da20a8f4e2923af0f0ff8b2a9d9628c5c385ee652845ea218b0cdfb7"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "failed",
+  "runtime": "Windows",
+  "compiler_sha256": "baeea07befadcad5ab32b2f2fc3f48c1ea422076386b51a4ff42c10f84635e91",
+  "compiler_dll_sha256": "e89cd1f91bcf29c444def0d73756a7b9e5386064186a0dc07aa8857b50ed2155",
+  "gameinfo_sha256": "c1b27311c5243126314b29c3dc782425e11fd351f185eb48e68275db8996cd2e",
+  "mod": "citadel",
+  "addon": "windows_deadlock_native_compiler",
+  "kind": "panorama",
+  "sources": {
+    "layout/probe.xml": {
+      "bytes": 136,
+      "sha256": "94a90431b7b9c043d8453cc5dd6e5f42e47ac09dd680d9eb80b22549ffac5bab"
+    },
+    "scripts/probe.js": {
+      "bytes": 57,
+      "sha256": "f75d9d412821b82247e56b3166bc13d5fc4008f44b39cc290f0cceebfbad7e28"
+    }
+  },
+  "runs": [
+    {
+      "exit_code": 1,
+      "log": "windows-deadlock-native-compiler.run1.log",
+      "artifacts": {}
+    }
+  ]
+}

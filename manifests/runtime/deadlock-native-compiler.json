@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "runtime": "Valve Proton Wine with WineD3D",
+  "compiler_sha256": "baeea07befadcad5ab32b2f2fc3f48c1ea422076386b51a4ff42c10f84635e91",
+  "gameinfo_sha256": "c1b27311c5243126314b29c3dc782425e11fd351f185eb48e68275db8996cd2e",
+  "mod": "citadel",
+  "addon": "modlock_probe_native",
+  "runs": [
+    {
+      "exit_code": 1,
+      "log": "deadlock-native-compiler.run1.log",
+      "artifacts": {}
+    }
+  ],
+  "proton_version": "1788504981 proton-11.0-2c-x86_64"
+}
