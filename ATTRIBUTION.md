@@ -15,13 +15,12 @@ classes and properties observed in maps shipped with Deadlock.
 
 ## Community SDK 12
 
-Modlock Tools reconstructs the community
-[CSDK 12](https://deadlockmodding.pages.dev/modding-tools/csdk-12) toolkit
-from Valve's own downloads. CSDK 12 is the set of Deadlock authoring tools
-that Deadlock modding community members assembled by merging the Counter-Strike
-2 Workshop Tools with their own fixes, and it defined the layout and workflow this
-repository reproduces. Thank you to everyone
-who built and maintains it.
+Modlock Tools reconstructs the community [CSDK
+12](https://deadlockmodding.pages.dev/modding-tools/csdk-12) toolkit from
+Valve's own downloads. CSDK 12 is the set of Deadlock authoring tools that
+Deadlock modding community members assembled by merging the Counter-Strike 2
+Workshop Tools with their own fixes, and it defined the layout and workflow
+this repository reproduces. Thank you to everyone who built and maintains it.
 
 `reference/csdk12.json` is a path and hash inventory of the community
 `Reduced_CSDK_12` archive distributed through that guide. It served as the
