@@ -1,17 +1,17 @@
 # Modlock Tools
 
-**Modlock Tools** builds a Windows authoring toolkit for [Deadlock] from
-Valve's own downloads. It pins a coherent Counter-Strike 2 Workshop Tools
-toolchain (Hammer, ModelDoc, Source Filmmaker, and the resource compiler),
-mounts verified Deadlock asset packages in a separate content project, and
-packages the result as a reproducible, checksummed release.
+**Modlock Tools** builds a Windows toolkit for making [Deadlock] maps, models,
+and UI. It takes the Counter-Strike 2 Workshop Tools (Hammer, ModelDoc, Source
+Filmmaker, and the resource compiler) from Steam, adds a content project that
+loads Deadlock's asset packages, and packages both as a reproducible release
+with checksums.
 
 [Deadlock]: https://store.steampowered.com/app/1422450/Deadlock/
 
-The repository holds no Valve binaries or assets. It holds file lists, SHA-256
-recipes, depot profiles, a small launcher, and the scripts that download,
-verify, assemble, and package the toolkit. Every file in a release is selected
-by recipe and checked by hash.
+This repository contains file lists, SHA-256 recipes, depot profiles, a small
+launcher, and the scripts that download, check, assemble, and package the
+toolkit. Valve's binaries and assets come from Steam at build time. A recipe
+lists every file in a release with its hash.
 
 > **Early development.** Editor startup, model compilation, and Panorama
 > compilation pass on native Windows. Map playtests, Citadel-specific ModelDoc
@@ -23,16 +23,16 @@ by recipe and checked by hash.
   depot, and manifest IDs for the CS2 and Dota 2 tools and the Deadlock
   runtime.
 - **Verified recipes.** Recipes in [`recipes/`](recipes) map each output path
-  to a source file or VPK member and its SHA-256. Assembly refuses any byte
-  that does not match.
+  to a source file or VPK member and its SHA-256. Assembly stops if any file's
+  hash differs.
 - **Content project.** `scripts/tool_project.py` writes a Citadel project that
   mounts Deadlock VPKs under the CS2 engine, with an entity definition file
   recovered from shipped maps.
 - **Reproducible releases.** `scripts/release_bundle.py` writes deterministic
   ZIPs, `release.json`, and `SHA256SUMS`. `bundle/Install.ps1` verifies every
   archive and installed file before publishing the install directory.
-- **Probes.** Compiler and editor probes record reproducible evidence of what
-  works on a given machine.
+- **Probes.** Compiler and editor probes record which tools work on a given
+  machine.
 
 ## Layout
 
@@ -40,7 +40,7 @@ by recipe and checked by hash.
 | --- | --- |
 | `profiles/` | Pinned Valve app, depot, and manifest selections |
 | `recipes/` | Hash-checked file recipes for each assembled tree |
-| `manifests/` | Depot file lists, coverage, release manifests, and runtime evidence |
+| `manifests/` | Depot file lists, coverage, release manifests, and runtime probe results |
 | `metadata/` | Entity definitions and the tools `gameinfo.gi` |
 | `scripts/` | Download, match, assemble, probe, and package scripts (standard library Python) |
 | `tools/` | The Windows launcher and the entity metadata exporter |
