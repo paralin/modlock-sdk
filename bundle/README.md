@@ -13,7 +13,7 @@ and SFM renders are not yet tested.
 ## Requirements
 
 - Windows 10 or 11, x64, with a DirectX 11 GPU and current drivers.
-- A short ASCII path such as `C:\modlock-tools`, without `%`, `!`, or quotes.
+- An ASCII path such as `$HOME\modlock-tools`, without `%`, `!`, or quotes.
   Spaces work.
 - About 40 GB free if Deadlock's packages are copied. When the toolkit is on
   the same drive as Deadlock, the installer links them instead and the toolkit
@@ -41,7 +41,7 @@ README, and `SHA256SUMS`. Copy all of them into one folder. Each ZIP is a
 separate archive; the installer extracts them all into one directory. Then run:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\Install.ps1 -Destination C:\modlock-tools
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Install.ps1 -Destination $HOME\modlock-tools
 ```
 
 The installer checks every ZIP and every extracted file against `release.json`

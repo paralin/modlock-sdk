@@ -1,12 +1,12 @@
 # Install or update Modlock Tools:
 #   irm https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.ps1 | iex
-# Set $env:MODLOCK_TOOLS_DIR to choose the directory (default C:\modlock-tools).
+# Set $env:MODLOCK_TOOLS_DIR to choose the directory (default ~\modlock-tools).
 & {
   $ErrorActionPreference = 'Stop'
   # Invoke-WebRequest draws progress so slowly in Windows PowerShell 5.1 that it
   # dominates the download time.
   $ProgressPreference = 'SilentlyContinue'
-  $destination = if ($env:MODLOCK_TOOLS_DIR) { $env:MODLOCK_TOOLS_DIR } else { 'C:\modlock-tools' }
+  $destination = if ($env:MODLOCK_TOOLS_DIR) { $env:MODLOCK_TOOLS_DIR } else { Join-Path $HOME 'modlock-tools' }
   $ref = if ($env:MODLOCK_TOOLS_REF) { $env:MODLOCK_TOOLS_REF } else { 'master' }
   $cache = Join-Path $destination '.cache'
   $source = Join-Path $cache 'source'

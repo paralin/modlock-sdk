@@ -48,13 +48,13 @@ On Linux or macOS:
 curl -fsSL https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.sh | bash
 ```
 
-The installer puts the toolkit in `C:\modlock-tools` on Windows and
-`~/modlock-tools` elsewhere; set `MODLOCK_TOOLS_DIR` to choose another
-directory. It installs [uv] if needed, uses the Counter-Strike 2 and Deadlock
-files already in your Steam libraries, and downloads the rest from Steam with
-[DepotDownloader]. Downloads need a Steam login: scan the QR code it prints with
-the Steam mobile app. Deadlock's asset packages are linked from your Deadlock
-installation when the system allows it, and copied otherwise (about 35 GB).
+The installer puts the toolkit in `~/modlock-tools`; set `MODLOCK_TOOLS_DIR` to
+choose another directory. It installs [uv] if needed, uses the Counter-Strike 2
+and Deadlock files already in your Steam libraries, and downloads the rest from
+Steam with [DepotDownloader]. Downloads need a Steam login: scan the QR code it
+prints with the Steam mobile app. Deadlock's asset packages are linked from your
+Deadlock installation when the system allows it, and copied otherwise (about 35
+GB).
 
 Run the same command again, or `Update.cmd` in the toolkit, to update after a
 game update. Only changed files are downloaded, and files Valve removed are

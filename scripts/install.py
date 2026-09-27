@@ -22,13 +22,6 @@ from toolkit import PROJECT_DIRS, ROOT, SAMPLE, authored, contained_path, depots
 ZIG_INDEX = "https://ziglang.org/download/index.json"
 
 
-def default_destination() -> Path:
-    """Use a short ASCII path on Windows, where the tools reject some characters."""
-    if os.name == "nt":
-        return Path("C:/modlock-tools")
-    return Path.home() / "modlock-tools"
-
-
 def zig(cache: Path) -> Path:
     """Download the Zig compiler the launcher build requires once."""
     arch = {"amd64": "x86_64", "arm64": "aarch64"}.get(platform.machine().lower(),
@@ -148,7 +141,7 @@ def install(destination: Path) -> None:
 def main() -> int:
     """Install or update the toolkit and point at the editors."""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--destination", type=Path, default=default_destination(),
+    parser.add_argument("--destination", type=Path, default=Path.home() / "modlock-tools",
                         help="Toolkit directory; rerun to update it")
     args = parser.parse_args()
     try:
