@@ -13,9 +13,26 @@ toolkit uses, a small launcher, entity definitions for Hammer, and the scripts
 that package and check a release. Valve's binaries and assets come from Steam
 at install time. [REPRODUCING.md](REPRODUCING.md) explains how the build works.
 
-> **Early development.** Editor startup, model compilation, and Panorama
-> compilation pass on native Windows. Map playtests, Citadel-specific ModelDoc
-> events, and SFM renders are not yet validated.
+> **Early development.** Hammer, ModelDoc, and SFM start in tools mode on
+> native Windows, and model and Panorama compilation pass. Deadlock's own
+> materials do not render in the editors; see
+> [Shaders](#shaders). Map playtests, Citadel-specific ModelDoc events, and SFM
+> renders are not yet validated.
+
+## Shaders
+
+Deadlock and CS2 share an engine but not a shader set, and Deadlock's shader
+build is one format version behind CS2's. Most Deadlock materials use
+Deadlock's `pbr` and `environment_*` shaders, which the CS2 tools do not have,
+so Deadlock's heroes and world show the error material in the editor
+viewport. CS2's own world shaders, such as `csgo_complex`, are missing from
+Deadlock in turn.
+
+Other compiled formats match: Deadlock's models, textures, particles, sounds,
+and Panorama files use the same resource versions as CS2's, and every particle
+operator Deadlock defines exists in the CS2 tools. For a material that renders
+in both, use a shader the two games share, such as `generic`, `spritecard`
+for particles, or `sky`.
 
 ## Install
 
