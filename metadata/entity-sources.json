@@ -1405,5 +1405,187 @@
     "Member": "maps/ui/team_reveal_hero/yamato_team_reveal/entities/default_ents.vents_c",
     "Sha256": "10a54c43f7f2159d3ae5503cf15e157146a9faf0e77ba262328e1798068011bb",
     "Entities": 7
+  },
+  {
+    "Map": "dl_hideout.vpk",
+    "MapSha256": "32fc9d31169eedec3d9f09713501d70a52f3f26e641d2a4ce7221ab5ba3e56b6",
+    "Member": "maps/dl_hideout/entities/default_ents.vents_c",
+    "Sha256": "e247e9899e54ad6c3b007c4ba53695470cfff925a11d24129865a0285a44f02b",
+    "Entities": 668
+  },
+  {
+    "Map": "dl_midtown.vpk",
+    "MapSha256": "53a072a015b74d3c791bc18a33468c193fde6364045b9e3eae4e747365c5fdee",
+    "Member": "maps/dl_midtown/entities/14781_3568_158#entitylumpname.vents_c",
+    "Sha256": "9b868f3a52e7e804afa467d8b7d151266898b847b7e70bd1cb48780514901623",
+    "Entities": 12
+  },
+  {
+    "Map": "dl_midtown.vpk",
+    "MapSha256": "53a072a015b74d3c791bc18a33468c193fde6364045b9e3eae4e747365c5fdee",
+    "Member": "maps/dl_midtown/entities/14781_3568_178#entitylumpname.vents_c",
+    "Sha256": "5cbaf76a6638ec3a77cc29afd0517bfde98d053bf7ddcb28c3ffecd965ed9de1",
+    "Entities": 9
+  },
+  {
+    "Map": "dl_midtown.vpk",
+    "MapSha256": "53a072a015b74d3c791bc18a33468c193fde6364045b9e3eae4e747365c5fdee",
+    "Member": "maps/dl_midtown/entities/14781_3578_158#entitylumpname.vents_c",
+    "Sha256": "665cb0406ebeca6eddc3040c732a13ab7d4af916f1760ba46940397f97dbb49b",
+    "Entities": 12
+  },
+  {
+    "Map": "dl_midtown.vpk",
+    "MapSha256": "53a072a015b74d3c791bc18a33468c193fde6364045b9e3eae4e747365c5fdee",
+    "Member": "maps/dl_midtown/entities/14781_3578_178#entitylumpname.vents_c",
+    "Sha256": "a831d7d307d22e1cc9f68fc6aaf0d69397c0260391e0d10586e41c7a53d49049",
+    "Entities": 9
+  },
+  {
+    "Map": "dl_midtown.vpk",
+    "MapSha256": "53a072a015b74d3c791bc18a33468c193fde6364045b9e3eae4e747365c5fdee",
+    "Member": "maps/dl_midtown/entities/default_ents.vents_c",
+    "Sha256": "f0c0b41a14c7d5077b03930bdb9714ae2cd658b1e0a13df00c478c21116fbbc1",
+    "Entities": 6097
+  },
+  {
+    "Map": "hl_aim_range.vpk",
+    "MapSha256": "cffa154072ab4f629eca44ccacef3a5a722ef5fe9fbd98bca6b5b8cad11ceb21",
+    "Member": "maps/hl_aim_range/entities/default_ents.vents_c",
+    "Sha256": "ea1e5a48beff4dfc9ef18112981e4578e255b0307136e7af678d2035d3656bae",
+    "Entities": 96
+  },
+  {
+    "Map": "hl_endif.vpk",
+    "MapSha256": "5da67b7af3aae18edcaad751cb88f6c8559aec6af5091c4e270b7cabfcb2f948",
+    "Member": "maps/hl_endif/entities/default_ents.vents_c",
+    "Sha256": "6de0815abf210d90dc857ec5765f4d98bda1bcaf0d7b32ea67facd5c55bdbac3",
+    "Entities": 43
+  },
+  {
+    "Map": "hl_parry_ball.vpk",
+    "MapSha256": "d469550e4528348a79cc615b8fdee40f6f6a04e3a493bfd4d8c264227d9ecf20",
+    "Member": "maps/hl_parry_ball/entities/default_ents.vents_c",
+    "Sha256": "d2493dce52a06028f9ab7571f1625e7a67f51db3582ea2894002722d80778269",
+    "Entities": 44
+  },
+  {
+    "Map": "hl_vindicta_hs.vpk",
+    "MapSha256": "8b240ffe5d97250e849b84fa128e843593a34da9f1f18e02349448298a6a5555",
+    "Member": "maps/hl_vindicta_hs/entities/default_ents.vents_c",
+    "Sha256": "7fc9827d51857bd787078a790d2e8898bd8b39d73c0ee70780cc8e23fe4136be",
+    "Entities": 15
+  },
+  {
+    "Map": "hl_wraith_orbit.vpk",
+    "MapSha256": "e2b9c83c55a92133bee22a5399ea27f11eac5232178ed3217bd40bd5e2c8c050",
+    "Member": "maps/hl_wraith_orbit/entities/default_ents.vents_c",
+    "Sha256": "089c214c157047192bd2b003494e68bc73dbe79db2a0a79dc15c38c99f8c2414",
+    "Entities": 17
+  },
+  {
+    "Map": "new_player_basics.vpk",
+    "MapSha256": "7339064ba006fab3230a41881e6cdec06ef3deee0b3b2ec492910b5eb170c04f",
+    "Member": "maps/new_player_basics/entities/default_ents.vents_c",
+    "Sha256": "93b10b1a3b31a75e255ec0caeb6593070675e8af59c584dede577ecd25a6d9f7",
+    "Entities": 369
+  },
+  {
+    "Map": "baba_postgame_portrait.vpk",
+    "MapSha256": "70f8ed54aa363c7bc314c1b030bf597b0e4eac765fbbc7c1d741639fa8b7c4bc",
+    "Member": "maps/ui/hero_postgame_portrait/baba_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "c835b1a44ee637ef1ae65781452063bd334c9ab73bd03a949ed00c0dbc840025",
+    "Entities": 9
+  },
+  {
+    "Map": "chessmaster_postgame_portrait.vpk",
+    "MapSha256": "9d4137ad2f4f54e7065d0785b8fc2c4d22de14281c4a2ccd6f54099aa2093ce6",
+    "Member": "maps/ui/hero_postgame_portrait/chessmaster_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "4385adaea5400d54986568ced82d28ac8914abbb9c0c522a874ae0b2f2bcf778",
+    "Entities": 10
+  },
+  {
+    "Map": "ratking_postgame_portrait.vpk",
+    "MapSha256": "81b7485e1e704484bc000febfb91d4dda314a1835f5b958955331c97858743ec",
+    "Member": "maps/ui/hero_postgame_portrait/ratking_postgame_portrait/entities/default_ents.vents_c",
+    "Sha256": "ce19c3a0e80f44b8167cc441017848f48c63bc2eeaac7da8274d98aaa00913f0",
+    "Entities": 12
+  },
+  {
+    "Map": "artist.vpk",
+    "MapSha256": "ff0b229b9c7bdbf0b959d1da7194e648efba1f373e62aa7d1eda39aff38ba34c",
+    "Member": "maps/ui/hero_prefabs/artist/entities/default_ents.vents_c",
+    "Sha256": "73e1616b3922ffa4aa81af6dc383d9820c3a050183888a1a415756df2e34e8a8",
+    "Entities": 35
+  },
+  {
+    "Map": "baba.vpk",
+    "MapSha256": "8299807b23f12c51be0be8e05975b36589cd4bbff2209b464d012dc3cb8b6f4d",
+    "Member": "maps/ui/hero_prefabs/baba/entities/default_ents.vents_c",
+    "Sha256": "8f94f0e99b48e4e0cc55e3f7aa5c164e0542543976f6853505e574264d7ab138",
+    "Entities": 23
+  },
+  {
+    "Map": "chessmaster.vpk",
+    "MapSha256": "e33b1773be6fd737542a9fd9af00a8bb8477ea3e0dff124ea50706561eadffd0",
+    "Member": "maps/ui/hero_prefabs/chessmaster/entities/default_ents.vents_c",
+    "Sha256": "60525c737f7660b066412a6c27f91de2284ed9c3f812aeb55b5f58b2662b3bd4",
+    "Entities": 24
+  },
+  {
+    "Map": "deadpack.vpk",
+    "MapSha256": "5c4d2bc108e392366db05225b6cee2ba06974b90429250ba3f9d46b7f437c290",
+    "Member": "maps/ui/hero_prefabs/deadpack/entities/default_ents.vents_c",
+    "Sha256": "d7107617fa450397e10455803d873efedfdc80e5d624ce01d3b013cb568cab0a",
+    "Entities": 32
+  },
+  {
+    "Map": "nurse.vpk",
+    "MapSha256": "6f4fce1bb6d00d9769d90d1b0663c1f69fc77e517d842a01169a5d730dee499d",
+    "Member": "maps/ui/hero_prefabs/nurse/entities/default_ents.vents_c",
+    "Sha256": "6b010eaceddc7f7f85e5ea55100efced2bc4b6dd381626b0bae829a7be09e6ab",
+    "Entities": 18
+  },
+  {
+    "Map": "ratking.vpk",
+    "MapSha256": "f8594200e7c715eee9faf4ae7ed7b78ac8fceb1f5aa75b19af8651efddd1ee93",
+    "Member": "maps/ui/hero_prefabs/ratking/entities/default_ents.vents_c",
+    "Sha256": "856a19db2422648b0699cd2b2a45ff264f3c777cb4be8bf63aa8eb35e3d503bd",
+    "Entities": 58
+  },
+  {
+    "Map": "tengu.vpk",
+    "MapSha256": "519b6eeab851b5dfff45c659336e4a6556fc7fe2a2b45c8e0b34a93837c65356",
+    "Member": "maps/ui/hero_prefabs/tengu/entities/default_ents.vents_c",
+    "Sha256": "6d53780de6b3dc92f8131fbac69eea9f879fd7f71d28d63033e079d99febebdf",
+    "Entities": 23
+  },
+  {
+    "Map": "baba_shop.vpk",
+    "MapSha256": "fe7ae64ffb656748360cf0575638ac259edd2166dd345762bbd75a12575506f1",
+    "Member": "maps/ui/hero_shop/baba_shop/entities/default_ents.vents_c",
+    "Sha256": "707950c2229609b8147cb33d0f1f190b9d46f83cb777bdfb1b1d0c676c143878",
+    "Entities": 9
+  },
+  {
+    "Map": "chessmaster_shop.vpk",
+    "MapSha256": "c489d7a6d754ec402e2233eee45e3aedb51b44a02fb4d9f08cc7974dbd74e699",
+    "Member": "maps/ui/hero_shop/chessmaster_shop/entities/default_ents.vents_c",
+    "Sha256": "a9a22aaa23f8e3ec60e6e2215599b0f59984f827e99e72e3388644633d747c45",
+    "Entities": 8
+  },
+  {
+    "Map": "frank_shop.vpk",
+    "MapSha256": "6ab5078e26ca7fca2dcf3ecd6800a7dc82614bafe8233bd9c7a1252848bf2315",
+    "Member": "maps/ui/hero_shop/frank_shop/entities/default_ents.vents_c",
+    "Sha256": "08bfe56e5fda07ba6bbac8a99a0ca617d70a119c3c15615764610b246625e35e",
+    "Entities": 11
+  },
+  {
+    "Map": "ratking_shop.vpk",
+    "MapSha256": "04a1900a054107f47d0c138b8ce50248469bf5ca166ff48dab23033e2fc8bd04",
+    "Member": "maps/ui/hero_shop/ratking_shop/entities/default_ents.vents_c",
+    "Sha256": "d2e0d1fcdc4f7c1e5d1b4a8255cec365b2a703a599a6be82390b2f78f79a7baf",
+    "Entities": 8
   }
 ]

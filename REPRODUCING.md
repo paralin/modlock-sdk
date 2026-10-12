@@ -58,18 +58,25 @@ mounts both `Game core` and `Mod core`, since the default key bindings need
 the second, and `LayeredOnMod core` keeps Valve's render defaults.
 
 Valve does not ship an entity definition file for Deadlock's tools.
-[`metadata/citadel.fgd`](metadata/citadel.fgd) adds 89 entity classes found in
-201 entity lumps across Deadlock's 185 map packages to Valve's base
-definitions. These are the classes and properties the shipped maps use, so
-some valid options are missing. To regenerate it, build
-`tools/EntityMetadata` against [ValveResourceFormat], run it over every map
-package, and merge the result:
+[`metadata/citadel.fgd`](metadata/citadel.fgd) adds 103 entity classes found in
+227 entity lumps across 207 Deadlock map packages to Valve's base definitions.
+These are the classes and properties the shipped maps use, so some valid
+options are missing. The packages come from more than one game build, so a
+class stays available after Valve removes the map that used it.
+[`metadata/entity-sources.json`](metadata/entity-sources.json) lists each
+package and lump by hash.
+
+To regenerate it, build `tools/EntityMetadata` against [ValveResourceFormat],
+run it over the map packages of the current build together with those of an
+earlier toolkit, and merge the result. A package that is the same in both is
+read once.
 
 ```sh
 dotnet build tools/EntityMetadata/EntityMetadata.csproj -c Release \
   -p:ValveResourceFormatProject=<ValveResourceFormat checkout>/ValveResourceFormat/ValveResourceFormat.csproj
 dotnet tools/EntityMetadata/bin/Release/net10.0/EntityMetadata.dll \
-  .tmp/map-entities <toolkit>/game/citadel_assets/maps/*.vpk
+  .tmp/map-entities $(find <toolkit>/game/citadel_assets/maps \
+  <earlier toolkit>/game/citadel_assets/maps -name '*.vpk' | sort)
 python3 scripts/entity_fgd.py .tmp/map-entities \
   --core <toolkit>/game/core --output metadata/citadel.fgd
 ```

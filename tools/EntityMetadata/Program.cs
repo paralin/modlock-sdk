@@ -21,11 +21,19 @@ if (Directory.Exists(output))
 
 Directory.CreateDirectory(output);
 var records = new List<LumpRecord>();
+var maps = new HashSet<string>();
 foreach (var input in args.Skip(1))
 {
-    // Hash the source package so extracted definitions have a stable input identity.
+    // Hash the source package so extracted definitions have a stable input
+    // identity. Maps from several builds may be given at once; a package that
+    // did not change between them is read once.
     using var file = File.OpenRead(input);
     var mapHash = Convert.ToHexStringLower(SHA256.HashData(file));
+    if (!maps.Add(mapHash))
+    {
+        continue;
+    }
+
     using var package = new Package();
     package.Read(input);
     if (package.Entries is null || !package.Entries.TryGetValue("vents_c", out var entries))
@@ -58,7 +66,7 @@ foreach (var input in args.Skip(1))
 
 File.WriteAllText(Path.Combine(output, "sources.json"),
     JsonSerializer.Serialize(records, new JsonSerializerOptions { WriteIndented = true }) + "\n");
-Console.WriteLine($"Exported {records.Count} entity lumps from {args.Length - 1} maps to {output}");
+Console.WriteLine($"Exported {records.Count} entity lumps from {maps.Count} maps to {output}");
 return 0;
 
 /// <summary>Identifies the original package, compiled entity bytes, and derived FGD.</summary>

@@ -11,31 +11,50 @@
 [
 ]
 
-@PointClass = citadel_base_prop_stairs : "Observed map entity"
+@PointClass base(Targetname) = citadel_base_prop_stairs : "Observed map entity"
 [
+    add_attribute(string) : "Observed field"
+    add_modifier(string) : "Observed field"
     animateonserver(boolean) : "Observed field"
+    animgraph2_identifier(string) : "Observed field"
+    bodygroups(string) : "Observed field"
+    breakablecontentsparticleoverride(string) : "Observed field"
+    breakablecontentspropgroupoverride(string) : "Observed field"
     breakablecontentstype(string) : "Observed field"
+    burstlocation(string) : "Observed field"
     burstscale(float) : "Observed field"
     clientsideentity(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     createnavobstacle(boolean) : "Observed field"
+    damagefilter(string) : "Observed field"
     disablelowviolence(string) : "Observed field"
     disablereceiveshadows(boolean) : "Observed field"
     disableshadows(string) : "Observed field"
+    expand_render_bounds_to_include_cloth(boolean) : "Observed field"
     explodedamage(float) : "Observed field"
     exploderadius(float) : "Observed field"
     fademaxdist(float) : "Observed field"
     fademindist(float) : "Observed field"
     forcenpcexclude(boolean) : "Observed field"
+    globalname(string) : "Observed field"
     glowcolor(vector) : "Observed field"
     glowrange(integer) : "Observed field"
     glowrangemin(integer) : "Observed field"
     glowstate(string) : "Observed field"
     glowteam(string) : "Observed field"
+    idleanim(string) : "Observed field"
     idleanimationloopmode(string) : "Observed field"
+    interactas(string) : "Observed field"
+    interactexclude(string) : "Observed field"
+    interactwith(string) : "Observed field"
     lagcompensate(boolean) : "Observed field"
+    lightingorigin(string) : "Observed field"
     lightmapstatic(string) : "Observed field"
+    model(string) : "Observed field"
     nointerpolate(boolean) : "Observed field"
     object_culling(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     performancemode(string) : "Observed field"
     pressuredelay(float) : "Observed field"
     randomizecycle(boolean) : "Observed field"
@@ -48,27 +67,38 @@
     solid(string) : "Observed field"
     spawnflags(integer) : "Observed field"
     stairs_location(string) : "Observed field"
+    startinganim(string) : "Observed field"
     startinganimationloopmode(string) : "Observed field"
     use_animgraph(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@PointClass = citadel_breakable_prop : "Observed map entity"
+@PointClass base(Targetname) = citadel_breakable_prop : "Observed map entity"
 [
     breakable_spawn_group(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     initial_spawn_time_override(float) : "Observed field"
     respawn_time_override(float) : "Observed field"
     subclass_name(string) : "Observed field"
+    vscripts(string) : "Observed field"
+    output OnKilled(void) : "Observed output"
 ]
 
 @SolidClass base(Targetname) = citadel_capture_point : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     groupname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     subclass_name(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
     output OnBecomeCapturable(void) : "Observed output"
     output OnFullyCaptured(void) : "Observed output"
 ]
@@ -94,41 +124,50 @@
     output SubObjective2Revitilized(void) : "Observed output"
 ]
 
-@PointClass = citadel_herotest_orbspawner : "Observed map entity"
+@PointClass base(Targetname) = citadel_hero_release_vote_terminal : "Observed map entity"
 [
-]
-
-@PointClass base(Targetname) = citadel_hideout_button : "Observed map entity"
-[
+    add_attribute(string) : "Observed field"
+    add_modifier(string) : "Observed field"
     animateonserver(boolean) : "Observed field"
+    animgraph2_identifier(string) : "Observed field"
+    bodygroups(string) : "Observed field"
+    breakablecontentsparticleoverride(string) : "Observed field"
+    breakablecontentspropgroupoverride(string) : "Observed field"
     breakablecontentstype(string) : "Observed field"
+    burstlocation(string) : "Observed field"
     burstscale(float) : "Observed field"
-    clientsideentity(string) : "Observed field"
+    clientsideentity(integer) : "Observed field"
+    compile_source_id(string) : "Observed field"
     createnavobstacle(boolean) : "Observed field"
-    disablelowviolence(string) : "Observed field"
+    damagefilter(string) : "Observed field"
+    disablelowviolence(integer) : "Observed field"
     disablereceiveshadows(boolean) : "Observed field"
-    disableshadows(string) : "Observed field"
+    disableshadows(integer) : "Observed field"
+    expand_render_bounds_to_include_cloth(boolean) : "Observed field"
     explodedamage(float) : "Observed field"
     exploderadius(float) : "Observed field"
     fademaxdist(float) : "Observed field"
     fademindist(float) : "Observed field"
     forcenpcexclude(boolean) : "Observed field"
+    globalname(string) : "Observed field"
     glowcolor(vector) : "Observed field"
     glowrange(integer) : "Observed field"
     glowrangemin(integer) : "Observed field"
-    glowstate(string) : "Observed field"
+    glowstate(integer) : "Observed field"
     glowteam(string) : "Observed field"
-    hideout_action(string) : "Observed field"
     idleanim(string) : "Observed field"
     idleanimationloopmode(string) : "Observed field"
-    interact_distance(float) : "Observed field"
-    interact_loc_string(string) : "Observed field"
-    interact_style(string) : "Observed field"
+    interactas(string) : "Observed field"
+    interactexclude(string) : "Observed field"
+    interactwith(string) : "Observed field"
     lagcompensate(boolean) : "Observed field"
-    lightmapstatic(string) : "Observed field"
+    lightingorigin(string) : "Observed field"
+    lightmapstatic(integer) : "Observed field"
     model(string) : "Observed field"
     nointerpolate(boolean) : "Observed field"
-    object_culling(string) : "Observed field"
+    object_culling(integer) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     performancemode(string) : "Observed field"
     pressuredelay(float) : "Observed field"
     randomizecycle(boolean) : "Observed field"
@@ -144,6 +183,85 @@
     startinganimationloopmode(string) : "Observed field"
     use_animgraph(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@PointClass = citadel_herotest_orbspawner : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_hideout_ball : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    subclass_name(string) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_hideout_button : "Observed map entity"
+[
+    add_attribute(string) : "Observed field"
+    add_modifier(string) : "Observed field"
+    animateonserver(boolean) : "Observed field"
+    animgraph2_identifier(string) : "Observed field"
+    bodygroups(string) : "Observed field"
+    breakablecontentsparticleoverride(string) : "Observed field"
+    breakablecontentspropgroupoverride(string) : "Observed field"
+    breakablecontentstype(string) : "Observed field"
+    burstlocation(string) : "Observed field"
+    burstscale(float) : "Observed field"
+    clientsideentity(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
+    createnavobstacle(boolean) : "Observed field"
+    damagefilter(string) : "Observed field"
+    disablelowviolence(string) : "Observed field"
+    disablereceiveshadows(boolean) : "Observed field"
+    disableshadows(string) : "Observed field"
+    expand_render_bounds_to_include_cloth(boolean) : "Observed field"
+    explodedamage(float) : "Observed field"
+    exploderadius(float) : "Observed field"
+    fademaxdist(float) : "Observed field"
+    fademindist(float) : "Observed field"
+    forcenpcexclude(boolean) : "Observed field"
+    globalname(string) : "Observed field"
+    glowcolor(vector) : "Observed field"
+    glowrange(integer) : "Observed field"
+    glowrangemin(integer) : "Observed field"
+    glowstate(string) : "Observed field"
+    glowteam(string) : "Observed field"
+    hideout_action(string) : "Observed field"
+    idleanim(string) : "Observed field"
+    idleanimationloopmode(string) : "Observed field"
+    interact_distance(float) : "Observed field"
+    interact_loc_string(string) : "Observed field"
+    interact_style(string) : "Observed field"
+    interactas(string) : "Observed field"
+    interactexclude(string) : "Observed field"
+    interactwith(string) : "Observed field"
+    lagcompensate(boolean) : "Observed field"
+    lightingorigin(string) : "Observed field"
+    lightmapstatic(string) : "Observed field"
+    model(string) : "Observed field"
+    nointerpolate(boolean) : "Observed field"
+    object_culling(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    performancemode(string) : "Observed field"
+    pressuredelay(float) : "Observed field"
+    randomizecycle(boolean) : "Observed field"
+    renderamt(string) : "Observed field"
+    rendercolor(vector) : "Observed field"
+    renderfx(string) : "Observed field"
+    rendermode(string) : "Observed field"
+    rendertocubemaps(boolean) : "Observed field"
+    skin(string) : "Observed field"
+    solid(string) : "Observed field"
+    spawnflags(integer) : "Observed field"
+    startinganim(string) : "Observed field"
+    startinganimationloopmode(string) : "Observed field"
+    use_animgraph(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
     world_panel(string) : "Observed field"
     world_panel_opacity_curve(string) : "Observed field"
     world_panel_opacity_end(string) : "Observed field"
@@ -154,32 +272,58 @@
 
 @PointClass = citadel_hideout_clock : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
 ]
 
 @PointClass = citadel_hideout_shootable_target_spawner : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_invis_volume : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
+    model(string) : "Observed field"
+    modifier_name(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass = citadel_item_pickup_rejuv_herotest_infospawn : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = citadel_item_powerup_spawner : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     subclass_name(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@PointClass = citadel_local_player_ranked_badge_prop : "Observed map entity"
+@PointClass base(Targetname) = citadel_local_player_ranked_badge_prop : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass = citadel_minimap_boundary : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
 ]
 
 @PointClass = citadel_new_years_fireworks : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     fireworkintervalmax(float) : "Observed field"
     fireworkintervalmin(float) : "Observed field"
     fireworkparticle1(string) : "Observed field"
@@ -195,35 +339,74 @@
     soundname(string) : "Observed field"
 ]
 
+@SolidClass base(Targetname) = citadel_obscured_volume : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
+    model(string) : "Observed field"
+    modifier_name(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
 @SolidClass base(Targetname) = citadel_passthrough_fake_wall : "Observed map entity"
 [
     allow_anyone(boolean) : "Observed field"
     allow_tiny_characters(boolean) : "Observed field"
+    compile_source_id(string) : "Observed field"
     model(string) : "Observed field"
     trigger_distance_meters(float) : "Observed field"
+    vscripts(string) : "Observed field"
     output OnClose(void) : "Observed output"
     output OnOpen(void) : "Observed output"
 ]
 
-@PointClass base(Targetname) = citadel_point_talker : "Observed map entity"
+@PointClass base(Targetname) = citadel_pickup_spawner : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    pickup_subclass(string) : "Observed field"
+    spawn_delay_override(float) : "Observed field"
+    subclass_name(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@PointClass = citadel_pregame_hero_draft_button : "Observed map entity"
+@PointClass base(Targetname) = citadel_point_talker : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_pregame_hero_draft_button : "Observed map entity"
+[
+    add_attribute(string) : "Observed field"
+    add_modifier(string) : "Observed field"
     animateonserver(boolean) : "Observed field"
+    animgraph2_identifier(string) : "Observed field"
+    bodygroups(string) : "Observed field"
+    breakablecontentsparticleoverride(string) : "Observed field"
+    breakablecontentspropgroupoverride(string) : "Observed field"
     breakablecontentstype(string) : "Observed field"
+    burstlocation(string) : "Observed field"
     burstscale(float) : "Observed field"
     clientsideentity(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     createnavobstacle(boolean) : "Observed field"
+    damagefilter(string) : "Observed field"
     disablelowviolence(string) : "Observed field"
     disablereceiveshadows(boolean) : "Observed field"
     disableshadows(string) : "Observed field"
+    expand_render_bounds_to_include_cloth(boolean) : "Observed field"
     explodedamage(float) : "Observed field"
     exploderadius(float) : "Observed field"
     fademaxdist(float) : "Observed field"
     fademindist(float) : "Observed field"
     forcenpcexclude(boolean) : "Observed field"
+    globalname(string) : "Observed field"
     glowcolor(vector) : "Observed field"
     glowrange(integer) : "Observed field"
     glowrangemin(integer) : "Observed field"
@@ -231,11 +414,17 @@
     glowteam(string) : "Observed field"
     idleanim(string) : "Observed field"
     idleanimationloopmode(string) : "Observed field"
+    interactas(string) : "Observed field"
+    interactexclude(string) : "Observed field"
+    interactwith(string) : "Observed field"
     lagcompensate(boolean) : "Observed field"
+    lightingorigin(string) : "Observed field"
     lightmapstatic(string) : "Observed field"
     model(string) : "Observed field"
     nointerpolate(boolean) : "Observed field"
     object_culling(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     performancemode(string) : "Observed field"
     pressuredelay(float) : "Observed field"
     randomizecycle(boolean) : "Observed field"
@@ -251,17 +440,28 @@
     startinganimationloopmode(string) : "Observed field"
     use_animgraph(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = citadel_prop_dynamic : "Observed map entity"
 [
+    _template_lump_ent_index(string) : "Observed field"
+    add_attribute(string) : "Observed field"
+    add_modifier(string) : "Observed field"
     animateonserver(boolean) : "Observed field"
     animationloopmode(string) : "Observed field"
+    animgraph2_identifier(string) : "Observed field"
     bakelighting(string) : "Observed field"
+    bodygroups(string) : "Observed field"
+    breakablecontentsparticleoverride(string) : "Observed field"
+    breakablecontentspropgroupoverride(string) : "Observed field"
     breakablecontentstype(string) : "Observed field"
+    burstlocation(string) : "Observed field"
     burstscale(float) : "Observed field"
     clientsideentity(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     createnavobstacle(boolean) : "Observed field"
+    damagefilter(string) : "Observed field"
     defaultanim(string) : "Observed field"
     defaultskin(string) : "Observed field"
     disablelowviolence(string) : "Observed field"
@@ -269,12 +469,14 @@
     disableshadows(string) : "Observed field"
     disablex360(string) : "Observed field"
     enemyskin(string) : "Observed field"
+    expand_render_bounds_to_include_cloth(boolean) : "Observed field"
     explodedamage(float) : "Observed field"
     exploderadius(float) : "Observed field"
     fademaxdist(float) : "Observed field"
     fademindist(float) : "Observed field"
     forcenpcexclude(boolean) : "Observed field"
     friendlyskin(string) : "Observed field"
+    globalname(string) : "Observed field"
     glowcolor(vector) : "Observed field"
     glowrange(string) : "Observed field"
     glowrangemin(integer) : "Observed field"
@@ -282,8 +484,12 @@
     glowteam(string) : "Observed field"
     idleanim(string) : "Observed field"
     idleanimationloopmode(string) : "Observed field"
+    interactas(string) : "Observed field"
+    interactexclude(string) : "Observed field"
+    interactwith(string) : "Observed field"
     isworld(boolean) : "Observed field"
     lagcompensate(boolean) : "Observed field"
+    lightingorigin(string) : "Observed field"
     lightmapstatic(string) : "Observed field"
     maxanimtime(string) : "Observed field"
     maxcpulevel(string) : "Observed field"
@@ -294,6 +500,8 @@
     model(string) : "Observed field"
     nointerpolate(boolean) : "Observed field"
     object_culling(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     performancemode(string) : "Observed field"
     pressuredelay(float) : "Observed field"
     randomanimation(string) : "Observed field"
@@ -313,38 +521,59 @@
     updatechildren(string) : "Observed field"
     use_animgraph(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = citadel_shop_prop_dynamic : "Observed map entity"
 [
+    add_attribute(string) : "Observed field"
+    add_modifier(string) : "Observed field"
     animateonserver(boolean) : "Observed field"
+    animgraph2_identifier(string) : "Observed field"
     bakelightdoublesided(string) : "Observed field"
     baketoworld(string) : "Observed field"
+    bodygroups(string) : "Observed field"
+    breakablecontentsparticleoverride(string) : "Observed field"
+    breakablecontentspropgroupoverride(string) : "Observed field"
     breakablecontentstype(string) : "Observed field"
+    burstlocation(string) : "Observed field"
     burstscale(float) : "Observed field"
     clientsideentity(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     createnavobstacle(boolean) : "Observed field"
+    damagefilter(string) : "Observed field"
     disableinlowquality(string) : "Observed field"
     disablelowviolence(string) : "Observed field"
     disablemerging(string) : "Observed field"
     disablereceiveshadows(boolean) : "Observed field"
     disableshadows(string) : "Observed field"
+    expand_render_bounds_to_include_cloth(boolean) : "Observed field"
     explodedamage(float) : "Observed field"
     exploderadius(float) : "Observed field"
     fademaxdist(float) : "Observed field"
     fademindist(float) : "Observed field"
     forcenpcexclude(boolean) : "Observed field"
+    globalname(string) : "Observed field"
     glowcolor(vector) : "Observed field"
     glowrange(integer) : "Observed field"
     glowrangemin(integer) : "Observed field"
     glowstate(string) : "Observed field"
     glowteam(string) : "Observed field"
+    idleanim(string) : "Observed field"
     idleanimationloopmode(string) : "Observed field"
+    interactas(string) : "Observed field"
+    interactexclude(string) : "Observed field"
+    interactwith(string) : "Observed field"
+    isshopopen(boolean) : "Observed field"
     lagcompensate(boolean) : "Observed field"
+    lanenum(string) : "Observed field"
+    lightingorigin(string) : "Observed field"
     lightmapstatic(string) : "Observed field"
     model(string) : "Observed field"
     nointerpolate(boolean) : "Observed field"
     object_culling(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     performancemode(string) : "Observed field"
     pressuredelay(float) : "Observed field"
     randomizecycle(boolean) : "Observed field"
@@ -363,17 +592,29 @@
     use_animgraph(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
     visoccluder(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = citadel_snd_base_music_obb : "Observed map entity"
 [
     box_maxs(vector) : "Observed field"
     box_mins(vector) : "Observed field"
+    compile_source_id(string) : "Observed field"
     max_distance(string) : "Observed field"
     operator_name(string) : "Observed field"
     operator_variable_name(string) : "Observed field"
     stack_name(string) : "Observed field"
     teamnumber(string) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = citadel_snd_dsp_obb : "Observed map entity"
+[
+    box_maxs(vector) : "Observed field"
+    box_mins(vector) : "Observed field"
+    compile_source_id(string) : "Observed field"
+    effect_name(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = citadel_snd_obb : "Observed map entity"
@@ -382,24 +623,32 @@
     box_mins(vector) : "Observed field"
     clientcullradius(float) : "Observed field"
     clientsideentity(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     entityindexselection(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     saveandrestore(boolean) : "Observed field"
     soundname(string) : "Observed field"
+    sourceentityattachment(string) : "Observed field"
+    sourceentityname(string) : "Observed field"
     startonspawn(boolean) : "Observed field"
     stoponnew(boolean) : "Observed field"
     tolocalplayer(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = citadel_snd_stack_field_obb : "Observed map entity"
 [
     box_maxs(vector) : "Observed field"
     box_mins(vector) : "Observed field"
+    compile_source_id(string) : "Observed field"
     max_distance(string) : "Observed field"
     music_state(string) : "Observed field"
     operator_name(string) : "Observed field"
     operator_variable_name(string) : "Observed field"
     stack_name(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = citadel_team_reveal_hero_card : "Observed map entity"
@@ -445,69 +694,174 @@
     uselocaloffset(boolean) : "Observed field"
 ]
 
-@SolidClass = citadel_trigger_climb_rope : "Observed map entity"
+@SolidClass base(Targetname) = citadel_trigger_bonk : "Observed map entity"
+[
+    bonk_range(float) : "Observed field"
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
+    model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    subclass_name(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_trigger_climb_rope : "Observed map entity"
 [
     aligncameraonautodismount(boolean) : "Observed field"
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@SolidClass = citadel_trigger_hideout : "Observed map entity"
+@SolidClass base(Targetname) = citadel_trigger_corrupted_item_shop : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
-    spawnflags(string) : "Observed field"
-    startdisabled(boolean) : "Observed field"
-    uselocaloffset(boolean) : "Observed field"
-]
-
-@SolidClass = citadel_trigger_hideout_teleport : "Observed map entity"
-[
-    landmark(string) : "Observed field"
-    locstring(string) : "Observed field"
-    map(string) : "Observed field"
-    model(string) : "Observed field"
-    prop(string) : "Observed field"
-    spawnflags(string) : "Observed field"
-    startdisabled(boolean) : "Observed field"
-    uselocaloffset(boolean) : "Observed field"
-]
-
-@SolidClass base(Targetname) = citadel_trigger_hotel_exit : "Observed map entity"
-[
-    is_success(boolean) : "Observed field"
-    model(string) : "Observed field"
-    spawnflags(string) : "Observed field"
-    startdisabled(boolean) : "Observed field"
-    uselocaloffset(boolean) : "Observed field"
-]
-
-@SolidClass = citadel_trigger_idol_return : "Observed map entity"
-[
-    model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     teamnumber(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
+    output OnItemLimitChanged(void) : "Observed output"
+]
+
+@SolidClass base(Targetname) = citadel_trigger_hideout : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
+    model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_trigger_hideout_teleport : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
+    landmark(string) : "Observed field"
+    locstring(string) : "Observed field"
+    map(string) : "Observed field"
+    model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    prop(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_trigger_hotel_exit : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
+    is_success(boolean) : "Observed field"
+    model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_trigger_idol_return : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
+    model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_trigger_ignore_out_of_play_area : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
+    model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_trigger_in_map_district : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    district_number(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
+    model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(boolean) : "Observed field"
+    teamnumber(string) : "Observed field"
+    uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @SolidClass base(Targetname) = citadel_trigger_interior : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     interior_type(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     rendercolor(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@SolidClass = citadel_trigger_no_portals : "Observed map entity"
+@SolidClass base(Targetname) = citadel_trigger_no_portals : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @SolidClass = citadel_trigger_push : "Observed map entity"
@@ -520,13 +874,19 @@
     uselocaloffset(boolean) : "Observed field"
 ]
 
-@SolidClass = citadel_trigger_shop_tunnel : "Observed map entity"
+@SolidClass base(Targetname) = citadel_trigger_shop_tunnel : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     teamnumber(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @SolidClass = citadel_trigger_speed_boost : "Observed map entity"
@@ -538,36 +898,66 @@
     uselocaloffset(boolean) : "Observed field"
 ]
 
-@SolidClass = citadel_trigger_suspend_modifier : "Observed map entity"
+@SolidClass base(Targetname) = citadel_trigger_suspend_modifier : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
     modifier_name(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @SolidClass base(Targetname) = citadel_trigger_teleport : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     delay(float) : "Observed field"
     exitpoint(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     prop(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     teamnumber(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
     output OnTeleport(void) : "Observed output"
 ]
 
-@SolidClass = citadel_tunnel_trigger : "Observed map entity"
+@PointClass base(Targetname) = citadel_tunnel_node : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    connecting_node_01(string) : "Observed field"
+    connecting_node_02(string) : "Observed field"
+    connecting_node_03(string) : "Observed field"
+    is_exit(boolean) : "Observed field"
+    tunnel_id(string) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@SolidClass base(Targetname) = citadel_tunnel_trigger : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     kill_when_not_tiny(boolean) : "Observed field"
     model(string) : "Observed field"
     movespeed_override(float) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
+    tunnel_id(integer) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = citadel_volume_omni : "Observed map entity"
@@ -614,6 +1004,7 @@
 @PointClass base(Targetname) = citadel_zipline_path : "Observed map entity"
 [
     color_tint(vector) : "Observed field"
+    compile_source_id(string) : "Observed field"
     effect_name(string) : "Observed field"
     lane_number(string) : "Observed field"
     max_simulation_time(float) : "Observed field"
@@ -625,7 +1016,9 @@
     slack(float) : "Observed field"
     start_active(boolean) : "Observed field"
     static_collision(boolean) : "Observed field"
-    use_baselane_color(boolean) : "Observed field"
+    surface_properties(string) : "Observed field"
+    use_baselane_color(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = citadel_zipline_path_node : "Observed map entity"
@@ -633,6 +1026,10 @@
     always_usable(string) : "Observed field"
     capturable(boolean) : "Observed field"
     color(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
+    connecting_node_01(string) : "Observed field"
+    connecting_node_02(string) : "Observed field"
+    connecting_node_03(string) : "Observed field"
     corner_node(boolean) : "Observed field"
     disable_ability_zip_targeting(string) : "Observed field"
     disable_zipping_to(boolean) : "Observed field"
@@ -653,26 +1050,34 @@
     teamnumber(string) : "Observed field"
     tertiary_guard_boss_name(string) : "Observed field"
     use_for_minimap_drawing(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = destroyable_building : "Observed map entity"
 [
+    add_attribute(string) : "Observed field"
+    add_modifier(string) : "Observed field"
     backdoorprotectiontrigger(string) : "Observed field"
+    bodygroups(string) : "Observed field"
     building_health(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     disableshadows(string) : "Observed field"
+    expand_render_bounds_to_include_cloth(boolean) : "Observed field"
     final(boolean) : "Observed field"
     lanenum(string) : "Observed field"
     model(string) : "Observed field"
     skin(string) : "Observed field"
     teamnumber(string) : "Observed field"
     trooperapproach(string) : "Observed field"
+    vscripts(string) : "Observed field"
     output OnAttackSubsided(void) : "Observed output"
     output OnDestroyed(void) : "Observed output"
     output OnUnderAttack(void) : "Observed output"
 ]
 
-@PointClass = env_cubemap_fog : "Observed map entity"
+@PointClass base(Targetname) = env_cubemap_fog : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     cubemapfogenddistance(float) : "Observed field"
     cubemapfogfalloffexponent(float) : "Observed field"
     cubemapfogheightexponent(float) : "Observed field"
@@ -685,10 +1090,12 @@
     cubemapfogstartdistance(float) : "Observed field"
     cubemapfogtexture(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@PointClass = env_gradient_fog : "Observed map entity"
+@PointClass base(Targetname) = env_gradient_fog : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     fadetime(float) : "Observed field"
     fogcolor(vector) : "Observed field"
     fogend(float) : "Observed field"
@@ -700,13 +1107,16 @@
     fogstrength(float) : "Observed field"
     fogverticalexponent(float) : "Observed field"
     startdisabled(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = filter_activator_team : "Observed map entity"
 [
     clientsideentity(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     filterteam(string) : "Observed field"
     negated(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @SolidClass = func_citadel_ladder : "Observed map entity"
@@ -721,129 +1131,187 @@
     model(string) : "Observed field"
 ]
 
-@SolidClass = func_regenerate : "Observed map entity"
+@SolidClass base(Targetname) = func_regenerate : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     teamnumber(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = hero_testing_controller : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass = info_ability_test_bot : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
 ]
 
 @PointClass = info_assigned_lane_particle : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     lanenum(string) : "Observed field"
     teamnumber(string) : "Observed field"
 ]
 
-@PointClass = info_citadel_familiar_helper : "Observed map entity"
+@PointClass base(Targetname) = info_citadel_director : "Observed map entity"
 [
+    allowanystandardnonbossevent(string) : "Observed field"
+    arenaentranceentity(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
+    radiusforced(float) : "Observed field"
+    radiusscale(float) : "Observed field"
+    type(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@PointClass = info_citadel_hideout_interest_point : "Observed map entity"
+@PointClass base(Targetname) = info_citadel_familiar_helper : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = info_citadel_hideout_interest_point : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    max_distance(float) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = info_citadel_matchmaking_status : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass = info_cover_point : "Observed map entity"
 [
-    allowoffnav(boolean) : "Observed field"
+    allowoffnav(string) : "Observed field"
     autoadjustdirection(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     groupid(string) : "Observed field"
     visionradius(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = info_hero_testing_point : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     heroid(string) : "Observed field"
     movetarget(string) : "Observed field"
     pointtype(string) : "Observed field"
     vscripts(string) : "Observed field"
 ]
 
-@PointClass = info_koth_spawn_location : "Observed map entity"
+@PointClass base(Targetname) = info_koth_spawn_location : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@PointClass = info_mini_map_marker : "Observed map entity"
+@PointClass base(Targetname) = info_mini_map_marker : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     markertype(string) : "Observed field"
     teamnumber(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@PointClass = info_neutral_trooper_camp : "Observed map entity"
+@PointClass base(Targetname) = info_nav_space : "Observed map entity"
+[
+    compile_source_id(string) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
+@PointClass base(Targetname) = info_neutral_trooper_camp : "Observed map entity"
 [
     campname(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     eneutraltroopertype(string) : "Observed field"
     initialspawndelayinseconds(string) : "Observed field"
     spawnintervalinseconds(string) : "Observed field"
     subclass_name(string) : "Observed field"
+    tetherradiusoverride(float) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass = info_neutral_trooper_spawn : "Observed map entity"
 [
     campname(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     covergroupid(string) : "Observed field"
     eneutraltroopertype(string) : "Observed field"
     grenadier(string) : "Observed field"
     hatecrateattacker(string) : "Observed field"
     model(string) : "Observed field"
     modelscale(string) : "Observed field"
+    neutralsubclass(string) : "Observed field"
     super(string) : "Observed field"
     teamnumber(string) : "Observed field"
+    troopersubclass(string) : "Observed field"
+    output OnNeutralTakeDamage(void) : "Observed output"
 ]
 
 @PointClass base(Targetname) = info_offscreen_panorama_texture : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     enable_mip_gen(boolean) : "Observed field"
+    layout_file(string) : "Observed field"
     panel_type(string) : "Observed field"
     render_attr_name(string) : "Observed field"
     resolution_x(string) : "Observed field"
     resolution_y(string) : "Observed field"
     targets(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@PointClass = info_super_trooper_spawn : "Observed map entity"
+@PointClass base(Targetname) = info_super_trooper_spawn : "Observed map entity"
 [
     bossname(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     covergroupid(string) : "Observed field"
     lanenum(string) : "Observed field"
     reinforcementsonly(boolean) : "Observed field"
     secondaryboss(boolean) : "Observed field"
     teamnumber(string) : "Observed field"
     troopertestspawner(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
     output OnTrooperKilled(void) : "Observed output"
 ]
 
 @PointClass base(Targetname) = info_team_spawn : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     grouptag(string) : "Observed field"
     initialspawn(boolean) : "Observed field"
     lanenum(string) : "Observed field"
     teamnumber(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass = info_teleport_location : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     lanenum(string) : "Observed field"
     objective(string) : "Observed field"
     teamnumber(string) : "Observed field"
 ]
 
-@PointClass = info_trooper_spawn : "Observed map entity"
+@PointClass base(Targetname) = info_trooper_spawn : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     disableziplining(boolean) : "Observed field"
     lanenum(string) : "Observed field"
     teamnumber(string) : "Observed field"
@@ -852,18 +1320,21 @@
 
 @PointClass = item_crate_spawn : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     early_spawn(boolean) : "Observed field"
     loot_type(string) : "Observed field"
     objective_position(string) : "Observed field"
 ]
 
-@PointClass = lane_marker_path : "Observed map entity"
+@PointClass base(Targetname) = lane_marker_path : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     lanenum(string) : "Observed field"
     laneslot(string) : "Observed field"
     pathnodepinsenabled(string) : "Observed field"
     pathnoderadiusscales(string) : "Observed field"
     pathnodes(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass = light_omni : "Observed map entity"
@@ -871,14 +1342,14 @@
     attenuation1(float) : "Observed field"
     attenuation2(float) : "Observed field"
     bouncescale(float) : "Observed field"
-    brightness(float) : "Observed field"
+    brightness(string) : "Observed field"
     brightness_legacy(string) : "Observed field"
     brightness_lumens(string) : "Observed field"
     castshadows(string) : "Observed field"
     clientsideentity(string) : "Observed field"
-    color(vector) : "Observed field"
+    color(string) : "Observed field"
     directlight(string) : "Observed field"
-    enabled(boolean) : "Observed field"
+    enabled(string) : "Observed field"
     fademaxdist(float) : "Observed field"
     fademindist(float) : "Observed field"
     indirectlight(string) : "Observed field"
@@ -895,7 +1366,7 @@
     precomputedobbextent(string) : "Observed field"
     precomputedobborigin(string) : "Observed field"
     priority(integer) : "Observed field"
-    range(float) : "Observed field"
+    range(string) : "Observed field"
     renderdiffuse(boolean) : "Observed field"
     renderspecular(string) : "Observed field"
     rendertocubemaps(boolean) : "Observed field"
@@ -960,44 +1431,52 @@
 [
     backdoorprotectiontrigger(string) : "Observed field"
     bossname(string) : "Observed field"
-    covergroupid(integer) : "Observed field"
+    compile_source_id(string) : "Observed field"
+    covergroupid(string) : "Observed field"
     lanenum(string) : "Observed field"
     laneside(string) : "Observed field"
     subclass_name(string) : "Observed field"
     teamnumber(string) : "Observed field"
+    vscripts(string) : "Observed field"
     output OnKilled(void) : "Observed output"
 ]
 
-@PointClass = npc_base_defense_sentry : "Observed map entity"
+@PointClass base(Targetname) = npc_base_defense_sentry : "Observed map entity"
 [
     ability_weapon(string) : "Observed field"
     attack_cone(float) : "Observed field"
+    compile_source_id(string) : "Observed field"
     health(float) : "Observed field"
     renderamt(string) : "Observed field"
     rendercolor(vector) : "Observed field"
     sentry_level(string) : "Observed field"
     teamnumber(string) : "Observed field"
-    unit_status_offset(vector) : "Observed field"
+    unit_status_offset(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = npc_boss_tier2 : "Observed map entity"
 [
     bossname(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     covergroupid(string) : "Observed field"
     lanenum(string) : "Observed field"
     subclass_name(string) : "Observed field"
     teamnumber(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@PointClass = npc_boss_tier3 : "Observed map entity"
+@PointClass base(Targetname) = npc_boss_tier3 : "Observed map entity"
 [
     backdoorprotectiontrigger(string) : "Observed field"
     bossname(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     covergroupid(string) : "Observed field"
     dying_cover_id(string) : "Observed field"
     lanenum(string) : "Observed field"
     subclass_name(string) : "Observed field"
     teamnumber(string) : "Observed field"
+    vscripts(string) : "Observed field"
     vulnerable_cover_id(string) : "Observed field"
     output OnBossKilled(void) : "Observed output"
     output OnBossPhase1End(void) : "Observed output"
@@ -1005,11 +1484,13 @@
 
 @PointClass = npc_neutral_sinners_sacrifice_hideout : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     teamnumber(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = point_prefab : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     prefab_associated_relay(string) : "Observed field"
     prefab_load_dynamic(boolean) : "Observed field"
     prefab_relays(string) : "Observed field"
@@ -1019,9 +1500,11 @@
 [
     _entname_fixup_prefix(string) : "Observed field"
     _procedural_connection_world_target(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
     graph_def(string) : "Observed field"
     graph_keys(string) : "Observed field"
     prefab_relay_interface(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass = portrait_world_unit : "Observed map entity"
@@ -1032,118 +1515,224 @@
     rendercolor(vector) : "Observed field"
 ]
 
+@PointClass base(Targetname) = t : "Observed map entity"
+[
+    _minlight(string) : "Observed field"
+    add_attribute(string) : "Observed field"
+    alwayssolidignorenav(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
+    disablereceiveshadows(string) : "Observed field"
+    disableshadows(string) : "Observed field"
+    excludednpc(string) : "Observed field"
+    fademaxdist(string) : "Observed field"
+    fademindist(string) : "Observed field"
+    globalname(string) : "Observed field"
+    inputfilter(string) : "Observed field"
+    interactas(string) : "Observed field"
+    interactexclude(string) : "Observed field"
+    interactwith(string) : "Observed field"
+    invert_exclusion(string) : "Observed field"
+    lightmapstatic(string) : "Observed field"
+    nointerpolate(string) : "Observed field"
+    object_culling(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    renderamt(string) : "Observed field"
+    rendercolor(string) : "Observed field"
+    renderfx(string) : "Observed field"
+    rendermode(string) : "Observed field"
+    rendertocubemaps(string) : "Observed field"
+    scriptedmovement(string) : "Observed field"
+    solidbsp(string) : "Observed field"
+    solidity(string) : "Observed field"
+    spawnflags(string) : "Observed field"
+    startdisabled(string) : "Observed field"
+    uselocaloffset(string) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
 @SolidClass base(Targetname) = trigger_catapult : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     launch_speed(float) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
+    pickup_subclass(string) : "Observed field"
+    pickup_trail_auto_space(boolean) : "Observed field"
+    pickup_trail_count(string) : "Observed field"
+    pickup_trail_enabled(boolean) : "Observed field"
+    pickup_trail_spawn_interval(float) : "Observed field"
+    pickup_trail_start_delay(float) : "Observed field"
+    pickup_trail_trajectory_spacing(float) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     target(string) : "Observed field"
     teamnumber(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
     output OnStartTouch(void) : "Observed output"
 ]
 
 @SolidClass base(Targetname) = trigger_hurt_citadel : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     damage(string) : "Observed field"
     damagecap(string) : "Observed field"
+    damageforce(vector) : "Observed field"
     damagemodel(string) : "Observed field"
     damagetype(string) : "Observed field"
     filtername(string) : "Observed field"
     forgivedelay(float) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
     nodmgforce(boolean) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     thinkalways(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @SolidClass base(Targetname) = trigger_item_shop : "Observed map entity"
 [
     audiooffset(string) : "Observed field"
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
+    lanenum(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     soundname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     teamnumber(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
     output OnEndTouch(void) : "Observed output"
     output OnStartTouch(void) : "Observed output"
 ]
 
 @SolidClass base(Targetname) = trigger_item_shop_safe_zone : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
     output OnContested(void) : "Observed output"
     output OnNotContested(void) : "Observed output"
 ]
 
-@SolidClass = trigger_midboss_shield : "Observed map entity"
+@SolidClass base(Targetname) = trigger_midboss_shield : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@SolidClass = trigger_neutral_shield : "Observed map entity"
+@SolidClass base(Targetname) = trigger_neutral_shield : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@SolidClass = trigger_ping_location : "Observed map entity"
+@SolidClass base(Targetname) = trigger_ping_location : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     ping_location(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @SolidClass base(Targetname) = trigger_team_base : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     teamnumber(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@SolidClass = trigger_tier3phase2_shield : "Observed map entity"
+@SolidClass base(Targetname) = trigger_tier3phase2_shield : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     teamnumber(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @SolidClass base(Targetname) = trigger_trooper_detector : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
+    filtername(string) : "Observed field"
+    globalname(string) : "Observed field"
     model(string) : "Observed field"
+    parentattachmentname(string) : "Observed field"
+    parentname(string) : "Observed field"
     spawnflags(string) : "Observed field"
     startdisabled(boolean) : "Observed field"
     teamnumber(string) : "Observed field"
     uselocaloffset(boolean) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
 @PointClass base(Targetname) = trooper_approach_horizon : "Observed map entity"
 [
+    compile_source_id(string) : "Observed field"
     lanenum(string) : "Observed field"
     laneslot(string) : "Observed field"
     pathnoderadiusscales(string) : "Observed field"
     pathnodes(string) : "Observed field"
+    vscripts(string) : "Observed field"
 ]
 
-@PointClass = worldspawn : "Observed map entity"
+@PointClass base(Targetname) = worldspawn : "Observed map entity"
 [
     allowheightfog(string) : "Observed field"
     backgroundmap(string) : "Observed field"
@@ -1160,11 +1749,14 @@
     heightfogscrolldir2(string) : "Observed field"
     heightfogtexture(string) : "Observed field"
     heightfogworldscale(string) : "Observed field"
+    lightmap_queries(boolean) : "Observed field"
     mapusagetype(string) : "Observed field"
     max_lightmap_resolution(string) : "Observed field"
     maxpropscreenwidth(float) : "Observed field"
     minpropscreenwidth(float) : "Observed field"
     newunit(string) : "Observed field"
+    novis_max_triangles_per_cluster(integer) : "Observed field"
+    novis_min_draw_volume_size(float) : "Observed field"
     prefab_has_runtime_entity_by_default(string) : "Observed field"
     pvstype(string) : "Observed field"
     skyname(string) : "Observed field"
@@ -1173,6 +1765,11 @@
     steamaudio_customdata_bake_dimensions(boolean) : "Observed field"
     steamaudio_customdata_bake_materials(boolean) : "Observed field"
     steamaudio_customdata_bake_occlusion(boolean) : "Observed field"
+    steamaudio_customdata_dimensions_inside_threshold(float) : "Observed field"
+    steamaudio_customdata_dimensions_insidesize_order(integer) : "Observed field"
+    steamaudio_customdata_dimensions_outside_order(integer) : "Observed field"
+    steamaudio_customdata_dimensions_outside_threshold(float) : "Observed field"
+    steamaudio_customdata_dimensions_size_threshold(float) : "Observed field"
     steamaudio_customdata_filter_navmesh(boolean) : "Observed field"
     steamaudio_customdata_filter_volumes(boolean) : "Observed field"
     steamaudio_customdata_generation_type(string) : "Observed field"
