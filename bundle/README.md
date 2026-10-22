@@ -80,6 +80,20 @@ Pop-Location
 It writes `game/citadel_addons/modlock_sample/models/probe.vmdl_c`. The same
 command compiles the sample Panorama layout, `panorama/layout/probe.xml`.
 
+A map compiles the same way after its materials. For a map saved as
+`maps/mymap.vmap` in your addon:
+
+```powershell
+Push-Location "$sdk\game\bin\win64"
+& .\resourcecompiler.exe -game "$sdk\game\citadel" -i "$sdk\content\citadel_addons\modlock_sample\maps\mymap.vmap" -nop4 -fshallow -world -phys -vis -bakedlighting -bakelighting
+Pop-Location
+```
+
+It writes `game/citadel_addons/modlock_sample/maps/mymap.vpk`. The game also
+needs the map's compiled materials, so pack them into that archive before
+copying it to Deadlock's `game/citadel/maps/`. The compiler needs a graphics
+device for materials, so run it in a desktop session.
+
 ## Known limits
 
 Hammer's entity list adds 103 classes seen in Deadlock's shipped maps to

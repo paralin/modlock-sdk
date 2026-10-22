@@ -14,10 +14,10 @@ that package and check a release. Valve's binaries and assets come from Steam
 at install time. [REPRODUCING.md](REPRODUCING.md) explains how the build works.
 
 > **Early development.** Hammer, ModelDoc, and SFM start in tools mode on
-> native Windows, and model and Panorama compilation pass. Deadlock's own
+> native Windows, and model, Panorama and map compilation pass. Deadlock's own
 > materials do not render in the editors; see
-> [Shaders](#shaders). Map playtests, Citadel-specific ModelDoc events, and SFM
-> renders are not yet validated.
+> [Shaders](#shaders). Map playtests in Hammer, Citadel-specific ModelDoc
+> events, and SFM renders are not yet validated.
 
 ## Shaders
 
@@ -37,8 +37,13 @@ for particles, or `sky`.
 ## Maps
 
 Build a map from its own source: a new map in Hammer under a name of its own,
-with materials on shaders both games share. Loading such a map in Deadlock is
-not yet validated.
+with materials on shaders both games share. Such a map loads and renders in
+Deadlock: compile its materials, then the map with `-world -phys -vis`, as
+[bundle/README.md](bundle/README.md) shows, and put the map's VPK together with
+its compiled materials in one archive, such as with `modlock vpk pack`. Placed
+in `game/citadel/maps/`, the archive loads with `map <name>`. Deadlock's own
+materials may appear in the map: their shaders are missing from the compiler,
+which reports an error for each, but the game draws them.
 
 A stock Deadlock map does not recompile into a map Deadlock loads. A map
 decompiled with Source 2 Viewer has lost its world node geometry and its
