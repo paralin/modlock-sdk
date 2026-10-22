@@ -34,6 +34,18 @@ operator Deadlock defines exists in the CS2 tools. For a material that renders
 in both, use a shader the two games share, such as `generic`, `spritecard`
 for particles, or `sky`.
 
+## Maps
+
+Build a map from its own source: a new map in Hammer under a name of its own,
+with materials on shaders both games share. Loading such a map in Deadlock is
+not yet validated.
+
+A stock Deadlock map does not recompile into a map Deadlock loads. A map
+decompiled with Source 2 Viewer has lost its world node geometry and its
+authoring data, its materials use the Deadlock shaders the CS2 tools lack, and
+its name and paths collide with the stock map's own files. To change a stock
+map, spawn and drive entities on it at runtime instead.
+
 ## Install
 
 On Windows, run this in PowerShell:
