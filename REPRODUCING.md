@@ -58,8 +58,8 @@ mounts both `Game core` and `Mod core`, since the default key bindings need
 the second, and `LayeredOnMod core` keeps Valve's render defaults.
 
 Valve does not ship an entity definition file for Deadlock's tools.
-[`metadata/citadel.fgd`](metadata/citadel.fgd) adds 103 entity classes found in
-227 entity lumps across 207 Deadlock map packages to Valve's base definitions.
+[`metadata/citadel.fgd`](metadata/citadel.fgd) adds 104 entity classes found in
+242 entity lumps across 218 Deadlock map packages to Valve's base definitions.
 These are the classes and properties the shipped maps use, so some valid
 options are missing. The packages come from more than one game build, so a
 class stays available after Valve removes the map that used it.

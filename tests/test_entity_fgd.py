@@ -34,6 +34,7 @@ class EntityFgdTest(unittest.TestCase):
 @PointClass base(Targetname) = citadel_probe : ""
 [
  count(integer) : ""
+ spawnflags(integer) : ""
  output OnReady(void) : ""
 ]
 ''')
@@ -41,6 +42,7 @@ class EntityFgdTest(unittest.TestCase):
 [
  count(string) : ""
  enabled(boolean) : ""
+ spawnflags(uint32) : ""
 ]
 ''')
             # A class only an earlier build's map placed stays, as does its lump.
@@ -58,6 +60,7 @@ class EntityFgdTest(unittest.TestCase):
             self.assertEqual([row["Map"] for row in json.loads(receipt.read_text())], ["new.vpk", "new.vpk", "old.vpk"])
             self.assertIn('@SolidClass base(Targetname) = citadel_probe', text)
             self.assertIn('count(string)', text)
+            self.assertIn('spawnflags(integer)', text)
             self.assertIn('output OnReady(void)', text)
             self.assertNotIn('light_omni', text)
 

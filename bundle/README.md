@@ -96,7 +96,7 @@ device for materials, so run it in a desktop session.
 
 ## Known limits
 
-Hammer's entity list adds 103 classes seen in Deadlock's shipped maps to
+Hammer's entity list adds 104 classes seen in Deadlock's shipped maps to
 Valve's base set. It includes only the properties those maps use. ModelDoc has
 generic model settings and lacks Deadlock's animation events.
 

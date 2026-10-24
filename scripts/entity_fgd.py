@@ -13,6 +13,8 @@ from pathlib import Path
 INCLUDES = ("base.fgd", "lights.fgd", "lights2.fgd", "markup_volumes.fgd", "postprocessing.fgd", "ai_defaultnpc.fgd")
 CLASS = re.compile(r'^@(Point|Solid)Class( base\(Targetname\))? = (\w+) : "[^"\n]*"\n\[\n(.*?)^\]',
                    re.MULTILINE | re.DOTALL)
+# Newer entity lumps name integer widths; Hammer knows one integer type.
+FIELD_TYPES = {"int32": "integer", "uint32": "integer"}
 PROPERTY = re.compile(r'^\s*(output )?(\w+)\((\w+)\) : "[^"\n]*"\s*$', re.MULTILINE)
 
 
@@ -102,7 +104,7 @@ def merge(source: Path, core: Path, target: Path, receipt: Path) -> int:
                 if output:
                     entity.outputs.add(key)
                 else:
-                    entity.fields.setdefault(key, set()).add(type_name)
+                    entity.fields.setdefault(key, set()).add(FIELD_TYPES.get(type_name, type_name))
 
     # Map serialization supplies observed keys, not editor defaults or full schemas.
     lines = ["// Generated from compiled Valve map entities; review inferred types.",

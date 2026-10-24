@@ -85,6 +85,16 @@
     output OnKilled(void) : "Observed output"
 ]
 
+@PointClass base(Targetname) = citadel_breakable_prop_hideout : "Observed map entity"
+[
+    breakable_spawn_group(string) : "Observed field"
+    compile_source_id(integer) : "Observed field"
+    initial_spawn_time_override(float) : "Observed field"
+    respawn_time_override(float) : "Observed field"
+    subclass_name(string) : "Observed field"
+    vscripts(string) : "Observed field"
+]
+
 @SolidClass base(Targetname) = citadel_capture_point : "Observed map entity"
 [
     compile_source_id(string) : "Observed field"
