@@ -20,7 +20,7 @@ def build(zig: str, output: Path) -> str:
     subprocess.run([zig, "cc", "-target", "x86_64-windows-gnu", "-O2", "-s",
                     "-Wall", "-Wextra", "-Werror", "-Wl,--subsystem,windows",
                     str(ROOT / "tools/sdk_launcher.c"), "-o", str(output)],
-                   check=True, timeout=120)
+                   check=True)
     return digest(output)
 
 

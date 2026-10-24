@@ -38,7 +38,11 @@ class InstallTest(unittest.TestCase):
     """Run the installer against a fake Steam library and a fake downloader."""
 
     def test_follows_depot_changes_and_keeps_user_work(self) -> None:
-        """Installed depots are linked, the rest downloaded, and dropped files removed."""
+        """Installed depots are linked, the rest downloaded, and dropped files removed.
+
+        Packages are symbolic links, as when the toolkit and the Steam library
+        sit on different disks, so a rerun replaces links it placed itself.
+        """
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             steam_root, library = root / "Steam", root / "Library"
@@ -77,6 +81,7 @@ class InstallTest(unittest.TestCase):
                     mock.patch.object(steam, "depot_downloader", return_value=Path("dd")), \
                     mock.patch.object(steam, "download", side_effect=download), \
                     mock.patch.object(install, "zig", return_value=Path("zig")), \
+                    mock.patch.object(install.os, "link", side_effect=OSError("cross-device")), \
                     mock.patch.object(install, "build",
                                       side_effect=lambda zig, output: output.write_bytes(b"exe")):
                 install.install(destination)
@@ -90,6 +95,7 @@ class InstallTest(unittest.TestCase):
                 install.install(destination)
 
             package = destination / "game/citadel_assets/pak01_dir.vpk"
+            self.assertTrue(package.is_symlink())
             self.assertTrue(os.path.samefile(package, game / "game/citadel/pak01_dir.vpk"))
             self.assertFalse((destination / "game/citadel_assets/bin").exists())
             self.assertEqual((destination / "game/bin/tools.dll").read_bytes(), b"tool")

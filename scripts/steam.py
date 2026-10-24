@@ -15,6 +15,7 @@ from pathlib import Path
 DEPOT_DOWNLOADER = "https://github.com/SteamRE/DepotDownloader/releases/latest/download"
 MANIFEST_MAGIC = 0x71F617D0
 DIRECTORY_FLAG = 0x40
+QR_ATTEMPTS = 10
 
 
 def fetch(url: str) -> bytes:
@@ -159,7 +160,9 @@ def download(program: Path, app: str, depot: str, include: tuple[str, ...],
     Steam denies anonymous sessions these depots. The first run shows a QR code
     for the Steam mobile app and saves a login token in DepotDownloader's own
     storage; account records the account name so later runs reuse it. When the
-    saved login fails, the next attempt asks for a new QR scan. DepotDownloader
+    saved login fails, the next attempt asks for a new QR scan. Steam often
+    drops a QR session about a minute in, before anyone scans it, so a failed
+    QR attempt shows a new code, up to QR_ATTEMPTS codes. DepotDownloader
     downloads only changed files and deletes files the new version drops.
     """
     folder.mkdir(parents=True, exist_ok=True)
@@ -168,7 +171,8 @@ def download(program: Path, app: str, depot: str, include: tuple[str, ...],
                         encoding="utf-8")
     command = [str(program), "-app", app, "-depot", depot, "-os", "windows", "-osarch", "64",
                "-filelist", str(filelist), "-dir", str(folder), "-remember-password"]
-    for attempt in range(2):
+    codes = QR_ATTEMPTS
+    while True:
         name = account.read_text(encoding="utf-8").strip() if account.is_file() else ""
         login = ["-username", name] if name else ["-qr"]
         if not name:
@@ -181,10 +185,12 @@ def download(program: Path, app: str, depot: str, include: tuple[str, ...],
                     account.write_text(match.group(1), encoding="utf-8")
         if process.returncode == 0:
             return
-        if not name:
-            break
-        account.unlink(missing_ok=True)
-    raise subprocess.CalledProcessError(process.returncode, command)
+        if name:
+            account.unlink(missing_ok=True)
+            continue
+        codes -= 1
+        if not codes:
+            raise subprocess.CalledProcessError(process.returncode, command)
 
 
 def downloaded_manifest(folder: Path, depot: str) -> str | None:

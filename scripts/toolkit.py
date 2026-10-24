@@ -51,12 +51,17 @@ def depots(root: Path = ROOT) -> list[Depot]:
 
 
 def contained_path(root: Path, relative: str) -> Path:
-    """Resolve a portable relative path inside root, rejecting traversal and symlink escape."""
+    """Resolve a portable relative path inside root, rejecting traversal and symlink escape.
+
+    Only the directories are resolved: the file itself may be a symbolic link
+    the installer placed to a package in the Steam library.
+    """
     path = PurePosixPath(relative)
     if not path.parts or path.is_absolute() or ".." in path.parts or "\\" in relative or ":" in relative:
         raise ValueError(f"Expected a relative portable path: {relative!r}")
-    result = root.joinpath(*path.parts).resolve()
-    if not result.is_relative_to(root.resolve()):
+    root = root.resolve()
+    result = root.joinpath(*path.parts)
+    if not result.parent.resolve().is_relative_to(root):
         raise ValueError(f"Path escapes its root: {relative!r}")
     return result
 

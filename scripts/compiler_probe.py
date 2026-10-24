@@ -67,7 +67,8 @@ def probe(sdk: Path, compiler: Path, mod: str, addon: str, report: Path, proton:
 
     The SDK must be a disposable copy. Proton uses a new prefix beside the report;
     only that prefix's server is stopped. A graphical DISPLAY must be provided
-    on Linux, including for this console compiler. Each run has a 90s deadline.
+    on Linux, including for this console compiler. Each compile has a 90s
+    deadline; creating the Proton prefix has ten minutes.
     """
     # Refuse an existing addon so acceptance cannot overwrite user-authored assets.
     if not re.fullmatch(r"[a-z][a-z0-9_]*", addon):
@@ -89,6 +90,8 @@ def probe(sdk: Path, compiler: Path, mod: str, addon: str, report: Path, proton:
     wine = proton.resolve().parent / "files/bin/wine" if proton else None
     command = ["cmd.exe", "/d", "/v:off", "/c"]
     if wine is not None:
+        # Proton's wine needs the library paths its proton script sets up, so
+        # the compile runs through that script too.
         if steam is None:
             raise ValueError("--proton requires --steam pointing to the Steam client installation")
         prefix.mkdir()
@@ -97,7 +100,7 @@ def probe(sdk: Path, compiler: Path, mod: str, addon: str, report: Path, proton:
                            STEAM_COMPAT_CLIENT_INSTALL_PATH=str(steam.resolve()),
                            SteamAppId="730", SteamGameId="730", PROTON_USE_WINED3D="1",
                            PROTON_LOG="1", PROTON_LOG_DIR=str(prefix))
-        command = [str(wine.resolve()), "cmd", "/d", "/v:off", "/c"]
+        command = [str(proton.resolve()), "run", "cmd", "/d", "/v:off", "/c"]
     elif os.name != "nt":
         raise ValueError("Use Windows, or provide --proton and --steam on Linux with DISPLAY set")
 
@@ -130,12 +133,13 @@ def probe(sdk: Path, compiler: Path, mod: str, addon: str, report: Path, proton:
             with report.with_suffix(".bootstrap.log").open("wb") as bootstrap:
                 subprocess.run([str(proton.resolve()), "run", "cmd", "/c", "exit"],
                                env=environment, stdout=bootstrap, stderr=subprocess.STDOUT,
-                               timeout=90, check=True)
+                               timeout=600, check=True)
             result["proton_version"] = (proton.resolve().parent / "version").read_text().strip()
 
         # cmd.exe redirection captures the binlaunch executable's child output.
         for iteration in range(2):
             log = report.with_suffix(f".run{iteration + 1}.log")
+            status = report.with_suffix(f".run{iteration + 1}.exit")
             invocation = (
                 'resourcecompiler.exe -game '
                 f'{windows_path(gameinfo.parent, wine is not None)} -i '
@@ -143,17 +147,21 @@ def probe(sdk: Path, compiler: Path, mod: str, addon: str, report: Path, proton:
                 f'-nop4 -f > {windows_path(log, wine is not None)} 2>&1'
             )
             batch = report.with_suffix(f".run{iteration + 1}.cmd")
-            batch.write_bytes(("@echo off\r\n" + invocation + "\r\nexit /b %errorlevel%\r\n").encode("utf-8"))
+            # proton run does not return the batch's exit code, so the batch records it.
+            batch.write_bytes(("@echo off\r\n" + invocation + "\r\n"
+                               f"echo %errorlevel% > {windows_path(status, wine is not None)}\r\n"
+                               "exit /b %errorlevel%\r\n").encode("utf-8"))
             completed = subprocess.run(
                 command + [windows_path(batch, wine is not None)[1:-1]], cwd=compiler.parent, env=environment,
                 capture_output=True, timeout=90, check=False,
             )
             if not log.exists():
                 log.write_bytes(completed.stdout + completed.stderr)
-            row = {"exit_code": completed.returncode, "log": log.name, "artifacts": {}}
+            code = int(status.read_text().strip()) if status.is_file() else completed.returncode or 1
+            row = {"exit_code": code, "log": log.name, "artifacts": {}}
             result["runs"].append(row)
-            if completed.returncode:
-                raise RuntimeError(f"Compiler exited {completed.returncode}; inspect {log}")
+            if code:
+                raise RuntimeError(f"Compiler exited {code}; inspect {log}")
             for relative in outputs:
                 artifact = output / relative
                 if not artifact.is_file() or artifact.stat().st_size == 0:
