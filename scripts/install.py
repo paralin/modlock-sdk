@@ -16,14 +16,14 @@ import zipfile
 from pathlib import Path
 
 import steam
-from build_launcher import ZIG_VERSION, build
+from build_programs import ZIG_VERSION, build
 from toolkit import PROJECT_DIRS, ROOT, SAMPLE, authored, contained_path, depots
 
 ZIG_INDEX = "https://ziglang.org/download/index.json"
 
 
 def zig(cache: Path) -> Path:
-    """Download the Zig compiler the launcher build requires once."""
+    """Download the Zig compiler the program build requires once."""
     arch = {"amd64": "x86_64", "arm64": "aarch64"}.get(platform.machine().lower(),
                                                        platform.machine().lower())
     system = {"Windows": "windows", "Linux": "linux", "Darwin": "macos"}[platform.system()]
@@ -68,8 +68,8 @@ def depot_files(cache: Path) -> tuple[dict[str, Path], dict[str, str | None]]:
 
         # A later depot's copy of a path replaces an earlier one's.
         for path in paths:
-            if (target := depot.target(path)) and (source := contained_path(base, path)).is_file():
-                sources[target] = source
+            if (targets := depot.targets(path)) and (source := contained_path(base, path)).is_file():
+                sources.update(dict.fromkeys(targets, source))
     return sources, manifests
 
 
@@ -120,9 +120,8 @@ def install(destination: Path) -> None:
     for name, source in sources.items():
         place(source, contained_path(destination, name))
 
-    launcher = cache / "sdk-launcher.exe"
-    build(str(zig(cache)), launcher)
-    for name, content in authored(ROOT, launcher).items():
+    build(str(zig(cache)), cache)
+    for name, content in authored(ROOT, cache).items():
         target = contained_path(destination, name)
         if name.startswith(SAMPLE) and target.exists():
             continue

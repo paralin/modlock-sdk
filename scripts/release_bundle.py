@@ -73,7 +73,7 @@ def build(root: Path, toolkit: Path, output: Path, revision: str,
     for name in state["files"]:
         entry = {"path": name, "input": contained_path(toolkit, name)}
         (assets if name.startswith(ASSETS) else tools).append(entry)
-    for name, source in authored(root, toolkit / ".cache/sdk-launcher.exe").items():
+    for name, source in authored(root, toolkit / ".cache").items():
         tools.append({"path": name, "input": source})
     for name in PROJECT_DIRS:
         tools.append({"path": name, "input": b""})

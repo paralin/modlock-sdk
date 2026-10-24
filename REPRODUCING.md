@@ -6,20 +6,33 @@ toolkit's layout came from.
 
 ## What the toolkit contains
 
-The toolkit is the Counter-Strike 2 Workshop Tools (Hammer, ModelDoc, Source
-Filmmaker, and the resource compiler) set up as a content project for
-Deadlock. It has three parts:
+The toolkit runs the Dota 2 Workshop Tools editors on Deadlock's engine, as a
+content project for Deadlock. Deadlock's tools ship without editors, and
+Dota's are the most recent Valve releases. It has these parts:
 
-- Valve's CS2 tools, taken from three CS2 depots.
-- Deadlock's asset packages, the `pak01_*.vpk` files, map packages and shader
-  packages, mounted as `game/citadel_assets`. Deadlock's game code is left
-  out.
-- Files from this repository: the launcher, `gameinfo.gi`, the entity
-  definitions, a sample addon, and the `.cmd` shortcuts.
+- Dota 2's tools from three Dota depots: `game/bin`, the editors' `game/core`,
+  and `content/core`. Dota's lighting tool is renamed `vrad3_base.exe`, and
+  its library is placed as both `vrad3.dll` and `vrad3_base.dll`: the
+  launcher loads the library named after its own file, and the tool loads
+  `vrad3.dll`.
+- Deadlock's engine, resource compiler and their libraries from
+  `game/bin/win64`, which replace Dota's copies, and Deadlock's core shader
+  packages, which replace Dota's in `game/core`.
+- Deadlock's core package, mounted as `game/core_deadlock`, and its asset
+  packages, map packages and game shader packages, mounted as
+  `game/citadel_assets`. Deadlock's game code is left out.
+- Two texture compression libraries from CS2, `bc7e.dll` and
+  `ispc_texcomp.dll`, which Deadlock's compiler loads and neither Deadlock nor
+  Dota ships.
+- Files from this repository: the launcher, the lighting tool wrapper,
+  `gameinfo.gi`, the entity definitions, a sample addon, and the `.cmd`
+  shortcuts.
 
-[`profiles/toolkit.json`](profiles/toolkit.json) lists each depot and the path
-prefixes taken from it. [`scripts/toolkit.py`](scripts/toolkit.py) maps depot
-paths to toolkit paths and lists the files this repository adds.
+[`profiles/toolkit.json`](profiles/toolkit.json) lists each depot and maps the
+depot path prefixes it takes to toolkit paths, or to several for a file needed
+under more than one name; the longest matching prefix decides where a file
+goes. [`scripts/toolkit.py`](scripts/toolkit.py) applies that map and lists
+the files this repository adds.
 
 ## Installing and updating
 
@@ -42,8 +55,9 @@ install and on every update:
 4. Remove the Valve files the last run placed that the current depots no longer
    have. `.cache/installed.json` records the placed files and the depot
    manifest IDs they came from.
-5. Build the launcher and write this repository's files. The sample addon is
-   written only if it is missing, so your edits to it are kept.
+5. Build the launcher and the lighting tool wrapper, and write this
+   repository's files. The sample addon is written only if it is missing, so
+   your edits to it are kept.
 
 When Valve ships a new version, run the installer again (or `Update.cmd` in
 the toolkit) to apply the difference.
@@ -54,13 +68,17 @@ the toolkit) to apply the difference.
 
 `game/citadel/gameinfo.gi` comes from
 [`metadata/citadel-tools-gameinfo.gi`](metadata/citadel-tools-gameinfo.gi). It
-runs the CS2 engine with Deadlock's packages added to the search path. It
-mounts both `Game core` and `Mod core`, since the default key bindings need
-the second, and `LayeredOnMod core` keeps Valve's render defaults. Its
-`ResourceCompiler` block turns on the lighting bake and selects the lightmap
-channels, Deadlock's version 4 layout; without it a map compile skips the bake
-and writes no lightmaps. Its `RenderSystem` block asks Vulkan for descriptor
-indexing, which the GPU lighting tool's scene descriptors need.
+adds Deadlock's packages to the search path, with `core_deadlock` ahead of the
+editors' `core`. It mounts both `Game core` and `Mod core`, since the default
+key bindings need the second, and `LayeredOnMod core` keeps Valve's render
+defaults. Its `ResourceCompiler`, `SceneSystem` and `WorldRenderer` blocks are
+Deadlock's own, without the game's post-build steps, whose PvE navigation cache
+step crashes without the game's code. `BakedLighting` selects the version 5
+lightmap channels; without it a map compile skips the bake and writes no
+lightmaps. Its `RenderSystem` block asks Vulkan for descriptor indexing, which
+the GPU lighting tool's scene descriptors need. `HasModAppSystems 0` keeps
+Deadlock's game code unloaded, which leaves out the precomputed shadow atlas
+that stationary lights need.
 
 Valve does not ship an entity definition file for Deadlock's tools.
 [`metadata/citadel.fgd`](metadata/citadel.fgd) adds 104 entity classes found in
@@ -87,13 +105,27 @@ python3 scripts/entity_fgd.py .tmp/map-entities --core <toolkit>/game/core \
 
 [ValveResourceFormat]: https://github.com/ValveResourceFormat/ValveResourceFormat
 
-## The launcher
+## The launcher and the lighting tool wrapper
 
 [`tools/sdk_launcher.c`](tools/sdk_launcher.c) loads the engine next to it and
-calls its `Source2Main` with the `citadel` project. The installer builds it
-with Zig 0.16.0. The build strips debug records, which would otherwise embed
-details of the build machine, so every host produces the same file. Its
-SHA-256 is `04b79688dc315ac893134434ee7ce6d7b8c04613df657b07aec3928c3829e92c`.
+calls its `Source2Main` with the `citadel` project.
+
+[`tools/vrad3_shim.c`](tools/vrad3_shim.c) is installed as `vrad3.exe`, where
+the resource compiler looks for the lighting tool. Deadlock's compiler writes a
+version 5 lighting script, which asks for a luminance direction lightmap that
+Dota's lighting tool cannot write. The wrapper rewrites those commands into the
+red, green and blue direction lightmaps it can write, runs Dota's tool as
+`vrad3_base.exe`, and then combines the three into the luminance lightmap,
+weighting each color's direction by its share of the luminance.
+
+[`scripts/build_programs.py`](scripts/build_programs.py) builds both with Zig
+0.16.0. The build strips debug records, which would otherwise embed details of
+the build machine, so every host produces the same files:
+
+| Program | SHA-256 |
+| --- | --- |
+| `sdk-launcher.exe` | `04b79688dc315ac893134434ee7ce6d7b8c04613df657b07aec3928c3829e92c` |
+| `vrad3.exe` | `39dc1a5ca054897892ba409db3069eca06e108c4f250210fc9570dc64f6bb22e` |
 
 ## Offline bundles
 
@@ -153,7 +185,7 @@ community `Reduced_CSDK_12` archive (SHA-256
 searched the CS2 and Deadlock depot manifests for the same files. Valve's
 depots supplied 8,064 of its 10,864 files. The others include older Valve
 binaries we could not locate, changed configuration, and community additions.
-The current CS2 tools replace the older binaries, and this repository's
+The current Valve tools replace the older binaries, and this repository's
 launcher, `gameinfo.gi` and entity definitions replace the community files. No file from the archive is used.
 
 The matching scripts, the hash inventory and the per-file recipes are in the

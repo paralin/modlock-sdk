@@ -1,37 +1,36 @@
 # Modlock Tools
 
 **Modlock Tools** builds a Windows toolkit for making [Deadlock] maps, models,
-and UI. It takes the Counter-Strike 2 Workshop Tools (Hammer, ModelDoc, Source
-Filmmaker, and the resource compiler) from Steam and sets them up as a content
-project that loads Deadlock's asset packages. Rerunning the installer updates
-the toolkit to the current Valve versions.
+and UI. It runs the Dota 2 Workshop Tools editors (Hammer, ModelDoc, Source
+Filmmaker, and the lighting tool) on Deadlock's own engine and resource
+compiler, as a content project that loads Deadlock's asset packages and
+shaders. Rerunning the installer updates the toolkit to the current Valve
+versions.
 
 [Deadlock]: https://store.steampowered.com/app/1422450/Deadlock/
 
 This repository contains the installer, the list of Valve depots and paths the
-toolkit uses, a small launcher, entity definitions for Hammer, and the scripts
+toolkit uses, a small launcher, a lighting tool wrapper, entity definitions for Hammer, and the scripts
 that package and check a release. Valve's binaries and assets come from Steam
 at install time. [REPRODUCING.md](REPRODUCING.md) explains how the build works.
 
-> **Early development.** Hammer, ModelDoc, and SFM start in tools mode on
-> native Windows, and model, material, Panorama and map compilation pass, with
-> baked lighting. Deadlock's materials in the editor viewport, map playtests in
-> Hammer, Citadel-specific ModelDoc events, and SFM renders are not yet
-> validated.
+> **Early development.** Map compilation passes with baked lighting in
+> Deadlock's current layout, and the maps render in Deadlock. The editors moved
+> from the CS2 tools to Dota's and are not yet checked on this toolkit; nor are
+> Deadlock's materials in the editor viewport, map playtests in Hammer,
+> Citadel-specific ModelDoc events, and SFM renders.
 
 ## Shaders
 
-Deadlock and CS2 share an engine and a compiled shader format, version 72,
-but not a shader set. Most Deadlock materials use Deadlock's `pbr` and
-`environment_*` shaders, which only Deadlock's own shader packages contain.
-The toolkit mounts those packages, `shaders_pc` for DirectX 11 and
-`shaders_vulkan` for Vulkan, with Deadlock's assets, so a `pbr` material
-compiles. CS2's own world shaders, such as `csgo_complex`, are missing from
-Deadlock, so do not use them.
+Deadlock's engine and resource compiler run with Deadlock's own shaders: its
+core shader packages replace the editors' in `game/core`, and its game shader
+packages, with `pbr` and `environment_*`, are mounted with its assets. A `pbr`
+material compiles as Deadlock compiles it. Dota's and CS2's world shaders are
+not part of the toolkit and Deadlock lacks them, so do not use them.
 
-Other compiled formats match: Deadlock's models, textures, particles, sounds,
-and Panorama files use the same resource versions as CS2's, and every particle
-operator Deadlock defines exists in the CS2 tools.
+Deadlock's core package is mounted as `game/core_deadlock`, ahead of the
+editors' own core, so the engine finds the materials and textures it expects.
+The editors' core supplies their interface and tool assets.
 
 ## Maps
 
@@ -42,17 +41,18 @@ map's VPK together with its compiled materials in one archive, such as with
 `modlock vpk pack`. Placed in `game/citadel/maps/`, the archive loads with
 `map <name>`.
 
-The compile bakes lighting on the GPU through Vulkan. The toolkit writes
-Deadlock's previous lightmap layout: one SH2 lightmap each for red, green,
-blue and the constant term, plus direct light shadows. Deadlock renders it.
-Deadlock's current maps use a newer layout with a single luminance lightmap,
-a precomputed shadow atlas for fog, and a fog irradiance volume; the CS2
-lighting tool cannot write it.
+The compile bakes lighting on the GPU through Vulkan in Deadlock's current
+lightmap layout, version 5: the SH2 constant term, one luminance direction
+lightmap, and direct light shadows, with light probes and a fog irradiance
+volume. Dota's lighting tool writes a direction lightmap for each of red, green
+and blue; `vrad3.exe` in the toolkit wraps it, runs it as `vrad3_base.exe`, and
+combines the three into the luminance lightmap. Use static lights. A
+stationary light needs the precomputed shadow atlas, which the compiler can
+only bake with Deadlock's game code loaded, so it lights nothing.
 
 A stock Deadlock map does not recompile into a map Deadlock loads. A map
 decompiled with Source 2 Viewer has lost its world node geometry and its
-authoring data, its materials use the Deadlock shaders the CS2 tools lack, and
-its name and paths collide with the stock map's own files. To change a stock
+authoring data, and its name and paths collide with the stock map's own files. To change a stock
 map, spawn and drive entities on it at runtime instead.
 
 ## Install
@@ -70,9 +70,9 @@ curl -fsSL https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.
 ```
 
 The installer puts the toolkit in `~/modlock-tools`; set `MODLOCK_TOOLS_DIR` to
-choose another directory. It installs [uv] if needed, uses the Counter-Strike 2
-and Deadlock files already in your Steam libraries, and downloads the rest from
-Steam with [DepotDownloader]. Downloads need a Steam login: scan the QR code it
+choose another directory. It installs [uv] if needed, uses the Dota 2,
+Counter-Strike 2 and Deadlock files already in your Steam libraries, and
+downloads the rest from Steam with [DepotDownloader]. Downloads need a Steam login: scan the QR code it
 prints with the Steam mobile app. Deadlock's asset packages are linked from your
 Deadlock installation when the system allows it, and copied otherwise (about 35
 GB).
@@ -93,7 +93,7 @@ describes the editors and the sample addon.
 | `profiles/toolkit.json` | The Valve depots the toolkit uses and the paths taken from each |
 | `scripts/` | Install, package, and probe scripts (standard library Python) |
 | `metadata/` | Entity definitions and the tools `gameinfo.gi` |
-| `tools/` | The Windows launcher and the entity metadata exporter |
+| `tools/` | The Windows launcher, the lighting tool wrapper, and the entity metadata exporter |
 | `bundle/` | The offline bundle installer and the toolkit README |
 | `tests/` | Unit tests for installing and packaging |
 
@@ -132,6 +132,6 @@ uses.
 
 ## License
 
-The scripts and launcher are MIT licensed. See [LICENSE](LICENSE).
+The scripts, launcher and lighting tool wrapper are MIT licensed. See [LICENSE](LICENSE).
 Valve's tools and game content remain Valve's and are not part of this
 repository.

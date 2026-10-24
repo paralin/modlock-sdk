@@ -62,8 +62,9 @@ class InstallTest(unittest.TestCase):
                 ["game/citadel/pak01_dir.vpk", "game/citadel/pak01_000.vpk",
                  "game/citadel/bin/client.dll"], ["game/citadel"]))
 
-            profile = [Depot("730", "2347771", ("game/bin/",)),
-                       Depot("1422450", "1422451", ("game/citadel/pak01_",))]
+            profile = [Depot("730", "2347771", {"game/bin/": "game/bin/"}),
+                       Depot("1422450", "1422451",
+                             {"game/citadel/pak01_": "game/citadel_assets/pak01_"})]
             depot_contents = {"game/bin/tools.dll": b"tool", "game/bin/old.dll": b"old"}
             downloads = []
 
@@ -83,7 +84,9 @@ class InstallTest(unittest.TestCase):
                     mock.patch.object(install, "zig", return_value=Path("zig")), \
                     mock.patch.object(install.os, "link", side_effect=OSError("cross-device")), \
                     mock.patch.object(install, "build",
-                                      side_effect=lambda zig, output: output.write_bytes(b"exe")):
+                                      side_effect=lambda zig, directory: [
+                                          (directory / name).write_bytes(b"exe")
+                                          for name in ("sdk-launcher.exe", "vrad3.exe")]):
                 install.install(destination)
                 sample = destination / "content/citadel_addons/modlock_sample/models/probe.vmdl"
                 sample.write_text("my model")

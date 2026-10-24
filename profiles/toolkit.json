@@ -2,63 +2,76 @@
   "depots": [
     {
       "app": "730",
-      "depot": "2347770",
-      "include": [
-        "game/core/",
-        "game/csgo_core/",
-        "game/csgo/gameinfo",
-        "game/csgo_imported/gameinfo",
-        "game/csgo/panorama/fonts/"
-      ]
-    },
-    {
-      "app": "730",
-      "depot": "2347771",
-      "include": [
-        "game/bin/",
-        "game/core/",
-        "game/csgo_core/",
-        "game/csgo/bin/",
-        "game/csgo/shaders_"
-      ]
-    },
-    {
-      "app": "730",
       "depot": "2347779",
-      "include": [
-        "game/bin/",
-        "game/core/",
-        "game/csgo/",
-        "game/csgo_core/",
-        "content/core/"
-      ]
+      "paths": {
+        "game/bin/win64/bc7e.dll": "game/bin/win64/bc7e.dll",
+        "game/bin/win64/ispc_texcomp.dll": "game/bin/win64/ispc_texcomp.dll"
+      }
+    },
+    {
+      "app": "570",
+      "depot": "373301",
+      "paths": {
+        "game/bin/": "game/bin/",
+        "game/core/": "game/core/",
+        "content/core/": "content/core/"
+      }
+    },
+    {
+      "app": "570",
+      "depot": "373303",
+      "paths": {
+        "game/bin/": "game/bin/",
+        "game/core/": "game/core/",
+        "content/core/": "content/core/"
+      }
+    },
+    {
+      "app": "570",
+      "depot": "381450",
+      "paths": {
+        "game/bin/": "game/bin/",
+        "game/bin/win64/vrad3.exe": "game/bin/win64/vrad3_base.exe",
+        "game/bin/win64/vrad3.dll": ["game/bin/win64/vrad3.dll", "game/bin/win64/vrad3_base.dll"],
+        "game/core/": "game/core/",
+        "content/core/": "content/core/"
+      }
     },
     {
       "app": "1422450",
       "depot": "1422451",
-      "include": [
-        "game/citadel/pak01_",
-        "game/citadel/maps/",
-        "game/citadel/shaders_"
-      ]
+      "paths": {
+        "game/bin/win64/": "game/bin/win64/",
+        "game/core/pak01_": "game/core_deadlock/pak01_",
+        "game/core/shaders_": "game/core/shaders_",
+        "game/citadel/pak01_": "game/citadel_assets/pak01_",
+        "game/citadel/maps/": "game/citadel_assets/maps/",
+        "game/citadel/shaders_": "game/citadel_assets/shaders_"
+      }
     },
     {
       "app": "1422450",
       "depot": "1422452",
-      "include": [
-        "game/citadel/pak01_",
-        "game/citadel/maps/",
-        "game/citadel/shaders_"
-      ]
+      "paths": {
+        "game/bin/win64/": "game/bin/win64/",
+        "game/core/pak01_": "game/core_deadlock/pak01_",
+        "game/core/shaders_": "game/core/shaders_",
+        "game/citadel/pak01_": "game/citadel_assets/pak01_",
+        "game/citadel/maps/": "game/citadel_assets/maps/",
+        "game/citadel/shaders_": "game/citadel_assets/shaders_"
+      }
     },
     {
       "app": "1422450",
       "depot": "1422456",
-      "include": [
-        "game/citadel/pak01_",
-        "game/citadel/maps/",
-        "game/citadel/shaders_"
-      ]
+      "paths": {
+        "game/bin/win64/": "game/bin/win64/",
+        "game/core/pak01_": "game/core_deadlock/pak01_",
+        "game/core/shaders_": "game/core/shaders_",
+        "game/citadel/pak01_": "game/citadel_assets/pak01_",
+        "game/citadel/maps/": "game/citadel_assets/maps/",
+        "game/citadel/shaders_": "game/citadel_assets/shaders_"
+      }
     }
   ]
 }

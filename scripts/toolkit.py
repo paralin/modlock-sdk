@@ -9,45 +9,52 @@ from pathlib import Path, PurePosixPath
 from compiler_probe import JS, MESH, MODEL, XML
 
 ROOT = Path(__file__).resolve().parents[1]
-DEADLOCK = "1422450"
 ASSETS = "game/citadel_assets/"
 SAMPLE = "content/citadel_addons/modlock_sample/"
 INSTALLER = "https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.ps1"
 
 # Empty directories the editors expect to exist.
-PROJECT_DIRS = ("content/citadel/", "content/citadel_assets/", "game/citadel/cfg/",
-                "game/citadel_addons/modlock_sample/", "game/citadel_community_addons/")
+PROJECT_DIRS = ("content/citadel/", "content/citadel_assets/", "content/core_deadlock/",
+                "game/citadel/cfg/", "game/citadel_addons/modlock_sample/",
+                "game/citadel_community_addons/")
 
 MODELS = '@include "models_base.fgd"\n@include "models_base_breakables.fgd"\n'
 
 
 @dataclass(frozen=True)
 class Depot:
-    """A Valve depot and the path prefixes the toolkit takes from it."""
+    """A Valve depot and where the toolkit puts the files it takes from it.
+
+    paths maps a depot path prefix to a toolkit path prefix, or to a list of
+    them for a file needed under several names. A file goes where its longest
+    matching prefix sends it, so one file can be renamed inside a directory the
+    depot otherwise contributes as is.
+    """
 
     app: str
     depot: str
-    include: tuple[str, ...]
+    paths: dict[str, str | list[str]]
 
-    def target(self, path: str) -> str | None:
-        """Return where a depot file goes in the toolkit, or None to leave it out.
+    @property
+    def include(self) -> tuple[str, ...]:
+        """The depot path prefixes the toolkit takes."""
+        return tuple(self.paths)
 
-        Deadlock contributes only its asset packages, mounted as citadel_assets;
-        its game code stays with the game.
-        """
-        if not path.startswith(self.include):
-            return None
-        if self.app != DEADLOCK:
-            return path
-        if not path.endswith(".vpk"):
-            return None
-        return ASSETS + path.removeprefix("game/citadel/")
+    def targets(self, path: str) -> list[str]:
+        """Return where a depot file goes in the toolkit; empty to leave it out."""
+        prefixes = [prefix for prefix in self.paths if path.startswith(prefix)]
+        if not prefixes:
+            return []
+        prefix = max(prefixes, key=len)
+        targets = self.paths[prefix]
+        return [target + path.removeprefix(prefix)
+                for target in ([targets] if isinstance(targets, str) else targets)]
 
 
 def depots(root: Path = ROOT) -> list[Depot]:
     """Read the depots in overlay order: a later depot's file replaces an earlier one's."""
     profile = json.loads((root / "profiles/toolkit.json").read_text(encoding="utf-8"))
-    return [Depot(row["app"], row["depot"], tuple(row["include"])) for row in profile["depots"]]
+    return [Depot(row["app"], row["depot"], row["paths"]) for row in profile["depots"]]
 
 
 def contained_path(root: Path, relative: str) -> Path:
@@ -66,11 +73,15 @@ def contained_path(root: Path, relative: str) -> Path:
     return result
 
 
-def authored(root: Path, launcher: Path) -> dict[str, bytes | Path]:
-    """Return the project files the toolkit adds to Valve's, by toolkit path."""
+def authored(root: Path, programs: Path) -> dict[str, bytes | Path]:
+    """Return the project files the toolkit adds to Valve's, by toolkit path.
+
+    programs is the directory build_programs wrote the Windows programs to.
+    """
     files = {
         "README.md": root / "bundle/README.md",
-        "game/bin/win64/sdk-launcher.exe": launcher,
+        "game/bin/win64/sdk-launcher.exe": programs / "sdk-launcher.exe",
+        "game/bin/win64/vrad3.exe": programs / "vrad3.exe",
         "game/citadel/gameinfo.gi": root / "metadata/citadel-tools-gameinfo.gi",
         "game/citadel/models_gamedata.fgd": MODELS.encode(),
         "game/citadel/citadel.fgd": root / "metadata/citadel.fgd",

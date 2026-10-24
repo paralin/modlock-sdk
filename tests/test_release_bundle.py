@@ -29,6 +29,7 @@ class ReleaseBundleTest(unittest.TestCase):
                 (toolkit / name).write_bytes(data)
             (toolkit / ".cache").mkdir()
             (toolkit / ".cache/sdk-launcher.exe").write_bytes(b"launcher")
+            (toolkit / ".cache/vrad3.exe").write_bytes(b"shim")
             (toolkit / ".cache/installed.json").write_text(
                 json.dumps({"depots": {"1422451": "7"}, "files": sorted(files)}))
 

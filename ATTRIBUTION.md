@@ -6,7 +6,7 @@ under which terms.
 
 ## Valve content
 
-Hammer, ModelDoc, Source Filmmaker, the resource compiler, and every Deadlock
+Hammer, ModelDoc, Source Filmmaker, the resource compiler, and every Dota 2, Deadlock
 and Counter-Strike 2 asset belong to Valve. This repository contains none of
 their binaries or assets. It lists the Valve depots and paths the toolkit uses;
 the installer takes those files from the user's own Steam games or downloads
