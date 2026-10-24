@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compile a Panorama or model addon twice and record reproducible output hashes."""
+"""Compile a Panorama, model or material addon twice and record reproducible output hashes."""
 
 from __future__ import annotations
 
@@ -44,6 +44,13 @@ f 2 3 7 6
 f 3 4 8 7
 f 4 1 5 8
 '''
+# Deadlock's own physically based shader, absent from the CS2 tools.
+MATERIAL = '''"Layer0"
+{
+	"shader" "pbr.vfx"
+	"g_vColorTint" "[1.000000 0.000000 1.000000 0.000000]"
+}
+'''
 
 
 def digest(path: Path) -> str:
@@ -74,7 +81,7 @@ def probe(sdk: Path, compiler: Path, mod: str, addon: str, report: Path, proton:
     if not re.fullmatch(r"[a-z][a-z0-9_]*", addon):
         raise ValueError("Addon name must contain lowercase letters, digits, and underscores")
     sdk, compiler, report = sdk.resolve(), compiler.resolve(), report.resolve()
-    folder = "panorama" if kind == "panorama" else "models"
+    folder = {"panorama": "panorama", "model": "models", "material": "materials"}[kind]
     content = sdk / "content" / f"{mod}_addons" / addon / folder
     output = sdk / "game" / f"{mod}_addons" / addon / folder
     gameinfo = sdk / "game" / mod / "gameinfo.gi"
@@ -109,10 +116,14 @@ def probe(sdk: Path, compiler: Path, mod: str, addon: str, report: Path, proton:
         fixtures = {"layout/probe.xml": XML, "scripts/probe.js": JS}
         input_name = "layout/probe.xml"
         outputs = ("layout/probe.vxml_c", "scripts/probe.vjs_c")
-    else:
+    elif kind == "model":
         fixtures = {"probe.vmdl": MODEL, "probe.obj": MESH}
         input_name = "probe.vmdl"
         outputs = ("probe.vmdl_c",)
+    else:
+        fixtures = {"probe.vmat": MATERIAL}
+        input_name = "probe.vmat"
+        outputs = ("probe.vmat_c",)
     for name, text in fixtures.items():
         path = content / name
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -187,7 +198,7 @@ def main() -> int:
     parser.add_argument("--compiler", type=Path, help="Compiler executable, default SDK/game/bin/win64/resourcecompiler.exe")
     parser.add_argument("--mod", choices=("csgo", "citadel", "dota"), required=True)
     parser.add_argument("--addon", default="modlock_sdk_probe")
-    parser.add_argument("--kind", choices=("panorama", "model"), default="panorama")
+    parser.add_argument("--kind", choices=("panorama", "model", "material"), default="panorama")
     parser.add_argument("--report", type=Path, required=True)
     parser.add_argument("--proton", type=Path, help="Valve Proton's proton script on Linux")
     parser.add_argument("--steam", type=Path, help="Steam client installation used by Proton")

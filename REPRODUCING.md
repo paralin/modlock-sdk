@@ -11,8 +11,9 @@ Filmmaker, and the resource compiler) set up as a content project for
 Deadlock. It has three parts:
 
 - Valve's CS2 tools, taken from three CS2 depots.
-- Deadlock's asset packages, the `pak01_*.vpk` files and map packages, mounted
-  as `game/citadel_assets`. Deadlock's game code is left out.
+- Deadlock's asset packages, the `pak01_*.vpk` files, map packages and shader
+  packages, mounted as `game/citadel_assets`. Deadlock's game code is left
+  out.
 - Files from this repository: the launcher, `gameinfo.gi`, the entity
   definitions, a sample addon, and the `.cmd` shortcuts.
 
@@ -55,7 +56,11 @@ the toolkit) to apply the difference.
 [`metadata/citadel-tools-gameinfo.gi`](metadata/citadel-tools-gameinfo.gi). It
 runs the CS2 engine with Deadlock's packages added to the search path. It
 mounts both `Game core` and `Mod core`, since the default key bindings need
-the second, and `LayeredOnMod core` keeps Valve's render defaults.
+the second, and `LayeredOnMod core` keeps Valve's render defaults. Its
+`ResourceCompiler` block turns on the lighting bake and selects the lightmap
+channels, Deadlock's version 4 layout; without it a map compile skips the bake
+and writes no lightmaps. Its `RenderSystem` block asks Vulkan for descriptor
+indexing, which the GPU lighting tool's scene descriptors need.
 
 Valve does not ship an entity definition file for Deadlock's tools.
 [`metadata/citadel.fgd`](metadata/citadel.fgd) adds 104 entity classes found in
@@ -111,7 +116,7 @@ produce the same ZIPs.
 ## Checking a toolkit
 
 Two scripts check a toolkit on Windows. `scripts/compiler_probe.py` compiles
-the sample model or Panorama layout twice and records the output hashes. Run
+the sample model, a `pbr` material, or the Panorama layout twice and records the output hashes. Run
 it on a copy of the toolkit, since it adds a new addon each time:
 
 ```sh

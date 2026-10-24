@@ -14,36 +14,40 @@ that package and check a release. Valve's binaries and assets come from Steam
 at install time. [REPRODUCING.md](REPRODUCING.md) explains how the build works.
 
 > **Early development.** Hammer, ModelDoc, and SFM start in tools mode on
-> native Windows, and model, Panorama and map compilation pass. Deadlock's own
-> materials do not render in the editors; see
-> [Shaders](#shaders). Map playtests in Hammer, Citadel-specific ModelDoc
-> events, and SFM renders are not yet validated.
+> native Windows, and model, material, Panorama and map compilation pass, with
+> baked lighting. Deadlock's materials in the editor viewport, map playtests in
+> Hammer, Citadel-specific ModelDoc events, and SFM renders are not yet
+> validated.
 
 ## Shaders
 
-Deadlock and CS2 share an engine but not a shader set, and Deadlock's shader
-build is one format version behind CS2's. Most Deadlock materials use
-Deadlock's `pbr` and `environment_*` shaders, which the CS2 tools do not have,
-so Deadlock's heroes and world show the error material in the editor
-viewport. CS2's own world shaders, such as `csgo_complex`, are missing from
-Deadlock in turn.
+Deadlock and CS2 share an engine and a compiled shader format, version 72,
+but not a shader set. Most Deadlock materials use Deadlock's `pbr` and
+`environment_*` shaders, which only Deadlock's own shader packages contain.
+The toolkit mounts those packages, `shaders_pc` for DirectX 11 and
+`shaders_vulkan` for Vulkan, with Deadlock's assets, so a `pbr` material
+compiles. CS2's own world shaders, such as `csgo_complex`, are missing from
+Deadlock, so do not use them.
 
 Other compiled formats match: Deadlock's models, textures, particles, sounds,
 and Panorama files use the same resource versions as CS2's, and every particle
-operator Deadlock defines exists in the CS2 tools. For a material that renders
-in both, use a shader the two games share, such as `generic`, `spritecard`
-for particles, or `sky`.
+operator Deadlock defines exists in the CS2 tools.
 
 ## Maps
 
-Build a map from its own source: a new map in Hammer under a name of its own,
-with materials on shaders both games share. Such a map loads and renders in
-Deadlock: compile its materials, then the map with `-world -phys -vis`, as
-[bundle/README.md](bundle/README.md) shows, and put the map's VPK together with
-its compiled materials in one archive, such as with `modlock vpk pack`. Placed
-in `game/citadel/maps/`, the archive loads with `map <name>`. Deadlock's own
-materials may appear in the map: their shaders are missing from the compiler,
-which reports an error for each, but the game draws them.
+Build a map from its own source: a new map in Hammer under a name of its own.
+Compile its materials, then the map with `-world -phys -vis -bakedlighting
+-bakelighting`, as [bundle/README.md](bundle/README.md) shows, and put the
+map's VPK together with its compiled materials in one archive, such as with
+`modlock vpk pack`. Placed in `game/citadel/maps/`, the archive loads with
+`map <name>`.
+
+The compile bakes lighting on the GPU through Vulkan. The toolkit writes
+Deadlock's previous lightmap layout: one SH2 lightmap each for red, green,
+blue and the constant term, plus direct light shadows. Deadlock renders it.
+Deadlock's current maps use a newer layout with a single luminance lightmap,
+a precomputed shadow atlas for fog, and a fog irradiance volume; the CS2
+lighting tool cannot write it.
 
 A stock Deadlock map does not recompile into a map Deadlock loads. A map
 decompiled with Source 2 Viewer has lost its world node geometry and its

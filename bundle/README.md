@@ -5,10 +5,10 @@ ModelDoc, and Source Filmmaker. It runs Valve's Counter-Strike 2 tools with
 Deadlock's asset packages mounted. It edits and compiles assets; it does not
 run Deadlock itself.
 
-**Early developer release.** The editors start, and model and Panorama
-compilation work on Windows. Deadlock's own materials do not render in the
-editors; see Known limits. Map playtests, Deadlock-specific ModelDoc events,
-and SFM renders are not yet tested.
+**Early developer release.** The editors start, and model, material,
+Panorama and map compilation work, with baked lighting. Deadlock's materials in
+the editor viewport, map playtests, Deadlock-specific ModelDoc events, and SFM
+renders are not yet tested.
 
 ## Requirements
 
@@ -100,14 +100,16 @@ Hammer's entity list adds 104 classes seen in Deadlock's shipped maps to
 Valve's base set. It includes only the properties those maps use. ModelDoc has
 generic model settings and lacks Deadlock's animation events.
 
-Deadlock and CS2 have different shader sets. Most Deadlock materials use
-Deadlock's `pbr` and `environment_*` shaders, which the CS2 tools lack, so
-Deadlock's heroes and world show the error material in the viewport. CS2
-world shaders such as `csgo_complex` are missing from Deadlock. For a material
-that renders in both, use a shared shader such as `generic`, `spritecard`, or
-`sky`. Models, textures, particles, sounds, and Panorama files use the same
-formats in both games. A file that compiles here may still fail in Deadlock,
-so test it in the game.
+Deadlock's `pbr` and `environment_*` shaders come from Deadlock's own shader
+packages, which the toolkit mounts with its assets. CS2 world shaders such as
+`csgo_complex` are missing from Deadlock. Models, textures, particles, sounds,
+and Panorama files use the same formats in both games. A file that compiles
+here may still fail in Deadlock, so test it in the game.
+
+The map compile bakes lighting on the GPU through Vulkan, so it needs a GPU
+with Vulkan ray tracing. It writes Deadlock's previous lightmap layout, which
+Deadlock renders. Deadlock's current maps use a newer layout, with a luminance
+lightmap and precomputed fog shadows, that these tools cannot write yet.
 
 If Windows reports a missing Microsoft runtime DLL, install the
 [Visual C++ x64 Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist).

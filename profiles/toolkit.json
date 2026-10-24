@@ -38,7 +38,8 @@
       "depot": "1422451",
       "include": [
         "game/citadel/pak01_",
-        "game/citadel/maps/"
+        "game/citadel/maps/",
+        "game/citadel/shaders_"
       ]
     },
     {
@@ -46,7 +47,8 @@
       "depot": "1422452",
       "include": [
         "game/citadel/pak01_",
-        "game/citadel/maps/"
+        "game/citadel/maps/",
+        "game/citadel/shaders_"
       ]
     },
     {
@@ -54,7 +56,8 @@
       "depot": "1422456",
       "include": [
         "game/citadel/pak01_",
-        "game/citadel/maps/"
+        "game/citadel/maps/",
+        "game/citadel/shaders_"
       ]
     }
   ]
