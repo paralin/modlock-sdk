@@ -65,7 +65,7 @@ class InstallTest(unittest.TestCase):
             profile = [Depot("730", "2347771", {"game/bin/": "game/bin/"}),
                        Depot("1422450", "1422451",
                              {"game/citadel/pak01_": "game/citadel_assets/pak01_"})]
-            depot_contents = {"game/bin/tools.dll": b"tool", "game/bin/old.dll": b"old"}
+            depot_contents = {"game/bin/tools.dll": b"tool", "game/bin/old/old.dll": b"old"}
             downloads = []
 
             def download(program, app, depot, include, folder, account):
@@ -90,11 +90,11 @@ class InstallTest(unittest.TestCase):
                 install.install(destination)
                 sample = destination / "content/citadel_addons/modlock_sample/models/probe.vmdl"
                 sample.write_text("my model")
-                self.assertEqual((destination / "game/bin/old.dll").read_bytes(), b"old")
+                self.assertEqual((destination / "game/bin/old/old.dll").read_bytes(), b"old")
 
-                # Valve drops old.dll in the next version.
-                del depot_contents["game/bin/old.dll"]
-                (root / "modlock-tools/.cache/depots/2347771/game/bin/old.dll").unlink()
+                # Valve drops old/ in the next version.
+                del depot_contents["game/bin/old/old.dll"]
+                (root / "modlock-tools/.cache/depots/2347771/game/bin/old/old.dll").unlink()
                 install.install(destination)
 
             package = destination / "game/citadel_assets/pak01_dir.vpk"
@@ -102,7 +102,7 @@ class InstallTest(unittest.TestCase):
             self.assertTrue(os.path.samefile(package, game / "game/citadel/pak01_dir.vpk"))
             self.assertFalse((destination / "game/citadel_assets/bin").exists())
             self.assertEqual((destination / "game/bin/tools.dll").read_bytes(), b"tool")
-            self.assertFalse((destination / "game/bin/old.dll").exists())
+            self.assertFalse((destination / "game/bin/old").exists())
             self.assertEqual(downloads, ["2347771"] * 2)
             self.assertEqual(sample.read_text(), "my model")
             self.assertTrue((destination / "game/citadel/gameinfo.gi").is_file())

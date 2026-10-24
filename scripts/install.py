@@ -116,7 +116,14 @@ def install(destination: Path) -> None:
     removed = sorted(set(previous) - set(sources))
     print(f"Placing {len(sources)} Valve files; removing {len(removed)}", flush=True)
     for name in removed:
-        contained_path(destination, name).unlink(missing_ok=True)
+        target = contained_path(destination, name)
+        target.unlink(missing_ok=True)
+        # Prune the directories the removal emptied, such as a whole game
+        # directory a profile no longer takes.
+        for parent in target.parents:
+            if parent == destination or not parent.is_dir() or any(parent.iterdir()):
+                break
+            parent.rmdir()
     for name, source in sources.items():
         place(source, contained_path(destination, name))
 
