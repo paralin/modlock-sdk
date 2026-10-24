@@ -11,8 +11,9 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 INCLUDES = ("base.fgd", "lights.fgd", "lights2.fgd", "markup_volumes.fgd", "postprocessing.fgd", "ai_defaultnpc.fgd")
-CLASS = re.compile(r'^@(Point|Solid)Class( base\(Targetname\))? = (\w+) : ""\n\[\n(.*?)^\]', re.MULTILINE | re.DOTALL)
-PROPERTY = re.compile(r'^\s*(output )?(\w+)\((\w+)\) : ""\s*$', re.MULTILINE)
+CLASS = re.compile(r'^@(Point|Solid)Class( base\(Targetname\))? = (\w+) : "[^"\n]*"\n\[\n(.*?)^\]',
+                   re.MULTILINE | re.DOTALL)
+PROPERTY = re.compile(r'^\s*(output )?(\w+)\((\w+)\) : "[^"\n]*"\s*$', re.MULTILINE)
 
 
 @dataclass
@@ -57,8 +58,13 @@ def declared_classes(text: str) -> set[str]:
     return names
 
 
-def merge(source: Path, core: Path, target: Path) -> int:
-    """Write one FGD from exported lumps, preserving core definitions unchanged."""
+def merge(source: Path, core: Path, target: Path, receipt: Path) -> int:
+    """Write one FGD from exported lumps, preserving core definitions unchanged.
+
+    The classes target already declares, and the lumps receipt already lists,
+    are kept, so a class stays available after Valve removes the last map that
+    used it. Each refresh reads only the current build's maps.
+    """
     # Include Valve's recursive base definitions and avoid redeclaring their classes.
     known = set()
     visited = set()
@@ -77,10 +83,15 @@ def merge(source: Path, core: Path, target: Path) -> int:
         read_base(name)
 
     # The extractor's receipt enumerates exactly which generated files belong here.
-    entities: dict[str, Entity] = {}
     records = json.loads((source / "sources.json").read_text(encoding="utf-8"))
-    for record in records:
-        text = (source / (record["Sha256"] + ".fgd")).read_text(encoding="utf-8")
+    texts = [(source / (record["Sha256"] + ".fgd")).read_text(encoding="utf-8") for record in records]
+    if target.is_file():
+        texts.append(target.read_text(encoding="utf-8"))
+    if receipt.is_file():
+        records += json.loads(receipt.read_text(encoding="utf-8"))
+
+    entities: dict[str, Entity] = {}
+    for text in texts:
         for kind, base, name, body in CLASS.findall(text):
             if name in known:
                 continue
@@ -112,6 +123,9 @@ def merge(source: Path, core: Path, target: Path) -> int:
         raise ValueError("No additional entity classes were recovered")
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+    lumps = {(row["MapSha256"], row["Member"]): row for row in records}
+    receipt.write_text(json.dumps(sorted(lumps.values(), key=lambda row: (row["Map"], row["MapSha256"], row["Member"])),
+                                  indent=2) + "\n", encoding="utf-8", newline="\n")
     return len(entities)
 
 
@@ -120,10 +134,13 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path, help="EntityMetadata output directory")
     parser.add_argument("--core", type=Path, required=True, help="Verified game/core directory containing Valve FGDs")
-    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True,
+                        help="FGD to write; the classes it already declares are kept")
+    parser.add_argument("--receipt", type=Path, required=True,
+                        help="Lump list to write; the lumps it already lists are kept")
     args = parser.parse_args()
     try:
-        count = merge(args.source, args.core, args.output)
+        count = merge(args.source, args.core, args.output, args.receipt)
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f"entity_fgd: {error}", file=sys.stderr)
         return 1

@@ -14,7 +14,7 @@ class EntityFgdTest(unittest.TestCase):
     """Keep inferred definitions separate from authoritative editor metadata."""
 
     def test_merges_observations_and_keeps_valve_base(self) -> None:
-        """Merge brush evidence and outputs, while preserving a core class."""
+        """Merge brush evidence, outputs and earlier classes, while preserving a core class."""
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             core = root / "core"
@@ -25,7 +25,8 @@ class EntityFgdTest(unittest.TestCase):
     editor("quoted = value")
     = light_omni : "Valve definition" [ ]
 ''')
-            (root / "sources.json").write_text(json.dumps([{"Sha256": "a"}, {"Sha256": "b"}]))
+            lump = {"Map": "new.vpk", "MapSha256": "n", "Member": "m"}
+            (root / "sources.json").write_text(json.dumps([{**lump, "Sha256": "a"}, {**lump, "Member": "n", "Sha256": "b"}]))
             (root / "a.fgd").write_text('''@PointClass = light_omni : ""
 [
  bad(string) : ""
@@ -42,9 +43,19 @@ class EntityFgdTest(unittest.TestCase):
  enabled(boolean) : ""
 ]
 ''')
+            # A class only an earlier build's map placed stays, as does its lump.
             output = root / "citadel.fgd"
-            self.assertEqual(merge(root, core, output), 1)
+            output.write_text('''@PointClass = citadel_removed : "Observed map entity"
+[
+    radius(float) : "Observed field"
+]
+''')
+            receipt = root / "entity-sources.json"
+            receipt.write_text(json.dumps([{"Map": "old.vpk", "MapSha256": "o", "Member": "m", "Sha256": "c"}]))
+            self.assertEqual(merge(root, core, output, receipt), 2)
             text = output.read_text()
+            self.assertIn('citadel_removed : "Observed map entity"\n[\n    radius(float)', text)
+            self.assertEqual([row["Map"] for row in json.loads(receipt.read_text())], ["new.vpk", "new.vpk", "old.vpk"])
             self.assertIn('@SolidClass base(Targetname) = citadel_probe', text)
             self.assertIn('count(string)', text)
             self.assertIn('output OnReady(void)', text)

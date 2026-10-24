@@ -66,19 +66,18 @@ class stays available after Valve removes the map that used it.
 [`metadata/entity-sources.json`](metadata/entity-sources.json) lists each
 package and lump by hash.
 
-To regenerate it, build `tools/EntityMetadata` against [ValveResourceFormat],
-run it over the map packages of the current build together with those of an
-earlier toolkit, and merge the result. A package that is the same in both is
-read once.
+To refresh it after a game update, build `tools/EntityMetadata` against
+[ValveResourceFormat], run it over the current build's map packages, and merge
+the result. The merge keeps every class `citadel.fgd` already declares and every
+lump `entity-sources.json` already lists, so it needs no earlier build's maps.
 
 ```sh
 dotnet build tools/EntityMetadata/EntityMetadata.csproj -c Release \
   -p:ValveResourceFormatProject=<ValveResourceFormat checkout>/ValveResourceFormat/ValveResourceFormat.csproj
 dotnet tools/EntityMetadata/bin/Release/net10.0/EntityMetadata.dll \
-  .tmp/map-entities $(find <toolkit>/game/citadel_assets/maps \
-  <earlier toolkit>/game/citadel_assets/maps -name '*.vpk' | sort)
-python3 scripts/entity_fgd.py .tmp/map-entities \
-  --core <toolkit>/game/core --output metadata/citadel.fgd
+  .tmp/map-entities $(find <toolkit>/game/citadel_assets/maps -name '*.vpk' | sort)
+python3 scripts/entity_fgd.py .tmp/map-entities --core <toolkit>/game/core \
+  --output metadata/citadel.fgd --receipt metadata/entity-sources.json
 ```
 
 [ValveResourceFormat]: https://github.com/ValveResourceFormat/ValveResourceFormat
@@ -118,6 +117,16 @@ it on a copy of the toolkit, since it adds a new addon each time:
 ```sh
 python scripts/compiler_probe.py --sdk <toolkit> --mod citadel --kind model \
   --addon model_probe --report reports/model.json
+```
+
+On Linux, the probe runs the compiler through Proton in a new prefix. It needs
+a graphical `DISPLAY`, the `proton` script, and the Steam client directory:
+
+```sh
+python3 scripts/compiler_probe.py --sdk <toolkit> --mod citadel --kind model \
+  --addon model_probe --report reports/model.json \
+  --proton "<Steam library>/steamapps/common/Proton - Experimental/proton" \
+  --steam ~/.steam/steam
 ```
 
 `scripts/editor_probe.py` opens Hammer, ModelDoc, and SFM on an interactive
