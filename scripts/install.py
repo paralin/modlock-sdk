@@ -4,11 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import io
 import json
 import os
 import platform
+import re
 import shutil
+import struct
 import subprocess
 import sys
 import tarfile
@@ -20,6 +23,14 @@ from build_programs import ZIG_VERSION, build
 from toolkit import PROJECT_DIRS, ROOT, SAMPLE, authored, contained_path, depots
 
 ZIG_INDEX = "https://ziglang.org/download/index.json"
+VPK_MAGIC = 0x55AA1234
+VPK_HEADER = struct.Struct("<7I")
+VPK_ENTRY = struct.Struct("<IHHIIH")
+# The archive index of an entry whose data sits in the package index itself.
+VPK_IN_INDEX = 0x7FFF
+# The empty signature section that ends an unsigned package.
+UNSIGNED_VPK = struct.pack("<5I", VPK_MAGIC, 1, 0, 0, 0)
+SHADER_ARCHIVE = re.compile(r"(.+/shaders_\w+)_\d{3}\.vpk")
 
 
 def zig(cache: Path) -> Path:
@@ -99,6 +110,62 @@ def place(source: Path, target: Path) -> None:
     shutil.copy2(source, target)
 
 
+def single_file(index: bytes, archives: list[bytes]) -> bytes:
+    """Rebuild a version 2 package split over archives as one unsigned file.
+
+    The archives' data follows the index's own in its data section, in archive
+    order, so an entry's offset grows by the size of the data before its
+    archive. The chunk hashes describe the archives and are dropped; the section
+    hashes are recomputed.
+    """
+    _, _, tree_size, own_size, *_ = VPK_HEADER.unpack_from(index)
+    tree = bytearray(index[VPK_HEADER.size:VPK_HEADER.size + tree_size])
+    own = index[VPK_HEADER.size + tree_size:VPK_HEADER.size + tree_size + own_size]
+    bases = [len(own)]
+    for archive in archives:
+        bases.append(bases[-1] + len(archive))
+
+    # The tree is extensions, then paths, then names, each list ending in an
+    # empty string; each name is followed by its entry and preload bytes.
+    position = 0
+
+    def string() -> bytes:
+        nonlocal position
+        end = tree.index(0, position)
+        value, position = tree[position:end], end + 1
+        return value
+
+    while string():
+        while string():
+            while string():
+                crc, preload, archive, offset, size, end = VPK_ENTRY.unpack_from(tree, position)
+                if archive != VPK_IN_INDEX:
+                    VPK_ENTRY.pack_into(tree, position, crc, preload, VPK_IN_INDEX,
+                                        bases[archive] + offset, size, end)
+                position += VPK_ENTRY.size + preload
+
+    data = own + b"".join(archives)
+    header = VPK_HEADER.pack(VPK_MAGIC, 2, len(tree), len(data), 0, 48, len(UNSIGNED_VPK))
+    hashes = hashlib.md5(tree).digest() + hashlib.md5(b"").digest()
+    whole = hashlib.md5(header + tree + data + hashes).digest()
+    return header + tree + data + hashes + whole + UNSIGNED_VPK
+
+
+def shader_packages(sources: dict[str, Path]) -> dict[str, list[Path]]:
+    """Take the shader packages' archives out of sources, keyed by their index.
+
+    The editors' asset system reads every package in a game directory other
+    than pak01 as a map, and reports a shader package's archive as a corrupt
+    one, so the toolkit writes each shader package as one file. They are tens of
+    megabytes.
+    """
+    packages: dict[str, list[Path]] = {}
+    for name in sorted(sources):
+        if match := SHADER_ARCHIVE.fullmatch(name):
+            packages.setdefault(f"{match[1]}_dir.vpk", []).append(sources.pop(name))
+    return packages
+
+
 def install(destination: Path) -> None:
     """Bring the toolkit in destination up to the current Valve depots.
 
@@ -113,6 +180,7 @@ def install(destination: Path) -> None:
     previous = json.loads(state.read_text(encoding="utf-8"))["files"] if state.is_file() else []
 
     sources, manifests = depot_files(cache)
+    shaders = shader_packages(sources)
     removed = sorted(set(previous) - set(sources))
     print(f"Placing {len(sources)} Valve files; removing {len(removed)}", flush=True)
     for name in removed:
@@ -125,7 +193,16 @@ def install(destination: Path) -> None:
                 break
             parent.rmdir()
     for name, source in sources.items():
-        place(source, contained_path(destination, name))
+        target = contained_path(destination, name)
+        if name not in shaders:
+            place(source, target)
+            continue
+        # Rewritten each run: a shader package is small, and its index alone
+        # does not show whether an archive changed.
+        target.unlink(missing_ok=True)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(single_file(source.read_bytes(),
+                                       [archive.read_bytes() for archive in shaders[name]]))
 
     build(str(zig(cache)), cache)
     for name, content in authored(ROOT, cache).items():

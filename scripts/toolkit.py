@@ -12,6 +12,14 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = "game/citadel_assets/"
 SAMPLE = "content/citadel_addons/modlock_sample/"
 INSTALLER = "https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.ps1"
+# The editors are Dota's and the compiler Deadlock's, and their animation
+# libraries disagree on one class, CNmSoundEvent, so the engine's schema check
+# would abort the editors. The engine looks a switch up by the MurmurHash2 of its
+# lowercase name; this name hashes, as the switch that turns the abort into a
+# warning does, to 0xd96c98b0.
+SCHEMA_MISMATCH_WARNS = "-ignaaw0gjr0"
+EDITOR_ARGS = ("-tools", "-insecure", "-novid", "-console", "-condebug", "-playtest",
+               SCHEMA_MISMATCH_WARNS)
 
 # Empty directories the editors expect to exist.
 PROJECT_DIRS = ("content/citadel/", "content/citadel_assets/", "content/core_deadlock/",
@@ -102,8 +110,7 @@ def authored(root: Path, programs: Path) -> dict[str, bytes | Path]:
     }.items():
         files[f"{name}.cmd"] = (
             '@echo off\r\nsetlocal\r\ncd /d "%~dp0game\\bin\\win64"\r\n'
-            'sdk-launcher.exe -tools -insecure -novid -console -condebug -playtest '
-            f'-addon modlock_sample {options}\r\n'
+            f'sdk-launcher.exe {" ".join(EDITOR_ARGS)} -addon modlock_sample {options}\r\n'
             'if errorlevel 1 pause\r\n'
         ).encode()
     return files

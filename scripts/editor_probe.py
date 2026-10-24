@@ -13,6 +13,8 @@ import sys
 from ctypes import wintypes
 from pathlib import Path
 
+from toolkit import EDITOR_ARGS
+
 
 def owned_windows(pid: int) -> list[tuple[int, str]]:
     """Read visible window titles belonging only to the test process."""
@@ -50,7 +52,7 @@ def probe(sdk: Path, reports: Path, addon: str, tool: str) -> dict:
     prefix = reports / tool
     if console.exists():
         console.replace(prefix.with_suffix(".prior-console.log"))
-    command = [str(executable), "-tools", "-insecure", "-novid", "-console", "-condebug", "-playtest"]
+    command = [str(executable), *EDITOR_ARGS]
     if tool == "modeldoc_editor":
         command += ["-addon", addon, "-asset", "models/probe.vmdl"]
     command += ["+show_tool", tool]

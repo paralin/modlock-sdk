@@ -40,8 +40,9 @@ class InstallTest(unittest.TestCase):
     def test_follows_depot_changes_and_keeps_user_work(self) -> None:
         """Installed depots are linked, the rest downloaded, and dropped files removed.
 
-        Packages are symbolic links, as when the toolkit and the Steam library
-        sit on different disks, so a rerun replaces links it placed itself.
+        A shader package is written as one file. Other packages are symbolic
+        links, as when the toolkit and the Steam library sit on different disks,
+        so a rerun replaces links it placed itself.
         """
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -58,13 +59,20 @@ class InstallTest(unittest.TestCase):
             (game / "game/citadel/bin").mkdir(parents=True)
             for name in ("pak01_dir.vpk", "pak01_000.vpk", "bin/client.dll"):
                 (game / "game/citadel" / name).write_bytes(b"deadlock")
+            # A shader package with one file, "abc" at offset 2 of archive 000.
+            shader_tree = b"txt\0shaders\0a\0" + struct.pack("<IHHIIH", 0, 0, 0, 2, 3, 0xFFFF) + b"\0\0\0"
+            (game / "game/citadel/shaders_pc_dir.vpk").write_bytes(
+                struct.pack("<7I", install.VPK_MAGIC, 2, len(shader_tree), 0, 28, 48, 20) + shader_tree)
+            (game / "game/citadel/shaders_pc_000.vpk").write_bytes(b"xxabcyy")
             (steam_root / "depotcache/1422451_7.manifest").write_bytes(depot_manifest(
                 ["game/citadel/pak01_dir.vpk", "game/citadel/pak01_000.vpk",
-                 "game/citadel/bin/client.dll"], ["game/citadel"]))
+                 "game/citadel/bin/client.dll", "game/citadel/shaders_pc_dir.vpk",
+                 "game/citadel/shaders_pc_000.vpk"], ["game/citadel"]))
 
             profile = [Depot("730", "2347771", {"game/bin/": "game/bin/"}),
                        Depot("1422450", "1422451",
-                             {"game/citadel/pak01_": "game/citadel_assets/pak01_"})]
+                             {"game/citadel/pak01_": "game/citadel_assets/pak01_",
+                              "game/citadel/shaders_": "game/citadel_assets/shaders_"})]
             depot_contents = {"game/bin/tools.dll": b"tool", "game/bin/old/old.dll": b"old"}
             downloads = []
 
@@ -100,6 +108,12 @@ class InstallTest(unittest.TestCase):
             package = destination / "game/citadel_assets/pak01_dir.vpk"
             self.assertTrue(package.is_symlink())
             self.assertTrue(os.path.samefile(package, game / "game/citadel/pak01_dir.vpk"))
+            shaders = (destination / "game/citadel_assets/shaders_pc_dir.vpk").read_bytes()
+            _, _, tree, data, chunks, _, _ = struct.unpack_from("<7I", shaders)
+            entry = struct.unpack_from("<IHHIIH", shaders, 28 + shader_tree.index(b"a\0") + 2)
+            self.assertEqual((data, chunks, entry[2:5]), (7, 0, (0x7FFF, 2, 3)))
+            self.assertEqual(shaders[28 + tree + 2:28 + tree + 5], b"abc")
+            self.assertFalse((destination / "game/citadel_assets/shaders_pc_000.vpk").exists())
             self.assertFalse((destination / "game/citadel_assets/bin").exists())
             self.assertEqual((destination / "game/bin/tools.dll").read_bytes(), b"tool")
             self.assertFalse((destination / "game/bin/old").exists())

@@ -52,6 +52,11 @@ install and on every update:
    depot's copy of a file replaces an earlier one's. Asset packages are hard
    linked (or symbolically linked) to their source, so they take no extra
    space; other files are copied. A file that already matches is skipped.
+   Shader packages are the exception: the editors' asset system reads every
+   package in a game directory other than `pak01` as a map, and reports a
+   split shader package's `_000` archive as corrupt. The installer writes each
+   shader package as one file, its archives' data moved into the index, on
+   every run.
 4. Remove the Valve files the last run placed that the current depots no longer
    have. `.cache/installed.json` records the placed files and the depot
    manifest IDs they came from.
@@ -109,6 +114,13 @@ python3 scripts/entity_fgd.py .tmp/map-entities --core <toolkit>/game/core \
 
 [`tools/sdk_launcher.c`](tools/sdk_launcher.c) loads the engine next to it and
 calls its `Source2Main` with the `citadel` project.
+The `.cmd` launchers pass `-ignaaw0gjr0`. The editors are Dota's and the
+compiler Deadlock's, and their animation libraries disagree on one class,
+`CNmSoundEvent`, so the engine's schema check would abort the editors. The
+engine looks up the switch that turns that abort into a warning by the
+MurmurHash2 of its name (seed `0x31415926`, lowercase, dash included),
+`0xd96c98b0`; the switch's real name is unknown, and this one hashes to the
+same value.
 
 [`tools/vrad3_shim.c`](tools/vrad3_shim.c) is installed as `vrad3.exe`, where
 the resource compiler looks for the lighting tool. Deadlock's compiler writes a
