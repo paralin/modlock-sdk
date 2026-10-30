@@ -12,6 +12,10 @@
   $source = Join-Path $cache 'source'
 
   if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
+    # uv's installer refuses Windows' default Restricted policy. Bypass for this
+    # process only, as uv's own instructions do; the user's setting is unchanged.
+    # A Group Policy setting wins over this and makes the call throw.
+    try { Set-ExecutionPolicy Bypass -Scope Process -Force } catch {}
     Invoke-RestMethod https://astral.sh/uv/install.ps1 | Invoke-Expression
     $env:Path = "$env:USERPROFILE\.local\bin;$env:Path"
   }
