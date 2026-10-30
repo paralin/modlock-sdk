@@ -1,11 +1,13 @@
 """Check that the installer follows the current depots and keeps user work on rerun."""
 
+import io
 import json
 import os
 import struct
 import sys
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 from unittest import mock
 
@@ -123,6 +125,40 @@ class InstallTest(unittest.TestCase):
             self.assertTrue((destination / "Update.cmd").is_file())
             state = json.loads((destination / ".cache/installed.json").read_text())
             self.assertEqual(state["depots"], {"2347771": "9", "1422451": "7"})
+
+    def test_zig_recovers_from_a_crash(self) -> None:
+        """A Zig folder a crash left zeroed or half unpacked is replaced; a complete one is kept."""
+        top = "zig-x86_64-windows-" + install.ZIG_VERSION
+        archive = io.BytesIO()
+        with zipfile.ZipFile(archive, "w") as zip_file:
+            zip_file.writestr(f"{top}/lib/internal.h", "#define _PGLOBAL\n")
+            zip_file.writestr(f"{top}/zig.exe", "zig")
+        index = json.dumps({install.ZIG_VERSION: {"x86_64-windows": {"tarball": "zig.zip"}}})
+        fetched = []
+
+        def fetch(url: str) -> bytes:
+            fetched.append(url)
+            return archive.getvalue() if url == "zig.zip" else index.encode()
+
+        with tempfile.TemporaryDirectory() as temporary:
+            cache = Path(temporary)
+            # Earlier installers' folder, whose header a power loss zeroed.
+            legacy = cache / top
+            (legacy / "lib").mkdir(parents=True)
+            (legacy / "lib/internal.h").write_bytes(bytes(17))
+            (legacy / "zig.exe").write_text("zig")
+            # The current folder, cut short before its last file.
+            (cache / f"zig-{install.ZIG_VERSION}/{top}/lib").mkdir(parents=True)
+            with mock.patch.object(install.platform, "machine", return_value="AMD64"), \
+                    mock.patch.object(install.platform, "system", return_value="Windows"), \
+                    mock.patch.object(steam, "fetch", side_effect=fetch):
+                program = install.zig(cache)
+                self.assertEqual(install.zig(cache), program)
+
+            self.assertEqual(program.read_text(), "zig")
+            self.assertEqual((program.parent / "lib/internal.h").read_text(), "#define _PGLOBAL\n")
+            self.assertFalse(legacy.exists())
+            self.assertEqual(fetched, [install.ZIG_INDEX, "zig.zip"])
 
 
 if __name__ == "__main__":

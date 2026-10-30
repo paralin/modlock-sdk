@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import io
 import json
 import os
 import platform
@@ -14,10 +13,9 @@ import shutil
 import struct
 import subprocess
 import sys
-import tarfile
-import zipfile
 from pathlib import Path
 
+import durable
 import steam
 from build_programs import ZIG_VERSION, build
 from toolkit import PROJECT_DIRS, ROOT, SAMPLE, authored, contained_path, depots
@@ -34,21 +32,27 @@ SHADER_ARCHIVE = re.compile(r"(.+/shaders_\w+)_\d{3}\.vpk")
 
 
 def zig(cache: Path) -> Path:
-    """Download the Zig compiler the program build requires once."""
+    """Download the Zig compiler the program build requires once.
+
+    Only the current version stays in the cache. Earlier installers unpacked
+    Zig under its archive's own name without flushing it, so a power loss could
+    leave a compiler whose headers are zeros; that folder is removed with the
+    other old versions.
+    """
     arch = {"amd64": "x86_64", "arm64": "aarch64"}.get(platform.machine().lower(),
                                                        platform.machine().lower())
     system = {"Windows": "windows", "Linux": "linux", "Darwin": "macos"}[platform.system()]
-    program = cache / f"zig-{arch}-{system}-{ZIG_VERSION}" / ("zig.exe" if system == "windows" else "zig")
-    if not program.is_file():
+    folder = cache / f"zig-{ZIG_VERSION}"
+    for old in cache.glob("zig-*"):
+        if old != folder:
+            shutil.rmtree(old, ignore_errors=True)
+
+    def download() -> bytes:
         print(f"Downloading Zig {ZIG_VERSION}", flush=True)
-        url = json.loads(steam.fetch(ZIG_INDEX))[ZIG_VERSION][f"{arch}-{system}"]["tarball"]
-        archive = io.BytesIO(steam.fetch(url))
-        if url.endswith(".zip"):
-            zipfile.ZipFile(archive).extractall(cache)
-        else:
-            with tarfile.open(fileobj=archive) as tar:
-                tar.extractall(cache, filter="tar")
-    return program
+        return steam.fetch(json.loads(steam.fetch(ZIG_INDEX))[ZIG_VERSION][f"{arch}-{system}"]["tarball"])
+
+    durable.unpack(folder, download)
+    return folder / f"zig-{arch}-{system}-{ZIG_VERSION}" / ("zig.exe" if system == "windows" else "zig")
 
 
 def depot_files(cache: Path) -> tuple[dict[str, Path], dict[str, str | None]]:
@@ -107,7 +111,7 @@ def place(source: Path, target: Path) -> None:
                 return
             except OSError:
                 pass
-    shutil.copy2(source, target)
+    durable.copy(source, target)
 
 
 def single_file(index: bytes, archives: list[bytes]) -> bytes:
@@ -177,7 +181,12 @@ def install(destination: Path) -> None:
     cache = destination / ".cache"
     cache.mkdir(parents=True, exist_ok=True)
     state = cache / "installed.json"
-    previous = json.loads(state.read_text(encoding="utf-8"))["files"] if state.is_file() else []
+    try:
+        previous = json.loads(state.read_text(encoding="utf-8"))["files"]
+    except (OSError, ValueError, KeyError):
+        # A first run, or a state file an older installer left broken in a
+        # crash: files Valve removed since then stay in place.
+        previous = []
 
     sources, manifests = depot_files(cache)
     shaders = shader_packages(sources)
@@ -217,8 +226,8 @@ def install(destination: Path) -> None:
     for name in PROJECT_DIRS:
         contained_path(destination, name).mkdir(parents=True, exist_ok=True)
 
-    state.write_text(json.dumps({"depots": manifests, "files": sorted(sources)}, indent=2) + "\n",
-                     encoding="utf-8")
+    durable.write(state, (json.dumps({"depots": manifests, "files": sorted(sources)}, indent=2)
+                          + "\n").encode())
 
 
 def main() -> int:

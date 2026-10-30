@@ -2,15 +2,15 @@
 
 from __future__ import annotations
 
-import io
 import os
 import platform
 import re
 import struct
 import subprocess
 import urllib.request
-import zipfile
 from pathlib import Path
+
+import durable
 
 DEPOT_DOWNLOADER = "https://github.com/SteamRE/DepotDownloader/releases/latest/download"
 MANIFEST_MAGIC = 0x71F617D0
@@ -145,11 +145,13 @@ def depot_downloader(cache: Path) -> Path:
     arch = "arm64" if platform.machine().lower() in ("arm64", "aarch64") else "x64"
     folder = cache / f"depotdownloader-{system}-{arch}"
     program = folder / ("DepotDownloader.exe" if system == "windows" else "DepotDownloader")
-    if not program.is_file():
+
+    def download() -> bytes:
         print("Downloading DepotDownloader", flush=True)
-        zipfile.ZipFile(io.BytesIO(fetch(f"{DEPOT_DOWNLOADER}/DepotDownloader-{system}-{arch}.zip"))
-                        ).extractall(folder)
-        program.chmod(0o755)
+        return fetch(f"{DEPOT_DOWNLOADER}/DepotDownloader-{system}-{arch}.zip")
+
+    durable.unpack(folder, download)
+    program.chmod(0o755)
     return program
 
 
