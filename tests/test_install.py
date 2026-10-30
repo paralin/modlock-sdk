@@ -42,9 +42,11 @@ class InstallTest(unittest.TestCase):
     def test_follows_depot_changes_and_keeps_user_work(self) -> None:
         """Installed depots are linked, the rest downloaded, and dropped files removed.
 
-        A shader package is written as one file. Other packages are symbolic
-        links, as when the toolkit and the Steam library sit on different disks,
-        so a rerun replaces links it placed itself.
+        A run after one that did not finish validates the downloads and copies
+        every file again, replacing a copy a power loss zeroed. A shader package
+        is written as one file. Other packages are symbolic links, as when the
+        toolkit and the Steam library sit on different disks, so a rerun
+        replaces links it placed itself.
         """
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -78,8 +80,8 @@ class InstallTest(unittest.TestCase):
             depot_contents = {"game/bin/tools.dll": b"tool", "game/bin/old/old.dll": b"old"}
             downloads = []
 
-            def download(program, app, depot, include, folder, account):
-                downloads.append(depot)
+            def download(program, app, depot, include, folder, account, validate):
+                downloads.append((depot, validate))
                 for name, data in depot_contents.items():
                     (folder / name).parent.mkdir(parents=True, exist_ok=True)
                     (folder / name).write_bytes(data)
@@ -107,6 +109,17 @@ class InstallTest(unittest.TestCase):
                 (root / "modlock-tools/.cache/depots/2347771/game/bin/old/old.dll").unlink()
                 install.install(destination)
 
+                # A power loss during a run zeroes a copy but keeps its size
+                # and time, and leaves the state incomplete.
+                tools = destination / "game/bin/tools.dll"
+                times = tools.stat()
+                tools.write_bytes(bytes(4))
+                os.utime(tools, ns=(times.st_atime_ns, times.st_mtime_ns))
+                state_file = destination / ".cache/installed.json"
+                state_file.write_text(state_file.read_text().replace('"complete": true',
+                                                                     '"complete": false'))
+                install.install(destination)
+
             package = destination / "game/citadel_assets/pak01_dir.vpk"
             self.assertTrue(package.is_symlink())
             self.assertTrue(os.path.samefile(package, game / "game/citadel/pak01_dir.vpk"))
@@ -119,12 +132,13 @@ class InstallTest(unittest.TestCase):
             self.assertFalse((destination / "game/citadel_assets/bin").exists())
             self.assertEqual((destination / "game/bin/tools.dll").read_bytes(), b"tool")
             self.assertFalse((destination / "game/bin/old").exists())
-            self.assertEqual(downloads, ["2347771"] * 2)
+            self.assertEqual(downloads, [("2347771", True), ("2347771", False), ("2347771", True)])
             self.assertEqual(sample.read_text(), "my model")
             self.assertTrue((destination / "game/citadel/gameinfo.gi").is_file())
             self.assertTrue((destination / "Update.cmd").is_file())
             state = json.loads((destination / ".cache/installed.json").read_text())
             self.assertEqual(state["depots"], {"2347771": "9", "1422451": "7"})
+            self.assertTrue(state["complete"])
 
     def test_zig_recovers_from_a_crash(self) -> None:
         """A Zig folder a crash left zeroed or half unpacked is replaced; a complete one is kept."""

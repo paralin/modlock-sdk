@@ -7,6 +7,7 @@ import platform
 import re
 import struct
 import subprocess
+import time
 import urllib.request
 from pathlib import Path
 
@@ -156,7 +157,7 @@ def depot_downloader(cache: Path) -> Path:
 
 
 def download(program: Path, app: str, depot: str, include: tuple[str, ...],
-             folder: Path, account: Path) -> None:
+             folder: Path, account: Path, validate: bool = False) -> None:
     """Bring a depot's included files in folder up to the current Windows version.
 
     Steam denies anonymous sessions these depots. The first run shows a QR code
@@ -165,14 +166,20 @@ def download(program: Path, app: str, depot: str, include: tuple[str, ...],
     saved login fails, the next attempt asks for a new QR scan. Steam often
     drops a QR session about a minute in, before anyone scans it, so a failed
     QR attempt shows a new code, up to QR_ATTEMPTS codes. DepotDownloader
-    downloads only changed files and deletes files the new version drops.
+    downloads only changed files and deletes files the new version drops; with
+    validate it also checks every file against the depot's checksums and fixes
+    the ones that differ. The files it wrote are on disk when this returns.
     """
     folder.mkdir(parents=True, exist_ok=True)
     filelist = folder.parent / f"{depot}.files.txt"
     filelist.write_text("".join(f"regex:^{re.escape(prefix)}\n" for prefix in include),
                         encoding="utf-8")
     command = [str(program), "-app", app, "-depot", depot, "-os", "windows", "-osarch", "64",
-               "-filelist", str(filelist), "-dir", str(folder), "-remember-password"]
+               "-filelist", str(filelist), "-dir", str(folder), "-remember-password",
+               *(["-validate"] if validate else [])]
+    # DepotDownloader neither flushes nor dates the files it writes, so the
+    # ones with a time after its start are the ones it wrote.
+    started = time.time()
     codes = QR_ATTEMPTS
     while True:
         name = account.read_text(encoding="utf-8").strip() if account.is_file() else ""
@@ -186,6 +193,7 @@ def download(program: Path, app: str, depot: str, include: tuple[str, ...],
                 if match := re.search(r"login with -username (\S+) -remember-password", line):
                     account.write_text(match.group(1), encoding="utf-8")
         if process.returncode == 0:
+            durable.flush_changed(folder, started)
             return
         if name:
             account.unlink(missing_ok=True)

@@ -59,7 +59,10 @@ install and on every update:
    every run.
 4. Remove the Valve files the last run placed that the current depots no longer
    have. `.cache/installed.json` records the placed files and the depot
-   manifest IDs they came from.
+   manifest IDs they came from, and is marked complete only once everything
+   the run wrote is on disk. A run that finds it incomplete, after a crash or
+   power loss, checks every downloaded file against Steam's checksums and
+   copies every placed file again.
 5. Build the launcher and the lighting tool wrapper, and write this
    repository's files. The sample addon is written only if it is missing, so
    your edits to it are kept.

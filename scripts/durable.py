@@ -13,7 +13,7 @@ import os
 import shutil
 import tarfile
 import zipfile
-from collections.abc import Callable
+from collections.abc import Callable, Iterable
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -31,6 +31,22 @@ def flush(path: Path) -> None:
         os.fsync(fd)
     finally:
         os.close(fd)
+
+
+def flush_all(paths: Iterable[Path]) -> None:
+    """Wait until every file's data is on disk, flushing several at once."""
+    with ThreadPoolExecutor(FLUSH_THREADS) as pool:
+        list(pool.map(flush, paths))
+
+
+def flush_changed(folder: Path, since: float) -> None:
+    """Wait until the data of every file in folder modified since a time is on disk.
+
+    For files another program wrote without flushing them; since is a
+    time.time() taken before it started.
+    """
+    flush_all(path for path in folder.rglob("*")
+              if path.is_file() and not path.is_symlink() and path.stat().st_mtime >= since)
 
 
 def write(path: Path, data: bytes) -> None:
@@ -68,7 +84,5 @@ def unpack(folder: Path, download: Callable[[], bytes]) -> None:
     else:
         with tarfile.open(fileobj=archive) as tar:
             tar.extractall(folder, filter="tar")
-    files = [path for path in folder.rglob("*") if path.is_file() and not path.is_symlink()]
-    with ThreadPoolExecutor(FLUSH_THREADS) as pool:
-        list(pool.map(flush, files))
+    flush_all(path for path in folder.rglob("*") if path.is_file() and not path.is_symlink())
     write(folder / COMPLETE, b"")
