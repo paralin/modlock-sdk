@@ -49,11 +49,21 @@ def flush_changed(folder: Path, since: float) -> None:
               if path.is_file() and not path.is_symlink() and path.stat().st_mtime >= since)
 
 
-def write(path: Path, data: bytes) -> None:
-    """Replace a file's contents so a crash leaves the old contents or the new."""
+def write(path: Path, data: bytes, like: Path | None = None) -> None:
+    """Replace a file's contents so a crash leaves the old contents or the new.
+
+    A file that already holds the contents is left alone, so a rerun with
+    nothing new writes nothing. like names a file whose modification time the
+    new contents take, for a changed copy that must still look current to the
+    size and time check.
+    """
+    if path.is_file() and path.read_bytes() == data:
+        return
     staging = path.with_name(path.name + ".partial")
     staging.write_bytes(data)
     flush(staging)
+    if like is not None:
+        shutil.copystat(like, staging)
     os.replace(staging, path)
 
 

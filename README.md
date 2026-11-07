@@ -15,10 +15,10 @@ that package and check a release. Valve's binaries and assets come from Steam
 at install time. [REPRODUCING.md](REPRODUCING.md) explains how the build works.
 
 > **Early development.** Map compilation passes with baked lighting in
-> Deadlock's current layout, and the maps render in Deadlock. The editors moved
-> from the CS2 tools to Dota's and are not yet checked on this toolkit; nor are
-> Deadlock's materials in the editor viewport, map playtests in Hammer,
-> Citadel-specific ModelDoc events, and SFM renders.
+> Deadlock's current layout, and the maps render in Deadlock. Hammer, ModelDoc
+> and Source Filmmaker open on this toolkit. Deadlock's materials in the editor
+> viewport, map playtests in Hammer, Citadel-specific ModelDoc events, and SFM
+> renders are not yet checked.
 
 ## Shaders
 
@@ -79,7 +79,8 @@ GB).
 
 Run the same command again, or `Update.cmd` in the toolkit, to update after a
 game update. Only changed files are downloaded, and files Valve removed are
-removed. Your addons and edits to the sample addon are kept. Then open
+removed. The toolkit's copies of Dota's modules are adapted to the current
+engine; Steam's own files stay as they are. Your addons and edits to the sample addon are kept. Then open
 `Hammer.cmd`, `ModelDoc.cmd`, or `SFM.cmd` in the toolkit directory. [bundle/README.md](bundle/README.md)
 describes the editors and the sample addon.
 

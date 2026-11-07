@@ -63,9 +63,13 @@ install and on every update:
    the run wrote is on disk. A run that finds it incomplete, after a crash or
    power loss, checks every downloaded file against Steam's checksums and
    copies every placed file again.
-5. Build the launcher and the lighting tool wrapper, and write this
+5. Bring every module onto tier0's console variable numbering; see
+   [Console variable numbering](#console-variable-numbering).
+6. Build the launcher and the lighting tool wrapper, and write this
    repository's files. The sample addon is written only if it is missing, so
-   your edits to it are kept.
+   your edits to it are kept. A file that already holds the right contents is
+   left alone, so a run with no game update changes nothing in the toolkit
+   beyond `.cache/installed.json`.
 
 When Valve ships a new version, run the installer again (or `Update.cmd` in
 the toolkit) to apply the difference.
@@ -117,13 +121,15 @@ python3 scripts/entity_fgd.py .tmp/map-entities --core <toolkit>/game/core \
 
 [`tools/sdk_launcher.c`](tools/sdk_launcher.c) loads the engine next to it and
 calls its `Source2Main` with the `citadel` project.
-The `.cmd` launchers pass `-ignaaw0gjr0`. The editors are Dota's and the
-compiler Deadlock's, and their animation libraries disagree on one class,
-`CNmSoundEvent`, so the engine's schema check would abort the editors. The
-engine looks up the switch that turns that abort into a warning by the
-MurmurHash2 of its name (seed `0x31415926`, lowercase, dash included),
-`0xd96c98b0`; the switch's real name is unknown, and this one hashes to the
-same value.
+The `.cmd` launchers pass `-danger_mode_ignore_schema_mismatches`. The editors
+are Dota's and the compiler Deadlock's, and their animation libraries disagree
+on one class, `CNmSoundEvent`, so the engine's schema check would abort the
+editors. With the switch on, the engine logs each mismatch and carries on. The
+engine looks the switch up by the MurmurHash2 of its name (seed `0x31415926`,
+lowercase, dash included), `0xd96c98b0`, so any name with that hash works,
+including the `-ignaaw0gjr0` of earlier toolkits. The resource compiler and the
+lighting tool compile models and maps without it, so they need no switch of
+their own.
 
 [`tools/vrad3_shim.c`](tools/vrad3_shim.c) is installed as `vrad3.exe`, where
 the resource compiler looks for the lighting tool. Deadlock's compiler writes a
@@ -141,6 +147,34 @@ the build machine, so every host produces the same files:
 | --- | --- |
 | `sdk-launcher.exe` | `04b79688dc315ac893134434ee7ce6d7b8c04613df657b07aec3928c3829e92c` |
 | `vrad3.exe` | `39dc1a5ca054897892ba409db3069eca06e108c4f250210fc9570dc64f6bb22e` |
+
+## Console variable numbering
+
+Every module that declares console variables links its own table of types and
+agrees with tier0 on a number for each type. Deadlock's engine added `int8` and
+`uint8` after `bool`, so each later type moved up by two, and Dota's modules
+still carry the old numbers. tier0 stops the process on a shared name declared
+under another number, and binds any other name to the wrong type.
+
+[`scripts/convars.py`](scripts/convars.py) reads the row count of each module's
+table and of tier0's. The installer changes a module only when the two differ:
+16 rows against 18. The change is on disk, in the toolkit's own copy, because
+Hammer starts the resource compiler and the lighting tool directly, and each of
+them loads these modules too. It keeps the module's table and its old numbers.
+The routine that declares a variable hands tier0 the engine's number, and each
+load of the type from tier0's entry turns it back into the module's number
+before it indexes the table. Compiled numbers are not touched, so a default of 3
+stays 3 when an `int32` becomes type 5. The file keeps its size, and the installer
+gives it the time of its Valve source.
+
+The copy is worked out again from its Valve source on every run and written only
+if it differs, so an engine update that changes the numbering carries through,
+and a game update that makes the two vendors agree puts the stock file back. A
+module whose code does not have the expected structure stays stock, and the
+install says which editor or step that costs. Files in Steam's folders are never
+changed, and Valve's files are never published. The engine does not check
+signatures on these modules: the changed copies load with or without
+`-insecure`, in the editors and in a compiler started by hand.
 
 ## Offline bundles
 

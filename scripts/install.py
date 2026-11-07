@@ -13,8 +13,9 @@ import shutil
 import struct
 import subprocess
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
+import convars
 import durable
 import steam
 from build_programs import ZIG_VERSION, build
@@ -29,6 +30,8 @@ VPK_IN_INDEX = 0x7FFF
 # The empty signature section that ends an unsigned package.
 UNSIGNED_VPK = struct.pack("<5I", VPK_MAGIC, 1, 0, 0, 0)
 SHADER_ARCHIVE = re.compile(r"(.+/shaders_\w+)_\d{3}\.vpk")
+# The module whose console variable numbering every other module must share.
+ENGINE_MODULE = "game/bin/win64/tier0.dll"
 
 
 def zig(cache: Path) -> Path:
@@ -172,6 +175,54 @@ def shader_packages(sources: dict[str, Path]) -> dict[str, list[Path]]:
     return packages
 
 
+def align_modules(sources: dict[str, Path], destination: Path) -> None:
+    """Make every module in the toolkit agree with its tier0 on console variable types.
+
+    The toolkit mixes two vendors' modules in one process, and any process that
+    loads a module takes its numbering, so the change has to be in the file. A
+    copy is the rewrite of its Valve source and nothing else: it is worked out
+    from the source on every run and written only if it differs, keeping the
+    source's size and time so place leaves it alone. Changes reach only the
+    toolkit's copy: a module is never one of the packages place links.
+
+    A module this cannot handle is left as Valve shipped it and reported; the
+    rest of the toolkit does not depend on it.
+    """
+    engine_source = sources.get(ENGINE_MODULE)
+    if engine_source is None:
+        return
+    try:
+        engine = convars.numbering(engine_source.read_bytes())
+    except convars.Unsupported as error:
+        engine = None
+        print(f"Console variables: tier0.dll could not be read: {error}", flush=True)
+    if engine is None:
+        print("Console variables: every module stays as Valve shipped it, "
+              "so the editors may not start", flush=True)
+        return
+
+    changed, failed = [], []
+    for name, source in sources.items():
+        if not name.endswith((".dll", ".exe")):
+            continue
+        stock = source.read_bytes()
+        try:
+            wanted = convars.aligned(stock, engine)
+        except convars.Unsupported as error:
+            wanted = stock
+            failed.append((name, error))
+        target = contained_path(destination, name)
+        if convars.MARKER in stock and target.read_bytes() != wanted:
+            durable.write(target, wanted, like=source)
+            changed.append(name)
+    if changed or not failed:
+        print(f"Console variables: updated {', '.join(changed)}" if changed
+              else "Console variables: nothing to do", flush=True)
+    for name, error in failed:
+        print(f"{convars.feature(name)} will not work: "
+              f"Modlock Tools could not adapt {PurePosixPath(name).name} because {error}.", flush=True)
+
+
 def install(destination: Path) -> None:
     """Bring the toolkit in destination up to the current Valve depots.
 
@@ -224,6 +275,7 @@ def install(destination: Path) -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         durable.write(target, single_file(source.read_bytes(),
                                           [archive.read_bytes() for archive in shaders[name]]))
+    align_modules(sources, destination)
 
     build(str(zig(cache)), cache)
     for name, content in authored(ROOT, cache).items():

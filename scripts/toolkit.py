@@ -14,10 +14,10 @@ SAMPLE = "content/citadel_addons/modlock_sample/"
 INSTALLER = "https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.ps1"
 # The editors are Dota's and the compiler Deadlock's, and their animation
 # libraries disagree on one class, CNmSoundEvent, so the engine's schema check
-# would abort the editors. The engine looks a switch up by the MurmurHash2 of its
-# lowercase name; this name hashes, as the switch that turns the abort into a
-# warning does, to 0xd96c98b0.
-SCHEMA_MISMATCH_WARNS = "-ignaaw0gjr0"
+# would abort the editors. This switch of Valve's turns the abort into a warning.
+# The engine looks a switch up by the MurmurHash2 of its lowercase name, here
+# 0xd96c98b0, and keeps only the hash.
+SCHEMA_MISMATCH_WARNS = "-danger_mode_ignore_schema_mismatches"
 EDITOR_ARGS = ("-tools", "-insecure", "-novid", "-console", "-condebug", "-playtest",
                SCHEMA_MISMATCH_WARNS)
 

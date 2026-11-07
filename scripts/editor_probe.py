@@ -101,7 +101,7 @@ def probe(sdk: Path, reports: Path, addon: str, tool: str) -> dict:
                 for handle, _ in windows:
                     user32.PostMessageW(handle, 0x0010, 0, 0)
                 try:
-                    result["close_exit_code"] = process.wait(timeout=5)
+                    result["close_exit_code"] = process.wait(timeout=60)
                 except subprocess.TimeoutExpired:
                     result["cleanup"] = "Stopped test process tree after close deadline"
         finally:
