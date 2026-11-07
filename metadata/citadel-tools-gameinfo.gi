@@ -1,12 +1,16 @@
+// The toolkit's changes to the game's own gameinfo.gi. The installer applies
+// them to the installed game's current file: each section here merges into the
+// game's section key by key, and each value inside a section replaces the
+// game's whole, so the search path list below replaces the game's list.
 "GameInfo"
 {
     game "Citadel asset tools"
     title "Citadel asset tools"
-    GameData "citadel.fgd"
     LayeredOnMod core
     // Mod app systems load the game's server and client code, which only the
-    // stationary light shadow atlas needs. Deadlock ships no modtools.dll to
-    // host them, so maps bake static lights.
+    // stationary light shadow atlas needs. The game's client would log on to
+    // Steam under the player's account, and Deadlock ships no modtools.dll to
+    // host the code anyway, so maps bake static lights.
     Engine2 { HasModAppSystems 0 }
     FileSystem
     {
@@ -25,205 +29,26 @@
             AddonRoot citadel_addons
             OfficialAddonRoot citadel_community_addons
         }
-    }
-    Hammer
-    {
-        fgd "citadel.fgd"
-        GameFeatureSet Citadel
-    }
-    ModelDoc
-    {
-        models_gamedata "models_gamedata.fgd"
-        features "animgraph;modelconfig"
+        // The game keeps key bindings and settings in the player's Steam
+        // profile folder. The editors write theirs under game/citadel/cfg
+        // instead, so an editor session never changes the player's.
+        UserSettingsPathID MOD
     }
     // The lighting tool bakes on the GPU through Vulkan, and its scene
     // descriptor sets need descriptor indexing, which the render system
-    // enables only when asked.
+    // enables only when asked. The game asks today; the bake needs it always.
     RenderSystem
     {
         VulkanRequireSubgroupWaveOpSupport 1
         VulkanRequireDescriptorIndexing 1
     }
-    // Deadlock's own map build settings. The game's post-build steps are left
-    // out: its PvE navigation cache step crashes without the game's code.
+    // With the game's Steam Audio runtime on, Hammer crashes drawing its first
+    // frame. Steam Audio baking in the map compiler does not need it.
+    SoundSystem { SteamAudioEnabled 0 }
     ResourceCompiler
     {
-        ForceVulkanForMapBuild 1
-        DefaultMapBuilders
-        {
-            bakedlighting 1
-            envmap 0
-            nav 1
-            sareverb 0
-            sapaths 0
-            sacustomdata 1
-        }
-        MeshCompiler
-        {
-            OptimizeForMeshlets 1
-            TrianglesPerMeshlet 64
-            UseMikkTSpace 1
-            EncodeVertexBuffer 1
-            EncodeVertexBufferVersion 1
-            EncodeVertexBufferLevel 3
-            EncodeIndexBuffer 1
-            SplitDepthStream 1
-        }
-        WorldRendererBuilder
-        {
-            VisibilityGuidedMeshClustering 1
-            MinimumTrianglesPerClusteredMesh 8192
-            MinimumVerticesPerClusteredMesh 8192
-            MinimumVolumePerClusteredMesh 8192
-            MaxPrecomputedVisClusterMembership 96
-            MaxCullingBoundsGroups 128
-            UseAggregateInstances 1
-            AggregateInstancingMeshlets 1
-            BakePropsWithExtraVertexStreams 1
-            MergeTranslucents 1
-            BakePrecomputedShadows 1
-            BakePrecomputedShadowsForDirectionalLights 0
-            BakePrecomputedDepthPyramids 0
-            PrecomputedShadowmapAtlas 1
-            PrecomputedShadowmapAtlasBorder 1
-            // Matches SceneSystem FogCachedShadowTileSizeTools.
-            PrecomputedShadowmapResolutionDefault 128
-        }
-        // Version 5 stores one luminance direction channel in place of the
-        // r, g and b channels of version 4. The editors' lighting tool writes
-        // only the version 4 channels; the vrad3.exe wrapper beside it turns
-        // them into the luminance channel.
-        BakedLighting
-        {
-            Version 5
-            ImportanceVolumeTransitionRegion 512
-            LightmapChannels
-            {
-                direct_light_shadows 1
-                debug_chart_color 1
-                directional_irradiance_sh2_dc 1
-                directional_irradiance_sh2_lum { CompressedFormat DXT1 }
-            }
-            LightmapGutterSize 2
-            UseStaticLightProbes 0
-            LPVAtlas 1
-        }
-        SteamAudio
-        {
-            ReverbDefaults
-            {
-                GridGenerationType 0
-                FilterUsingVolumes 1
-                FilterUsingNavMesh 0
-                GridSpacing 3.0
-                HeightAboveFloor 1.5
-                RebakeOption 0
-                NumRays 32768
-                NumBounces 64
-                IRDuration 1.0
-                AmbisonicsOrder 1
-                ClusteringEnabled 0
-                ClusteringCubemapResolution 16.0
-                ClusteringDepthThreshold 10.0
-            }
-            PathingDefaults
-            {
-                GridGenerationType 0
-                FilterUsingVolumes 1
-                FilterUsingNavMesh 0
-                GridSpacing 3.0
-                HeightAboveFloor 1.5
-                RebakeOption 0
-                NumVisSamples 1
-                ProbeVisRadius 0
-                ProbeVisThreshold 0.1
-                ProbeVisPathRange 1000.0
-            }
-            CustomDataDefaults
-            {
-                GridGenerationType 0
-                FilterUsingVolumes 1
-                FilterUsingNavMesh 1
-                GridSpacing 6
-                HeightAboveFloor 1.5
-                RebakeOption 0
-                BakeOcclusion 0
-                BakeDimensions 1
-                BakeMaterials 0
-                OcclusionPathing 1
-                OcclusionReflection 0
-                OcclusionReflectionRays 16384
-                OcclusionReflectionBounces 16
-                DimensionsOutsideThreshold 0.02
-            }
-            ProbeGenerationVolumeDefaults
-            {
-                Spacing 3.0
-                Height 1.5
-                HeightSpacing 12
-                UseForReverb 0
-                UseForPathing 0
-                UseForCustomData 1
-                FilterUsingVolumes 1
-                FilterUsingNavMesh 1
-            }
-        }
-        VisBuilder
-        {
-            MaxVisClusters 4096
-            PreMergeOpenSpaceDistanceThreshold 128.0
-            PreMergeOpenSpaceMaxDimension 2048.0
-            PreMergeOpenSpaceMaxRatio 8.0
-            PreMergeSmallRegionsSizeThreshold 20.0
-        }
-        TextureCompiler
-        {
-            AllowNP2Textures 1
-            AllowPanoramaMipGeneration 1
-        }
-    }
-    // Deadlock's renderer settings, so the editors draw maps as the game does.
-    SceneSystem
-    {
-        GpuLightBinner 1
-        FogCachedShadowAtlasWidthTools 2048
-        FogCachedShadowAtlasHeightTools 2048
-        FogCachedShadowTileSizeTools 128
-        GpuLightBinnerSunLightFastPath 1
-        CSMCascadeResolution 2048
-        SunLightManagerCount 0
-        SunLightManagerCountTools 0
-        DefaultShadowTextureWidth 6144
-        DefaultShadowTextureHeight 6144
-        DynamicShadowResolution 1
-        TransformTextureRowCount 1024
-        TransformTextureRowCountToolsMode 6144
-        SunLightMaxCascadeSize 4
-        SunLightShadowRenderMode Depth
-        NonTexturedGradientFog 1
-        CubemapFog 1
-        VolumetricFog 1
-        FrameBufferCopyFormat R11G11B10F
-        Tonemapping 0
-        WellKnownLightCookies
-        {
-            blank "materials/effects/lightcookies/blank.vtex"
-            flashlight "materials/effects/lightcookies/flashlight.vtex"
-        }
-        ComputeShaderSkinning 1
-    }
-    WorldRenderer
-    {
-        EnvironmentMaps 1
-        EnvironmentMapFaceSize 256
-        EnvironmentMapRenderSize 1024
-        EnvironmentMapFormat BC6H
-        EnvironmentMapPreviewFormat BC6H
-        EnvironmentMapColorSpace linear
-        EnvironmentMapMipProcessor GGXCubeMapBlur
-        EnvironmentMapUseCubeArray 1
-        EnvironmentMapCacheSizeTools 300
-        BindlessSceneObjectDesc CitadelBindlessDesc
-        GrassCastsShadows 1
+        // The game's post-build steps need its code: the PvE navigation cache
+        // step crashes without it.
+        GameSpecificPostMapBuildSteps { }
     }
 }

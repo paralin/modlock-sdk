@@ -11,6 +11,9 @@ from compiler_probe import JS, MESH, MODEL, XML
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = "game/citadel_assets/"
 SAMPLE = "content/citadel_addons/modlock_sample/"
+# The game's gameinfo.gi, which the installer writes with the toolkit's changes.
+GAMEINFO = "game/citadel/gameinfo.gi"
+GAMEINFO_CHANGES = ROOT / "metadata/citadel-tools-gameinfo.gi"
 INSTALLER = "https://raw.githubusercontent.com/paralin/modlock-sdk/master/install.ps1"
 # The editors are Dota's and the compiler Deadlock's, and their animation
 # libraries disagree on one class, CNmSoundEvent, so the engine's schema check
@@ -90,7 +93,6 @@ def authored(root: Path, programs: Path) -> dict[str, bytes | Path]:
         "README.md": root / "bundle/README.md",
         "game/bin/win64/sdk-launcher.exe": programs / "sdk-launcher.exe",
         "game/bin/win64/vrad3.exe": programs / "vrad3.exe",
-        "game/citadel/gameinfo.gi": root / "metadata/citadel-tools-gameinfo.gi",
         "game/citadel/models_gamedata.fgd": MODELS.encode(),
         "game/citadel/citadel.fgd": root / "metadata/citadel.fgd",
         SAMPLE + "models/probe.vmdl": MODEL.encode(),

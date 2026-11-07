@@ -42,6 +42,7 @@
       "depot": "1422451",
       "paths": {
         "game/bin/win64/": "game/bin/win64/",
+        "game/citadel/gameinfo.gi": "game/citadel/gameinfo.gi",
         "game/core/pak01_": "game/core_deadlock/pak01_",
         "game/core/shaders_": "game/core/shaders_",
         "game/citadel/pak01_": "game/citadel_assets/pak01_",
@@ -54,6 +55,7 @@
       "depot": "1422452",
       "paths": {
         "game/bin/win64/": "game/bin/win64/",
+        "game/citadel/gameinfo.gi": "game/citadel/gameinfo.gi",
         "game/core/pak01_": "game/core_deadlock/pak01_",
         "game/core/shaders_": "game/core/shaders_",
         "game/citadel/pak01_": "game/citadel_assets/pak01_",
@@ -66,6 +68,7 @@
       "depot": "1422456",
       "paths": {
         "game/bin/win64/": "game/bin/win64/",
+        "game/citadel/gameinfo.gi": "game/citadel/gameinfo.gi",
         "game/core/pak01_": "game/core_deadlock/pak01_",
         "game/core/shaders_": "game/core/shaders_",
         "game/citadel/pak01_": "game/citadel_assets/pak01_",

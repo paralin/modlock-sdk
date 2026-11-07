@@ -17,9 +17,11 @@ from pathlib import Path, PurePosixPath
 
 import convars
 import durable
+import gameinfo
 import steam
 from build_programs import ZIG_VERSION, build
-from toolkit import PROJECT_DIRS, ROOT, SAMPLE, authored, contained_path, depots
+from toolkit import (GAMEINFO, GAMEINFO_CHANGES, PROJECT_DIRS, ROOT, SAMPLE, authored,
+                     contained_path, depots)
 
 ZIG_INDEX = "https://ziglang.org/download/index.json"
 VPK_MAGIC = 0x55AA1234
@@ -254,6 +256,12 @@ def install(destination: Path) -> None:
 
     sources, manifests = depot_files(cache, repair)
     shaders = shader_packages(sources)
+    # Written below from the game's copy, so Valve's changes to it reach the
+    # editors on the next update.
+    game_info = sources.pop(GAMEINFO, None)
+    if game_info is None:
+        raise ValueError("Deadlock's game/citadel/gameinfo.gi is missing; "
+                         "verify the game's files in Steam and run the update again")
     removed = sorted(set(previous) - set(sources))
     print(f"Placing {len(sources)} Valve files; removing {len(removed)}", flush=True)
     for name in removed:
@@ -284,6 +292,8 @@ def install(destination: Path) -> None:
             continue
         target.parent.mkdir(parents=True, exist_ok=True)
         durable.write(target, content.read_bytes() if isinstance(content, Path) else content)
+    durable.write(contained_path(destination, GAMEINFO),
+                  gameinfo.tools(game_info.read_bytes(), GAMEINFO_CHANGES.read_bytes()))
     for name in PROJECT_DIRS:
         contained_path(destination, name).mkdir(parents=True, exist_ok=True)
 

@@ -93,7 +93,7 @@ describes the editors and the sample addon.
 | `install.sh`, `install.ps1` | One-line installers that run `scripts/install.py` |
 | `profiles/toolkit.json` | The Valve depots the toolkit uses and the paths taken from each |
 | `scripts/` | Install, package, and probe scripts (standard library Python) |
-| `metadata/` | Entity definitions and the tools `gameinfo.gi` |
+| `metadata/` | Entity definitions and the toolkit's changes to the game's `gameinfo.gi` |
 | `tools/` | The Windows launcher, the lighting tool wrapper, and the entity metadata exporter |
 | `bundle/` | The offline bundle installer and the toolkit README |
 | `tests/` | Unit tests for installing and packaging |

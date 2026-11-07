@@ -13,6 +13,7 @@ from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import convars
+import gameinfo
 import install
 import steam
 from toolkit import Depot
@@ -235,6 +236,13 @@ class InstallTest(unittest.TestCase):
             (game / "game/citadel/bin").mkdir(parents=True)
             for name in ("pak01_dir.vpk", "pak01_000.vpk", "bin/client.dll"):
                 (game / "game/citadel" / name).write_bytes(b"deadlock")
+            # The game's own file, with a search path another program added.
+            (game / "game/citadel/gameinfo.gi").write_text(
+                '"GameInfo"\n{\n\tgame "citadel"\n\tFileSystem\n\t{\n\t\tSearchPaths\n\t\t{\n'
+                '\t\t\tGame citadel/other_program // added by another program\n'
+                '\t\t\tGame citadel\n\t\t}\n\t\t"UserSettingsPathID" "USRLOCAL"\n\t}\n'
+                '\tHammer { RenderMode ToolsVis }\n'
+                '\tEngine2 { HasModAppSystems 1 Capable64Bit 1 }\n}\n')
             # A shader package with one file, "abc" at offset 2 of archive 000.
             shader_tree = b"txt\0shaders\0a\0" + struct.pack("<IHHIIH", 0, 0, 0, 2, 3, 0xFFFF) + b"\0\0\0"
             (game / "game/citadel/shaders_pc_dir.vpk").write_bytes(
@@ -243,11 +251,12 @@ class InstallTest(unittest.TestCase):
             (steam_root / "depotcache/1422451_7.manifest").write_bytes(depot_manifest(
                 ["game/citadel/pak01_dir.vpk", "game/citadel/pak01_000.vpk",
                  "game/citadel/bin/client.dll", "game/citadel/shaders_pc_dir.vpk",
-                 "game/citadel/shaders_pc_000.vpk"], ["game/citadel"]))
+                 "game/citadel/shaders_pc_000.vpk", "game/citadel/gameinfo.gi"], ["game/citadel"]))
 
             profile = [Depot("730", "2347771", {"game/bin/": "game/bin/"}),
                        Depot("1422450", "1422451",
-                             {"game/citadel/pak01_": "game/citadel_assets/pak01_",
+                             {"game/citadel/gameinfo.gi": "game/citadel/gameinfo.gi",
+                              "game/citadel/pak01_": "game/citadel_assets/pak01_",
                               "game/citadel/shaders_": "game/citadel_assets/shaders_"})]
             depot_contents = {"game/bin/tools.dll": b"tool", "game/bin/old/old.dll": b"old"}
             downloads = []
@@ -306,7 +315,16 @@ class InstallTest(unittest.TestCase):
             self.assertFalse((destination / "game/bin/old").exists())
             self.assertEqual(downloads, [("2347771", True), ("2347771", False), ("2347771", True)])
             self.assertEqual(sample.read_text(), "my model")
-            self.assertTrue((destination / "game/citadel/gameinfo.gi").is_file())
+            # The game's gameinfo.gi with the toolkit's changes: sections merge
+            # key by key, and the search path list is the toolkit's alone.
+            (_, info), = gameinfo.parse((destination / "game/citadel/gameinfo.gi").read_text())
+            info = dict(info)
+            paths = dict(info["FileSystem"])["SearchPaths"]
+            self.assertEqual(paths[0], ("Mod", "citadel"))
+            self.assertNotIn(("Game", "citadel/other_program"), paths)
+            self.assertEqual(dict(info["FileSystem"])["UserSettingsPathID"], "MOD")
+            self.assertEqual(info["Hammer"], [("RenderMode", "ToolsVis")])
+            self.assertEqual(info["Engine2"], [("HasModAppSystems", "0"), ("Capable64Bit", "1")])
             self.assertTrue((destination / "Update.cmd").is_file())
             state = json.loads((destination / ".cache/installed.json").read_text())
             self.assertEqual(state["depots"], {"2347771": "9", "1422451": "7"})

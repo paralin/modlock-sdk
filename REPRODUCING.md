@@ -24,9 +24,10 @@ Dota's are the most recent Valve releases. It has these parts:
 - Two texture compression libraries from CS2, `bc7e.dll` and
   `ispc_texcomp.dll`, which Deadlock's compiler loads and neither Deadlock nor
   Dota ships.
-- Files from this repository: the launcher, the lighting tool wrapper,
-  `gameinfo.gi`, the entity definitions, a sample addon, and the `.cmd`
-  shortcuts.
+- Deadlock's own `gameinfo.gi`, which the installer changes for the toolkit.
+- Files from this repository: the launcher, the lighting tool wrapper, the
+  changes to `gameinfo.gi`, the entity definitions, a sample addon, and the
+  `.cmd` shortcuts.
 
 [`profiles/toolkit.json`](profiles/toolkit.json) lists each depot and maps the
 depot path prefixes it takes to toolkit paths, or to several for a file needed
@@ -78,19 +79,26 @@ the toolkit) to apply the difference.
 
 ## The content project
 
-`game/citadel/gameinfo.gi` comes from
-[`metadata/citadel-tools-gameinfo.gi`](metadata/citadel-tools-gameinfo.gi). It
-adds Deadlock's packages to the search path, with `core_deadlock` ahead of the
-editors' `core`. It mounts both `Game core` and `Mod core`, since the default
-key bindings need the second, and `LayeredOnMod core` keeps Valve's render
-defaults. Its `ResourceCompiler`, `SceneSystem` and `WorldRenderer` blocks are
-Deadlock's own, without the game's post-build steps, whose PvE navigation cache
-step crashes without the game's code. `BakedLighting` selects the version 5
-lightmap channels; without it a map compile skips the bake and writes no
-lightmaps. Its `RenderSystem` block asks Vulkan for descriptor indexing, which
-the GPU lighting tool's scene descriptors need. `HasModAppSystems 0` keeps
-Deadlock's game code unloaded, which leaves out the precomputed shadow atlas
-that stationary lights need.
+The installer writes `game/citadel/gameinfo.gi` from the installed game's own
+file, so Valve's renderer, editor and compiler settings reach the editors on
+each update. It applies the changes in
+[`metadata/citadel-tools-gameinfo.gi`](metadata/citadel-tools-gameinfo.gi): each
+section there merges into the game's section key by key, and each value inside
+a section replaces the game's whole. The search path list replaces the game's,
+including any search path another program added to the game's file: Deadlock's
+packages, with `core_deadlock` ahead of the editors' `core`, and both `Game
+core` and `Mod core`, since the default key bindings need the second.
+`LayeredOnMod core` keeps Valve's render defaults. The game's post-build steps
+are left out, since the PvE navigation cache step crashes without the game's
+code. `HasModAppSystems 0` keeps Deadlock's game code unloaded, which leaves out
+the precomputed shadow atlas that stationary lights need. `SteamAudioEnabled 0`
+keeps the game's Steam Audio runtime out of the editors, since Hammer crashes on
+its first frame with it. `UserSettingsPathID MOD` points the editors' settings
+at `game/citadel/cfg` instead of the player's Steam profile folder, and the
+`RenderSystem` keys ask Vulkan for the descriptor indexing that the GPU lighting
+tool's scene descriptors need. The game's `BakedLighting` block selects the
+version 5 lightmap channels; without it a map compile skips the bake and writes
+no lightmaps.
 
 Valve does not ship an entity definition file for Deadlock's tools.
 [`metadata/citadel.fgd`](metadata/citadel.fgd) adds 104 entity classes found in
