@@ -40,6 +40,7 @@ def steam_roots() -> list[Path]:
         home = Path.home()
         roots += [home / ".steam/steam", home / ".local/share/Steam",
                   home / ".var/app/com.valvesoftware.Steam/.local/share/Steam",
+                  home / "snap/steam/common/.local/share/Steam",
                   home / "Library/Application Support/Steam"]
     return [root for root in roots if (root / "steamapps").is_dir()]
 
